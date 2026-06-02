@@ -74,10 +74,10 @@ This is a new public project, so it does not yet have large adoption metrics. Th
 ## Current Public Evidence
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
-- Latest main commit: https://github.com/zlbdh/maintainer-harness/commit/216bf991b6c74a1fe3155978ba20e707c7724be6
-- Latest successful CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26822171456
-- Latest successful Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26822168441
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
+- Reviewer brief commit: https://github.com/zlbdh/maintainer-harness/commit/32e6a0ad378a4e52478d067c8d78d30522b1e0cb
+- Reviewer brief CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26829792583
+- Reviewer brief Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083
 - Reviewer brief: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-reviewer-brief.md
 - Current metrics: 0 stars, 0 forks, 0 watchers, and 3 open issues as of 2026-06-02.
 - Public growth posture: feedback-first discovery materials are published; the project does not ask for artificial stars.

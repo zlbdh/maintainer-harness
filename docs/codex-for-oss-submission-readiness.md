@@ -8,10 +8,10 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | --- | --- |
 | Project site | https://zlbdh.github.io/maintainer-harness/ |
 | Source repository | https://github.com/zlbdh/maintainer-harness |
-| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10 |
-| Latest main commit | https://github.com/zlbdh/maintainer-harness/commit/5f1c357636ce58bf354a0e39f0474644c2747cfe |
-| Latest successful CI | https://github.com/zlbdh/maintainer-harness/actions/runs/26821647602 |
-| Latest successful Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26821645827 |
+| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11 |
+| Reviewer brief commit | https://github.com/zlbdh/maintainer-harness/commit/32e6a0ad378a4e52478d067c8d78d30522b1e0cb |
+| Reviewer brief CI | https://github.com/zlbdh/maintainer-harness/actions/runs/26829792583 |
+| Reviewer brief Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |

@@ -30,7 +30,8 @@ cd maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.8
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.9
+- 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5

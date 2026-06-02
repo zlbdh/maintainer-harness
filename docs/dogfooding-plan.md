@@ -2,6 +2,8 @@
 
 Maintainer Harness is early, so the strongest support request is not popularity. It is a concrete plan to use Codex on public maintainer workflows and publish the resulting evidence without exposing private project data.
 
+Public tracking issue: https://github.com/zlbdh/maintainer-harness/issues/7
+
 ## First 30 Days
 
 | Window | Goal | Public Artifact |
@@ -28,7 +30,7 @@ Credits should not be used for private product development, unpublished customer
 
 - Keep the repository public and CI-gated.
 - Publish small tagged releases with clear changelog entries.
-- Use GitHub issues for the roadmap instead of private notes.
+- Use GitHub issues for the roadmap instead of private notes, starting with the pinned 30-day evidence loop issue.
 - Record skipped validation as skipped, not passed.
 - Redact validation evidence before copying summaries out of ignored reports.
 - Add examples before claiming workflow maturity.

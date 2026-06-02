@@ -47,18 +47,20 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 | X / Twitter | Short technical hook and repository link. | Use the short post or thread below. |
 | LinkedIn | Maintainer story and open source process angle. | Use the LinkedIn draft below. |
 | Reddit or forum posts | Ask for workflow critique in relevant maintainer/devtools communities. | Use the feedback request below. |
-| GitHub issues | Show an active public roadmap. | Keep issues `#5` and `#6` pinned so outside maintainers can find feedback and first-run paths quickly. |
+| GitHub issues | Show an active public roadmap. | Keep issues `#5`, `#6`, and `#7` pinned so outside maintainers can find feedback, first-run paths, and the 30-day evidence loop quickly. |
 
 Current public launch anchors:
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Source repo: https://github.com/zlbdh/maintainer-harness
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.8
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.9
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Pinned dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow

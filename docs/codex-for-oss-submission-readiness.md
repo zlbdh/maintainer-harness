@@ -8,13 +8,14 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | --- | --- |
 | Project site | https://zlbdh.github.io/maintainer-harness/ |
 | Source repository | https://github.com/zlbdh/maintainer-harness |
-| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.8 |
+| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.9 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Demo path | `docs/demo.md` |
 | Launch kit | `docs/launch-kit.md` |
 | Dogfooding plan | `docs/dogfooding-plan.md` |
+| Public 30-day dogfooding tracker | https://github.com/zlbdh/maintainer-harness/issues/7 |
 | Issue-to-review example | `examples/issue-to-review/` |
 | Release workflow example | `examples/release-workflow/` |
 | Codex Security overview | `docs/security/codex-security-project-overview.md` |
@@ -54,4 +55,4 @@ The current application audit is passing in the ignored report directory.
 
 - Confirm how to split applicant name across the form's required last-name and first-name fields.
 - Confirm whether to only fill the form or fill and submit it.
-- Optionally pin the repository on the GitHub profile UI. The repository README and profile README already link the project, and issues `#5` and `#6` are pinned inside the repository.
+- Optionally pin the repository on the GitHub profile UI. The repository README and profile README already link the project, and issues `#5`, `#6`, and `#7` are pinned inside the repository.

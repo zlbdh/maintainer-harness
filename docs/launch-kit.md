@@ -53,6 +53,7 @@ Current public launch anchors:
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.1
 - Passing launch-ready CI run: https://github.com/zlbdh/maintainer-harness/actions/runs/26809709826
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
+- Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - GitHub profile README: https://github.com/zlbdh/zlbdh
 
@@ -186,7 +187,7 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 | 2 | Share the LinkedIn post. | Feedback from devtools/open source contacts. |
 | 3 | Submit Show HN if the maintainer can stay online to answer questions. | Technical feedback, not just stars. |
 | 4 | Turn feedback into GitHub issues. | Public roadmap becomes more specific. |
-| 5 | Add one synthetic workflow improvement from feedback. | A visible commit tied to feedback. |
+| 5 | Invite one contributor to try issue #6 and report first-run friction. | The first contribution path is tested by someone outside the maintainer loop. |
 | 6 | Post a short update with what changed. | Shows the project is maintained. |
 | 7 | Review stars, forks, issues, traffic, and comments. | Decide next launch topic. |
 

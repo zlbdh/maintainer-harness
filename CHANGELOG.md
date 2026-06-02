@@ -18,6 +18,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Complete synthetic sample change packet that validates from a clean checkout.
 - Public feedback issue and `v0.1.1` launch-ready release anchors in launch materials.
 - GitHub profile README anchor for Maintainer Harness visibility.
+- Project-specific GitHub labels and a good-first-issue demo feedback path.
 
 ### Changed
 

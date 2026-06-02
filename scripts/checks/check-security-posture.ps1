@@ -46,6 +46,7 @@ $findings = New-Object System.Collections.Generic.List[object]
 $requiredSecurityPaths = @(
     'SECURITY.md',
     'docs\security\threat-model.md',
+    'docs\security\codex-security-project-overview.md',
     'docs\security\codex-security-scope.md',
     'docs\security\security-review-checklist.md',
     'standards\global\mcp-safety.md',
@@ -152,6 +153,21 @@ if (Test-TrackedFileContains -RelativePath 'docs\security\codex-security-scope.m
     $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'codex-security-scope' -Detail 'Codex Security review scope is documented.'))
 } else {
     $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check 'codex-security-scope' -Detail 'Codex Security review scope is not documented.'))
+}
+
+$overviewChecks = @(
+    @{ Name = 'security-entry-points'; Pattern = 'Entry Points And Untrusted Inputs'; Detail = 'Codex Security overview includes entry points and untrusted inputs.' },
+    @{ Name = 'security-trust-boundaries'; Pattern = 'Trust Boundaries And Auth Assumptions'; Detail = 'Codex Security overview includes trust boundaries and auth assumptions.' },
+    @{ Name = 'security-sensitive-data'; Pattern = 'Sensitive Data Paths Or Privileged Actions'; Detail = 'Codex Security overview includes sensitive data paths and privileged actions.' },
+    @{ Name = 'security-review-first'; Pattern = 'Areas To Review First'; Detail = 'Codex Security overview includes prioritized review areas.' }
+)
+
+foreach ($overviewCheck in $overviewChecks) {
+    if (Test-TrackedFileContains -RelativePath 'docs\security\codex-security-project-overview.md' -Pattern $overviewCheck.Pattern) {
+        $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check $overviewCheck.Name -Detail $overviewCheck.Detail))
+    } else {
+        $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check $overviewCheck.Name -Detail "Missing Codex Security overview section: $($overviewCheck.Pattern)"))
+    }
 }
 
 if ($SkipSensitivePattern) {

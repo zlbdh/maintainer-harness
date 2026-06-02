@@ -9,6 +9,7 @@ Use this checklist before requesting Codex Security review, adding new agent rol
 - Confirm product checkouts under `repos/` are ignored.
 - Confirm generated reports and worktrees are ignored.
 - Confirm no credentials, tokens, cookies, private endpoints, or customer data appear in tracked files.
+- Confirm `docs/security/codex-security-project-overview.md` still reflects current entry points, trust boundaries, sensitive paths, and review priorities.
 
 ## Agent Scope
 
@@ -37,9 +38,9 @@ Use this checklist before requesting Codex Security review, adding new agent rol
 When requesting Codex Security support, point reviewers to:
 
 - `docs/security/threat-model.md`
+- `docs/security/codex-security-project-overview.md`
 - `docs/security/codex-security-scope.md`
 - `standards/global/mcp-safety.md`
 - `config/agent-registry.yaml`
 - `.github/workflows/harness-validation.yml`
 - `scripts/checks/check-security-posture.ps1`
-

@@ -71,6 +71,20 @@ if (Test-Path -LiteralPath $evidencePath) {
     $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'evidence-matrix' -Detail 'Missing docs/codex-for-oss-evidence.md.'))
 }
 
+$supportEvidencePaths = @(
+    @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
+    @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' }
+)
+
+foreach ($supportEvidence in $supportEvidencePaths) {
+    $supportEvidencePath = Join-Path $repoRoot $supportEvidence.Path
+    if (Test-Path -LiteralPath $supportEvidencePath) {
+        $findings.Add((New-AuditFinding -Status 'PASS' -Check $supportEvidence.Check -Detail $supportEvidence.Detail))
+    } else {
+        $findings.Add((New-AuditFinding -Status 'FAIL' -Check $supportEvidence.Check -Detail "Missing $($supportEvidence.Path)."))
+    }
+}
+
 try {
     & (Join-Path $repoRoot 'scripts\bootstrap\verify-workspace.ps1') -Quiet | Out-Null
     $findings.Add((New-AuditFinding -Status 'PASS' -Check 'workspace' -Detail 'Harness workspace validates.'))

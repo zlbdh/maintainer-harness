@@ -31,6 +31,8 @@ The project is designed for maintainers of multi-repository open source systems,
 
 See `docs/codex-for-oss-evidence.md` for a file-by-file evidence matrix that maps the repository to maintainer automation, pull request review workflows, release workflows, API credits usage, and security care.
 
+See `docs/dogfooding-plan.md` for the first 30 days of public API-credit-backed dogfooding and `docs/security/codex-security-project-overview.md` for a paste-ready Codex Security threat-model overview.
+
 ## Current Stage
 
 Early public-ready project. The repository has been generalized from local maintainer experiments into a reusable harness. It does not yet have broad external adoption, stars, or contributors, so the application should be honest about its stage and emphasize maintainership value rather than popularity.
@@ -45,15 +47,15 @@ Early public-ready project. The repository has been generalized from local maint
 
 ## Why Does This Repository Qualify? 500 Characters Max
 
-Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets PR review, maintainer automation, release evidence, and agent security boundaries across multi-repo projects. It is not popular yet, but it offers reusable infrastructure for maintainers who need Codex workflows to stay scoped, auditable, and safe.
+Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets PR review, maintainer automation, release evidence, and agent security boundaries across multi-repo projects. It now has public CI, security posture gates, and paste-ready Codex Security context, while staying honest about early adoption.
 
 ## How Will You Use API Credits? 500 Characters Max
 
-I will use API credits and ChatGPT Pro with Codex to dogfood the harness: generate issue-to-task packets, review worker outputs, stress-test scope boundaries, summarize validation for PRs/releases, and build synthetic examples. Credits support public maintainer automation and security review workflows, not private product development.
+I will use API credits and ChatGPT Pro with Codex to dogfood public maintainer workflows: generate issue-to-task packets, review worker outputs, stress-test scope boundaries, summarize validation for PRs/releases, and build synthetic examples. Credits support open maintainer automation and security review, not private product development.
 
 ## Anything Else? 500 Characters Max
 
-Please also consider Codex Security. This repo coordinates agent write scopes, MCP context, generated worktrees, validation evidence, and public release gates. I added a threat model, review scope, checklist, and CI security posture check so reviewers can inspect concrete boundaries rather than a generic security claim.
+Please also consider Codex Security. This repo coordinates agent write scopes, MCP context, generated worktrees, validation evidence, and release gates. I added a threat model, paste-ready project overview, review scope, checklist, and CI security posture check so reviewers can inspect concrete boundaries rather than a generic security claim.
 
 ## Longer Project Narrative
 

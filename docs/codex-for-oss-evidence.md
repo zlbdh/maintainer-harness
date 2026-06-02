@@ -16,7 +16,8 @@ The application is positioned around maintainership value rather than popularity
 | Day-to-day coding and triage | `docs/workflow.md`, `docs/harness-sop.md`, and `.agent/skills/local-baseline-triage/` define bounded maintainer routines. |
 | API credits usage | `docs/codex-for-oss-application.md` explains dogfooding: task generation, review packets, baseline triage, validation summaries, and reusable examples. |
 | Security care | `SECURITY.md`, `docs/security/`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, and publication hygiene explicit. |
-| Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
+| Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
+| Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
 
 ## Why This Is Useful Despite Early Adoption
 
@@ -40,6 +41,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The project is honest about early stage and limited usage metrics.
 - The repository includes public hygiene controls before submission.
 - Codex Security is useful because the project coordinates agents, MCP context, generated worktrees, validation evidence, and release gates.
+- The full-support request is backed by public artifacts: CI, issue templates, a dogfooding plan, a Codex Security project overview, and a security posture gate.
 
 ## Publication Gate
 

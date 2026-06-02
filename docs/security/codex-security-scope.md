@@ -4,6 +4,7 @@ Maintainer Harness requests Codex Security support because the project is specif
 
 ## In Scope
 
+- Paste-ready security project overview in `docs/security/codex-security-project-overview.md`
 - Agent role definitions in `config/agent-registry.yaml`
 - Worker packet generation in `scripts/orchestrator/dispatch-change.ps1`
 - Worker review and acceptance logic in `scripts/orchestrator/review-worker-output.ps1`
@@ -33,4 +34,3 @@ Maintainer Harness requests Codex Security support because the project is specif
 ## Why This Matters For OSS
 
 Open source maintainers often need help with triage, review, and release work, but they also need reproducible evidence and clear authority boundaries. A security review of this harness can improve not only one repository, but a reusable pattern for maintainers adopting agent-assisted workflows.
-

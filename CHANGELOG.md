@@ -12,12 +12,16 @@ This project follows a simple date-based changelog until formal versioned releas
 - Security posture gate in `scripts/checks/check-security-posture.ps1`.
 - GitHub Actions step for CI security posture validation.
 - Full-support Codex for OSS application wording covering API credits, ChatGPT Pro with Codex, and Codex Security.
+- Paste-ready Codex Security project overview aligned to entry points, trust boundaries, sensitive data paths, privileged actions, and review priorities.
+- Public 30-day dogfooding plan for API-credit-backed maintainer workflows.
 
 ### Changed
 
 - Application audit now includes security posture status.
+- Application audit now checks the dogfooding plan and Codex Security project overview.
 - MCP catalog owner scope is generic for open source maintainers.
 - Public release docs now include security posture checks.
+- README now surfaces CI, license, and security posture badges.
 
 ## 2026-06-01
 

@@ -1,5 +1,9 @@
 # Maintainer Harness
 
+[![Harness validation](https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml/badge.svg)](https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Security posture](https://img.shields.io/badge/security%20posture-CI%20gated-green)](docs/security/security-review-checklist.md)
+
 Maintainer Harness is a lightweight control plane for open source maintainers who want agent-assisted work to stay auditable, bounded, and reproducible.
 
 **Status:** early public-ready project. The current repository uses synthetic sample repositories so maintainers can inspect the workflow before connecting real projects.
@@ -134,7 +138,8 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `.github/`: issue and pull request templates
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
-- `docs/security/`: threat model, Codex Security review scope, and security review checklist
+- `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
+- `docs/security/`: threat model, Codex Security project overview, review scope, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows
 - `.github/workflows/harness-validation.yml`: public CI entry point

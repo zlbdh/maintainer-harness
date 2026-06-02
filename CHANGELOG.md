@@ -26,6 +26,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.3` release anchor for the project site package.
 - Synthetic issue-to-review packet under `examples/issue-to-review/` covering issue intake, impact mapping, worker scope, and reviewer acceptance evidence.
 - GitHub Actions, workspace verification, public readiness, and application audit now include the issue-to-review example.
+- `v0.1.4` release anchor for the issue-to-review packet example.
 
 ### Changed
 

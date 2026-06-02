@@ -18,7 +18,7 @@ The application is positioned around maintainership value rather than popularity
 | Security care | `SECURITY.md`, `docs/security/`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, and publication hygiene explicit. |
 | Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
-| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.3` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
+| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.4` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
 
 ## Why This Is Useful Despite Early Adoption
 

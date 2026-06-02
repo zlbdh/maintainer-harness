@@ -18,6 +18,7 @@ cd maintainer-harness
 .\scripts\checks\validate-repos.ps1
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 ```
 
@@ -26,6 +27,7 @@ cd maintainer-harness
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+- Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.3
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6

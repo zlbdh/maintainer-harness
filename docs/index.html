@@ -68,7 +68,7 @@
         <p class="eyebrow">90-second path</p>
         <h2 id="demo-title">Try it without private repositories.</h2>
         <p>
-          The sample change packet is synthetic. It validates the workflow shape without
+          The sample packets are synthetic. They validate the workflow shape without
           cloning product repositories, opening worktrees, or using production credentials.
         </p>
       </div>
@@ -77,6 +77,7 @@ cd maintainer-harness
 .\scripts\checks\validate-repos.ps1
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern</code></pre>
     </section>
 

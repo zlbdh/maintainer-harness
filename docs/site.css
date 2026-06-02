@@ -11,9 +11,7 @@
   --shadow: 0 18px 50px rgba(17, 24, 39, 0.16);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -22,8 +20,14 @@ body {
   font-family: "Segoe UI", Verdana, sans-serif;
 }
 
-a {
-  color: inherit;
+a { color: inherit; }
+
+.site-header,
+.hero,
+.section,
+.signal-band {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .site-header {
@@ -31,27 +35,37 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1180px;
-  margin: 0 auto;
   padding: 22px 28px;
 }
 
-.brand {
+.brand,
+h1,
+h2 {
   font-family: Georgia, "Times New Roman", serif;
+}
+
+.brand {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
 }
 
-nav {
+nav,
+.hero-actions {
   display: flex;
   align-items: center;
+}
+
+nav {
   gap: 18px;
   color: var(--muted);
   font-size: 15px;
 }
 
-nav a {
+nav a,
+.button,
+.signal-band a,
+.link-list a {
   text-decoration: none;
 }
 
@@ -60,13 +74,6 @@ nav a {
   background: var(--ink);
   padding: 10px 14px;
   border-radius: 8px;
-}
-
-.hero,
-.section,
-.signal-band {
-  max-width: 1180px;
-  margin: 0 auto;
 }
 
 .hero {
@@ -95,14 +102,7 @@ nav a {
 h1,
 h2,
 h3,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-}
+p { margin-top: 0; }
 
 h1 {
   max-width: 650px;
@@ -129,19 +129,18 @@ h3 {
   line-height: 1.65;
 }
 
+.lead {
+  max-width: 620px;
+  margin-bottom: 30px;
+}
+
 .lead strong {
   display: block;
   margin-bottom: 6px;
   color: var(--ink);
 }
 
-.lead {
-  max-width: 620px;
-  margin-bottom: 30px;
-}
-
 .hero-actions {
-  display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -153,7 +152,6 @@ h3 {
   padding: 12px 16px;
   border-radius: 8px;
   font-weight: 800;
-  text-decoration: none;
 }
 
 .button.primary {
@@ -182,23 +180,30 @@ h3 {
   border-radius: 4px;
 }
 
-.signal-band {
+.signal-band,
+.grid {
   display: grid;
+}
+
+.signal-band {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   padding: 0 28px 38px;
 }
 
-.signal-band a {
+.signal-band a,
+.link-list a {
   display: flex;
   align-items: center;
+  font-weight: 800;
+}
+
+.signal-band a {
   min-height: 58px;
   padding: 14px 16px;
   background: var(--ink);
   color: #ffffff;
   border-radius: 8px;
-  font-weight: 800;
-  text-decoration: none;
 }
 
 .section {
@@ -232,7 +237,6 @@ code {
 }
 
 .grid {
-  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 30px;
@@ -246,30 +250,17 @@ article {
   border-radius: 8px;
 }
 
-article:nth-child(1) {
-  border-top: 5px solid var(--teal);
-}
-
-article:nth-child(2) {
-  border-top: 5px solid var(--blue);
-}
-
-article:nth-child(3) {
-  border-top: 5px solid var(--amber);
-}
-
-article:nth-child(4) {
-  border-top: 5px solid var(--ink);
-}
+article:nth-child(1) { border-top: 5px solid var(--teal); }
+article:nth-child(2) { border-top: 5px solid var(--blue); }
+article:nth-child(3) { border-top: 5px solid var(--amber); }
+article:nth-child(4) { border-top: 5px solid var(--ink); }
 
 article p {
   font-size: 16px;
   line-height: 1.55;
 }
 
-.final {
-  padding-bottom: 92px;
-}
+.final { padding-bottom: 92px; }
 
 .link-list {
   display: grid;
@@ -277,15 +268,11 @@ article p {
 }
 
 .link-list a {
-  display: flex;
-  align-items: center;
   min-height: 60px;
   padding: 16px 18px;
   background: var(--surface);
   border: 2px solid var(--ink);
   border-radius: 8px;
-  font-weight: 800;
-  text-decoration: none;
 }
 
 @media (max-width: 900px) {
@@ -303,22 +290,15 @@ article p {
     flex-direction: column;
   }
 
-  nav {
-    flex-wrap: wrap;
-  }
+  nav { flex-wrap: wrap; }
 
   .hero {
     min-height: auto;
     padding-top: 20px;
   }
 
-  h1 {
-    font-size: 44px;
-  }
-
-  h2 {
-    font-size: 34px;
-  }
+  h1 { font-size: 44px; }
+  h2 { font-size: 34px; }
 }
 
 @media (max-width: 560px) {
@@ -332,22 +312,15 @@ article p {
     font-size: 14px;
   }
 
-  .brand {
-    font-size: 22px;
-  }
+  .brand { font-size: 22px; }
 
   .hero {
     gap: 24px;
     padding: 12px 20px 32px;
   }
 
-  .section {
-    padding: 52px 20px;
-  }
-
-  .signal-band {
-    padding: 0 20px 32px;
-  }
+  .section { padding: 52px 20px; }
+  .signal-band { padding: 0 20px 32px; }
 
   h1 {
     margin-bottom: 18px;
@@ -360,16 +333,12 @@ article p {
     line-height: 1.58;
   }
 
-  .hero-media {
-    padding: 8px;
-  }
+  .hero-media { padding: 8px; }
 
   pre {
     min-height: 230px;
     padding: 18px;
   }
 
-  code {
-    font-size: 14px;
-  }
+  code { font-size: 14px; }
 }

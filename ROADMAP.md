@@ -15,7 +15,7 @@ Maintainer Harness is early-stage and public-ready, but it should grow through m
 ## Maintainer Automation
 
 - Generate change packets from GitHub issues.
-- Produce pull request review packets from `impact.yaml` and `execution.yaml`.
+- Expand pull request review packets from `impact.yaml` and `execution.yaml` beyond the first `examples/issue-to-review/` packet.
 - Summarize validation evidence into release notes.
 - Add optional GitHub Actions examples for pull request triage.
 

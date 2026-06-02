@@ -1,0 +1,17 @@
+change_id: CHG-2026-0002-issue-to-review-packet
+summary: Synthetic issue intake converted into a PR-review-ready change packet.
+source_issue:
+  provider: GitHub
+  repository: example/maintainer-tool
+  number: 42
+  title: Document the validation evidence required before PR review
+affected_repositories:
+  - id: harness
+    reason: Adds maintainer-facing review packet documentation and example evidence.
+interfaces:
+  - name: PR review packet
+    change_type: documentation
+  - name: validation evidence record
+    change_type: documentation
+dependencies: []
+risk_level: low

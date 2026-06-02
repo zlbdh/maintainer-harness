@@ -58,6 +58,7 @@ Current public launch anchors:
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+- Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Share page: https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 - Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
@@ -86,6 +87,7 @@ git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 .\scripts\checks\validate-repos.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 
 I would like feedback from maintainers who have tried using agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?

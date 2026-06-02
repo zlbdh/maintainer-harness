@@ -25,6 +25,10 @@ jobs:
         shell: pwsh
         run: .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 
+      - name: Validate issue-to-review packet
+        shell: pwsh
+        run: .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+
       - name: Exercise machine-readable checks
         shell: pwsh
         run: |

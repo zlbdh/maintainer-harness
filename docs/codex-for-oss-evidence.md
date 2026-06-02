@@ -11,7 +11,7 @@ The application is positioned around maintainership value rather than popularity
 | Program theme | Maintainer Harness evidence |
 | --- | --- |
 | Maintainer automation | `scripts/bootstrap/init-change.ps1`, `scripts/orchestrator/dispatch-change.ps1`, and `.agent/skills/` turn maintenance work into repeatable packets. |
-| Pull request review workflows | `templates/worker-result.md`, `schemas/worker-response.schema.json`, `schemas/review-response.schema.json`, and `scripts/orchestrator/review-worker-output.ps1` define reviewable worker output. |
+| Pull request review workflows | `examples/issue-to-review/`, `templates/worker-result.md`, `schemas/worker-response.schema.json`, `schemas/review-response.schema.json`, and `scripts/orchestrator/review-worker-output.ps1` define reviewable worker output. |
 | Release workflows | `templates/release-note.md`, `release/README.md`, `standards/global/release-gates.md`, and `templates/postmortem.md` preserve release evidence. |
 | Day-to-day coding and triage | `docs/workflow.md`, `docs/harness-sop.md`, and `.agent/skills/local-baseline-triage/` define bounded maintainer routines. |
 | API credits usage | `docs/codex-for-oss-application.md` explains dogfooding: task generation, review packets, baseline triage, validation summaries, and reusable examples. |
@@ -38,7 +38,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 
 - The repository is a maintainer tool, not a private product.
 - Codex would be used to improve and dogfood the harness itself.
-- The first target workflows are PR review packets, maintainer triage, validation summaries, and release evidence.
+- The first target workflows are PR review packets, maintainer triage, validation summaries, and release evidence; `examples/issue-to-review/` now shows the PR review packet shape.
 - The project is honest about early stage and limited usage metrics.
 - The repository includes public hygiene controls before submission.
 - Codex Security is useful because the project coordinates agents, MCP context, generated worktrees, validation evidence, and release gates.

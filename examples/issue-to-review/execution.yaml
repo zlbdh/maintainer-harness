@@ -1,0 +1,49 @@
+change_id: CHG-2026-0002-issue-to-review-packet
+title: Issue-to-review synthetic packet
+stage: review-ready
+stage_owner: review-agent
+repo_owners:
+  control_repo: change-intake-agent
+  harness: knowledge-agent
+write_scopes:
+  control_repo:
+    owner: change-intake-agent
+    files:
+      - brief.md
+      - issue-intake.md
+      - impact.yaml
+      - execution.yaml
+      - design.md
+      - acceptance.md
+      - verification/result.md
+  business_repos:
+    harness:
+      - docs/**
+      - examples/**
+depends_on: []
+branch:
+  control_repo: main
+  harness: main
+worktree:
+  control_repo: .
+  harness: .
+snapshot_policy:
+  control_repo: none
+  harness: none
+runtime_type:
+  control_repo: main-agent
+  harness: worker
+registry_ref:
+  control_repo: change-intake-agent
+  harness: knowledge-agent
+worker_result:
+  harness: verification/workers/harness.md
+review_result:
+  harness: verification/result.md
+lock_state:
+  control_repo: unlocked
+  business_repos:
+    harness: unlocked
+snapshot_at: ""
+notes:
+  - "Synthetic PR-review example only; no live GitHub issue or pull request is required."

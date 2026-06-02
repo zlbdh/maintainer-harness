@@ -1,0 +1,57 @@
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python / Node / Playwright artifacts
+node_modules/
+playwright-report/
+test-results/
+*.log
+
+# Local product repo workspaces live under repos/, but this control repo tracks only repos.yaml
+/repos/**
+!/repos/repos.yaml
+
+# Generated validation reports
+/reports/**
+!/reports/README.md
+!/reports/local-validation/
+!/reports/local-validation/.gitkeep
+
+# Generated or local execution artifacts
+/worktrees/**
+/changes/CHG-*/
+/changes/*/runtime/
+/changes/*/verification/workers/
+
+# Legacy private case artifacts from local experiments
+/*.png
+/*.mmd
+/*.md
+!/README.md
+!/AGENTS.md
+!/CHANGELOG.md
+!/CODE_OF_CONDUCT.md
+!/CONTRIBUTING.md
+!/MAINTAINERS.md
+!/ROADMAP.md
+!/SECURITY.md
+!/SUPPORT.md
+/scripts/generate_current_flowchart.py
+/scripts/generate_flowchart_companions.py
+/evals/api/*.md
+/evals/web/*.md
+/evals/mobile/*.md
+/standards/backend/*.md
+/standards/web/*.md
+/standards/mobile/*.md
+
+# Temporary outputs
+tmp/
+temp/
+dist/
+coverage/

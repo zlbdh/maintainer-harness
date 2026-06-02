@@ -1,0 +1,11 @@
+change_id: CHG-2026-0001-sample-docs-validation
+summary: Documentation-only harness validation example.
+affected_repositories:
+  - id: harness
+    reason: Updates maintainer-facing documentation.
+interfaces:
+  - name: README quick start
+    change_type: documentation
+dependencies: []
+risk_level: low
+

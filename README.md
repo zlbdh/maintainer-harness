@@ -1,0 +1,155 @@
+# Maintainer Harness
+
+Maintainer Harness is a lightweight control plane for open source maintainers who want agent-assisted work to stay auditable, bounded, and reproducible.
+
+**Status:** early public-ready project. The current repository uses synthetic sample repositories so maintainers can inspect the workflow before connecting real projects.
+
+It does not replace your product repositories. It keeps the operational layer around them:
+
+- change intake
+- cross-repository impact analysis
+- task cards and write scopes
+- worker dispatch packets
+- local validation reports
+- release notes and postmortems
+- reusable maintainer skills
+
+The project is intentionally repository-agnostic. The default configuration uses sample repositories under `repos/repos.yaml`; replace those entries with your own repositories before running real maintenance workflows.
+
+## Why This Exists
+
+Agent-assisted maintenance often fails for ordinary reasons:
+
+- the task starts before scope is clear
+- multiple workers touch the same files
+- validation is described but not actually run
+- release notes lose the evidence trail
+- project knowledge stays trapped in chat history
+
+This harness turns those risks into files, checks, and repeatable commands.
+
+## Core Concepts
+
+- `change-id`: one durable identifier for each maintenance change
+- `brief.md`: what changed and why
+- `impact.yaml`: affected repositories, interfaces, configs, and dependency order
+- `execution.yaml`: owners, branches, worktrees, lock state, and result locations
+- `tasks/<repo>.md`: one bounded task card per repository
+- `verification/result.md`: final evidence and acceptance result
+- `.agent/skills/`: local recipes for common maintainer workflows
+
+## Directory Layout
+
+```text
+.
+├── AGENTS.md
+├── .agent/
+│   └── skills/
+├── repos/
+│   └── repos.yaml
+├── config/
+│   └── agent-registry.yaml
+├── docs/
+├── standards/
+├── templates/
+├── changes/
+├── evals/
+├── reports/
+├── release/
+├── mcp/
+└── scripts/
+```
+
+## Quick Start
+
+1. Edit `repos/repos.yaml` and replace the sample repositories with your project repositories.
+
+2. Check the harness structure and repository metadata:
+
+```powershell
+.\scripts\checks\validate-repos.ps1
+.\scripts\bootstrap\verify-workspace.ps1
+```
+
+3. Dry-run repository clone or sync:
+
+```powershell
+.\scripts\bootstrap\clone-repos.ps1 -DryRun
+.\scripts\bootstrap\sync-repos.ps1 -DryRun
+```
+
+4. Discover local contracts and run baseline checks:
+
+```powershell
+.\scripts\checks\discover-contracts.ps1
+.\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution
+```
+
+5. Create a change packet:
+
+```powershell
+.\scripts\bootstrap\init-change.ps1 -ChangeId CHG-2026-0001-sample-change -Title "Sample maintainer workflow"
+.\scripts\checks\validate-change.ps1 -ChangeId CHG-2026-0001-sample-change
+```
+
+6. Prepare worker packets:
+
+```powershell
+.\scripts\orchestrator\dispatch-change.ps1 -ChangeId CHG-2026-0001-sample-change -DryRun
+```
+
+See `examples/sample-change/` for a synthetic change packet that is safe to publish.
+
+## Validation
+
+The default validation workflow runs on Windows PowerShell and is also wired into GitHub Actions:
+
+```powershell
+.\scripts\checks\validate-repos.ps1
+.\scripts\bootstrap\verify-workspace.ps1
+.\scripts\checks\discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
+.\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
+.\scripts\checks\check-public-ready.ps1
+```
+
+In a fresh checkout, sample repositories are expected to report warning-level `missing-local-env` until you replace or clone them. See `docs/validation.md`.
+
+## Configuration Files
+
+- `repos/repos.yaml`: repository metadata and validation commands
+- `config/agent-registry.yaml`: maintainer roles and allowed write scopes
+- `templates/`: change, task, verification, release, and postmortem templates
+- `standards/`: global and repository-specific guardrails
+- `mcp/`: read-only MCP blueprints for safe external context
+
+## Open Source Project Files
+
+- `CONTRIBUTING.md`: contribution workflow and local validation
+- `SECURITY.md`: vulnerability reporting and security boundaries
+- `CODE_OF_CONDUCT.md`: community behavior expectations
+- `SUPPORT.md`: support channels and issue guidance
+- `MAINTAINERS.md` and `.github/CODEOWNERS`: ownership and review routing
+- `.github/repository-settings.yml`: suggested public GitHub description, topics, and branch protection
+- `.github/`: issue and pull request templates
+- `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
+- `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
+- `docs/github-publication.md`: safe publication steps for GitHub
+- `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows
+- `.github/workflows/harness-validation.yml`: public CI entry point
+- `scripts/bootstrap/prepare-publication.ps1`: dry-run/apply helper for the final public commit
+- `scripts/checks/write-application-audit.ps1`: ignored pre-application audit report generator
+
+## Public Hygiene
+
+This repository is meant to be public. Do not commit:
+
+- product source checkouts under `repos/`
+- generated worktrees under `worktrees/`
+- local validation reports with sensitive paths
+- credentials, tokens, private endpoints, customer data, or production logs
+
+The included `.gitignore` keeps the default repository safe for public use, but maintainers should still review `git status --ignored` before publishing.
+
+## License
+
+MIT License. See `LICENSE`.

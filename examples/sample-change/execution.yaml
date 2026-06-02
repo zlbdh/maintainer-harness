@@ -1,0 +1,13 @@
+change_id: CHG-2026-0001-sample-docs-validation
+mode: serial
+tasks:
+  - id: docs
+    owner: knowledge-agent
+    write_scope:
+      - README.md
+      - docs/**
+      - examples/**
+    validation:
+      - .\scripts\checks\validate-repos.ps1
+      - .\scripts\bootstrap\verify-workspace.ps1
+

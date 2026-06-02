@@ -1,0 +1,58 @@
+repos:
+  - id: api
+    name: sample-api-service
+    remote: "https://github.com/example/sample-api-service.git"
+    local_path: "repos/sample-api-service"
+    default_branch: main
+    stack: java-spring
+    role: backend-service
+    clone_mode: git
+    validation_profile: backend-maven
+    owner_scope: oss-maintainers
+    bootstrap_command: "mvn -version"
+    build_command: "mvn package -DskipTests"
+    test_command: "mvn test"
+    smoke_command: "mvn -q test"
+    safe_check_commands:
+      - "mvn -q test"
+      - "mvn -q package -DskipTests"
+    status: missing-local-env
+    notes: "Replace this sample entry with your API or backend repository before running real baseline checks."
+  - id: web
+    name: sample-web-app
+    remote: "https://github.com/example/sample-web-app.git"
+    local_path: "repos/sample-web-app"
+    default_branch: main
+    stack: react-vite
+    role: web-app
+    clone_mode: git
+    validation_profile: web-vite
+    owner_scope: oss-maintainers
+    bootstrap_command: "npm ci --ignore-scripts"
+    build_command: "npm run build"
+    test_command: "npm run test"
+    smoke_command: "npx playwright test"
+    safe_check_commands:
+      - "npm run build"
+      - "npm run test"
+    status: missing-local-env
+    notes: "Replace this sample entry with your web repository and actual validation commands."
+  - id: mobile
+    name: sample-mobile-app
+    remote: "https://github.com/example/sample-mobile-app.git"
+    local_path: "repos/sample-mobile-app"
+    default_branch: main
+    stack: react-native
+    role: mobile-app
+    clone_mode: git
+    validation_profile: mobile-rn
+    owner_scope: oss-maintainers
+    bootstrap_command: "npm ci --ignore-scripts"
+    build_command: "npm run start"
+    test_command: "npm run test -- --watch=false"
+    smoke_command: "maestro test evals/mobile"
+    safe_check_commands:
+      - "npm run lint"
+      - "npm run test -- --watch=false"
+    status: missing-local-env
+    notes: "Replace this sample entry with your mobile repository or remove it if your project has no mobile surface."

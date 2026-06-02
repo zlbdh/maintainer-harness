@@ -1,0 +1,68 @@
+# Codex for OSS Application Notes
+
+This file provides a paste-ready project summary for the OpenAI Codex for OSS application form.
+
+## Project Name
+
+Maintainer Harness
+
+## Repository
+
+Use the public GitHub repository URL after publishing this cleaned repository.
+
+## Short Description
+
+Maintainer Harness is a lightweight open source control plane for agent-assisted software maintenance. It turns cross-repository work into auditable change packets, scoped worker tasks, validation commands, release evidence, and reusable maintainer skills.
+
+## Why Codex Helps
+
+Maintainers often need to coordinate fixes across several repositories while keeping scope, evidence, and release notes consistent. Codex is useful here because it can read the harness files, generate bounded task cards, run validation scripts, and summarize evidence without turning the process into unstructured chat history.
+
+## OSS Relevance
+
+The project is designed for maintainers of multi-repository open source systems, especially projects that want to use AI agents without losing auditability. It focuses on safe defaults:
+
+- repository metadata lives in `repos/repos.yaml`
+- agent roles and write scopes live in `config/agent-registry.yaml`
+- every change gets a durable `change-id`
+- worker packets are generated from explicit impact and execution files
+- validation output is recorded before release decisions
+- MCP examples are read-only by default
+
+See `docs/codex-for-oss-evidence.md` for a file-by-file evidence matrix that maps the repository to maintainer automation, pull request review workflows, release workflows, API credits usage, and security care.
+
+## Current Stage
+
+Early public-ready project. The repository has been generalized from local maintainer experiments into a reusable harness. It does not yet have broad external adoption, stars, or contributors, so the application should be honest about its stage and emphasize maintainership value rather than popularity.
+
+## Form Checklist
+
+- GitHub username: make the profile public before submitting.
+- GitHub repository URL: publish this cleaned repository and make it public before submitting.
+- Role: choose `Primary maintainer` if you own and maintain the repository.
+- Organization ID: use the `org-...` value from the OpenAI API Platform organization settings.
+- Interest: select API credits; select Codex Security only if the repository needs security review support.
+
+## Why Does This Repository Qualify? 500 Characters Max
+
+Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets a program-relevant gap: PR review, maintainer automation, and release evidence across multi-repo projects. It is not popular yet, but it is reusable infrastructure for maintainers who need agents to stay scoped, auditable, and secure.
+
+## How Will You Use API Credits? 500 Characters Max
+
+I will use API credits to dogfood Codex on the harness itself: generate issue-to-task packets, review worker outputs, summarize validation for PRs/releases, and build reusable synthetic examples. The credits support public maintainer automation and release workflows, not private product development.
+
+## Anything Else? 500 Characters Max
+
+Public hygiene is built into the repo: product names and local paths are scanned across candidate paths and contents, sample repos replace private checkouts, generated reports/worktrees are ignored, and governance files plus GitHub templates are present. I will submit only the public GitHub URL after the gate passes.
+
+## Longer Project Narrative
+
+Maintainer Harness is an early open source project that helps maintainers use Codex safely on multi-repository maintenance work. Instead of asking an agent to make broad changes directly, the harness creates auditable change packets: intake, impact analysis, task cards, write scopes, worker dispatch packets, local validation reports, release notes, and postmortems.
+
+The goal is to make agent-assisted OSS maintenance more reproducible and reviewable. Codex can help maintainers read project context, draft bounded implementation tasks, run local validation commands, and summarize evidence for pull requests and releases. The repository is intentionally generic and includes sample repository metadata, schemas, templates, PowerShell scripts, read-only MCP blueprints, and reusable maintainer skills.
+
+This is a new public project, so it does not yet have large adoption metrics. The reason I am applying is to use Codex to improve the harness itself and demonstrate a practical workflow for other open source maintainers who want AI assistance without losing control of scope, security, or release evidence.
+
+## Suggested Project URL Note
+
+Before submitting, publish the cleaned repository to GitHub and use that URL. Avoid linking to a private repository or a repository that still contains product-specific names, screenshots, local paths, or ignored legacy artifacts.

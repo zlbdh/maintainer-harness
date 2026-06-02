@@ -1,0 +1,33 @@
+name: Harness validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate repository metadata
+        shell: pwsh
+        run: .\scripts\checks\validate-repos.ps1
+
+      - name: Verify harness structure
+        shell: pwsh
+        run: .\scripts\bootstrap\verify-workspace.ps1
+
+      - name: Exercise machine-readable checks
+        shell: pwsh
+        run: |
+          .\scripts\checks\validate-repos.ps1 -Quiet -PassThru | ConvertTo-Json -Depth 5
+          .\scripts\checks\discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
+          .\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
+
+      - name: Check public readiness
+        shell: pwsh
+        run: .\scripts\checks\check-public-ready.ps1 -SkipSensitivePattern

@@ -4,6 +4,8 @@ Maintainer Harness is early, so the strongest support request is not popularity.
 
 Public tracking issue: https://github.com/zlbdh/maintainer-harness/issues/7
 
+Public run notes: `docs/dogfooding-runs/`
+
 ## First 30 Days
 
 | Window | Goal | Public Artifact |

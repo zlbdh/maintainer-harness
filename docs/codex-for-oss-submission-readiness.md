@@ -16,6 +16,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
+| First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
 | Demo path | `docs/demo.md` |
 | Cross-platform validation | `docs/cross-platform-validation.md` |
 | Launch kit | `docs/launch-kit.md` |

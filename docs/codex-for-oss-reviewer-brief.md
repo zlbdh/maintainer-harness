@@ -52,6 +52,15 @@ issues. The application should not claim adoption it does not have. The
 stronger current signal is the public evidence package, passing validation
 gates, pinned feedback issues, and a concrete 30-day dogfooding plan.
 
+## External Validation Plan
+
+The remaining weak signal is outside usage. The project now tracks a
+feedback-first validation sprint in `docs/external-validation-sprint.md`. The
+target is 5+ real stars from people who inspected the project, 2+ public issue
+comments or first-run reports, 1 outside first-run report, and 1 feedback-driven
+follow-up issue or commit. Until those signals exist, the application should
+stay honest that external adoption is not proven yet.
+
 ## 30 / 60 / 90 Day Commitments
 
 | Window | Public commitment |

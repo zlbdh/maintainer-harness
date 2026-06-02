@@ -216,6 +216,9 @@ Use this when the project needs a quick credibility lift before an application
 review. It is intentionally feedback-first: stars are a discovery signal, not
 the ask that opens the conversation.
 
+For the concrete 80% readiness threshold and message templates, see
+`docs/external-validation-sprint.md`.
+
 | Window | Action | Copy Anchor | Evidence To Record |
 | --- | --- | --- | --- |
 | Hour 0 | Pin the repository on the GitHub profile UI. | "Open source control plane for agent-assisted maintenance." | Screenshot or profile URL in the launch log. |

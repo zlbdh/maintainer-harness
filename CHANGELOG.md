@@ -47,6 +47,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Reviewer brief for Codex for OSS full-support evaluation, including current metrics, early-stage rationale, and 30/60/90 day public commitments.
 - `v0.1.11` release anchor for the Codex for OSS reviewer brief.
 - Public dogfooding run notes under `docs/dogfooding-runs/`, starting with the Codex application hardening run.
+- External validation sprint plan for collecting honest maintainer feedback, first-run reports, and star-safe discovery signals.
 
 ### Changed
 

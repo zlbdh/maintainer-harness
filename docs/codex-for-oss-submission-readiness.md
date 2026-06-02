@@ -17,6 +17,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
+| External validation sprint | `docs/external-validation-sprint.md` |
 | Demo path | `docs/demo.md` |
 | Cross-platform validation | `docs/cross-platform-validation.md` |
 | Launch kit | `docs/launch-kit.md` |

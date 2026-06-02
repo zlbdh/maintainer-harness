@@ -20,6 +20,7 @@ The application is positioned around maintainership value rather than popularity
 | Reviewer readiness | `docs/codex-for-oss-reviewer-brief.md` gives a short reviewer-facing case for full support, including current metrics, why early-stage support is still useful, and 30/60/90 day public commitments. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
 | Public dogfooding evidence | `docs/dogfooding-runs/2026-06-02-application-hardening.md` records the first Codex-assisted application hardening run, produced artifacts, validation gates, and remaining weak signals. |
+| External validation plan | `docs/external-validation-sprint.md` defines the honest path for turning weak external usage into public maintainer feedback, first-run reports, and star-safe discovery signals. |
 | Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, `docs/codex-for-oss-submission-readiness.md`, the `v0.1.11` reviewer-brief release, pinned issues `#5`, `#6`, and `#7`, feedback-specific issue templates, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
 | Cross-platform validation | `.github/workflows/harness-validation.yml`, `scripts/lib/HarnessRepoTools.ps1`, and `docs/cross-platform-validation.md` keep the public validation gate runnable on Windows, Ubuntu, and macOS while clearly limiting worker orchestration claims until dogfooding feedback arrives. |
 
@@ -55,6 +56,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The latest public site and launch materials include a star-safe call to action: ask for demo feedback first, and present stars only as an honest discovery signal for maintainers who find the workflow useful.
 - The reviewer brief gives the application a short, auditable narrative for why an early project with no adoption metrics can still produce reusable ecosystem value.
 - The first public dogfooding run shows that the project is already using Codex-style workflows to improve its own application evidence, while recording weak signals honestly.
+- The external validation sprint makes the 80% readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
 
 ## Publication Gate
 

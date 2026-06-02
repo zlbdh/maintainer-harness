@@ -177,6 +177,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/codex-for-oss-reviewer-brief.md`: one-page reviewer brief for the full-support request
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/dogfooding-runs/`: public dogfooding run notes and validation evidence
+- `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals
 - `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
 - `docs/cross-platform-validation.md`: Windows, Ubuntu, and macOS validation coverage and current boundaries

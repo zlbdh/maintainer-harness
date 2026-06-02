@@ -417,12 +417,12 @@ function Invoke-HarnessCommand {
         [string]$WorkingDirectory
     )
 
-    $isWindows = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform(
+    $runningOnWindows = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform(
         [System.Runtime.InteropServices.OSPlatform]::Windows
     )
 
     $psi = New-Object System.Diagnostics.ProcessStartInfo
-    if ($isWindows) {
+    if ($runningOnWindows) {
         $psi.FileName = 'cmd.exe'
         $psi.Arguments = "/d /s /c ""$Command"""
     } else {

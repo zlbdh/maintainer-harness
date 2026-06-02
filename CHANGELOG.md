@@ -62,6 +62,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.13` release anchor for the worker-output reviewability and readiness
   monitor package.
 - One-command review demo runner for outside first-run feedback.
+- `v0.1.14` release anchor for the one-command external review demo.
 
 ### Changed
 
@@ -78,8 +79,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 - Public readiness checks now require the feedback-specific issue templates.
 - Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
-- Launch and share materials now point to the v0.1.13 reviewability and
-  readiness monitor release.
+- Launch and share materials now point to the v0.1.14 one-command review demo
+  release.
 - Worker and review response schema titles now use generic Maintainer Harness names.
 
 ## 2026-06-01

@@ -38,6 +38,7 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 | 2026-06-03 | First-run report generator | https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1 | Published | Outside reviewers can generate a paste-ready, path-sanitized first-run issue draft after trying the demo. | Use with issue #6 to collect the missing outside first-run report. |
 | 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.12 | Published | Release anchor for the first-run report generator. | Use as the newest application evidence anchor. |
 | 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.13 | Published | Release anchor for worker-output reviewability and readiness monitoring. | Use as the newest application evidence anchor. |
+| 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.14 | Published | Release anchor for the one-command external review demo. | Use as the newest application evidence anchor. |
 | TBD | X / Twitter | TBD | Planned | Use `docs/share.md` or `docs/launch-kit.md`. | Record comments and reposts. |
 | TBD | LinkedIn | TBD | Planned | Use `docs/launch-kit.md`. | Record maintainer feedback. |
 | TBD | Show HN | TBD | Planned | Submit only when available to reply. | Convert useful feedback into issues. |

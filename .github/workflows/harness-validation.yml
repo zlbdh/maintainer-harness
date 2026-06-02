@@ -8,42 +8,50 @@ on:
 
 jobs:
   validate:
-    runs-on: windows-latest
+    name: validate (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Validate repository metadata
         shell: pwsh
-        run: .\scripts\checks\validate-repos.ps1
+        run: ./scripts/checks/validate-repos.ps1
 
       - name: Verify harness structure
         shell: pwsh
-        run: .\scripts\bootstrap\verify-workspace.ps1
+        run: ./scripts/bootstrap/verify-workspace.ps1
 
       - name: Validate sample change packet
         shell: pwsh
-        run: .\scripts\checks\validate-change.ps1 -Path examples\sample-change
+        run: ./scripts/checks/validate-change.ps1 -Path examples/sample-change
 
       - name: Validate issue-to-review packet
         shell: pwsh
-        run: .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+        run: ./scripts/checks/validate-change.ps1 -Path examples/issue-to-review
 
       - name: Validate release workflow packet
         shell: pwsh
-        run: .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
+        run: ./scripts/checks/validate-change.ps1 -Path examples/release-workflow
 
       - name: Exercise machine-readable checks
         shell: pwsh
         run: |
-          .\scripts\checks\validate-repos.ps1 -Quiet -PassThru | ConvertTo-Json -Depth 5
-          .\scripts\checks\discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
-          .\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
+          ./scripts/checks/validate-repos.ps1 -Quiet -PassThru | ConvertTo-Json -Depth 5
+          ./scripts/checks/discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
+          ./scripts/checks/run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
 
       - name: Check public readiness
         shell: pwsh
-        run: .\scripts\checks\check-public-ready.ps1 -SkipSensitivePattern
+        run: ./scripts/checks/check-public-ready.ps1 -SkipSensitivePattern
 
       - name: Check security posture
         shell: pwsh
-        run: .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+        run: ./scripts/checks/check-security-posture.ps1 -SkipSensitivePattern

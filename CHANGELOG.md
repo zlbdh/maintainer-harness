@@ -42,6 +42,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public Codex for OSS submission readiness checklist.
 - Public 30-day Codex dogfooding tracker issue and milestone.
 - `v0.1.9` release anchor for submission readiness and public dogfooding tracking.
+- Cross-platform validation gate for Windows, Ubuntu, and macOS.
 
 ### Changed
 

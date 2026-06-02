@@ -9,7 +9,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 function Get-PackageJsonData {
     param([string]$PackagePath)

@@ -2,6 +2,8 @@
 
 Maintainer Harness separates three validation levels.
 
+The public GitHub Actions gate runs the core validation path on Windows, Ubuntu, and macOS. See `docs/cross-platform-validation.md` for the exact scope and current boundary.
+
 ## 1. Harness Metadata
 
 ```powershell

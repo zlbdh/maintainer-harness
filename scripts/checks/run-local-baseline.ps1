@@ -9,10 +9,10 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
-. (Join-Path $PSScriptRoot '..\lib\HarnessBaselineTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessBaselineTools.ps1')
 
-$validateReposScript = Join-Path (Get-HarnessRepoRoot) 'scripts\checks\validate-repos.ps1'
+$validateReposScript = Join-HarnessPath (Get-HarnessRepoRoot) 'scripts/checks/validate-repos.ps1'
 & $validateReposScript -Quiet
 
 $contracts = & (Join-Path $PSScriptRoot 'discover-contracts.ps1') -RepoIds $RepoIds -NoReport -Quiet -PassThru

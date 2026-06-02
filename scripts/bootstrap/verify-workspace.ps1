@@ -7,10 +7,10 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 $repoRoot = Get-HarnessRepoRoot
-$validateReposScript = Join-Path $repoRoot 'scripts\checks\validate-repos.ps1'
+$validateReposScript = Join-HarnessPath $repoRoot 'scripts/checks/validate-repos.ps1'
 
 & $validateReposScript -Quiet
 
@@ -46,6 +46,7 @@ $requiredPaths = @(
     'docs\site.css',
     'docs\.nojekyll',
     'docs\demo.md',
+    'docs\cross-platform-validation.md',
     'docs\launch-kit.md',
     'docs\share.md',
     'docs\launch-log.md',
@@ -158,7 +159,7 @@ $errors = New-Object System.Collections.Generic.List[string]
 $warnings = New-Object System.Collections.Generic.List[string]
 
 foreach ($required in $requiredPaths) {
-    $fullPath = Join-Path $repoRoot $required
+    $fullPath = Join-HarnessPath $repoRoot $required
     if (-not (Test-Path -LiteralPath $fullPath)) {
         $errors.Add("缺少控制仓关键路径：$required")
     }

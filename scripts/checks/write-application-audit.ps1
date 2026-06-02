@@ -7,7 +7,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 function Get-ApplicationSection {
     param(
@@ -41,7 +41,7 @@ function New-AuditFinding {
 $repoRoot = Get-HarnessRepoRoot
 $findings = New-Object System.Collections.Generic.List[object]
 
-$applicationPath = Join-Path $repoRoot 'docs\codex-for-oss-application.md'
+$applicationPath = Join-HarnessPath $repoRoot 'docs/codex-for-oss-application.md'
 $applicationText = Get-Content -LiteralPath $applicationPath -Raw
 
 $formSections = @(
@@ -64,7 +64,7 @@ foreach ($section in $formSections) {
     }
 }
 
-$evidencePath = Join-Path $repoRoot 'docs\codex-for-oss-evidence.md'
+$evidencePath = Join-HarnessPath $repoRoot 'docs/codex-for-oss-evidence.md'
 if (Test-Path -LiteralPath $evidencePath) {
     $findings.Add((New-AuditFinding -Status 'PASS' -Check 'evidence-matrix' -Detail 'Codex for OSS evidence matrix exists.'))
 } else {
@@ -73,6 +73,7 @@ if (Test-Path -LiteralPath $evidencePath) {
 
 $supportEvidencePaths = @(
     @{ Check = 'project-site'; Path = 'docs\index.html'; Detail = 'GitHub Pages project landing page exists.' },
+    @{ Check = 'cross-platform-validation'; Path = 'docs\cross-platform-validation.md'; Detail = 'Cross-platform validation scope exists.' },
     @{ Check = 'issue-to-review-example'; Path = 'examples\issue-to-review\verification\result.md'; Detail = 'Issue-to-review packet example exists.' },
     @{ Check = 'release-workflow-example'; Path = 'examples\release-workflow\release\release-note.md'; Detail = 'Release workflow packet example exists.' },
     @{ Check = 'submission-readiness'; Path = 'docs\codex-for-oss-submission-readiness.md'; Detail = 'Codex for OSS submission readiness checklist exists.' },
@@ -83,7 +84,7 @@ $supportEvidencePaths = @(
 )
 
 foreach ($supportEvidence in $supportEvidencePaths) {
-    $supportEvidencePath = Join-Path $repoRoot $supportEvidence.Path
+    $supportEvidencePath = Join-HarnessPath $repoRoot $supportEvidence.Path
     if (Test-Path -LiteralPath $supportEvidencePath) {
         $findings.Add((New-AuditFinding -Status 'PASS' -Check $supportEvidence.Check -Detail $supportEvidence.Detail))
     } else {
@@ -92,16 +93,16 @@ foreach ($supportEvidence in $supportEvidencePaths) {
 }
 
 try {
-    & (Join-Path $repoRoot 'scripts\bootstrap\verify-workspace.ps1') -Quiet | Out-Null
+    & (Join-HarnessPath $repoRoot 'scripts/bootstrap/verify-workspace.ps1') -Quiet | Out-Null
     $findings.Add((New-AuditFinding -Status 'PASS' -Check 'workspace' -Detail 'Harness workspace validates.'))
 } catch {
     $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'workspace' -Detail $_.Exception.Message))
 }
 
 if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
-    $publicReady = & (Join-Path $repoRoot 'scripts\checks\check-public-ready.ps1') -SensitivePattern $SensitivePattern -PassThru
+    $publicReady = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-ready.ps1') -SensitivePattern $SensitivePattern -PassThru
 } else {
-    $publicReady = & (Join-Path $repoRoot 'scripts\checks\check-public-ready.ps1') -PassThru
+    $publicReady = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-ready.ps1') -PassThru
 }
 
 foreach ($finding in @($publicReady.findings)) {
@@ -113,9 +114,9 @@ foreach ($finding in @($publicReady.findings)) {
 }
 
 if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
-    $securityPosture = & (Join-Path $repoRoot 'scripts\checks\check-security-posture.ps1') -SensitivePattern $SensitivePattern -PassThru
+    $securityPosture = & (Join-HarnessPath $repoRoot 'scripts/checks/check-security-posture.ps1') -SensitivePattern $SensitivePattern -PassThru
 } else {
-    $securityPosture = & (Join-Path $repoRoot 'scripts\checks\check-security-posture.ps1') -PassThru
+    $securityPosture = & (Join-HarnessPath $repoRoot 'scripts/checks/check-security-posture.ps1') -PassThru
 }
 
 $findings.Add((New-AuditFinding -Status $securityPosture.overall_status -Check 'security-posture' -Detail "Security posture check returned $($securityPosture.overall_status)."))
@@ -132,7 +133,7 @@ $audit = [pscustomobject]@{
     findings = @($findings.ToArray())
 }
 
-$reportDir = Ensure-HarnessDirectory -Path (Join-Path $repoRoot 'reports\application-audit')
+$reportDir = Ensure-HarnessDirectory -Path (Join-HarnessPath $repoRoot 'reports/application-audit')
 $timestamp = Get-HarnessTimestamp
 $jsonPath = Join-Path $reportDir ($timestamp + '-application-audit.json')
 $mdPath = Join-Path $reportDir ($timestamp + '-application-audit.md')

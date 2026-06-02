@@ -7,7 +7,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 $repos = Get-HarnessRepoConfig
 
@@ -82,7 +82,7 @@ foreach ($repo in $repos) {
         $errors.Add("仓库 $($repo.id) 的 remote 不是可识别的 Git 远端地址。")
     }
 
-    $reposRoot = Join-Path (Get-HarnessRepoRoot) 'repos'
+    $reposRoot = Join-HarnessPath (Get-HarnessRepoRoot) 'repos'
     if (-not ([string]$resolvedLocalPath).StartsWith($reposRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
         $errors.Add("仓库 $($repo.id) 的 local_path 未落在本控制仓 repos/ 目录下。")
     }

@@ -7,7 +7,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 if ([string]::IsNullOrWhiteSpace($ChangeId) -and [string]::IsNullOrWhiteSpace($Path)) {
     throw "请传入 -ChangeId 或 -Path。"
@@ -16,7 +16,7 @@ if ([string]::IsNullOrWhiteSpace($ChangeId) -and [string]::IsNullOrWhiteSpace($P
 $repoRoot = Get-HarnessRepoRoot
 
 if (-not [string]::IsNullOrWhiteSpace($ChangeId)) {
-    $targetDir = Join-Path $repoRoot ("changes\" + $ChangeId)
+    $targetDir = Join-HarnessPath $repoRoot ("changes/" + $ChangeId)
 } else {
     $targetDir = (Resolve-Path -LiteralPath $Path).Path
 }
@@ -31,13 +31,13 @@ $requiredFiles = @(
     'execution.yaml',
     'design.md',
     'acceptance.md',
-    'verification\result.md'
+    'verification/result.md'
 )
 
 $errors = New-Object System.Collections.Generic.List[string]
 
 foreach ($relativePath in $requiredFiles) {
-    $fullPath = Join-Path $targetDir $relativePath
+    $fullPath = Join-HarnessPath $targetDir $relativePath
     if (-not (Test-Path -LiteralPath $fullPath)) {
         $errors.Add("缺少文件：$relativePath")
         continue
@@ -114,7 +114,7 @@ if (Test-Path -LiteralPath $impactPath) {
     }
 
     foreach ($repoId in ($impactRepoIds | Select-Object -Unique)) {
-        $taskPath = Join-Path $targetDir ("tasks\" + $repoId + '.md')
+        $taskPath = Join-HarnessPath $targetDir ("tasks/" + $repoId + '.md')
         if (-not (Test-Path -LiteralPath $taskPath)) {
             $errors.Add("影响分析已声明仓库但缺少任务卡：tasks\$repoId.md")
             continue

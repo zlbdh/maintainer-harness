@@ -8,7 +8,7 @@ Maintainer Harness is early-stage and public-ready, but it should grow through m
 - Replace sample repository entries with real open source dogfooding repositories when available.
 - Add more synthetic examples for bugfix and security-review workflows.
 - Execute the first 30-day dogfooding loop described in `docs/dogfooding-plan.md` and tracked in issue #7.
-- Add cross-platform validation notes for Linux and macOS contributors.
+- Expand cross-platform coverage beyond validation gates into worker orchestration after Linux/macOS dogfooding feedback.
 - Improve JSON output contracts for automation consumers.
 - Expand the Codex Security review package with concrete findings from external review.
 

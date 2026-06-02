@@ -10,7 +10,7 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
 function New-PublicReadyFinding {
     param(
@@ -75,6 +75,7 @@ $requiredPublicPaths = @(
     'docs\site.css',
     'docs\.nojekyll',
     'docs\demo.md',
+    'docs\cross-platform-validation.md',
     'docs\launch-kit.md',
     'docs\share.md',
     'docs\launch-log.md',
@@ -125,7 +126,7 @@ $requiredPublicPaths = @(
 )
 
 foreach ($relativePath in $requiredPublicPaths) {
-    $fullPath = Join-Path $repoRoot $relativePath
+    $fullPath = Join-HarnessPath $repoRoot $relativePath
     if (Test-Path -LiteralPath $fullPath) {
         $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'required-path' -Detail $relativePath))
     } else {
@@ -135,14 +136,14 @@ foreach ($relativePath in $requiredPublicPaths) {
 
 if (-not $SkipHarnessValidation) {
     try {
-        & (Join-Path $repoRoot 'scripts\checks\validate-repos.ps1') -Quiet | Out-Null
+        & (Join-HarnessPath $repoRoot 'scripts/checks/validate-repos.ps1') -Quiet | Out-Null
         $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'validate-repos' -Detail 'Repository metadata validates.'))
     } catch {
         $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'validate-repos' -Detail $_.Exception.Message))
     }
 
     try {
-        & (Join-Path $repoRoot 'scripts\bootstrap\verify-workspace.ps1') -Quiet | Out-Null
+        & (Join-HarnessPath $repoRoot 'scripts/bootstrap/verify-workspace.ps1') -Quiet | Out-Null
         $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'verify-workspace' -Detail 'Harness structure validates.'))
     } catch {
         $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'verify-workspace' -Detail $_.Exception.Message))

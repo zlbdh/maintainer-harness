@@ -145,7 +145,7 @@ The default validation workflow runs on Windows PowerShell and is also wired int
 .\scripts\checks\check-security-posture.ps1
 ```
 
-In a fresh checkout, sample repositories are expected to report warning-level `missing-local-env` until you replace or clone them. See `docs/validation.md`.
+GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In a fresh checkout, sample repositories are expected to report warning-level `missing-local-env` until you replace or clone them. See `docs/validation.md` and `docs/cross-platform-validation.md`.
 
 ## Configuration Files
 
@@ -170,6 +170,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
+- `docs/cross-platform-validation.md`: Windows, Ubuntu, and macOS validation coverage and current boundaries
 - `docs/launch-kit.md`: policy-safe launch copy and outreach plan for real open source discovery
 - `docs/share.md`: compact share page with demo commands and canonical links
 - `docs/launch-log.md`: public launch action and metrics tracking

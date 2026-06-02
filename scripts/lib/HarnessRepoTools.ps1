@@ -1,7 +1,26 @@
 Set-StrictMode -Version Latest
 
 function Get-HarnessRepoRoot {
-    return (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
+    return (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
+}
+
+function Convert-HarnessRelativePath {
+    param([string]$Path)
+
+    if ([string]::IsNullOrWhiteSpace($Path)) {
+        return $Path
+    }
+
+    return (($Path -replace '\\', '/') -replace '/+', '/')
+}
+
+function Join-HarnessPath {
+    param(
+        [string]$Root,
+        [string]$RelativePath
+    )
+
+    return (Join-Path $Root (Convert-HarnessRelativePath $RelativePath))
 }
 
 function Resolve-HarnessRepoPath {
@@ -17,7 +36,7 @@ function Resolve-HarnessRepoPath {
     }
 
     $repoRoot = Get-HarnessRepoRoot
-    return (Join-Path $repoRoot ($cleanPath -replace '/', '\'))
+    return (Join-HarnessPath $repoRoot $cleanPath)
 }
 
 function Unquote-HarnessScalar {
@@ -138,12 +157,12 @@ function Parse-HarnessRepoConfig {
 
 function Get-HarnessRepoConfig {
     $repoRoot = Get-HarnessRepoRoot
-    return Parse-HarnessRepoConfig -YamlPath (Join-Path $repoRoot 'repos\repos.yaml')
+    return Parse-HarnessRepoConfig -YamlPath (Join-HarnessPath $repoRoot 'repos/repos.yaml')
 }
 
 function Get-HarnessAgentRegistry {
     $repoRoot = Get-HarnessRepoRoot
-    return Parse-HarnessTopLevelListConfig -YamlPath (Join-Path $repoRoot 'config\agent-registry.yaml') -SectionName 'roles'
+    return Parse-HarnessTopLevelListConfig -YamlPath (Join-HarnessPath $repoRoot 'config/agent-registry.yaml') -SectionName 'roles'
 }
 
 function Get-HarnessAgentRegistryMap {
@@ -346,7 +365,7 @@ function Get-HarnessTimestamp {
 
 function Get-HarnessValidationReportDir {
     $repoRoot = Get-HarnessRepoRoot
-    return (Ensure-HarnessDirectory -Path (Join-Path $repoRoot 'reports\local-validation'))
+    return (Ensure-HarnessDirectory -Path (Join-HarnessPath $repoRoot 'reports/local-validation'))
 }
 
 function Write-HarnessTextFile {
@@ -398,9 +417,19 @@ function Invoke-HarnessCommand {
         [string]$WorkingDirectory
     )
 
+    $isWindows = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform(
+        [System.Runtime.InteropServices.OSPlatform]::Windows
+    )
+
     $psi = New-Object System.Diagnostics.ProcessStartInfo
-    $psi.FileName = 'cmd.exe'
-    $psi.Arguments = "/d /s /c ""$Command"""
+    if ($isWindows) {
+        $psi.FileName = 'cmd.exe'
+        $psi.Arguments = "/d /s /c ""$Command"""
+    } else {
+        $psi.FileName = '/bin/sh'
+        $psi.ArgumentList.Add('-c')
+        $psi.ArgumentList.Add($Command)
+    }
     $psi.WorkingDirectory = $WorkingDirectory
     $psi.RedirectStandardOutput = $true
     $psi.RedirectStandardError = $true

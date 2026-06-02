@@ -8,8 +8,8 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-. (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
-. (Join-Path $PSScriptRoot '..\lib\HarnessPathScope.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessPathScope.ps1')
 
 function New-SecurityPostureFinding {
     param(
@@ -32,7 +32,7 @@ function Test-TrackedFileContains {
         [string]$Pattern
     )
 
-    $fullPath = Join-Path $repoRoot $RelativePath
+    $fullPath = Join-HarnessPath $repoRoot $RelativePath
     if (-not (Test-Path -LiteralPath $fullPath)) {
         return $false
     }
@@ -59,14 +59,14 @@ $requiredSecurityPaths = @(
 )
 
 foreach ($relativePath in $requiredSecurityPaths) {
-    if (Test-Path -LiteralPath (Join-Path $repoRoot $relativePath)) {
+    if (Test-Path -LiteralPath (Join-HarnessPath $repoRoot $relativePath)) {
         $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'required-security-path' -Detail $relativePath))
     } else {
         $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check 'required-security-path' -Detail "Missing $relativePath"))
     }
 }
 
-$gitignorePath = Join-Path $repoRoot '.gitignore'
+$gitignorePath = Join-HarnessPath $repoRoot '.gitignore'
 $gitignoreText = if (Test-Path -LiteralPath $gitignorePath) { Get-Content -LiteralPath $gitignorePath -Raw } else { '' }
 $requiredIgnoreRules = @(
     '/repos/**',
@@ -92,7 +92,8 @@ $ignoredProbePaths = @(
 )
 
 foreach ($probePath in $ignoredProbePaths) {
-    $ignoreResult = Invoke-HarnessCommand -WorkingDirectory $repoRoot -Command ("git check-ignore -- {0}" -f ('"' + $probePath + '"'))
+    $normalizedProbePath = Convert-HarnessRelativePath $probePath
+    $ignoreResult = Invoke-HarnessCommand -WorkingDirectory $repoRoot -Command ("git check-ignore -- {0}" -f ('"' + $normalizedProbePath + '"'))
     if ($ignoreResult.ExitCode -eq 0) {
         $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'ignored-artifact' -Detail $probePath))
     } else {
@@ -100,7 +101,7 @@ foreach ($probePath in $ignoredProbePaths) {
     }
 }
 
-$mcpCatalogPath = Join-Path $repoRoot 'mcp\catalog.yaml'
+$mcpCatalogPath = Join-HarnessPath $repoRoot 'mcp/catalog.yaml'
 if (Test-Path -LiteralPath $mcpCatalogPath) {
     $mcpText = Get-Content -LiteralPath $mcpCatalogPath -Raw
     $mcpLines = @($mcpText -split "`r?`n")
@@ -131,7 +132,7 @@ if (Test-Path -LiteralPath $mcpCatalogPath) {
     }
 }
 
-$agentRegistryPath = Join-Path $repoRoot 'config\agent-registry.yaml'
+$agentRegistryPath = Join-HarnessPath $repoRoot 'config/agent-registry.yaml'
 if (Test-Path -LiteralPath $agentRegistryPath) {
     $agentText = Get-Content -LiteralPath $agentRegistryPath -Raw
     if ($agentText -match '(?m)^\s*allowed_paths:\s*$') {
@@ -215,7 +216,7 @@ foreach ($redactionCheck in $redactionChecks) {
 if ($SkipSensitivePattern) {
     $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail 'Sensitive pattern check intentionally skipped.'))
 } elseif (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
-    $publicReady = & (Join-Path $repoRoot 'scripts\checks\check-public-ready.ps1') -SensitivePattern $SensitivePattern -PassThru
+    $publicReady = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-ready.ps1') -SensitivePattern $SensitivePattern -PassThru
     foreach ($finding in @($publicReady.findings | Where-Object { $_.check -in @('sensitive-path', 'sensitive-pattern') })) {
         $findings.Add((New-SecurityPostureFinding -Status $finding.status -Check "public-ready-$($finding.check)" -Detail $finding.detail))
     }

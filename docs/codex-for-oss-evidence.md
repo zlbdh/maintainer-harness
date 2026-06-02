@@ -12,6 +12,7 @@ The application is positioned around maintainership value rather than popularity
 | --- | --- |
 | Maintainer automation | `scripts/bootstrap/init-change.ps1`, `scripts/orchestrator/dispatch-change.ps1`, and `.agent/skills/` turn maintenance work into repeatable packets. |
 | Pull request review workflows | `examples/issue-to-review/`, `templates/worker-result.md`, `schemas/worker-response.schema.json`, `schemas/review-response.schema.json`, and `scripts/orchestrator/review-worker-output.ps1` define reviewable worker output. |
+| Worker output reviewability | `docs/worker-output-reviewability.md`, `templates/worker-result.md`, `schemas/worker-response.schema.json`, `schemas/review-response.schema.json`, and `examples/issue-to-review/verification/workers/harness.md` show the difference between vague agent output and evidence a maintainer can accept, reject, or request changes on. |
 | Release workflows | `examples/release-workflow/`, `templates/release-note.md`, `release/README.md`, `standards/global/release-gates.md`, and `templates/postmortem.md` preserve release evidence, skipped checks, rollback, and postmortem-ready notes. |
 | Day-to-day coding and triage | `docs/workflow.md`, `docs/harness-sop.md`, and `.agent/skills/local-baseline-triage/` define bounded maintainer routines. |
 | API credits usage | `docs/codex-for-oss-application.md` explains dogfooding: task generation, review packets, baseline triage, validation summaries, and reusable examples. |
@@ -61,6 +62,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The first public dogfooding run shows that the project is already using Codex-style workflows to improve its own application evidence, while recording weak signals honestly.
 - The external validation sprint and 90% scorecard make the readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
 - The first-run report generator gives outside reviewers a paste-ready, sanitized issue draft after running the demo commands.
+- The worker-output reviewability example gives reviewers a short good/bad comparison before they critique the harness on issue `#5`.
 
 ## Publication Gate
 

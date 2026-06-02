@@ -20,6 +20,7 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
 $links = [ordered]@{
     ProjectSite = 'https://zlbdh.github.io/maintainer-harness/'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
+    ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5'
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6'
@@ -35,6 +36,9 @@ gates, and security boundaries.
 
 Review kit:
 $($links.ReviewKit)
+
+Worker output example:
+$($links.ReviewabilityExample)
 
 The most useful feedback is one concrete answer:
 What evidence would make an agent worker output reviewable enough for you to
@@ -84,6 +88,7 @@ $lines = @(
     '',
     "- Project site: $($links.ProjectSite)",
     "- Review kit: $($links.ReviewKit)",
+    "- Worker output reviewability: $($links.ReviewabilityExample)",
     "- Source repo: $($links.SourceRepo)",
     "- Feedback issue: $($links.FeedbackIssue)",
     "- First-run issue: $($links.FirstRunIssue)",

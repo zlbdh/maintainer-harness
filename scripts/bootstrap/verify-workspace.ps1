@@ -47,6 +47,7 @@ $requiredPaths = @(
     'docs\dogfooding-plan.md',
     'docs\external-validation-sprint.md',
     'docs\maintainer-review-kit.md',
+    'docs\worker-output-reviewability.md',
     'docs\index.html',
     'docs\site.css',
     'docs\.nojekyll',

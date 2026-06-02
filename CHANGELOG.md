@@ -55,6 +55,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - External feedback evidence registry and validator for machine-readable 90% scorekeeping.
 - Maintainer review kit for five-minute outside feedback handoff.
 - Review request packet generator for honest maintainer outreach.
+- Worker output reviewability example for outside maintainers to compare vague
+  agent replies with reviewable evidence.
 
 ### Changed
 
@@ -72,6 +74,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public readiness checks now require the feedback-specific issue templates.
 - Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
 - Launch and share materials now point to the v0.1.12 first-run feedback release and the 90% readiness threshold.
+- Worker and review response schema titles now use generic Maintainer Harness names.
 
 ## 2026-06-01
 

@@ -16,6 +16,7 @@ Pick one path:
 | Path | Time | What to do | Best feedback link |
 | --- | ---: | --- | --- |
 | Review the workflow shape | 3 min | Read the sample issue-to-review packet and say what evidence is missing. | https://github.com/zlbdh/maintainer-harness/issues/5 |
+| Compare worker evidence | 3 min | Read the good/bad worker output example and name the missing evidence. | https://github.com/zlbdh/maintainer-harness/issues/5 |
 | Run the clean demo | 5 min | Clone the repo, run the demo commands, then generate a first-run report. | https://github.com/zlbdh/maintainer-harness/issues/6 |
 | Review the security boundary | 5 min | Read the Codex Security overview and flag unsafe agent or MCP assumptions. | https://github.com/zlbdh/maintainer-harness/issues/5 |
 
@@ -41,6 +42,8 @@ customer data, or production logs.
 
 - What evidence would make agent worker output reviewable enough to accept,
   reject, or request changes?
+- Is the good/bad example in `docs/worker-output-reviewability.md` strict
+  enough for real maintainer review?
 - Which file or command made the workflow clear first?
 - Which file or command was confusing, slow, or too platform-specific?
 - What security boundary should fail before a worker can change files?

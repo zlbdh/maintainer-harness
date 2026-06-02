@@ -9,7 +9,7 @@ Maintainer Harness is early, so the strongest support request is not popularity.
 | Days 1-7 | Run the harness on synthetic docs-validation and issue-to-review examples. | Updated `examples/sample-change/` and `examples/issue-to-review/`, validation reports summarized in docs, and roadmap issues. |
 | Days 8-14 | Expand pull-request review packet examples with explicit worker scope and reviewer acceptance evidence. | Additional example change packets and schema coverage notes. |
 | Days 15-21 | Exercise Codex Security style review on agent scopes, MCP blueprints, ignored artifacts, and release gates. | Updated `docs/security/` notes, checklist outcomes, and tracked fixes. |
-| Days 22-30 | Prepare the next public release from verified changes only. | Changelog entry, release note draft, passing GitHub Actions run, and tagged release. |
+| Days 22-30 | Prepare the next public release from verified changes only. | `examples/release-workflow/`, changelog entry, release note draft, passing GitHub Actions run, and tagged release. |
 
 ## API Credit Usage
 

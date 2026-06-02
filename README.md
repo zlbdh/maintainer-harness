@@ -33,6 +33,7 @@ The default sample change is synthetic and safe to run in a clean checkout:
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 ```
 
@@ -129,7 +130,7 @@ It is not a hosted product, a replacement for project-specific CI, or a way to b
 .\scripts\orchestrator\dispatch-change.ps1 -ChangeId CHG-2026-0001-sample-change -DryRun
 ```
 
-See `examples/sample-change/` for a synthetic docs-validation packet and `examples/issue-to-review/` for an issue-to-change packet shaped for pull request review.
+See `examples/sample-change/` for a synthetic docs-validation packet, `examples/issue-to-review/` for an issue-to-change packet shaped for pull request review, and `examples/release-workflow/` for release evidence and skipped-check handling.
 
 ## Validation
 
@@ -175,6 +176,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/security/`: threat model, Codex Security project overview, review scope, redaction guidance, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `examples/issue-to-review/`: synthetic GitHub issue intake through pull request review evidence
+- `examples/release-workflow/`: synthetic release note, rollback, skipped-check, and postmortem-ready evidence
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows
 - `.github/workflows/harness-validation.yml`: public CI entry point
 - `scripts/bootstrap/prepare-publication.ps1`: dry-run/apply helper for the final public commit

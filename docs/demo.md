@@ -1,6 +1,6 @@
 # Demo
 
-This demo is designed for maintainers who want to understand the harness before connecting a real repository. It uses synthetic sample packets under `examples/sample-change/` and `examples/issue-to-review/`.
+This demo is designed for maintainers who want to understand the harness before connecting a real repository. It uses synthetic sample packets under `examples/sample-change/`, `examples/issue-to-review/`, and `examples/release-workflow/`.
 
 ## 30-Second Story
 
@@ -24,6 +24,7 @@ cd maintainer-harness
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 ```
 
@@ -36,6 +37,8 @@ cd maintainer-harness
 - `examples/sample-change/verification/result.md` records acceptance evidence.
 - `examples/issue-to-review/issue-intake.md` shows a sanitized GitHub issue intake.
 - `examples/issue-to-review/verification/result.md` shows reviewer acceptance evidence before a pull request.
+- `examples/release-workflow/release/release-note.md` shows release evidence, rollback steps, and skipped checks.
+- `examples/release-workflow/release/postmortem-ready.md` shows learning hooks after release.
 - `config/agent-registry.yaml` keeps role write scopes explicit.
 - `docs/security/codex-security-project-overview.md` explains the highest-risk security boundaries.
 

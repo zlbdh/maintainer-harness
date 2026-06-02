@@ -1,0 +1,53 @@
+change_id: CHG-2026-0003-release-evidence
+title: Synthetic release evidence workflow
+stage: release-ready
+stage_owner: release-agent
+repo_owners:
+  control_repo: change-intake-agent
+  harness: release-agent
+write_scopes:
+  control_repo:
+    owner: change-intake-agent
+    files:
+      - brief.md
+      - impact.yaml
+      - execution.yaml
+      - design.md
+      - acceptance.md
+      - verification/result.md
+      - release/release-note.md
+      - release/postmortem-ready.md
+  business_repos:
+    harness:
+      - examples/release-workflow/**
+      - docs/**
+      - release/**
+depends_on:
+  - examples/sample-change
+  - examples/issue-to-review
+branch:
+  control_repo: main
+  harness: main
+worktree:
+  control_repo: .
+  harness: .
+snapshot_policy:
+  control_repo: none
+  harness: none
+runtime_type:
+  control_repo: main-agent
+  harness: worker
+registry_ref:
+  control_repo: change-intake-agent
+  harness: release-agent
+worker_result:
+  harness: verification/workers/harness.md
+review_result:
+  harness: verification/result.md
+lock_state:
+  control_repo: unlocked
+  business_repos:
+    harness: unlocked
+snapshot_at: ""
+notes:
+  - "Synthetic release workflow only; release gates are demonstrated without publishing a real tag."

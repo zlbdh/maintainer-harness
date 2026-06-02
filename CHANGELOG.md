@@ -29,7 +29,10 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.4` release anchor for the issue-to-review packet example.
 - Validation report redaction guide under `docs/security/redaction-patterns.md`.
 - Security posture, workspace verification, public readiness, and application audit now require the redaction guide.
+- `v0.1.6` release anchor for the synthetic release workflow example.
 - `v0.1.5` release anchor for validation report redaction guidance.
+- Synthetic release workflow packet under `examples/release-workflow/` covering release notes, skipped checks, rollback, and postmortem-ready evidence.
+- GitHub Actions, workspace verification, public readiness, and application audit now include the release workflow example.
 
 ### Changed
 

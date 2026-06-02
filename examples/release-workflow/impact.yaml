@@ -1,0 +1,14 @@
+change_id: CHG-2026-0003-release-evidence
+summary: Synthetic release evidence packet for maintainer release decisions.
+affected_repositories:
+  - id: harness
+    reason: Adds release evidence, validation summary, rollback, and postmortem-ready examples.
+interfaces:
+  - name: release note template
+    change_type: documentation
+  - name: verification result template
+    change_type: documentation
+  - name: release gates standard
+    change_type: documentation
+dependencies: []
+risk_level: low

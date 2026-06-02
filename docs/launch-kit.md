@@ -53,12 +53,13 @@ Current public launch anchors:
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Source repo: https://github.com/zlbdh/maintainer-harness
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.5
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.6
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
+- Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
 - Share page: https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 - Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
@@ -88,6 +89,7 @@ cd maintainer-harness
 .\scripts\checks\validate-repos.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 
 I would like feedback from maintainers who have tried using agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?

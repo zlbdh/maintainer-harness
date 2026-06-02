@@ -19,6 +19,7 @@ cd maintainer-harness
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 ```
 
@@ -28,7 +29,8 @@ cd maintainer-harness
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.5
+- Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.6
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg

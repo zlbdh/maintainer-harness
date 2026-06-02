@@ -52,9 +52,11 @@ The synthetic sample packet is part of the public demo path:
 
 ```powershell
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
+.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 ```
 
-GitHub Actions also runs this check so the demo cannot drift silently.
+GitHub Actions also runs these checks so the demo packets cannot drift silently.
 
 ## Validation Evidence Redaction
 

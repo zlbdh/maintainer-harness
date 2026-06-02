@@ -29,6 +29,10 @@ jobs:
         shell: pwsh
         run: .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 
+      - name: Validate release workflow packet
+        shell: pwsh
+        run: .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
+
       - name: Exercise machine-readable checks
         shell: pwsh
         run: |

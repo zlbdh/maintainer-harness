@@ -59,6 +59,7 @@ Expected result:
 - `docs/security/` explains the threat model and Codex Security review scope.
 - `docs/security/redaction-patterns.md` explains how to share validation evidence without raw private report data.
 - `examples/sample-change/` demonstrates a safe synthetic workflow.
+- `examples/issue-to-review/` and `examples/release-workflow/` demonstrate review and release evidence workflows.
 
 ## Before Submit
 

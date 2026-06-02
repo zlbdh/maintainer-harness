@@ -12,13 +12,13 @@ The application is positioned around maintainership value rather than popularity
 | --- | --- |
 | Maintainer automation | `scripts/bootstrap/init-change.ps1`, `scripts/orchestrator/dispatch-change.ps1`, and `.agent/skills/` turn maintenance work into repeatable packets. |
 | Pull request review workflows | `examples/issue-to-review/`, `templates/worker-result.md`, `schemas/worker-response.schema.json`, `schemas/review-response.schema.json`, and `scripts/orchestrator/review-worker-output.ps1` define reviewable worker output. |
-| Release workflows | `templates/release-note.md`, `release/README.md`, `standards/global/release-gates.md`, and `templates/postmortem.md` preserve release evidence. |
+| Release workflows | `examples/release-workflow/`, `templates/release-note.md`, `release/README.md`, `standards/global/release-gates.md`, and `templates/postmortem.md` preserve release evidence, skipped checks, rollback, and postmortem-ready notes. |
 | Day-to-day coding and triage | `docs/workflow.md`, `docs/harness-sop.md`, and `.agent/skills/local-baseline-triage/` define bounded maintainer routines. |
 | API credits usage | `docs/codex-for-oss-application.md` explains dogfooding: task generation, review packets, baseline triage, validation summaries, and reusable examples. |
 | Security care | `SECURITY.md`, `docs/security/`, `docs/security/redaction-patterns.md`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, validation evidence redaction, and publication hygiene explicit. |
 | Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
-| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.5` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
+| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.6` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
 
 ## Why This Is Useful Despite Early Adoption
 
@@ -39,7 +39,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 
 - The repository is a maintainer tool, not a private product.
 - Codex would be used to improve and dogfood the harness itself.
-- The first target workflows are PR review packets, maintainer triage, validation summaries, and release evidence; `examples/issue-to-review/` now shows the PR review packet shape.
+- The first target workflows are PR review packets, maintainer triage, validation summaries, and release evidence; `examples/issue-to-review/` shows the PR review packet shape and `examples/release-workflow/` shows the release evidence shape.
 - The project is honest about early stage and limited usage metrics.
 - The repository includes public hygiene controls before submission.
 - Codex Security is useful because the project coordinates agents, MCP context, generated worktrees, validation evidence, and release gates.

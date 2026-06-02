@@ -53,6 +53,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.12` release anchor for the first-run report generator.
 - Authenticated GitHub API support for the 90% readiness monitor.
 - External feedback evidence registry and validator for machine-readable 90% scorekeeping.
+- Maintainer review kit for five-minute outside feedback handoff.
 
 ### Changed
 

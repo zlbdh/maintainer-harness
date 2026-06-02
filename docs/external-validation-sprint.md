@@ -36,6 +36,10 @@ Prioritize people who can judge the workflow:
 
 Avoid broad audiences until the demo path has at least one outside report.
 
+Use `docs/maintainer-review-kit.md` as the shortest public reviewer handoff.
+It gives maintainers a five-minute path to inspect, run, or security-review the
+workflow without needing private repository context.
+
 ## Message Template
 
 ```text
@@ -45,6 +49,9 @@ It is an early open source control plane for agent-assisted maintenance: change 
 
 Project site:
 https://zlbdh.github.io/maintainer-harness/
+
+Five-minute review kit:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
 
 The most useful feedback is not "looks good" -- it is:
 What evidence would make an agent worker output reviewable enough for you to accept, reject, or request changes?

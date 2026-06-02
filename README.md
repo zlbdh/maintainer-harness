@@ -10,6 +10,10 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **Project site:** https://zlbdh.github.io/maintainer-harness/
 
+**Reviewer kit:** if you have five minutes, use
+`docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
+demo, or leave public feedback.
+
 **Share or star:** if the demo is useful, share the project site or star the
 repository so other maintainers can find it. Feedback is more valuable than a
 vanity metric; the best starting points are issue
@@ -185,6 +189,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/dogfooding-runs/`: public dogfooding run notes and validation evidence
 - `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals
+- `docs/maintainer-review-kit.md`: five-minute outside maintainer feedback path
 - `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
 - `docs/cross-platform-validation.md`: Windows, Ubuntu, and macOS validation coverage and current boundaries

@@ -16,6 +16,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 . (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '..\lib\HarnessPathScope.ps1')
 
 function Convert-ToHarnessAbsolutePath {
     param(
@@ -98,45 +99,6 @@ function Test-HarnessReviewEnvironmentBlockedMessage {
     }
 
     return $Text -match 'EACCES|未安装到本地可执行路径|缺少 .+ 可执行文件|is not recognized as an internal or external command|依赖阻断|本地依赖'
-}
-
-function Normalize-HarnessPath {
-    param([string]$Path)
-
-    if ([string]::IsNullOrWhiteSpace($Path)) {
-        return ''
-    }
-
-    return (($Path -replace '\\', '/').Trim())
-}
-
-function Test-HarnessPathMatchesAllowedPath {
-    param(
-        [string]$Candidate,
-        [string[]]$AllowedPaths
-    )
-
-    $normalizedCandidate = Normalize-HarnessPath -Path $Candidate
-    if ([string]::IsNullOrWhiteSpace($normalizedCandidate)) {
-        return $false
-    }
-
-    foreach ($allowedPath in @($AllowedPaths)) {
-        $normalizedAllowed = Normalize-HarnessPath -Path $allowedPath
-        if ([string]::IsNullOrWhiteSpace($normalizedAllowed)) {
-            continue
-        }
-
-        if (
-            ($normalizedCandidate -eq $normalizedAllowed) -or
-            $normalizedCandidate.EndsWith("/$normalizedAllowed") -or
-            $normalizedCandidate.EndsWith($normalizedAllowed)
-        ) {
-            return $true
-        }
-    }
-
-    return $false
 }
 
 function Get-HarnessPathMentionsFromText {

@@ -77,7 +77,8 @@ $supportEvidencePaths = @(
     @{ Check = 'release-workflow-example'; Path = 'examples\release-workflow\release\release-note.md'; Detail = 'Release workflow packet example exists.' },
     @{ Check = 'redaction-patterns'; Path = 'docs\security\redaction-patterns.md'; Detail = 'Validation report redaction guide exists.' },
     @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
-    @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' }
+    @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' },
+    @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' }
 )
 
 foreach ($supportEvidence in $supportEvidencePaths) {

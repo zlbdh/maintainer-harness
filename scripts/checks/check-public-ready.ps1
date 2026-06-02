@@ -79,6 +79,7 @@ $requiredPublicPaths = @(
     'docs\security\threat-model.md',
     'docs\security\codex-security-project-overview.md',
     'docs\security\codex-security-scope.md',
+    'docs\security\codex-security-review-pass-2026-06-02.md',
     'docs\security\redaction-patterns.md',
     'docs\security\security-review-checklist.md',
     'docs\github-publication.md',
@@ -115,6 +116,7 @@ $requiredPublicPaths = @(
     'examples\release-workflow\release\postmortem-ready.md',
     'repos\repos.yaml',
     'config\agent-registry.yaml',
+    'scripts\lib\HarnessPathScope.ps1',
     'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1'
 )

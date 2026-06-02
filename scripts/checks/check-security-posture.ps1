@@ -9,6 +9,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 . (Join-Path $PSScriptRoot '..\lib\HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '..\lib\HarnessPathScope.ps1')
 
 function New-SecurityPostureFinding {
     param(
@@ -48,11 +49,13 @@ $requiredSecurityPaths = @(
     'docs\security\threat-model.md',
     'docs\security\codex-security-project-overview.md',
     'docs\security\codex-security-scope.md',
+    'docs\security\codex-security-review-pass-2026-06-02.md',
     'docs\security\redaction-patterns.md',
     'docs\security\security-review-checklist.md',
     'standards\global\mcp-safety.md',
     'mcp\catalog.yaml',
-    'config\agent-registry.yaml'
+    'config\agent-registry.yaml',
+    'scripts\lib\HarnessPathScope.ps1'
 )
 
 foreach ($relativePath in $requiredSecurityPaths) {
@@ -142,6 +145,29 @@ if (Test-Path -LiteralPath $agentRegistryPath) {
     } else {
         $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'agent-broad-scopes' -Detail 'No repository-wide allowed path pattern detected.'))
     }
+}
+
+$scopeAssertions = @(
+    @{ Candidate = 'docs/demo.md'; Allowed = @('docs/**'); Expected = $true },
+    @{ Candidate = 'examples/release-workflow/release/release-note.md'; Allowed = @('examples/release-workflow/**'); Expected = $true },
+    @{ Candidate = 'README.md'; Allowed = @('README.md'); Expected = $true },
+    @{ Candidate = 'nested/README.md'; Allowed = @('README.md'); Expected = $false },
+    @{ Candidate = '../README.md'; Allowed = @('README.md'); Expected = $false },
+    @{ Candidate = 'C:/tmp/README.md'; Allowed = @('README.md'); Expected = $false },
+    @{ Candidate = 'scripts/checks/check-security-posture.ps1'; Allowed = @('docs/**'); Expected = $false }
+)
+$scopeFailures = @(
+    foreach ($assertion in $scopeAssertions) {
+        $actual = Test-HarnessPathMatchesAllowedPath -Candidate $assertion.Candidate -AllowedPaths $assertion.Allowed
+        if ($actual -ne $assertion.Expected) {
+            "$($assertion.Candidate) against $($assertion.Allowed -join ',') expected $($assertion.Expected) got $actual"
+        }
+    }
+)
+if ($scopeFailures.Count -eq 0) {
+    $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'path-scope-helper' -Detail 'Allowed path helper enforces anchored glob matching and rejects traversal.'))
+} else {
+    $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check 'path-scope-helper' -Detail ($scopeFailures -join '; ')))
 }
 
 if (Test-TrackedFileContains -RelativePath 'SECURITY.md' -Pattern 'Security Advisories') {

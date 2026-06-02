@@ -33,6 +33,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.5` release anchor for validation report redaction guidance.
 - Synthetic release workflow packet under `examples/release-workflow/` covering release notes, skipped checks, rollback, and postmortem-ready evidence.
 - GitHub Actions, workspace verification, public readiness, and application audit now include the release workflow example.
+- First Codex Security review pass under `docs/security/codex-security-review-pass-2026-06-02.md`.
+- Shared path-scope helper for review-worker output checks.
 
 ### Changed
 
@@ -46,6 +48,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - GitHub Actions now validates the synthetic sample change packet.
 - Suggested repository metadata now points visitors to the demo path.
 - Suggested repository metadata now points visitors to the GitHub Pages project site.
+- Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 
 ## 2026-06-01
 

@@ -173,7 +173,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/share.md`: compact share page with demo commands and canonical links
 - `docs/launch-log.md`: public launch action and metrics tracking
 - `docs/assets/social-preview.svg`: social preview card for launch posts
-- `docs/security/`: threat model, Codex Security project overview, review scope, redaction guidance, and security review checklist
+- `docs/security/`: threat model, Codex Security project overview, review scope, first review pass, redaction guidance, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `examples/issue-to-review/`: synthetic GitHub issue intake through pull request review evidence
 - `examples/release-workflow/`: synthetic release note, rollback, skipped-check, and postmortem-ready evidence

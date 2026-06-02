@@ -21,6 +21,7 @@ Maintainer Harness requests Codex Security support because the project is specif
 - Production credentials, production databases, customer data, and private logs
 - Write-capable MCP integrations that have not gone through a separate design review
 - Generated local reports under ignored `reports/` paths
+- Redaction practice for validation evidence in `docs/security/redaction-patterns.md`
 
 ## Review Questions
 

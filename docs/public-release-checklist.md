@@ -25,6 +25,7 @@ Expected result:
 - no sensitive path or content matches from public candidate files
 - public files appear as tracked or staged
 - legacy local assets appear only under ignored entries
+- validation evidence copied from ignored reports has been redacted with `docs/security/redaction-patterns.md`
 
 ## Validation
 
@@ -56,6 +57,7 @@ Expected result:
 - `docs/codex-for-oss-application.md` contains paste-ready form responses.
 - `docs/codex-for-oss-evidence.md` maps repository files to the application claims.
 - `docs/security/` explains the threat model and Codex Security review scope.
+- `docs/security/redaction-patterns.md` explains how to share validation evidence without raw private report data.
 - `examples/sample-change/` demonstrates a safe synthetic workflow.
 
 ## Before Submit

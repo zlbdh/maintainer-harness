@@ -172,7 +172,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/share.md`: compact share page with demo commands and canonical links
 - `docs/launch-log.md`: public launch action and metrics tracking
 - `docs/assets/social-preview.svg`: social preview card for launch posts
-- `docs/security/`: threat model, Codex Security project overview, review scope, and security review checklist
+- `docs/security/`: threat model, Codex Security project overview, review scope, redaction guidance, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `examples/issue-to-review/`: synthetic GitHub issue intake through pull request review evidence
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows
@@ -189,6 +189,7 @@ This repository is meant to be public. Do not commit:
 - generated worktrees under `worktrees/`
 - local validation reports with sensitive paths
 - credentials, tokens, private endpoints, customer data, or production logs
+- unredacted validation evidence copied from ignored report paths
 
 The included `.gitignore` keeps the default repository safe for public use, but maintainers should still review `git status --ignored` before publishing.
 

@@ -48,6 +48,7 @@ $requiredSecurityPaths = @(
     'docs\security\threat-model.md',
     'docs\security\codex-security-project-overview.md',
     'docs\security\codex-security-scope.md',
+    'docs\security\redaction-patterns.md',
     'docs\security\security-review-checklist.md',
     'standards\global\mcp-safety.md',
     'mcp\catalog.yaml',
@@ -167,6 +168,21 @@ foreach ($overviewCheck in $overviewChecks) {
         $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check $overviewCheck.Name -Detail $overviewCheck.Detail))
     } else {
         $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check $overviewCheck.Name -Detail "Missing Codex Security overview section: $($overviewCheck.Pattern)"))
+    }
+}
+
+$redactionChecks = @(
+    @{ Name = 'redaction-private-data'; Pattern = 'Private Data Classes'; Detail = 'Redaction guide documents private data classes.' },
+    @{ Name = 'redaction-ignored-artifacts'; Pattern = 'Ignored Artifact Boundaries'; Detail = 'Redaction guide documents ignored artifact boundaries.' },
+    @{ Name = 'redaction-pre-share'; Pattern = 'Pre-Share Checklist'; Detail = 'Redaction guide includes a pre-share checklist.' },
+    @{ Name = 'redaction-synthetic-examples'; Pattern = 'Synthetic Redaction Examples'; Detail = 'Redaction guide includes synthetic examples.' }
+)
+
+foreach ($redactionCheck in $redactionChecks) {
+    if (Test-TrackedFileContains -RelativePath 'docs\security\redaction-patterns.md' -Pattern $redactionCheck.Pattern) {
+        $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check $redactionCheck.Name -Detail $redactionCheck.Detail))
+    } else {
+        $findings.Add((New-SecurityPostureFinding -Status 'FAIL' -Check $redactionCheck.Name -Detail "Missing redaction guide section: $($redactionCheck.Pattern)"))
     }
 }
 

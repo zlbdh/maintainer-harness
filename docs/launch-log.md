@@ -18,6 +18,8 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 | 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.3 | Published | Release anchors the project site package. | Use the Pages URL as the primary external link. |
 | 2026-06-02 | Synthetic PR review example | https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review | Published | Issue intake, impact mapping, worker scope, and reviewer acceptance evidence now have a public packet example. | Link issue #1 to the release. |
 | 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.4 | Published | Release anchors the issue-to-review packet example. | Use in maintainer outreach posts. |
+| 2026-06-02 | Validation redaction guide | https://github.com/zlbdh/maintainer-harness/blob/main/docs/security/redaction-patterns.md | Prepared | Local reports have concrete redaction classes, ignored-boundary rules, and a pre-share checklist. | Close or update issue #3 after CI passes. |
+| 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.5 | Planned | Release will anchor the validation report redaction guide. | Publish after CI passes. |
 | 2026-06-02 | GitHub profile README | https://github.com/zlbdh/zlbdh | Published | Profile now links to Maintainer Harness. | Manually pin repo in GitHub UI. |
 | 2026-06-02 | GitHub issue labels | https://github.com/zlbdh/maintainer-harness/issues | Published | Issues are labeled by area and newcomer path. | Keep labels current as issues change. |
 | TBD | X / Twitter | TBD | Planned | Use `docs/share.md` or `docs/launch-kit.md`. | Record comments and reposts. |

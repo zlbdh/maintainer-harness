@@ -6,6 +6,7 @@ The main risks are agent write-scope drift, accidental publication of local arti
 
 - `docs/security/threat-model.md`
 - `docs/security/codex-security-scope.md`
+- `docs/security/redaction-patterns.md`
 - `docs/security/security-review-checklist.md`
 
 ## Supported Versions
@@ -33,6 +34,7 @@ The harness should not commit or require:
 - product source checkouts under `repos/`
 - generated worktrees under `worktrees/`
 - validation reports containing sensitive local paths
+- unredacted validation evidence copied from ignored report paths
 
 MCP blueprints in this repository are intentionally read-only. Any write-capable integration should be reviewed as a separate design change.
 
@@ -44,5 +46,7 @@ Run these before publishing, requesting support, or adding new automation surfac
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
+
+Before sharing validation evidence, apply `docs/security/redaction-patterns.md` and keep complete generated reports under ignored paths.
 
 The GitHub workflow also runs the security posture check without project-specific sensitive terms.

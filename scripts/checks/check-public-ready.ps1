@@ -79,6 +79,7 @@ $requiredPublicPaths = @(
     'docs\security\threat-model.md',
     'docs\security\codex-security-project-overview.md',
     'docs\security\codex-security-scope.md',
+    'docs\security\redaction-patterns.md',
     'docs\security\security-review-checklist.md',
     'docs\github-publication.md',
     'docs\public-release-checklist.md',

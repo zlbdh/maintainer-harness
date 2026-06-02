@@ -15,10 +15,10 @@ The application is positioned around maintainership value rather than popularity
 | Release workflows | `templates/release-note.md`, `release/README.md`, `standards/global/release-gates.md`, and `templates/postmortem.md` preserve release evidence. |
 | Day-to-day coding and triage | `docs/workflow.md`, `docs/harness-sop.md`, and `.agent/skills/local-baseline-triage/` define bounded maintainer routines. |
 | API credits usage | `docs/codex-for-oss-application.md` explains dogfooding: task generation, review packets, baseline triage, validation summaries, and reusable examples. |
-| Security care | `SECURITY.md`, `docs/security/`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, and publication hygiene explicit. |
+| Security care | `SECURITY.md`, `docs/security/`, `docs/security/redaction-patterns.md`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, validation evidence redaction, and publication hygiene explicit. |
 | Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
-| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.4` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
+| Public launch readiness | `docs/index.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, the `v0.1.5` release, issues `#5` and `#6`, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
 
 ## Why This Is Useful Despite Early Adoption
 
@@ -31,6 +31,7 @@ The project is early, so it should not claim broad external adoption. Its applic
 - local validation output is captured before release decisions
 - publication checks can fail loudly before private material is pushed
 - security posture checks can fail loudly when MCP access, agent scopes, ignored artifacts, or Codex Security review docs drift
+- validation report redaction guidance makes public evidence sharing safer before maintainers copy ignored local reports into tracked summaries
 
 This is a practical fit for open source maintainers who want AI assistance while preserving reviewability and trust.
 
@@ -43,6 +44,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The repository includes public hygiene controls before submission.
 - Codex Security is useful because the project coordinates agents, MCP context, generated worktrees, validation evidence, and release gates.
 - The full-support request is backed by public artifacts: CI, issue templates, a dogfooding plan, a Codex Security project overview, and a security posture gate.
+- The repository now includes validation report redaction guidance for local paths, tokens, private endpoints, logs, customer data, and private repository names.
 - The repository has a policy-safe launch path: a GitHub Pages project site, a validated demo, a compact share page, a launch-ready release, GitHub topics, labeled issues, a public feedback issue, a good-first-issue path, a launch log, and a GitHub profile README entry.
 
 ## Publication Gate

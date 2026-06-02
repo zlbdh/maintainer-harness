@@ -27,6 +27,9 @@ This project follows a simple date-based changelog until formal versioned releas
 - Synthetic issue-to-review packet under `examples/issue-to-review/` covering issue intake, impact mapping, worker scope, and reviewer acceptance evidence.
 - GitHub Actions, workspace verification, public readiness, and application audit now include the issue-to-review example.
 - `v0.1.4` release anchor for the issue-to-review packet example.
+- Validation report redaction guide under `docs/security/redaction-patterns.md`.
+- Security posture, workspace verification, public readiness, and application audit now require the redaction guide.
+- `v0.1.5` release anchor for validation report redaction guidance.
 
 ### Changed
 

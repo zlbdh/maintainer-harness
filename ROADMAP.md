@@ -24,7 +24,7 @@ Maintainer Harness is early-stage and public-ready, but it should grow through m
 - Keep write scopes explicit for every worker packet.
 - Keep MCP examples read-only by default.
 - Add regression checks for public hygiene patterns.
-- Document private-data redaction practices for validation reports.
+- Expand validation report redaction examples as real maintainer feedback arrives.
 - Keep the security posture gate required in CI before adding write-capable integrations.
 
 ## Not Planned

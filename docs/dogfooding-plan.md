@@ -30,6 +30,7 @@ Credits should not be used for private product development, unpublished customer
 - Publish small tagged releases with clear changelog entries.
 - Use GitHub issues for the roadmap instead of private notes.
 - Record skipped validation as skipped, not passed.
+- Redact validation evidence before copying summaries out of ignored reports.
 - Add examples before claiming workflow maturity.
 - Avoid claiming broad external adoption until there are real users or contributors.
 

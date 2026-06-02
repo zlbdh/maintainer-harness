@@ -56,6 +56,12 @@ The synthetic sample packet is part of the public demo path:
 
 GitHub Actions also runs this check so the demo cannot drift silently.
 
+## Validation Evidence Redaction
+
+Generated reports under `reports/` are ignored because they can include local paths, private repository names, stack traces, endpoints, or environment details. Before copying validation evidence into tracked files, use `docs/security/redaction-patterns.md`.
+
+The tracked summary should keep the command, status, skipped checks, and maintainer-relevant findings. It should not include raw terminal transcripts, secrets, customer data, private endpoints, or full local paths.
+
 ## Public Readiness
 
 Before applying to an open source support program, run:
@@ -95,4 +101,4 @@ Generate a pre-application report:
 .\scripts\checks\write-application-audit.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
 
-The report is written under `reports/application-audit/`, which is ignored by Git. It checks form-section length, evidence files, workspace structure, sensitive terms, security posture, and publication blockers.
+The report is written under `reports/application-audit/`, which is ignored by Git. It checks form-section length, evidence files, workspace structure, redaction guidance, sensitive terms, security posture, and publication blockers.

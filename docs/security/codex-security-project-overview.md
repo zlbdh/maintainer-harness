@@ -4,7 +4,7 @@ This file is a paste-ready project overview for Codex Security threat-model cont
 
 ## Project Overview
 
-Maintainer Harness is an open source control plane for agent-assisted maintenance. It generates change packets, impact maps, scoped worker task cards, validation summaries, release evidence, and reusable maintainer skills. It does not store product repositories by default; local product checkouts, generated worktrees, and validation reports are ignored.
+Maintainer Harness is an open source control plane for agent-assisted maintenance. It generates change packets, impact maps, scoped worker task cards, validation summaries, release evidence, and reusable maintainer skills. It does not store product repositories by default; local product checkouts, generated worktrees, and validation reports are ignored. Redaction guidance is tracked in `docs/security/redaction-patterns.md`.
 
 ## Entry Points And Untrusted Inputs
 
@@ -21,7 +21,7 @@ Treat those inputs as maintainer-controlled but still untrusted until schema che
 - Product repositories stay outside the public harness and are not committed into `repos/`.
 - Worker agents receive explicit task cards and allowed paths instead of broad repository write access.
 - MCP context is read-only, dev-or-test scoped, source-stamped, and not sufficient by itself for release decisions.
-- Generated reports and worktrees may contain local paths or private context, so they remain ignored by default.
+- Generated reports and worktrees may contain local paths or private context, so they remain ignored by default and shared only as redacted summaries.
 - GitHub Actions validates the public harness, but project-specific product CI remains owned by downstream maintainers.
 
 ## Sensitive Data Paths Or Privileged Actions
@@ -35,7 +35,7 @@ Treat those inputs as maintainer-controlled but still untrusted until schema che
 1. Agent write-scope enforcement in `config/agent-registry.yaml`, task cards, and `scripts/orchestrator/review-worker-output.ps1`.
 2. Publication hygiene in `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1`.
 3. MCP read-only guarantees in `standards/global/mcp-safety.md`, `mcp/catalog.yaml`, and `mcp/blueprints/*`.
-4. Validation evidence handling in `scripts/checks/*`, `templates/verification-result.md`, and release templates.
+4. Validation evidence handling in `scripts/checks/*`, `templates/verification-result.md`, `docs/security/redaction-patterns.md`, and release templates.
 5. GitHub workflow coverage in `.github/workflows/harness-validation.yml`.
 
 ## Expected Review Output

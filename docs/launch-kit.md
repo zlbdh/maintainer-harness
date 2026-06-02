@@ -40,7 +40,8 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 
 | Channel | Best Use | Draft |
 | --- | --- | --- |
-| GitHub profile pinned repo | Make the project visible from the maintainer profile. | Pin `maintainer-harness` manually from the GitHub profile UI; the public API does not expose profile pinning. |
+| GitHub profile README | Make the project visible from the maintainer profile even before manual pinning. | Published at https://github.com/zlbdh/zlbdh. |
+| GitHub profile pinned repo | Add another fixed profile entry. | Pin `maintainer-harness` manually from the GitHub profile UI; the public API does not expose profile pinning. |
 | Hacker News Show HN | Ask technical maintainers for feedback after the demo path is clear. | Use the Show HN draft below. |
 | X / Twitter | Short technical hook and repository link. | Use the short post or thread below. |
 | LinkedIn | Maintainer story and open source process angle. | Use the LinkedIn draft below. |
@@ -53,6 +54,7 @@ Current public launch anchors:
 - Passing launch-ready CI run: https://github.com/zlbdh/maintainer-harness/actions/runs/26809709826
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+- GitHub profile README: https://github.com/zlbdh/zlbdh
 
 ## Show HN Draft
 
@@ -178,7 +180,8 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 
 | Day | Action | Success Signal |
 | --- | --- | --- |
-| 1 | Pin the repo on the GitHub profile through the GitHub UI and verify topics. | Profile visitors can find it. |
+| 1 | Publish the GitHub profile README and verify topics. | Profile visitors can find the project. |
+| 1 | Pin the repo on the GitHub profile through the GitHub UI. | Profile visitors get a second fixed entry point. |
 | 1 | Post the X short post. | At least one maintainer comment or repost. |
 | 2 | Share the LinkedIn post. | Feedback from devtools/open source contacts. |
 | 3 | Submit Show HN if the maintainer can stay online to answer questions. | Technical feedback, not just stars. |

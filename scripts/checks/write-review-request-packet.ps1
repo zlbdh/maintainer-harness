@@ -19,11 +19,14 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
 
 $links = [ordered]@{
     ProjectSite = 'https://zlbdh.github.io/maintainer-harness/'
+    ExternalReview = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
+    ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
     ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5'
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6'
+    FollowUpIssue = 'https://github.com/zlbdh/maintainer-harness/issues/7'
     FirstRunTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
 }
 
@@ -36,6 +39,9 @@ gates, and security boundaries.
 
 Review kit:
 $($links.ReviewKit)
+
+External review path with copy-ready comment templates:
+$($links.ExternalReviewTemplates)
 
 Worker output example:
 $($links.ReviewabilityExample)
@@ -61,6 +67,9 @@ If you run the demo, this command generates a paste-ready local report:
 Public first-run reports go here:
 $($links.FirstRunIssue)
 
+Copy-ready issue #5 and issue #6 comment templates:
+$($links.ExternalReviewTemplates)
+
 If a separate thread is clearer, the template is here:
 $($links.FirstRunTemplate)
 "@
@@ -77,6 +86,9 @@ $($links.ReviewKit)
 
 Feedback issue:
 $($links.FeedbackIssue)
+
+External review path:
+$($links.ExternalReview)
 "@
 
 $lines = @(
@@ -90,12 +102,24 @@ $lines = @(
     '## Links',
     '',
     "- Project site: $($links.ProjectSite)",
+    "- External review path: $($links.ExternalReview)",
+    "- External review templates: $($links.ExternalReviewTemplates)",
     "- Review kit: $($links.ReviewKit)",
     "- Worker output reviewability: $($links.ReviewabilityExample)",
     "- Source repo: $($links.SourceRepo)",
     "- Feedback issue: $($links.FeedbackIssue)",
     "- First-run issue: $($links.FirstRunIssue)",
+    "- Follow-up issue: $($links.FollowUpIssue)",
     "- First-run template: $($links.FirstRunTemplate)",
+    '',
+    '## Outside Reviewer Action Path',
+    '',
+    '| Time | Best action | Public target |',
+    '| --- | --- | --- |',
+    "| 3 min | Name one missing evidence item before accepting agent output. | $($links.FeedbackIssue) |",
+    "| 5 min | Run the clean demo and post first-run friction. | $($links.FirstRunIssue) |",
+    "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
+    "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FollowUpIssue) |",
     '',
     '## Short Maintainer Request',
     '',
@@ -118,6 +142,7 @@ $lines = @(
     '## Evidence Tracking Checklist',
     '',
     '- If the response is a comment on issue `#6`, the readiness monitor can count it automatically.',
+    '- If the response is a comment on issue `#5`, it can count as public reviewability feedback.',
     '- If the response is public somewhere else, add the URL to `docs/external-feedback-evidence.yaml` after verifying it.',
     '- If the response is private, summarize the theme in `docs/launch-log.md` only if it does not reveal private names or private repo details.',
     '- If feedback produces a concrete change, create a public issue, commit, or release link before counting it as a follow-up artifact.',

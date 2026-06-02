@@ -230,7 +230,7 @@ For the concrete 90% readiness threshold and message templates, see
 | --- | --- | --- | --- |
 | Hour 0 | Pin the repository on the GitHub profile UI. | "Open source control plane for agent-assisted maintenance." | Screenshot or profile URL in the launch log. |
 | Hour 1 | Send the share page to 3-5 maintainers or devtools builders who can critique the workflow. | "Could you tell me what evidence would make this worker output reviewable?" | Names omitted if private; record channel and feedback theme. |
-| Hour 2 | Generate the review request packet and send the maintainer review kit, worker-output example, and one-command review demo to reviewers who prefer a structured 5-minute path. | "Pick one path: inspect, run, or review security boundaries." | Public issue comment or first-run report URL. |
+| Hour 2 | Generate the review request packet and send the external review templates, maintainer review kit, worker-output example, and one-command review demo to reviewers who prefer a structured 5-minute path. | "Pick one path: inspect, run, or review security boundaries." | Public issue comment or first-run report URL. |
 | Hour 4 | Post the short X / Twitter copy with the project site. | Use the short post above. | Post URL and first replies. |
 | Hour 12 | Share the LinkedIn draft with a feedback question. | "What would you need before trusting an agent's worker output?" | Post URL and comments. |
 | Hour 24 | Convert useful replies into GitHub issues or roadmap notes. | Link issue #5, #6, or #7. | Issue URLs and follow-up owner. |

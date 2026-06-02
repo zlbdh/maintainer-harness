@@ -15,6 +15,10 @@ To generate a local copy-paste request packet, run:
 .\scripts\checks\write-review-request-packet.ps1
 ```
 
+The generated packet includes the external review templates, issue `#5`,
+issue `#6`, and issue `#7` so reviewers can choose the shortest public feedback
+path.
+
 ## Five-Minute Review Path
 
 Pick one path:

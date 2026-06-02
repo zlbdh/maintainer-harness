@@ -13,10 +13,12 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Reviewer brief CI | https://github.com/zlbdh/maintainer-harness/actions/runs/26829792583 |
 | Reviewer brief Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
+| Non-blocking readiness monitor | `Report Codex for OSS readiness` step in the Harness validation workflow |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
 | 90% readiness scorecard | `docs/codex-for-oss-90-scorecard.md` |
+| Worker output reviewability example | `docs/worker-output-reviewability.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
 | External validation sprint | `docs/external-validation-sprint.md` |
 | Demo path | `docs/demo.md` |

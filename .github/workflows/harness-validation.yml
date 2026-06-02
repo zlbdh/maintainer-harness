@@ -6,6 +6,11 @@ on:
     branches:
       - main
 
+permissions:
+  actions: read
+  contents: read
+  issues: read
+
 jobs:
   validate:
     name: validate (${{ matrix.os }})
@@ -55,6 +60,32 @@ jobs:
       - name: Validate external feedback evidence
         shell: pwsh
         run: ./scripts/checks/validate-external-feedback-evidence.ps1
+
+      - name: Report Codex for OSS readiness
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          $readiness = ./scripts/checks/measure-application-readiness.ps1 -PassThru
+          $readiness | ConvertTo-Json -Depth 8
+
+          if ($env:GITHUB_STEP_SUMMARY) {
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '### Codex for OSS readiness'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Score: {0}/{1}' -f $readiness.score, $readiness.target_score)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Ready for form submission: {0}' -f $readiness.ready_for_form_submission)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'This step reports the hard external-signal gate. A score below 90 does not fail CI.'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| Status | Check | Detail | Points |'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| --- | --- | --- | ---: |'
+
+            foreach ($finding in $readiness.findings) {
+              $detail = ([string]$finding.detail) -replace '\|', '/'
+              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ("| {0} | {1} | {2} | {3} |" -f $finding.status, $finding.check, $detail, $finding.points)
+            }
+          }
 
       - name: Check security posture
         shell: pwsh

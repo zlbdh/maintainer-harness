@@ -24,6 +24,12 @@ The script checks the GitHub repository, latest main CI, latest Pages
 deployment, stars, public feedback comments, first-run reports, and manually
 recorded follow-up artifacts.
 
+GitHub Actions also runs the readiness monitor on the Windows validation job
+with `GITHUB_TOKEN` and writes a non-blocking step summary. A score below 90
+stays visible but does not fail CI; CI failures are reserved for broken
+repository structure, public hygiene, evidence registry format, or security
+posture drift.
+
 Public follow-up evidence is recorded in
 `docs/external-feedback-evidence.yaml` and validated by
 `scripts/checks/validate-external-feedback-evidence.ps1`. Only `verified`
@@ -58,11 +64,14 @@ feedback is not enough.
 
 ## Current Expected State
 
-As of the 2026-06-03 local check, Maintainer Harness scores 60/90:
+As of the 2026-06-03 local check at commit `ce2274d`, Maintainer Harness
+scores 60/90:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint
 - PASS: latest main CI and Pages deployment
+- PASS: worker output reviewability example is now included in the public
+  evidence package
 - FAIL: 0/5 real stars
 - FAIL: 0/2 external issue comments
 - FAIL: 0/1 outside first-run report

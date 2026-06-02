@@ -104,6 +104,11 @@ For machine-readable scorekeeping, add public verified signals to
 .\scripts\checks\validate-external-feedback-evidence.ps1
 ```
 
+The Harness validation workflow also publishes a non-blocking Codex for OSS
+readiness summary on the Windows job, so public reviewers can see whether the
+external-signal gate is still open without treating missing stars as a CI
+failure.
+
 ## 90% Readiness Threshold
 
 The application should be re-estimated near 90% only after these public signals

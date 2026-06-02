@@ -57,6 +57,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Review request packet generator for honest maintainer outreach.
 - Worker output reviewability example for outside maintainers to compare vague
   agent replies with reviewable evidence.
+- Non-blocking Codex for OSS readiness summary in the Harness validation
+  workflow.
 
 ### Changed
 

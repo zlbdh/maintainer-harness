@@ -86,7 +86,7 @@ if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
 
 foreach ($finding in @($publicReady.findings)) {
     if ($finding.check -in @('git-commit', 'origin', 'tracked-public-files')) {
-        $findings.Add((New-AuditFinding -Status 'FAIL' -Check "publication-$($finding.check)" -Detail $finding.detail))
+        $findings.Add((New-AuditFinding -Status $finding.status -Check "publication-$($finding.check)" -Detail $finding.detail))
     } elseif ($finding.status -eq 'FAIL') {
         $findings.Add((New-AuditFinding -Status 'FAIL' -Check "public-ready-$($finding.check)" -Detail $finding.detail))
     }

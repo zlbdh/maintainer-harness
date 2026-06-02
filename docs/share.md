@@ -6,6 +6,10 @@ This is the compact sharing page for Maintainer Harness. Use it when posting, re
 
 https://zlbdh.github.io/maintainer-harness/
 
+## Reviewer Link
+
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
+
 ## One-Liner
 
 Maintainer Harness turns agent work into scoped change packets, validation evidence, and release-ready review trails.

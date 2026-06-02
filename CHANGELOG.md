@@ -93,6 +93,8 @@ This project follows a simple date-based changelog until formal versioned releas
   readiness monitor instead of freezing date-bound counts.
 - External review page now includes copy-ready issue `#5` and issue `#6`
   comment templates for real outside reviewers.
+- README and project site now surface the outside reviewer action path more
+  directly before the star-safe CTA.
 
 ## 2026-06-01
 

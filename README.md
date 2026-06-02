@@ -19,6 +19,15 @@ demo, or leave public feedback.
 **Reviewability example:** `docs/worker-output-reviewability.md` compares vague
 worker output with evidence a maintainer can actually review.
 
+**Outside reviewer actions:**
+
+| Time | Best action | Public link |
+| --- | --- | --- |
+| 3 min | Say what evidence is missing before accepting agent output. | [Issue #5](https://github.com/zlbdh/maintainer-harness/issues/5) |
+| 5 min | Run the clean demo and post first-run friction. | [Issue #6](https://github.com/zlbdh/maintainer-harness/issues/6) |
+| After inspection | Use the copy-ready comment templates if they match what you actually saw. | [External review templates](https://zlbdh.github.io/maintainer-harness/external-review.html#templates) |
+| After feedback | Track any concrete follow-up as a public issue, commit, or release note. | [Issue #7](https://github.com/zlbdh/maintainer-harness/issues/7) |
+
 **Share or star:** if the demo is useful, share the project site or star the
 repository so other maintainers can find it. Feedback is more valuable than a
 vanity metric; the best starting points are issue

@@ -16,6 +16,10 @@ Run:
 .\scripts\checks\measure-application-readiness.ps1
 ```
 
+For continuous monitoring, set `GITHUB_TOKEN` or `GH_TOKEN` before running the
+script. Anonymous GitHub API calls can be rate-limited, which makes the score
+temporarily unverifiable even when the repository itself is public.
+
 The script checks the GitHub repository, latest main CI, latest Pages
 deployment, stars, public feedback comments, first-run reports, and manually
 recorded follow-up artifacts.

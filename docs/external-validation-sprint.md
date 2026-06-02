@@ -112,3 +112,6 @@ external usage is still unproven.
 3. Run public readiness and security posture checks.
 4. Publish a small release or commit anchor if feedback changes the project.
 5. Update `docs/codex-for-oss-reviewer-brief.md` with the new signal count.
+6. Run `scripts/checks/measure-application-readiness.ps1` with `GITHUB_TOKEN`
+   or `GH_TOKEN` set so the 90% monitor does not depend on anonymous API
+   limits.

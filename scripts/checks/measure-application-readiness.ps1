@@ -8,6 +8,7 @@ param(
     [int[]]$FeedbackIssueNumbers = @(5, 6, 7),
     [int]$FirstRunIssueNumber = 6,
     [int]$FeedbackFollowUpCount = 0,
+    [string]$GitHubToken = '',
     [switch]$PassThru
 )
 
@@ -16,10 +17,50 @@ $ErrorActionPreference = 'Stop'
 
 . (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
 
-function Get-GitHubJson {
-    param([string]$Url)
+function Get-GitHubApiHeaders {
+    param([string]$Token)
 
-    return Invoke-RestMethod -Uri $Url -Headers @{ 'User-Agent' = 'maintainer-harness-readiness-check' }
+    if ([string]::IsNullOrWhiteSpace($Token)) {
+        if (-not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)) {
+            $Token = $env:GITHUB_TOKEN
+        } elseif (-not [string]::IsNullOrWhiteSpace($env:GH_TOKEN)) {
+            $Token = $env:GH_TOKEN
+        }
+    }
+
+    $headers = @{
+        'User-Agent' = 'maintainer-harness-readiness-check'
+        'Accept' = 'application/vnd.github+json'
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($Token)) {
+        $headers['Authorization'] = "Bearer $Token"
+        $headers['X-GitHub-Api-Version'] = '2022-11-28'
+    }
+
+    return $headers
+}
+
+function Get-GitHubJson {
+    param(
+        [string]$Url,
+        [hashtable]$Headers
+    )
+
+    try {
+        return Invoke-RestMethod -Uri $Url -Headers $Headers
+    } catch {
+        $message = $_.Exception.Message
+        $details = ''
+        if ($_.ErrorDetails -and $_.ErrorDetails.Message) {
+            $details = $_.ErrorDetails.Message
+        }
+        $errorText = "$message $details"
+        if ($errorText -match 'rate limit') {
+            throw "GitHub API rate limit exceeded while checking $Url. Set GITHUB_TOKEN or GH_TOKEN, or pass -GitHubToken, so the readiness monitor can use authenticated requests."
+        }
+        throw
+    }
 }
 
 function New-ReadinessFinding {
@@ -78,9 +119,11 @@ if ([string]::IsNullOrWhiteSpace($owner) -or [string]::IsNullOrWhiteSpace($repoN
     throw "Repository must be in owner/name form. Got: $Repository"
 }
 
-$repo = Get-GitHubJson "https://api.github.com/repos/$Repository"
-$mainCommit = Get-GitHubJson "https://api.github.com/repos/$Repository/commits/$($repo.default_branch)"
-$runs = Get-GitHubJson "https://api.github.com/repos/$Repository/actions/runs?branch=$($repo.default_branch)&per_page=20"
+$githubHeaders = Get-GitHubApiHeaders -Token $GitHubToken
+
+$repo = Get-GitHubJson -Url "https://api.github.com/repos/$Repository" -Headers $githubHeaders
+$mainCommit = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/commits/$($repo.default_branch)" -Headers $githubHeaders
+$runs = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/actions/runs?branch=$($repo.default_branch)&per_page=20" -Headers $githubHeaders
 
 $latestHarnessRun = @($runs.workflow_runs) |
     Where-Object { $_.name -eq 'Harness validation' -and $_.head_sha -eq $mainCommit.sha } |
@@ -94,7 +137,7 @@ $externalFirstRunReports = 0
 $issueCommentBreakdown = @()
 
 foreach ($issueNumber in $FeedbackIssueNumbers) {
-    $comments = @(Get-GitHubJson "https://api.github.com/repos/$Repository/issues/$issueNumber/comments?per_page=100")
+    $comments = @(Get-GitHubJson -Url "https://api.github.com/repos/$Repository/issues/$issueNumber/comments?per_page=100" -Headers $githubHeaders)
     $external = @($comments | Where-Object {
         ($null -ne $_) -and
         ($_.PSObject.Properties.Name -contains 'user') -and

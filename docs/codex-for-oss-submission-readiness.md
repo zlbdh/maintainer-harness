@@ -8,7 +8,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | --- | --- |
 | Project site | https://zlbdh.github.io/maintainer-harness/ |
 | Source repository | https://github.com/zlbdh/maintainer-harness |
-| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.9 |
+| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |

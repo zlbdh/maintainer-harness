@@ -112,6 +112,9 @@ The Harness validation workflow also publishes a non-blocking Codex for OSS
 readiness summary on the Windows job, so public reviewers can see whether the
 external-signal gate is still open without treating missing stars as a CI
 failure.
+The dedicated `Codex readiness monitor` workflow can also be run manually after
+new stars, issue comments, first-run reports, or feedback follow-up artifacts
+arrive.
 
 ## 90% Readiness Threshold
 

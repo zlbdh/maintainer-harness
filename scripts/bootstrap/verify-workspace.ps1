@@ -95,6 +95,7 @@ $requiredPaths = @(
     '.github',
     '.github\CODEOWNERS',
     '.github\repository-settings.yml',
+    '.github\workflows\codex-readiness-monitor.yml',
     '.github\workflows\harness-validation.yml',
     '.github\PULL_REQUEST_TEMPLATE.md',
     '.github\ISSUE_TEMPLATE\config.yml',

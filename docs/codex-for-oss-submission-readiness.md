@@ -14,6 +14,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Reviewer brief Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Non-blocking readiness monitor | `Report Codex for OSS readiness` step in the Harness validation workflow |
+| Scheduled readiness monitor | https://github.com/zlbdh/maintainer-harness/actions/workflows/codex-readiness-monitor.yml |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |

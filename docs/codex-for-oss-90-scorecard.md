@@ -35,6 +35,13 @@ stays visible but does not fail CI; CI failures are reserved for broken
 repository structure, public hygiene, evidence registry format, or security
 posture drift.
 
+The repository also includes a dedicated `Codex readiness monitor` workflow
+under `.github/workflows/codex-readiness-monitor.yml`. It can be run manually
+or on its six-hour schedule, writes a step summary, and uploads a
+`codex-readiness.json` artifact. It uses the GitHub Actions token for
+authenticated API checks so monitoring does not depend on local anonymous rate
+limits.
+
 Public follow-up evidence is recorded in
 `docs/external-feedback-evidence.yaml` and validated by
 `scripts/checks/validate-external-feedback-evidence.ps1`. Only `verified`
@@ -69,8 +76,9 @@ feedback is not enough.
 
 ## Current Expected State
 
-As of the 2026-06-03 local check at commit `ce2274d`, Maintainer Harness
-scores 60/90:
+As of the latest full API-backed local check on 2026-06-03, Maintainer Harness
+scores 60/90. Later local anonymous checks may be temporarily blocked by GitHub
+API rate limits, so the scheduled workflow is the preferred ongoing monitor:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint

@@ -1,0 +1,63 @@
+name: Codex readiness monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  actions: read
+  contents: read
+  issues: read
+
+jobs:
+  monitor:
+    name: monitor
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Measure Codex for OSS readiness
+        id: readiness
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          $readiness = ./scripts/checks/measure-application-readiness.ps1 -PassThru
+          $reportDir = New-Item -ItemType Directory -Force -Path reports/readiness
+          $jsonPath = Join-Path $reportDir 'codex-readiness.json'
+          $readiness | ConvertTo-Json -Depth 8 | Set-Content -Path $jsonPath -Encoding UTF8
+
+          "score=$($readiness.score)" >> $env:GITHUB_OUTPUT
+          "ready=$($readiness.ready_for_form_submission)" >> $env:GITHUB_OUTPUT
+
+          if ($env:GITHUB_STEP_SUMMARY) {
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '### Codex for OSS readiness monitor'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Score: {0}/{1}' -f $readiness.score, $readiness.target_score)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Ready for form submission: {0}' -f $readiness.ready_for_form_submission)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'This scheduled monitor uses the GitHub Actions token for authenticated API checks. A score below 90 does not fail the workflow.'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| Status | Check | Detail | Points |'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| --- | --- | --- | ---: |'
+
+            foreach ($finding in $readiness.findings) {
+              $detail = ([string]$finding.detail) -replace '\|', '/'
+              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ("| {0} | {1} | {2} | {3} |" -f $finding.status, $finding.check, $detail, $finding.points)
+            }
+          }
+
+          if ($readiness.ready_for_form_submission) {
+            Write-Host 'Codex for OSS readiness gate reached. Ask the maintainer to submit the form.'
+          } else {
+            Write-Host 'Codex for OSS readiness gate is still open. Keep collecting real external evidence.'
+          }
+
+      - name: Upload readiness report
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-readiness-report
+          path: reports/readiness/codex-readiness.json
+          if-no-files-found: error

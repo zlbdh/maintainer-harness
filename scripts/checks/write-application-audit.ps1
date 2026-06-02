@@ -79,6 +79,7 @@ $supportEvidencePaths = @(
     @{ Check = 'submission-readiness'; Path = 'docs\codex-for-oss-submission-readiness.md'; Detail = 'Codex for OSS submission readiness checklist exists.' },
     @{ Check = 'reviewer-brief'; Path = 'docs\codex-for-oss-reviewer-brief.md'; Detail = 'Codex for OSS reviewer brief exists.' },
     @{ Check = 'readiness-scorecard'; Path = 'docs\codex-for-oss-90-scorecard.md'; Detail = '90% readiness scorecard exists.' },
+    @{ Check = 'readiness-monitor-workflow'; Path = '.github\workflows\codex-readiness-monitor.yml'; Detail = 'Scheduled Codex readiness monitor workflow exists.' },
     @{ Check = 'external-validation-sprint'; Path = 'docs\external-validation-sprint.md'; Detail = 'External validation sprint exists.' },
     @{ Check = 'external-feedback-evidence'; Path = 'docs\external-feedback-evidence.yaml'; Detail = 'External feedback evidence registry exists.' },
     @{ Check = 'maintainer-review-kit'; Path = 'docs\maintainer-review-kit.md'; Detail = 'Maintainer review kit exists.' },

@@ -58,6 +58,7 @@ $requiredPublicPaths = @(
     'SUPPORT.md',
     'CHANGELOG.md',
     'ROADMAP.md',
+    '.github\workflows\codex-readiness-monitor.yml',
     '.github\workflows\harness-validation.yml',
     '.github\CODEOWNERS',
     '.github\repository-settings.yml',

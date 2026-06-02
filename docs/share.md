@@ -21,6 +21,7 @@ cd maintainer-harness
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\run-review-demo.ps1
 .\scripts\checks\write-first-run-report.ps1
 .\scripts\checks\write-review-request-packet.ps1
 ```
@@ -41,6 +42,7 @@ cd maintainer-harness
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - First-run feedback template: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
+- Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md

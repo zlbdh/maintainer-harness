@@ -17,7 +17,7 @@ Pick one path:
 | --- | ---: | --- | --- |
 | Review the workflow shape | 3 min | Read the sample issue-to-review packet and say what evidence is missing. | https://github.com/zlbdh/maintainer-harness/issues/5 |
 | Compare worker evidence | 3 min | Read the good/bad worker output example and name the missing evidence. | https://github.com/zlbdh/maintainer-harness/issues/5 |
-| Run the clean demo | 5 min | Clone the repo, run the demo commands, then generate a first-run report. | https://github.com/zlbdh/maintainer-harness/issues/6 |
+| Run the clean demo | 5 min | Clone the repo and run the one-command demo report. | https://github.com/zlbdh/maintainer-harness/issues/6 |
 | Review the security boundary | 5 min | Read the Codex Security overview and flag unsafe agent or MCP assumptions. | https://github.com/zlbdh/maintainer-harness/issues/5 |
 
 ## Demo Commands
@@ -25,6 +25,12 @@ Pick one path:
 ```powershell
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
+.\scripts\checks\run-review-demo.ps1
+```
+
+To run each check manually:
+
+```powershell
 .\scripts\checks\validate-repos.ps1
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change

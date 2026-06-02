@@ -21,6 +21,7 @@ The application is positioned around maintainership value rather than popularity
 | Reviewer readiness | `docs/codex-for-oss-reviewer-brief.md` gives a short reviewer-facing case for full support, including current metrics, why early-stage support is still useful, and 30/60/90 day public commitments. |
 | 90% scorecard | `docs/codex-for-oss-90-scorecard.md` and `scripts/checks/measure-application-readiness.ps1` define the hard external-signal gates before asking the maintainer to submit the form. |
 | First-run feedback capture | `scripts/checks/write-first-run-report.ps1`, `docs/external-feedback-evidence.yaml`, `scripts/checks/validate-external-feedback-evidence.ps1`, `.github/ISSUE_TEMPLATE/first_run_feedback.md`, and issue `#6` make outside demo reports easier to generate, register, and validate without publishing private paths. |
+| One-command outside review demo | `scripts/checks/run-review-demo.ps1` runs the public demo checks and hands reviewers the generated first-run report path, issue `#6`, review kit, and worker-output example. |
 | Maintainer review handoff | `docs/maintainer-review-kit.md` and `scripts/checks/write-review-request-packet.ps1` give outside reviewers a five-minute path to inspect the workflow shape, run the demo, or review the security boundary. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
 | Public dogfooding evidence | `docs/dogfooding-runs/2026-06-02-application-hardening.md` records the first Codex-assisted application hardening run, produced artifacts, validation gates, and remaining weak signals. |
@@ -62,6 +63,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The first public dogfooding run shows that the project is already using Codex-style workflows to improve its own application evidence, while recording weak signals honestly.
 - The external validation sprint and 90% scorecard make the readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
 - The first-run report generator gives outside reviewers a paste-ready, sanitized issue draft after running the demo commands.
+- The one-command review demo reduces outside first-run friction by running the public checks and pointing reviewers to the generated report and issue `#6`.
 - The worker-output reviewability example gives reviewers a short good/bad comparison before they critique the harness on issue `#5`.
 
 ## Publication Gate

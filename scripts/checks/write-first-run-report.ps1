@@ -169,6 +169,8 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
     $OutPath = Join-Path $reportDir ((Get-HarnessTimestamp) + '-first-run-report.md')
 }
 
+$report | Add-Member -NotePropertyName path -NotePropertyValue $OutPath -Force
+
 $lines = @(
     '# Maintainer Harness First-Run Report',
     '',

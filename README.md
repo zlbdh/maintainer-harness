@@ -43,6 +43,13 @@ The project is intentionally repository-agnostic. The default configuration uses
 The default sample change is synthetic and safe to run in a clean checkout:
 
 ```powershell
+.\scripts\checks\run-review-demo.ps1
+```
+
+That one command runs the public demo checks and writes a paste-ready first-run
+feedback draft under `reports/first-run/`. To run the same checks manually:
+
+```powershell
 .\scripts\checks\validate-repos.ps1
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
@@ -215,6 +222,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `.github/workflows/harness-validation.yml`: public CI entry point
 - `scripts/bootstrap/prepare-publication.ps1`: dry-run/apply helper for the final public commit
 - `scripts/checks/write-application-audit.ps1`: ignored pre-application audit report generator
+- `scripts/checks/run-review-demo.ps1`: one-command external review demo and first-run report handoff
 - `scripts/checks/write-first-run-report.ps1`: ignored first-run report generator for outside demo feedback
 - `scripts/checks/write-review-request-packet.ps1`: ignored outreach packet generator for honest maintainer review requests
 - `scripts/checks/check-security-posture.ps1`: CI-friendly security posture gate for agent scopes, MCP safety, and ignored artifacts

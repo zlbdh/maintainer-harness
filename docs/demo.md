@@ -20,6 +20,15 @@ The point is not to make agents more autonomous. The point is to make their work
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 
+.\scripts\checks\run-review-demo.ps1
+```
+
+That command runs the demo checks and writes a sanitized first-run feedback
+draft under `reports/first-run/`.
+
+To run the checks manually:
+
+```powershell
 .\scripts\checks\validate-repos.ps1
 .\scripts\bootstrap\verify-workspace.ps1
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change

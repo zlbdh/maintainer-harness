@@ -61,6 +61,7 @@ This project follows a simple date-based changelog until formal versioned releas
   workflow.
 - `v0.1.13` release anchor for the worker-output reviewability and readiness
   monitor package.
+- One-command review demo runner for outside first-run feedback.
 
 ### Changed
 

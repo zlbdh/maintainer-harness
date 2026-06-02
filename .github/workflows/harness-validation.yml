@@ -61,6 +61,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/validate-external-feedback-evidence.ps1
 
+      - name: Exercise review demo runner
+        shell: pwsh
+        run: ./scripts/checks/run-review-demo.ps1 -SkipCommandExecution -PassThru | ConvertTo-Json -Depth 5
+
       - name: Report Codex for OSS readiness
         if: matrix.os == 'windows-latest'
         shell: pwsh

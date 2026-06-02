@@ -10,6 +10,13 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **Project site:** https://zlbdh.github.io/maintainer-harness/
 
+**Share or star:** if the demo is useful, share the project site or star the
+repository so other maintainers can find it. Feedback is more valuable than a
+vanity metric; the best starting points are issue
+[#5](https://github.com/zlbdh/maintainer-harness/issues/5) for reviewability
+feedback and issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6)
+for first-run friction.
+
 It does not replace your product repositories. It keeps the operational layer around them auditable:
 
 - change intake

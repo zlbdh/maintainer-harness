@@ -56,3 +56,15 @@ https://zlbdh.github.io/maintainer-harness/
 ```text
 For maintainers using Codex or other coding agents: what evidence would make a worker output reviewable enough for you to accept, reject, or request changes?
 ```
+
+## Star-Safe CTA
+
+Use this only after giving people the demo link or asking for feedback:
+
+```text
+If this workflow is useful, a star helps other maintainers discover it. The most helpful response is still feedback on what evidence would make agent output reviewable.
+```
+
+Avoid asking for star trades, bulk upvotes, automated engagement, or support
+from people who have not seen the project. The project is stronger when stars
+come from people who understand what the harness is trying to make safer.

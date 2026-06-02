@@ -210,6 +210,34 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 
 Record links, comments, and follow-up items in `docs/launch-log.md`.
 
+## 48-Hour Star And Feedback Sprint
+
+Use this when the project needs a quick credibility lift before an application
+review. It is intentionally feedback-first: stars are a discovery signal, not
+the ask that opens the conversation.
+
+| Window | Action | Copy Anchor | Evidence To Record |
+| --- | --- | --- | --- |
+| Hour 0 | Pin the repository on the GitHub profile UI. | "Open source control plane for agent-assisted maintenance." | Screenshot or profile URL in the launch log. |
+| Hour 1 | Send the share page to 3-5 maintainers or devtools builders who can critique the workflow. | "Could you tell me what evidence would make this worker output reviewable?" | Names omitted if private; record channel and feedback theme. |
+| Hour 4 | Post the short X / Twitter copy with the project site. | Use the short post above. | Post URL and first replies. |
+| Hour 12 | Share the LinkedIn draft with a feedback question. | "What would you need before trusting an agent's worker output?" | Post URL and comments. |
+| Hour 24 | Convert useful replies into GitHub issues or roadmap notes. | Link issue #5, #6, or #7. | Issue URLs and follow-up owner. |
+| Hour 36 | Publish a small update if feedback produced a concrete change. | "Here is what changed after first-run feedback." | Commit, release, or issue link. |
+| Hour 48 | Review stars, forks, comments, and traffic. | No vanity claims; report the numbers as-is. | Update `docs/launch-log.md`. |
+
+Good star wording:
+
+```text
+If this workflow is useful, a star helps other maintainers find it. Feedback on the demo is even more useful right now.
+```
+
+Do not use:
+
+```text
+Star-for-star, paid stars, bot engagement, private group upvote requests, or "please star even if you have not tried it."
+```
+
 ## Metrics To Track
 
 - stars and forks

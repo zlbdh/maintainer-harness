@@ -15,6 +15,7 @@ $firstRunScript = Join-HarnessPath $repoRoot 'scripts/checks/write-first-run-rep
 $reviewKitUrl = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
 $reviewabilityUrl = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
 $firstRunIssueUrl = 'https://github.com/zlbdh/maintainer-harness/issues/6'
+$externalReviewUrl = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
 
 $arguments = @{
     PassThru = $true
@@ -38,6 +39,7 @@ $result = [pscustomobject]@{
     status = $status
     first_run_report_path = $report.path
     first_run_issue = $firstRunIssueUrl
+    external_review_path = $externalReviewUrl
     review_kit = $reviewKitUrl
     reviewability_example = $reviewabilityUrl
     passed_count = [int]$report.passed_count
@@ -50,6 +52,7 @@ Write-Host 'Maintainer Harness review demo complete.'
 Write-Host "Status: $status"
 Write-Host "First-run report: $($result.first_run_report_path)"
 Write-Host "First-run feedback issue: $firstRunIssueUrl"
+Write-Host "External review templates: $externalReviewUrl"
 Write-Host "Review kit: $reviewKitUrl"
 Write-Host "Worker output example: $reviewabilityUrl"
 Write-Host ''

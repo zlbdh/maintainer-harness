@@ -91,7 +91,9 @@ what to share publicly; the project should not create feedback on their behalf.
 For automatic readiness counting, the preferred public target is a comment on
 issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
 The generated report includes a shorter `Copy This Comment Into Issue #6`
-section for public posting.
+section for public posting and links the external review page with copy-ready
+issue `#5` and issue `#6` templates:
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
 Record each useful response in `docs/launch-log.md` or a GitHub issue:
 

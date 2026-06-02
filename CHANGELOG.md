@@ -95,6 +95,8 @@ This project follows a simple date-based changelog until formal versioned releas
   comment templates for real outside reviewers.
 - README and project site now surface the outside reviewer action path more
   directly before the star-safe CTA.
+- One-command review demo and generated first-run reports now point reviewers
+  to the external review templates after the demo run.
 
 ## 2026-06-01
 

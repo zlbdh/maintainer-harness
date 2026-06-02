@@ -28,7 +28,9 @@ draft under `reports/first-run/`.
 For the public readiness monitor, paste the reviewed report as a comment on
 issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
 The report includes a `Copy This Comment Into Issue #6` section for a shorter
-public first-run comment.
+public first-run comment. It also links the external review page with
+copy-ready issue `#5` and issue `#6` comment templates:
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
 To run the checks manually:
 

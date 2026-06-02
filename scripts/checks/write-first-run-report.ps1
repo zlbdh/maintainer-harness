@@ -158,6 +158,7 @@ $report = [pscustomobject]@{
     generated_at = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
     issue_url = 'https://github.com/zlbdh/maintainer-harness/issues/6'
     template_url = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
+    external_review_url = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     environment = $environment
     passed_count = $passed.Count
     failed_count = $failed.Count
@@ -216,6 +217,9 @@ $lines = @(
     '',
     'Optional fallback: create a new issue with the first-run feedback template if a separate thread is clearer:',
     $report.template_url,
+    '',
+    'External review page with copy-ready issue #5 and issue #6 comment templates:',
+    $report.external_review_url,
     '',
     '## Copy This Comment Into Issue #6',
     '',
@@ -283,6 +287,7 @@ Write-HarnessTextFile -Path $OutPath -Content ($lines -join [Environment]::NewLi
 
 Write-Host "First-run report: $OutPath"
 Write-Host "Passed: $($passed.Count); Failed: $($failed.Count); Skipped: $($skipped.Count)"
+Write-Host "External review templates: $($report.external_review_url)"
 
 if ($PassThru) {
     return $report

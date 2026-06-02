@@ -156,7 +156,8 @@ $skipped = @($results | Where-Object { $_.status -eq 'SKIP' })
 
 $report = [pscustomobject]@{
     generated_at = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
-    issue_url = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
+    issue_url = 'https://github.com/zlbdh/maintainer-harness/issues/6'
+    template_url = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
     environment = $environment
     passed_count = $passed.Count
     failed_count = $failed.Count
@@ -176,8 +177,11 @@ $lines = @(
     '',
     "Generated: $($report.generated_at)",
     '',
-    'Paste this into the first-run feedback issue if you want to share friction:',
+    'Preferred sharing target: paste this as a comment on the pinned first-run issue so the public readiness monitor can count it automatically:',
     $report.issue_url,
+    '',
+    'Optional fallback: create a new issue with the first-run feedback template if a separate thread is clearer:',
+    $report.template_url,
     '',
     '## Environment',
     '',

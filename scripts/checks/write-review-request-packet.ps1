@@ -60,6 +60,9 @@ If you run the demo, this command generates a paste-ready local report:
 
 Public first-run reports go here:
 $($links.FirstRunIssue)
+
+If a separate thread is clearer, the template is here:
+$($links.FirstRunTemplate)
 "@
 
 $securityRequest = @"
@@ -114,7 +117,8 @@ $lines = @(
     '',
     '## Evidence Tracking Checklist',
     '',
-    '- If the response is public, add the URL to `docs/external-feedback-evidence.yaml` after verifying it.',
+    '- If the response is a comment on issue `#6`, the readiness monitor can count it automatically.',
+    '- If the response is public somewhere else, add the URL to `docs/external-feedback-evidence.yaml` after verifying it.',
     '- If the response is private, summarize the theme in `docs/launch-log.md` only if it does not reveal private names or private repo details.',
     '- If feedback produces a concrete change, create a public issue, commit, or release link before counting it as a follow-up artifact.',
     '- Keep stars secondary: feedback is the stronger signal.',

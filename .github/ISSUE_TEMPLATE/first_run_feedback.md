@@ -15,13 +15,11 @@ labels: "area:demo, area:feedback"
 ## Commands Tried
 
 ```powershell
-.\scripts\checks\validate-repos.ps1
-.\scripts\bootstrap\verify-workspace.ps1
-.\scripts\checks\validate-change.ps1 -Path examples\sample-change
-.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
-.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
-.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\run-review-demo.ps1
 ```
+
+The demo runner writes a sanitized report under `reports/first-run/`. You can
+paste the relevant sections here after reviewing them.
 
 ## Result
 

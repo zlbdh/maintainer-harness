@@ -24,6 +24,11 @@ The script checks the GitHub repository, latest main CI, latest Pages
 deployment, stars, public feedback comments, first-run reports, and manually
 recorded follow-up artifacts.
 
+External first-run reports are counted automatically when an outside reviewer
+comments on issue `#6`. Public reports elsewhere can still count after their
+URL is added as a verified `first-run-report` signal in
+`docs/external-feedback-evidence.yaml`.
+
 GitHub Actions also runs the readiness monitor on the Windows validation job
 with `GITHUB_TOKEN` and writes a non-blocking step summary. A score below 90
 stays visible but does not fail CI; CI failures are reserved for broken

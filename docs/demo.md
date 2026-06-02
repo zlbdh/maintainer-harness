@@ -25,6 +25,8 @@ cd maintainer-harness
 
 That command runs the demo checks and writes a sanitized first-run feedback
 draft under `reports/first-run/`.
+For the public readiness monitor, paste the reviewed report as a comment on
+issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
 
 To run the checks manually:
 

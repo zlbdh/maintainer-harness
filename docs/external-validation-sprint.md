@@ -79,12 +79,14 @@ https://zlbdh.github.io/maintainer-harness/
 Ask outside reviewers to run:
 
 ```powershell
-.\scripts\checks\write-first-run-report.ps1
+.\scripts\checks\run-review-demo.ps1
 ```
 
 The script writes an ignored Markdown draft under `reports/first-run/` with
 sanitized command output and the first-run issue link. Reviewers still decide
 what to share publicly; the project should not create feedback on their behalf.
+For automatic readiness counting, the preferred public target is a comment on
+issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
 
 Record each useful response in `docs/launch-log.md` or a GitHub issue:
 

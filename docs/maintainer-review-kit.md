@@ -43,6 +43,8 @@ To run each check manually:
 The final command writes a local Markdown report under `reports/first-run/`.
 Review it before sharing and remove secrets, private repository names, tokens,
 customer data, or production logs.
+For automatic 90% readiness counting, paste the report as a public comment on
+issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
 
 ## What Feedback Helps Most
 

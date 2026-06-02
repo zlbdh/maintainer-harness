@@ -43,6 +43,7 @@ $requiredPaths = @(
     'docs\codex-for-oss-submission-readiness.md',
     'docs\codex-for-oss-reviewer-brief.md',
     'docs\codex-for-oss-90-scorecard.md',
+    'docs\external-feedback-evidence.yaml',
     'docs\dogfooding-plan.md',
     'docs\external-validation-sprint.md',
     'docs\index.html',
@@ -142,6 +143,7 @@ $requiredPaths = @(
     '.agent\skills\postmortem-to-regression\SKILL.md',
     'scripts',
     'scripts\lib',
+    'scripts\lib\HarnessFeedbackEvidence.ps1',
     'scripts\lib\HarnessBaselineTools.ps1',
     'scripts\lib\HarnessPathScope.ps1',
     'scripts\bootstrap\clone-repos.ps1',
@@ -157,6 +159,7 @@ $requiredPaths = @(
     'scripts\checks\write-application-audit.ps1',
     'scripts\checks\write-first-run-report.ps1',
     'scripts\checks\measure-application-readiness.ps1',
+    'scripts\checks\validate-external-feedback-evidence.ps1',
     'scripts\checks\run-local-baseline.ps1'
 )
 

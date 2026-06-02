@@ -1,0 +1,18 @@
+signals:
+  # Record only public, reviewer-visible evidence here.
+  # Supported type values:
+  # - issue-comment
+  # - first-run-report
+  # - feedback-follow-up
+  #
+  # Supported status values:
+  # - pending
+  # - verified
+  #
+  # Example:
+  # - id: 2026-06-03-first-run-example
+  #   date: 2026-06-03
+  #   type: first-run-report
+  #   status: verified
+  #   url: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-example
+  #   summary: Outside maintainer ran the demo and reported first-run friction.

@@ -72,6 +72,7 @@ $requiredPublicPaths = @(
     'docs\codex-for-oss-submission-readiness.md',
     'docs\codex-for-oss-reviewer-brief.md',
     'docs\codex-for-oss-90-scorecard.md',
+    'docs\external-feedback-evidence.yaml',
     'docs\dogfooding-plan.md',
     'docs\external-validation-sprint.md',
     'docs\index.html',
@@ -123,10 +124,12 @@ $requiredPublicPaths = @(
     'examples\release-workflow\release\postmortem-ready.md',
     'repos\repos.yaml',
     'config\agent-registry.yaml',
+    'scripts\lib\HarnessFeedbackEvidence.ps1',
     'scripts\lib\HarnessPathScope.ps1',
     'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1',
     'scripts\checks\measure-application-readiness.ps1',
+    'scripts\checks\validate-external-feedback-evidence.ps1',
     'scripts\checks\write-first-run-report.ps1'
 )
 

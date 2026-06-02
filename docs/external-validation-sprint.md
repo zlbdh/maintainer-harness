@@ -88,6 +88,12 @@ Record each useful response in `docs/launch-log.md` or a GitHub issue:
 | Follow-up artifact | issue URL, commit URL, release URL |
 
 Private names are not required. Public URLs are stronger when available.
+For machine-readable scorekeeping, add public verified signals to
+`docs/external-feedback-evidence.yaml` and run:
+
+```powershell
+.\scripts\checks\validate-external-feedback-evidence.ps1
+```
 
 ## 90% Readiness Threshold
 

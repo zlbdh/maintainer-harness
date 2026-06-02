@@ -24,6 +24,11 @@ The script checks the GitHub repository, latest main CI, latest Pages
 deployment, stars, public feedback comments, first-run reports, and manually
 recorded follow-up artifacts.
 
+Public follow-up evidence is recorded in
+`docs/external-feedback-evidence.yaml` and validated by
+`scripts/checks/validate-external-feedback-evidence.ps1`. Only `verified`
+entries with public `https://` URLs count toward the score.
+
 ## Hard Gates
 
 | Gate | Required |

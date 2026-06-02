@@ -8,6 +8,7 @@ param(
     [int[]]$FeedbackIssueNumbers = @(5, 6, 7),
     [int]$FirstRunIssueNumber = 6,
     [int]$FeedbackFollowUpCount = 0,
+    [string]$EvidencePath = 'docs/external-feedback-evidence.yaml',
     [string]$GitHubToken = '',
     [switch]$PassThru
 )
@@ -16,6 +17,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 . (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
+. (Join-Path $PSScriptRoot '../lib/HarnessFeedbackEvidence.ps1')
 
 function Get-GitHubApiHeaders {
     param([string]$Token)
@@ -120,6 +122,17 @@ if ([string]::IsNullOrWhiteSpace($owner) -or [string]::IsNullOrWhiteSpace($repoN
 }
 
 $githubHeaders = Get-GitHubApiHeaders -Token $GitHubToken
+$evidenceSignals = @(Get-HarnessFeedbackEvidenceSignals -Path $EvidencePath)
+$verifiedEvidenceSignals = @($evidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'status') -and
+    ($_.status -eq 'verified') -and
+    ($_.PSObject.Properties.Name -contains 'url') -and
+    -not [string]::IsNullOrWhiteSpace([string]$_.url)
+})
+$verifiedEvidenceUrls = @{}
+foreach ($signal in $verifiedEvidenceSignals) {
+    $verifiedEvidenceUrls[[string]$signal.url] = $true
+}
 
 $repo = Get-GitHubJson -Url "https://api.github.com/repos/$Repository" -Headers $githubHeaders
 $mainCommit = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/commits/$($repo.default_branch)" -Headers $githubHeaders
@@ -135,6 +148,7 @@ $latestPagesRun = @($runs.workflow_runs) |
 $externalFeedbackComments = 0
 $externalFirstRunReports = 0
 $issueCommentBreakdown = @()
+$apiExternalCommentUrls = @{}
 
 foreach ($issueNumber in $FeedbackIssueNumbers) {
     $comments = @(Get-GitHubJson -Url "https://api.github.com/repos/$Repository/issues/$issueNumber/comments?per_page=100" -Headers $githubHeaders)
@@ -150,6 +164,11 @@ foreach ($issueNumber in $FeedbackIssueNumbers) {
     })
 
     $externalFeedbackComments += $external.Count
+    foreach ($comment in $external) {
+        if (($comment.PSObject.Properties.Name -contains 'html_url') -and $comment.html_url) {
+            $apiExternalCommentUrls[[string]$comment.html_url] = $true
+        }
+    }
     if ($issueNumber -eq $FirstRunIssueNumber) {
         $externalFirstRunReports += $external.Count
     }
@@ -159,6 +178,25 @@ foreach ($issueNumber in $FeedbackIssueNumbers) {
         external_comments = $external.Count
     }
 }
+
+$verifiedIssueCommentSignals = @($verifiedEvidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'type') -and
+    ($_.type -in @('issue-comment', 'first-run-report')) -and
+    -not $apiExternalCommentUrls.ContainsKey([string]$_.url)
+})
+$verifiedFirstRunSignals = @($verifiedEvidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'type') -and
+    ($_.type -eq 'first-run-report') -and
+    -not $apiExternalCommentUrls.ContainsKey([string]$_.url)
+})
+$verifiedFollowUpSignals = @($verifiedEvidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'type') -and
+    ($_.type -eq 'feedback-follow-up')
+})
+
+$externalFeedbackComments += $verifiedIssueCommentSignals.Count
+$externalFirstRunReports += $verifiedFirstRunSignals.Count
+$effectiveFeedbackFollowUpCount = $FeedbackFollowUpCount + $verifiedFollowUpSignals.Count
 
 $findings = New-Object System.Collections.Generic.List[object]
 
@@ -174,8 +212,8 @@ $findings.Add((New-ReadinessFinding -Status ($(if ($externalFeedbackComments -ge
 $firstRunPoints = Get-ClampedPoints -Value $externalFirstRunReports -Target $TargetExternalFirstRunReports -MaxPoints 10
 $findings.Add((New-ReadinessFinding -Status ($(if ($externalFirstRunReports -ge $TargetExternalFirstRunReports) { 'PASS' } else { 'FAIL' })) -Check 'external-first-run' -Detail ("{0}/{1} external first-run reports on issue #{2}" -f $externalFirstRunReports, $TargetExternalFirstRunReports, $FirstRunIssueNumber) -Points $firstRunPoints))
 
-$followUpPoints = Get-ClampedPoints -Value $FeedbackFollowUpCount -Target $TargetFeedbackFollowUps -MaxPoints 5
-$findings.Add((New-ReadinessFinding -Status ($(if ($FeedbackFollowUpCount -ge $TargetFeedbackFollowUps) { 'PASS' } else { 'FAIL' })) -Check 'feedback-follow-up' -Detail ("{0}/{1} feedback-driven issue or commit artifacts recorded" -f $FeedbackFollowUpCount, $TargetFeedbackFollowUps) -Points $followUpPoints))
+$followUpPoints = Get-ClampedPoints -Value $effectiveFeedbackFollowUpCount -Target $TargetFeedbackFollowUps -MaxPoints 5
+$findings.Add((New-ReadinessFinding -Status ($(if ($effectiveFeedbackFollowUpCount -ge $TargetFeedbackFollowUps) { 'PASS' } else { 'FAIL' })) -Check 'feedback-follow-up' -Detail ("{0}/{1} feedback-driven issue or commit artifacts recorded" -f $effectiveFeedbackFollowUpCount, $TargetFeedbackFollowUps) -Points $followUpPoints))
 
 $ciOk = $latestHarnessRun -and $latestHarnessRun.conclusion -eq 'success'
 $pagesOk = $latestPagesRun -and $latestPagesRun.conclusion -eq 'success'
@@ -188,7 +226,7 @@ $readyFor90 = (
     $repo.stargazers_count -ge $TargetStars -and
     $externalFeedbackComments -ge $TargetExternalFeedbackComments -and
     $externalFirstRunReports -ge $TargetExternalFirstRunReports -and
-    $FeedbackFollowUpCount -ge $TargetFeedbackFollowUps -and
+    $effectiveFeedbackFollowUpCount -ge $TargetFeedbackFollowUps -and
     $ciOk -and
     $pagesOk
 )
@@ -208,9 +246,16 @@ $result = [pscustomobject]@{
         open_issues = [int]$repo.open_issues_count
         external_feedback_comments = $externalFeedbackComments
         external_first_run_reports = $externalFirstRunReports
-        feedback_follow_up_count = $FeedbackFollowUpCount
+        feedback_follow_up_count = $effectiveFeedbackFollowUpCount
+        verified_evidence_signals = $verifiedEvidenceSignals.Count
     }
     issue_comment_breakdown = $issueCommentBreakdown
+    evidence_path = $EvidencePath
+    evidence_signal_breakdown = [pscustomobject]@{
+        verified_issue_comment_signals = $verifiedIssueCommentSignals.Count
+        verified_first_run_signals = $verifiedFirstRunSignals.Count
+        verified_follow_up_signals = $verifiedFollowUpSignals.Count
+    }
     latest_ci = New-WorkflowRunSummary $latestHarnessRun
     latest_pages = New-WorkflowRunSummary $latestPagesRun
     findings = $findings

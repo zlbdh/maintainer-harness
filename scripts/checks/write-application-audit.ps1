@@ -80,11 +80,14 @@ $supportEvidencePaths = @(
     @{ Check = 'reviewer-brief'; Path = 'docs\codex-for-oss-reviewer-brief.md'; Detail = 'Codex for OSS reviewer brief exists.' },
     @{ Check = 'readiness-scorecard'; Path = 'docs\codex-for-oss-90-scorecard.md'; Detail = '90% readiness scorecard exists.' },
     @{ Check = 'external-validation-sprint'; Path = 'docs\external-validation-sprint.md'; Detail = 'External validation sprint exists.' },
+    @{ Check = 'external-feedback-evidence'; Path = 'docs\external-feedback-evidence.yaml'; Detail = 'External feedback evidence registry exists.' },
     @{ Check = 'redaction-patterns'; Path = 'docs\security\redaction-patterns.md'; Detail = 'Validation report redaction guide exists.' },
     @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
     @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' },
     @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' },
+    @{ Check = 'feedback-evidence-lib'; Path = 'scripts\lib\HarnessFeedbackEvidence.ps1'; Detail = 'External feedback evidence parser exists.' },
     @{ Check = 'readiness-script'; Path = 'scripts\checks\measure-application-readiness.ps1'; Detail = 'Readiness measurement script exists.' },
+    @{ Check = 'feedback-evidence-validator'; Path = 'scripts\checks\validate-external-feedback-evidence.ps1'; Detail = 'External feedback evidence validator exists.' },
     @{ Check = 'first-run-report-script'; Path = 'scripts\checks\write-first-run-report.ps1'; Detail = 'First-run report generator exists.' }
 )
 
@@ -102,6 +105,13 @@ try {
     $findings.Add((New-AuditFinding -Status 'PASS' -Check 'workspace' -Detail 'Harness workspace validates.'))
 } catch {
     $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'workspace' -Detail $_.Exception.Message))
+}
+
+try {
+    & (Join-HarnessPath $repoRoot 'scripts/checks/validate-external-feedback-evidence.ps1') | Out-Null
+    $findings.Add((New-AuditFinding -Status 'PASS' -Check 'external-feedback-evidence-validation' -Detail 'External feedback evidence registry validates.'))
+} catch {
+    $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'external-feedback-evidence-validation' -Detail $_.Exception.Message))
 }
 
 if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {

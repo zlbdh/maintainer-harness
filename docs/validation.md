@@ -46,6 +46,16 @@ For automation:
 
 In a fresh public checkout, the harness itself should validate, while sample product repositories should report `missing-local-env` with warning-level baseline status until the maintainer replaces or clones them.
 
+## Sample Change Packet
+
+The synthetic sample packet is part of the public demo path:
+
+```powershell
+.\scripts\checks\validate-change.ps1 -Path examples\sample-change
+```
+
+GitHub Actions also runs this check so the demo cannot drift silently.
+
 ## Public Readiness
 
 Before applying to an open source support program, run:

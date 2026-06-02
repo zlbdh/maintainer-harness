@@ -14,6 +14,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Full-support Codex for OSS application wording covering API credits, ChatGPT Pro with Codex, and Codex Security.
 - Paste-ready Codex Security project overview aligned to entry points, trust boundaries, sensitive data paths, privileged actions, and review priorities.
 - Public 30-day dogfooding plan for API-credit-backed maintainer workflows.
+- Demo transcript and launch kit for policy-safe open source discovery.
+- Complete synthetic sample change packet that validates from a clean checkout.
 
 ### Changed
 
@@ -22,6 +24,9 @@ This project follows a simple date-based changelog until formal versioned releas
 - MCP catalog owner scope is generic for open source maintainers.
 - Public release docs now include security posture checks.
 - README now surfaces CI, license, and security posture badges.
+- README now includes a 90-second try path and clearer maintainer audience positioning.
+- Suggested GitHub topics now include developer-tools, GitHub Actions, security tooling, and CLI tooling discovery terms.
+- GitHub Actions now validates the synthetic sample change packet.
 
 ## 2026-06-01
 

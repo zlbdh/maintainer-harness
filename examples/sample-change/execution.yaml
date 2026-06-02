@@ -1,13 +1,49 @@
 change_id: CHG-2026-0001-sample-docs-validation
-mode: serial
-tasks:
-  - id: docs
-    owner: knowledge-agent
-    write_scope:
+title: Sample documentation validation workflow
+stage: verification
+stage_owner: verification-agent
+repo_owners:
+  control_repo: change-intake-agent
+  harness: knowledge-agent
+write_scopes:
+  control_repo:
+    owner: change-intake-agent
+    files:
+      - brief.md
+      - impact.yaml
+      - execution.yaml
+      - design.md
+      - acceptance.md
+      - verification/result.md
+  business_repos:
+    harness:
       - README.md
       - docs/**
       - examples/**
-    validation:
-      - .\scripts\checks\validate-repos.ps1
-      - .\scripts\bootstrap\verify-workspace.ps1
-
+depends_on: []
+branch:
+  control_repo: main
+  harness: main
+worktree:
+  control_repo: .
+  harness: .
+snapshot_policy:
+  control_repo: none
+  harness: none
+runtime_type:
+  control_repo: main-agent
+  harness: worker
+registry_ref:
+  control_repo: change-intake-agent
+  harness: knowledge-agent
+worker_result:
+  harness: verification/workers/harness.md
+review_result:
+  harness: verification/result.md
+lock_state:
+  control_repo: unlocked
+  business_repos:
+    harness: unlocked
+snapshot_at: ""
+notes:
+  - "Synthetic example only; no product repository is required."

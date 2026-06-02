@@ -1,0 +1,192 @@
+# Launch Kit
+
+This kit is for growing real open source discovery without buying stars, asking for fake upvotes, or creating inauthentic engagement. The goal is simple: make the project easy to understand, easy to try, and easy to give feedback on.
+
+## Ground Rules
+
+- Do not buy stars, use bots, trade stars, or ask friends to upvote.
+- Ask for feedback, not vanity metrics.
+- Share the repository only where maintainer tooling, agent workflows, CI, or open source release process are on topic.
+- Make it easy to try the project before asking anyone to care about it.
+- Be clear that the project is early and uses synthetic examples.
+
+Useful public rules:
+
+- GitHub topics help people discover repositories by purpose and subject: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
+- GitHub allows project-related README and description text, but inauthentic activity is risky: https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies
+- Show HN is for things people can try, and the rules say not to ask friends to upvote or comment: https://news.ycombinator.com/showhn.html
+
+## Repository Pitch
+
+Short description:
+
+```text
+Auditable control plane for agent-assisted open source maintenance workflows.
+```
+
+One-liner:
+
+```text
+Maintainer Harness turns agent work into scoped change packets, validation evidence, and release-ready review trails.
+```
+
+Longer version:
+
+```text
+Maintainer Harness is an open source control plane for maintainers using Codex or other agents. Instead of starting from vague chat, each change gets a brief, impact map, execution plan, bounded worker task cards, validation evidence, and release gates. The sample workflow is synthetic, so maintainers can inspect the pattern before connecting real repositories.
+```
+
+## Launch Targets
+
+| Channel | Best Use | Draft |
+| --- | --- | --- |
+| GitHub profile pinned repo | Make the project visible from the maintainer profile. | Pin `maintainer-harness` and keep the description short. |
+| Hacker News Show HN | Ask technical maintainers for feedback after the demo path is clear. | Use the Show HN draft below. |
+| X / Twitter | Short technical hook and repository link. | Use the short post or thread below. |
+| LinkedIn | Maintainer story and open source process angle. | Use the LinkedIn draft below. |
+| Reddit or forum posts | Ask for workflow critique in relevant maintainer/devtools communities. | Use the feedback request below. |
+| GitHub issues | Show an active public roadmap. | Keep issues specific and acceptance-driven. |
+
+## Show HN Draft
+
+Title:
+
+```text
+Show HN: Maintainer Harness - scoped change packets for agent-assisted OSS work
+```
+
+Text:
+
+```text
+I built Maintainer Harness because agent-assisted maintenance often loses the boring but important parts: scope, evidence, review boundaries, and release notes.
+
+The repo is a file-based control plane. A change becomes a brief, impact map, execution plan, worker task cards, validation evidence, and release gates. It is intentionally early and uses synthetic sample repositories so people can try the pattern without connecting private code.
+
+The security surface is also part of the project: explicit worker write scopes, read-only MCP blueprints, ignored generated worktrees/reports, and CI checks for public readiness and security posture.
+
+Demo path:
+
+git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+.\scripts\checks\validate-repos.ps1
+.\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+
+I would like feedback from maintainers who have tried using agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?
+```
+
+## X / Twitter Short Post
+
+```text
+I published Maintainer Harness: a small open source control plane for agent-assisted maintenance.
+
+It turns Codex/agent work into:
+- change briefs
+- impact maps
+- scoped worker tasks
+- validation evidence
+- release gates
+
+Early, synthetic, and CI-gated:
+https://github.com/zlbdh/maintainer-harness
+```
+
+## X / Twitter Thread
+
+```text
+1/ I published Maintainer Harness, an open source control plane for maintainers using Codex or other coding agents.
+
+The problem it targets is not "can an agent write code?"
+It is: where did the scope, evidence, and release decision go?
+
+2/ Each change becomes files:
+- brief.md
+- impact.yaml
+- execution.yaml
+- task cards
+- validation evidence
+- release notes
+
+That makes worker output easier to review and reject.
+
+3/ The first security boundary is intentionally boring:
+- explicit allowed paths
+- read-only MCP blueprints
+- ignored product checkouts
+- ignored generated reports/worktrees
+- public readiness and security posture checks in CI
+
+4/ The repo is early and uses synthetic examples. That is deliberate. Maintainers can inspect the workflow before connecting real repositories.
+
+Demo:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+
+5/ I would love feedback from OSS maintainers who have tried agent-assisted PR review or release work:
+
+What evidence would make a worker output reviewable enough for you?
+```
+
+## LinkedIn Draft
+
+```text
+I published Maintainer Harness, an open source control plane for agent-assisted maintenance.
+
+The project came from a simple problem: coding agents can produce work quickly, but maintainers still need scope, evidence, review boundaries, and release notes.
+
+Maintainer Harness keeps those pieces in files:
+
+- change brief
+- cross-repo impact map
+- execution plan
+- bounded worker task cards
+- validation evidence
+- release gates
+- security posture checks
+
+The first release is intentionally early and uses synthetic repositories. That lets maintainers inspect the pattern before connecting private code.
+
+I am especially interested in feedback from people who maintain multi-repo projects or have tried using agents for PR review and release work.
+
+What would you need to see before trusting an agent's worker output?
+
+https://github.com/zlbdh/maintainer-harness
+
+#opensource #maintainers #codex #developerexperience
+```
+
+## Forum Feedback Request
+
+```text
+I am looking for feedback on an early open source maintainer tool:
+https://github.com/zlbdh/maintainer-harness
+
+It is a file-based control plane for agent-assisted maintenance. Instead of letting an agent work from chat alone, it creates a change brief, impact map, execution plan, bounded task cards, validation evidence, and release gates.
+
+The repo is intentionally synthetic for now, so it can be tried without private code. The highest-risk areas are agent write scopes, read-only MCP context, ignored generated artifacts, and evidence handling before releases.
+
+For people who maintain OSS projects: what would make this workflow useful enough to try on a real issue?
+```
+
+## Seven-Day Launch Checklist
+
+| Day | Action | Success Signal |
+| --- | --- | --- |
+| 1 | Pin the repo on the GitHub profile and verify topics. | Profile visitors can find it. |
+| 1 | Post the X short post. | At least one maintainer comment or repost. |
+| 2 | Share the LinkedIn post. | Feedback from devtools/open source contacts. |
+| 3 | Submit Show HN if the maintainer can stay online to answer questions. | Technical feedback, not just stars. |
+| 4 | Turn feedback into GitHub issues. | Public roadmap becomes more specific. |
+| 5 | Add one synthetic workflow improvement from feedback. | A visible commit tied to feedback. |
+| 6 | Post a short update with what changed. | Shows the project is maintained. |
+| 7 | Review stars, forks, issues, traffic, and comments. | Decide next launch topic. |
+
+## Metrics To Track
+
+- stars and forks
+- issue comments from real maintainers
+- clone count and referral traffic from GitHub Insights
+- release downloads if assets are added later
+- number of feedback items converted into roadmap issues
+- validation failures found by outside users
+
+Stars are a signal, not the goal. The stronger signal is whether maintainers can try the workflow and tell you what would make it trustworthy.

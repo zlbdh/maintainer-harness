@@ -4,11 +4,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Security posture](https://img.shields.io/badge/security%20posture-CI%20gated-green)](docs/security/security-review-checklist.md)
 
-Maintainer Harness is a lightweight control plane for open source maintainers who want agent-assisted work to stay auditable, bounded, and reproducible.
+Maintainer Harness is a lightweight control plane for open source maintainers who want Codex and other agents to work from scoped packets instead of vague chat.
 
 **Status:** early public-ready project. The current repository uses synthetic sample repositories so maintainers can inspect the workflow before connecting real projects.
 
-It does not replace your product repositories. It keeps the operational layer around them:
+It does not replace your product repositories. It keeps the operational layer around them auditable:
 
 - change intake
 - cross-repository impact analysis
@@ -19,6 +19,19 @@ It does not replace your product repositories. It keeps the operational layer ar
 - reusable maintainer skills
 
 The project is intentionally repository-agnostic. The default configuration uses sample repositories under `repos/repos.yaml`; replace those entries with your own repositories before running real maintenance workflows.
+
+## Try It In 90 Seconds
+
+The default sample change is synthetic and safe to run in a clean checkout:
+
+```powershell
+.\scripts\checks\validate-repos.ps1
+.\scripts\bootstrap\verify-workspace.ps1
+.\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+```
+
+That flow checks the harness, validates a complete sample change packet, and confirms the public security posture. See `docs/demo.md` for a short transcript.
 
 ## Why This Exists
 
@@ -31,6 +44,15 @@ Agent-assisted maintenance often fails for ordinary reasons:
 - project knowledge stays trapped in chat history
 
 This harness turns those risks into files, checks, and repeatable commands.
+
+## Who This Is For
+
+- maintainers coordinating fixes across multiple repositories
+- open source projects trying agent-assisted PR review without losing auditability
+- teams that want workers to receive explicit write scopes and validation commands
+- contributors who need clear evidence before a release decision
+
+It is not a hosted product, a replacement for project-specific CI, or a way to bypass human review.
 
 ## Core Concepts
 
@@ -139,6 +161,8 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
+- `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
+- `docs/launch-kit.md`: policy-safe launch copy and outreach plan for real open source discovery
 - `docs/security/`: threat model, Codex Security project overview, review scope, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows

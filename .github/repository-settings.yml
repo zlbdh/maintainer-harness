@@ -13,6 +13,10 @@ topics:
   - automation
   - pull-request-review
   - release-workflows
+  - developer-tools
+  - github-actions
+  - security-tools
+  - cli-tools
 features:
   issues: true
   projects: false

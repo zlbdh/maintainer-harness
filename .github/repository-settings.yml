@@ -3,8 +3,8 @@
 # This file is documentation for maintainers. It is not applied automatically.
 
 name: maintainer-harness
-description: Auditable control plane for agent-assisted open source maintenance workflows.
-homepage: ""
+description: Scoped change packets for agent-assisted open source maintenance.
+homepage: "https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md"
 topics:
   - codex
   - maintainer-tools

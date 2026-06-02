@@ -21,7 +21,7 @@ Useful public rules:
 Short description:
 
 ```text
-Auditable control plane for agent-assisted open source maintenance workflows.
+Scoped change packets for agent-assisted open source maintenance.
 ```
 
 One-liner:
@@ -40,12 +40,19 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 
 | Channel | Best Use | Draft |
 | --- | --- | --- |
-| GitHub profile pinned repo | Make the project visible from the maintainer profile. | Pin `maintainer-harness` and keep the description short. |
+| GitHub profile pinned repo | Make the project visible from the maintainer profile. | Pin `maintainer-harness` manually from the GitHub profile UI; the public API does not expose profile pinning. |
 | Hacker News Show HN | Ask technical maintainers for feedback after the demo path is clear. | Use the Show HN draft below. |
 | X / Twitter | Short technical hook and repository link. | Use the short post or thread below. |
 | LinkedIn | Maintainer story and open source process angle. | Use the LinkedIn draft below. |
 | Reddit or forum posts | Ask for workflow critique in relevant maintainer/devtools communities. | Use the feedback request below. |
 | GitHub issues | Show an active public roadmap. | Keep issues specific and acceptance-driven. |
+
+Current public launch anchors:
+
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.1
+- Passing launch-ready CI run: https://github.com/zlbdh/maintainer-harness/actions/runs/26809709826
+- Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
+- Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 
 ## Show HN Draft
 
@@ -171,7 +178,7 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 
 | Day | Action | Success Signal |
 | --- | --- | --- |
-| 1 | Pin the repo on the GitHub profile and verify topics. | Profile visitors can find it. |
+| 1 | Pin the repo on the GitHub profile through the GitHub UI and verify topics. | Profile visitors can find it. |
 | 1 | Post the X short post. | At least one maintainer comment or repost. |
 | 2 | Share the LinkedIn post. | Feedback from devtools/open source contacts. |
 | 3 | Submit Show HN if the maintainer can stay online to answer questions. | Technical feedback, not just stars. |

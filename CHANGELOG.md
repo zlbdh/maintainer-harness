@@ -16,6 +16,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public 30-day dogfooding plan for API-credit-backed maintainer workflows.
 - Demo transcript and launch kit for policy-safe open source discovery.
 - Complete synthetic sample change packet that validates from a clean checkout.
+- Public feedback issue and `v0.1.1` launch-ready release anchors in launch materials.
 
 ### Changed
 
@@ -27,6 +28,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - README now includes a 90-second try path and clearer maintainer audience positioning.
 - Suggested GitHub topics now include developer-tools, GitHub Actions, security tooling, and CLI tooling discovery terms.
 - GitHub Actions now validates the synthetic sample change packet.
+- Suggested repository metadata now points visitors to the demo path.
 
 ## 2026-06-01
 

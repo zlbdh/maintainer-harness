@@ -18,6 +18,7 @@ The application is positioned around maintainership value rather than popularity
 | Security care | `SECURITY.md`, `docs/security/`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, and publication hygiene explicit. |
 | Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, and `docs/security/security-review-checklist.md` define the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
+| Public launch readiness | `docs/demo.md`, `docs/launch-kit.md`, the `v0.1.1` release, and issue `#5` make the repository easier to try, share, and critique without artificial star growth. |
 
 ## Why This Is Useful Despite Early Adoption
 
@@ -42,6 +43,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The repository includes public hygiene controls before submission.
 - Codex Security is useful because the project coordinates agents, MCP context, generated worktrees, validation evidence, and release gates.
 - The full-support request is backed by public artifacts: CI, issue templates, a dogfooding plan, a Codex Security project overview, and a security posture gate.
+- The repository has a policy-safe launch path: a validated demo, a launch-ready release, GitHub topics, and a public feedback issue.
 
 ## Publication Gate
 

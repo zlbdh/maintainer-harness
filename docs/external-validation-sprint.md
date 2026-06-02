@@ -40,7 +40,8 @@ Use `docs/maintainer-review-kit.md` as the shortest public reviewer handoff.
 It gives maintainers a five-minute path to inspect, run, or security-review the
 workflow without needing private repository context.
 Use `https://zlbdh.github.io/maintainer-harness/external-review.html` when a
-reviewer needs one web page with the four public signal actions.
+reviewer needs one web page with the four public signal actions and short
+copy-ready comment templates for issue `#5` and issue `#6`.
 For local copy-paste request drafts, run
 `scripts/checks/write-review-request-packet.ps1`.
 

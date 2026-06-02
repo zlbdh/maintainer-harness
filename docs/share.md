@@ -33,6 +33,7 @@ cd maintainer-harness
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
+- Copy-ready review comments: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow

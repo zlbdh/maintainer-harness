@@ -6,6 +6,9 @@ critique. The goal is real feedback, not artificial engagement.
 For a web-first handoff, use:
 https://zlbdh.github.io/maintainer-harness/external-review.html
 
+That page also includes copy-ready comment templates for issue `#5` and issue
+`#6`. Please use them only after inspecting the project or running the demo.
+
 To generate a local copy-paste request packet, run:
 
 ```powershell

@@ -36,6 +36,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - First Codex Security review pass under `docs/security/codex-security-review-pass-2026-06-02.md`.
 - Shared path-scope helper for review-worker output checks.
 - `v0.1.7` release anchor for the first Codex Security review pass.
+- First-run feedback and worker-output reviewability issue templates.
+- `v0.1.8` release anchor for feedback conversion templates.
 
 ### Changed
 
@@ -50,6 +52,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Suggested repository metadata now points visitors to the demo path.
 - Suggested repository metadata now points visitors to the GitHub Pages project site.
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
+- Public readiness checks now require the feedback-specific issue templates.
 
 ## 2026-06-01
 

@@ -65,6 +65,8 @@ $requiredPublicPaths = @(
     '.github\ISSUE_TEMPLATE\config.yml',
     '.github\ISSUE_TEMPLATE\bug_report.md',
     '.github\ISSUE_TEMPLATE\feature_request.md',
+    '.github\ISSUE_TEMPLATE\first_run_feedback.md',
+    '.github\ISSUE_TEMPLATE\worker_output_reviewability.md',
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
     'docs\dogfooding-plan.md',

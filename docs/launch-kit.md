@@ -47,7 +47,7 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 | X / Twitter | Short technical hook and repository link. | Use the short post or thread below. |
 | LinkedIn | Maintainer story and open source process angle. | Use the LinkedIn draft below. |
 | Reddit or forum posts | Ask for workflow critique in relevant maintainer/devtools communities. | Use the feedback request below. |
-| GitHub issues | Show an active public roadmap. | Keep issues specific and acceptance-driven. |
+| GitHub issues | Show an active public roadmap. | Keep issues `#5` and `#6` pinned so outside maintainers can find feedback and first-run paths quickly. |
 
 Current public launch anchors:
 
@@ -57,6 +57,8 @@ Current public launch anchors:
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
+- Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow

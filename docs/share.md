@@ -33,6 +33,8 @@ cd maintainer-harness
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.8
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
+- Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - First-run feedback template: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg

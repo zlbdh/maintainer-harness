@@ -55,6 +55,9 @@ Current public launch anchors:
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+- Share page: https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md
+- Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
+- Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
 - GitHub profile README: https://github.com/zlbdh/zlbdh
 
 ## Show HN Draft
@@ -190,6 +193,8 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 | 5 | Invite one contributor to try issue #6 and report first-run friction. | The first contribution path is tested by someone outside the maintainer loop. |
 | 6 | Post a short update with what changed. | Shows the project is maintained. |
 | 7 | Review stars, forks, issues, traffic, and comments. | Decide next launch topic. |
+
+Record links, comments, and follow-up items in `docs/launch-log.md`.
 
 ## Metrics To Track
 

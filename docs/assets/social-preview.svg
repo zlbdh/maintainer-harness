@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Maintainer Harness social preview</title>
+  <desc id="desc">Scoped change packets for agent-assisted open source maintenance.</desc>
+  <rect width="1200" height="630" fill="#101418"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="#f7f4ec"/>
+  <rect x="94" y="94" width="1012" height="442" rx="18" fill="#ffffff" stroke="#1f2937" stroke-width="3"/>
+  <g transform="translate(124 124)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#0f766e"/>
+    <text x="90" y="29" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">OPEN SOURCE</text>
+  </g>
+  <text x="124" y="245" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="800" fill="#111827">Maintainer Harness</text>
+  <text x="128" y="306" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600" fill="#374151">Scoped change packets for agent-assisted maintenance</text>
+  <g transform="translate(128 365)" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#111827">
+    <rect x="0" y="0" width="252" height="56" rx="10" fill="#dbeafe"/>
+    <text x="22" y="36">change brief</text>
+    <rect x="272" y="0" width="238" height="56" rx="10" fill="#dcfce7"/>
+    <text x="294" y="36">impact map</text>
+    <rect x="530" y="0" width="254" height="56" rx="10" fill="#fef3c7"/>
+    <text x="552" y="36">worker scope</text>
+    <rect x="804" y="0" width="148" height="56" rx="10" fill="#fee2e2"/>
+    <text x="826" y="36">CI gates</text>
+  </g>
+  <g transform="translate(128 462)" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#4b5563">
+    <text x="0" y="0">github.com/zlbdh/maintainer-harness</text>
+    <text x="0" y="38">Demo, release, feedback issue, and good first issue included.</text>
+  </g>
+  <g transform="translate(920 120)">
+    <circle cx="66" cy="66" r="64" fill="#111827"/>
+    <path d="M36 66h60M66 36v60" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="66" cy="66" r="24" fill="#0f766e"/>
+  </g>
+</svg>

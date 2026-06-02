@@ -19,6 +19,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public feedback issue and `v0.1.1` launch-ready release anchors in launch materials.
 - GitHub profile README anchor for Maintainer Harness visibility.
 - Project-specific GitHub labels and a good-first-issue demo feedback path.
+- Share page, launch log, and social preview asset for public launch posts.
 
 ### Changed
 

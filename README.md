@@ -20,6 +20,8 @@ It does not replace your product repositories. It keeps the operational layer ar
 
 The project is intentionally repository-agnostic. The default configuration uses sample repositories under `repos/repos.yaml`; replace those entries with your own repositories before running real maintenance workflows.
 
+![Maintainer Harness social preview](docs/assets/social-preview.svg)
+
 ## Try It In 90 Seconds
 
 The default sample change is synthetic and safe to run in a clean checkout:
@@ -163,6 +165,9 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
 - `docs/launch-kit.md`: policy-safe launch copy and outreach plan for real open source discovery
+- `docs/share.md`: compact share page with demo commands and canonical links
+- `docs/launch-log.md`: public launch action and metrics tracking
+- `docs/assets/social-preview.svg`: social preview card for launch posts
 - `docs/security/`: threat model, Codex Security project overview, review scope, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows

@@ -16,6 +16,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
+| 90% readiness scorecard | `docs/codex-for-oss-90-scorecard.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
 | External validation sprint | `docs/external-validation-sprint.md` |
 | Demo path | `docs/demo.md` |
@@ -57,9 +58,12 @@ $pattern = '<private-name>|<private-remote>|<local-path>|<private-role>'
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern $pattern
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern $pattern
 .\scripts\checks\write-application-audit.ps1 -SensitivePattern $pattern
+.\scripts\checks\measure-application-readiness.ps1
 ```
 
 The current application audit is passing in the ignored report directory.
+The readiness score intentionally exits non-zero until the 90% external-signal
+gate is reached.
 
 ## Manual Web Form Step
 

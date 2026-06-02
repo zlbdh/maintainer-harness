@@ -18,6 +18,7 @@ The application is positioned around maintainership value rather than popularity
 | Security care | `SECURITY.md`, `docs/security/`, `docs/security/redaction-patterns.md`, `standards/global/mcp-safety.md`, `mcp/`, `.gitignore`, `scripts/checks/check-public-ready.ps1`, and `scripts/checks/check-security-posture.ps1` keep write access, secrets, validation evidence redaction, and publication hygiene explicit. |
 | Codex Security review | `docs/security/threat-model.md`, `docs/security/codex-security-project-overview.md`, `docs/security/codex-security-scope.md`, `docs/security/codex-security-review-pass-2026-06-02.md`, and `docs/security/security-review-checklist.md` define and exercise the review surface for agent write scopes, MCP read-only guarantees, generated worktrees, validation evidence, and release gates. |
 | Reviewer readiness | `docs/codex-for-oss-reviewer-brief.md` gives a short reviewer-facing case for full support, including current metrics, why early-stage support is still useful, and 30/60/90 day public commitments. |
+| 90% scorecard | `docs/codex-for-oss-90-scorecard.md` and `scripts/checks/measure-application-readiness.ps1` define the hard external-signal gates before asking the maintainer to submit the form. |
 | Public dogfooding plan | `docs/dogfooding-plan.md` defines the first 30 days of API-credit-backed public maintainer workflows and avoids unsupported adoption claims. |
 | Public dogfooding evidence | `docs/dogfooding-runs/2026-06-02-application-hardening.md` records the first Codex-assisted application hardening run, produced artifacts, validation gates, and remaining weak signals. |
 | External validation plan | `docs/external-validation-sprint.md` defines the honest path for turning weak external usage into public maintainer feedback, first-run reports, and star-safe discovery signals. |
@@ -56,7 +57,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The latest public site and launch materials include a star-safe call to action: ask for demo feedback first, and present stars only as an honest discovery signal for maintainers who find the workflow useful.
 - The reviewer brief gives the application a short, auditable narrative for why an early project with no adoption metrics can still produce reusable ecosystem value.
 - The first public dogfooding run shows that the project is already using Codex-style workflows to improve its own application evidence, while recording weak signals honestly.
-- The external validation sprint makes the 80% readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
+- The external validation sprint and 90% scorecard make the readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
 
 ## Publication Gate
 

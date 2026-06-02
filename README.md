@@ -175,6 +175,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
 - `docs/codex-for-oss-submission-readiness.md`: public submission readiness checklist for the application evidence package
 - `docs/codex-for-oss-reviewer-brief.md`: one-page reviewer brief for the full-support request
+- `docs/codex-for-oss-90-scorecard.md`: hard gates and script-backed scorecard for the 90% readiness target
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/dogfooding-runs/`: public dogfooding run notes and validation evidence
 - `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals

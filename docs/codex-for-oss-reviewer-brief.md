@@ -34,9 +34,9 @@ large star counts.
 
 - Public repository: https://github.com/zlbdh/maintainer-harness
 - Project site: https://zlbdh.github.io/maintainer-harness/
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
-- Latest successful CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26822171456
-- Latest successful Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26822168441
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
+- Main branch CI history: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain
+- Main branch Pages history: https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain
 - Cross-platform validation: `docs/cross-platform-validation.md`
 - Pull request review packet example: `examples/issue-to-review/`
 - Release evidence packet example: `examples/release-workflow/`
@@ -60,6 +60,11 @@ target is 5+ real stars from people who inspected the project, 2+ public issue
 comments or first-run reports, 1 outside first-run report, and 1 feedback-driven
 follow-up issue or commit. Until those signals exist, the application should
 stay honest that external adoption is not proven yet.
+
+The hard 90% readiness gate is tracked in
+`docs/codex-for-oss-90-scorecard.md` and measured by
+`scripts/checks/measure-application-readiness.ps1`. The current script-backed
+score is below 90 until real external feedback appears.
 
 ## 30 / 60 / 90 Day Commitments
 

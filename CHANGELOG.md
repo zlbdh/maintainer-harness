@@ -20,6 +20,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - GitHub profile README anchor for Maintainer Harness visibility.
 - Project-specific GitHub labels and a good-first-issue demo feedback path.
 - Share page, launch log, and social preview asset for public launch posts.
+- `v0.1.2` release anchor for the share asset package.
 
 ### Changed
 

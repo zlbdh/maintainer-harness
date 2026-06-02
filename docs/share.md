@@ -24,7 +24,7 @@ cd maintainer-harness
 ## Useful Links
 
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.1
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.2
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg

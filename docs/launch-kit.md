@@ -50,8 +50,8 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 
 Current public launch anchors:
 
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.1
-- Passing launch-ready CI run: https://github.com/zlbdh/maintainer-harness/actions/runs/26809709826
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.2
+- CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Demo path: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md

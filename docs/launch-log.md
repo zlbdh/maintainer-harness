@@ -13,6 +13,7 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 | Date | Channel | URL | Status | Result | Follow-up |
 | --- | --- | --- | --- | --- | --- |
 | 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.1 | Published | Release includes demo and feedback link. | Watch for issue comments. |
+| 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.2 | Published | Release includes share page, launch log, and social preview asset. | Use in social posts. |
 | 2026-06-02 | GitHub profile README | https://github.com/zlbdh/zlbdh | Published | Profile now links to Maintainer Harness. | Manually pin repo in GitHub UI. |
 | 2026-06-02 | GitHub issue labels | https://github.com/zlbdh/maintainer-harness/issues | Published | Issues are labeled by area and newcomer path. | Keep labels current as issues change. |
 | TBD | X / Twitter | TBD | Planned | Use `docs/share.md` or `docs/launch-kit.md`. | Record comments and reposts. |

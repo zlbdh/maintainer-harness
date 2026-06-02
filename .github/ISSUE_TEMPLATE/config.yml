@@ -1,9 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: External review path
+    url: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
+    about: Use this page for the shortest reviewability and first-run feedback paths.
   - name: Security report
     url: https://github.com/zlbdh/maintainer-harness/security/advisories/new
     about: Please report vulnerabilities privately instead of opening a public issue.
   - name: Support guidance
     url: https://github.com/zlbdh/maintainer-harness/blob/main/SUPPORT.md
     about: Read support guidance before opening an issue.
-

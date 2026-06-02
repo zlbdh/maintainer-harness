@@ -10,6 +10,16 @@ labels: "area:feedback, question"
 - Project shape: single-repo / multi-repo / release-heavy / security-heavy
 - Agent use case: PR review / triage / release notes / cross-repo change / other
 
+To count toward the public readiness gate, add reviewability feedback as a
+comment on issue #5 after inspecting the project:
+https://github.com/zlbdh/maintainer-harness/issues/5
+
+External review page with copy-ready comment templates:
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
+
+Only use the template after inspecting the project, sample packets, or worker
+output example.
+
 ## Worker Output You Would Need
 
 What should a worker report before you would accept, reject, or request changes?

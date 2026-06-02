@@ -99,6 +99,8 @@ This project follows a simple date-based changelog until formal versioned releas
   to the external review templates after the demo run.
 - Review request packets now include the external review templates and a
   four-step public feedback action path.
+- Issue templates and the issue chooser now point outside reviewers to the
+  external review templates and preferred public feedback targets.
 
 ## 2026-06-01
 

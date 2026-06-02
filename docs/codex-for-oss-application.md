@@ -55,7 +55,7 @@ I will use API credits and ChatGPT Pro with Codex to dogfood public maintainer w
 
 ## Anything Else? 500 Characters Max
 
-Please also consider Codex Security. This repo coordinates agent write scopes, MCP context, generated worktrees, validation evidence, and release gates. It includes a threat model, paste-ready overview, review scope, redaction guide, checklist, and CI security posture check so reviewers can inspect concrete boundaries.
+Please also consider Codex Security. This repo coordinates agent write scopes, MCP context, generated worktrees, validation evidence, and release gates. It includes a threat model, paste-ready overview, review scope, first review pass with one remediated path-scope finding, redaction guide, and CI security posture checks.
 
 ## Longer Project Narrative
 

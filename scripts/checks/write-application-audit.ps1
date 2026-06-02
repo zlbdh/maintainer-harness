@@ -89,7 +89,8 @@ $supportEvidencePaths = @(
     @{ Check = 'feedback-evidence-lib'; Path = 'scripts\lib\HarnessFeedbackEvidence.ps1'; Detail = 'External feedback evidence parser exists.' },
     @{ Check = 'readiness-script'; Path = 'scripts\checks\measure-application-readiness.ps1'; Detail = 'Readiness measurement script exists.' },
     @{ Check = 'feedback-evidence-validator'; Path = 'scripts\checks\validate-external-feedback-evidence.ps1'; Detail = 'External feedback evidence validator exists.' },
-    @{ Check = 'first-run-report-script'; Path = 'scripts\checks\write-first-run-report.ps1'; Detail = 'First-run report generator exists.' }
+    @{ Check = 'first-run-report-script'; Path = 'scripts\checks\write-first-run-report.ps1'; Detail = 'First-run report generator exists.' },
+    @{ Check = 'review-request-packet-script'; Path = 'scripts\checks\write-review-request-packet.ps1'; Detail = 'Review request packet generator exists.' }
 )
 
 foreach ($supportEvidence in $supportEvidencePaths) {

@@ -56,6 +56,12 @@ If you want to report first-run friction, generate a paste-ready issue draft:
 .\scripts\checks\write-first-run-report.ps1
 ```
 
+If you want a local packet for asking maintainers to review the project:
+
+```powershell
+.\scripts\checks\write-review-request-packet.ps1
+```
+
 ## Why This Exists
 
 Agent-assisted maintenance often fails for ordinary reasons:
@@ -206,6 +212,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `scripts/bootstrap/prepare-publication.ps1`: dry-run/apply helper for the final public commit
 - `scripts/checks/write-application-audit.ps1`: ignored pre-application audit report generator
 - `scripts/checks/write-first-run-report.ps1`: ignored first-run report generator for outside demo feedback
+- `scripts/checks/write-review-request-packet.ps1`: ignored outreach packet generator for honest maintainer review requests
 - `scripts/checks/check-security-posture.ps1`: CI-friendly security posture gate for agent scopes, MCP safety, and ignored artifacts
 
 ## Public Hygiene

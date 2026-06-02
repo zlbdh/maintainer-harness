@@ -3,6 +3,12 @@
 Use this page when asking an outside maintainer or devtools builder for a quick
 critique. The goal is real feedback, not artificial engagement.
 
+To generate a local copy-paste request packet, run:
+
+```powershell
+.\scripts\checks\write-review-request-packet.ps1
+```
+
 ## Five-Minute Review Path
 
 Pick one path:

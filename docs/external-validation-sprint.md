@@ -39,6 +39,8 @@ Avoid broad audiences until the demo path has at least one outside report.
 Use `docs/maintainer-review-kit.md` as the shortest public reviewer handoff.
 It gives maintainers a five-minute path to inspect, run, or security-review the
 workflow without needing private repository context.
+For local copy-paste request drafts, run
+`scripts/checks/write-review-request-packet.ps1`.
 
 ## Message Template
 

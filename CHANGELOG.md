@@ -54,6 +54,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Authenticated GitHub API support for the 90% readiness monitor.
 - External feedback evidence registry and validator for machine-readable 90% scorekeeping.
 - Maintainer review kit for five-minute outside feedback handoff.
+- Review request packet generator for honest maintainer outreach.
 
 ### Changed
 

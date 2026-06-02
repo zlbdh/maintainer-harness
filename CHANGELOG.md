@@ -35,6 +35,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - GitHub Actions, workspace verification, public readiness, and application audit now include the release workflow example.
 - First Codex Security review pass under `docs/security/codex-security-review-pass-2026-06-02.md`.
 - Shared path-scope helper for review-worker output checks.
+- `v0.1.7` release anchor for the first Codex Security review pass.
 
 ### Changed
 

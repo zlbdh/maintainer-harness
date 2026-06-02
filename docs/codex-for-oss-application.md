@@ -79,5 +79,5 @@ This is a new public project, so it does not yet have large adoption metrics. Th
 - Reviewer brief CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26829792583
 - Reviewer brief Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083
 - Reviewer brief: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-reviewer-brief.md
-- Current metrics: 0 stars, 0 forks, 0 watchers, and 3 open issues as of 2026-06-02.
+- Current metrics: counted by the 90% readiness monitor; the application does not claim adoption before real external signals appear.
 - Public growth posture: feedback-first discovery materials are published; the project does not ask for artificial stars.

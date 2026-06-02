@@ -89,6 +89,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Launch and share materials now point to the v0.1.15 external review path
   release.
 - Worker and review response schema titles now use generic Maintainer Harness names.
+- Public application materials now point current adoption metrics to the
+  readiness monitor instead of freezing date-bound counts.
 
 ## 2026-06-01
 

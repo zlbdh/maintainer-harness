@@ -47,10 +47,12 @@ large star counts.
 
 ## Current Metrics
 
-As of 2026-06-02, the repository has 0 stars, 0 forks, 0 watchers, and 3 open
-issues. The application should not claim adoption it does not have. The
-stronger current signal is the public evidence package, passing validation
-gates, pinned feedback issues, and a concrete 30-day dogfooding plan.
+The repository is early and should not claim adoption it does not have. Current
+stars, public comments, first-run reports, and feedback follow-up artifacts are
+counted by `scripts/checks/measure-application-readiness.ps1` and the scheduled
+readiness monitor. The stronger current signal is the public evidence package,
+passing validation gates, pinned feedback issues, and a concrete 30-day
+dogfooding plan.
 
 ## External Validation Plan
 

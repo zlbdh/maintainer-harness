@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>External Review - Maintainer Harness</title>
+  <meta name="description" content="A short external reviewer path for Maintainer Harness.">
+  <link rel="canonical" href="https://zlbdh.github.io/maintainer-harness/external-review.html">
+  <meta property="og:title" content="External Review - Maintainer Harness">
+  <meta property="og:description" content="Review, run, and comment on Maintainer Harness without private repositories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zlbdh.github.io/maintainer-harness/external-review.html">
+  <meta property="og:image" content="https://zlbdh.github.io/maintainer-harness/assets/social-preview.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Maintainer Harness</a>
+    <nav aria-label="Primary">
+      <a href="index.html#demo">Demo</a>
+      <a href="index.html#evidence">Evidence</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/5">Feedback</a>
+      <a class="nav-action" href="https://github.com/zlbdh/maintainer-harness">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="review-title">
+      <div class="hero-copy">
+        <p class="eyebrow">External reviewer path</p>
+        <h1 id="review-title">Help test agent work reviewability.</h1>
+        <p class="lead">
+          Maintainer Harness is early. The most useful public signal is a concrete
+          maintainer comment about what evidence would make agent output safe to
+          accept, reject, or request changes on.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/zlbdh/maintainer-harness/issues/6">Run The Demo Path</a>
+          <a class="button secondary" href="https://github.com/zlbdh/maintainer-harness/issues/5">Comment On Reviewability</a>
+        </div>
+        <p class="microcopy">
+          Stars help discovery only after inspection. Feedback is the stronger signal.
+        </p>
+      </div>
+      <div class="hero-media" aria-label="Maintainer Harness preview">
+        <img src="assets/social-preview.svg" alt="Maintainer Harness preview card">
+      </div>
+    </section>
+
+    <section class="signal-band" aria-label="External review links">
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/5">Reviewability feedback</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/6">First-run report</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md">Evidence example</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/7">Follow-up tracker</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/actions/workflows/codex-readiness-monitor.yml">Readiness monitor</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/stargazers">Star after inspection</a>
+    </section>
+
+    <section id="actions" class="section" aria-labelledby="actions-title">
+      <p class="eyebrow">90% gate actions</p>
+      <h2 id="actions-title">Four public signals move the application.</h2>
+      <div class="grid">
+        <article>
+          <h3>Review</h3>
+          <p>Comment on issue #5 with one missing piece of evidence for accepting or rejecting worker output.</p>
+        </article>
+        <article>
+          <h3>Run</h3>
+          <p>Clone the repo, run the review demo, and paste the copy-ready first-run block into issue #6.</p>
+        </article>
+        <article>
+          <h3>Star</h3>
+          <p>Star only if the workflow is useful after inspection. This is a discovery signal, not the main ask.</p>
+        </article>
+        <article>
+          <h3>Follow Up</h3>
+          <p>Turn a concrete feedback item into issue #7, a commit, or a release note so the improvement is visible.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="commands-title">
+      <div>
+        <p class="eyebrow">Clean checkout</p>
+        <h2 id="commands-title">Run the synthetic demo.</h2>
+        <p>
+          The demo does not need private repositories, credentials, generated worktrees,
+          or production logs.
+        </p>
+      </div>
+      <pre aria-label="Review demo commands"><code>git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+.\scripts\checks\run-review-demo.ps1</code></pre>
+    </section>
+
+    <section class="section split final" aria-labelledby="links-title">
+      <div>
+        <p class="eyebrow">Public evidence</p>
+        <h2 id="links-title">Everything should be reviewer-visible.</h2>
+        <p>
+          Private messages can guide improvements, but only public comments,
+          first-run reports, stars from real readers, and feedback-driven public
+          artifacts count toward the 90% submission gate.
+        </p>
+      </div>
+      <div class="link-list">
+        <a href="https://github.com/zlbdh/maintainer-harness/issues/5">Comment on issue #5</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/issues/6">Post a first-run report on issue #6</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/issues/7">Track a follow-up on issue #7</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md">Use the five-minute review kit</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-90-scorecard.md">Read the 90% scorecard</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/actions/workflows/codex-readiness-monitor.yml">Check the readiness monitor</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

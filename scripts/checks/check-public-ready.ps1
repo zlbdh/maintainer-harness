@@ -79,6 +79,7 @@ $requiredPublicPaths = @(
     'docs\maintainer-review-kit.md',
     'docs\worker-output-reviewability.md',
     'docs\index.html',
+    'docs\external-review.html',
     'docs\site.css',
     'docs\.nojekyll',
     'docs\demo.md',

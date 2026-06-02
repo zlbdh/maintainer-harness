@@ -73,6 +73,7 @@ if (Test-Path -LiteralPath $evidencePath) {
 
 $supportEvidencePaths = @(
     @{ Check = 'project-site'; Path = 'docs\index.html'; Detail = 'GitHub Pages project landing page exists.' },
+    @{ Check = 'external-review-path'; Path = 'docs\external-review.html'; Detail = 'External review path exists.' },
     @{ Check = 'cross-platform-validation'; Path = 'docs\cross-platform-validation.md'; Detail = 'Cross-platform validation scope exists.' },
     @{ Check = 'issue-to-review-example'; Path = 'examples\issue-to-review\verification\result.md'; Detail = 'Issue-to-review packet example exists.' },
     @{ Check = 'release-workflow-example'; Path = 'examples\release-workflow\release\release-note.md'; Detail = 'Release workflow packet example exists.' },

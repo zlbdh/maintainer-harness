@@ -67,6 +67,9 @@ This project follows a simple date-based changelog until formal versioned releas
   readiness monitor can count outside reports automatically.
 - First-run reports now include a short copy-ready comment block for issue `#6`.
 - Scheduled and manual Codex for OSS readiness monitor workflow.
+- GitHub Pages external review path mapping the 90% hard external-signal gates
+  to public reviewer actions.
+- `v0.1.15` release anchor for the external review action page.
 
 ### Changed
 
@@ -83,7 +86,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 - Public readiness checks now require the feedback-specific issue templates.
 - Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
-- Launch and share materials now point to the v0.1.14 one-command review demo
+- Launch and share materials now point to the v0.1.15 external review path
   release.
 - Worker and review response schema titles now use generic Maintainer Harness names.
 

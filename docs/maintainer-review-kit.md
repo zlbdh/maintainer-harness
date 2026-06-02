@@ -3,6 +3,9 @@
 Use this page when asking an outside maintainer or devtools builder for a quick
 critique. The goal is real feedback, not artificial engagement.
 
+For a web-first handoff, use:
+https://zlbdh.github.io/maintainer-harness/external-review.html
+
 To generate a local copy-paste request packet, run:
 
 ```powershell

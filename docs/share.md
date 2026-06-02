@@ -29,13 +29,14 @@ cd maintainer-harness
 ## Useful Links
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
+- External review path: https://zlbdh.github.io/maintainer-harness/external-review.html
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.14
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6

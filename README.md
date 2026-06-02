@@ -10,6 +10,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **Project site:** https://zlbdh.github.io/maintainer-harness/
 
+**External review path:** https://zlbdh.github.io/maintainer-harness/external-review.html
+
 **Reviewer kit:** if you have five minutes, use
 `docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
 demo, or leave public feedback.
@@ -207,7 +209,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals
 - `docs/maintainer-review-kit.md`: five-minute outside maintainer feedback path
 - `docs/worker-output-reviewability.md`: good/bad worker output evidence example for maintainer review
-- `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
+- `docs/index.html`, `docs/external-review.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site and external reviewer path
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
 - `docs/cross-platform-validation.md`: Windows, Ubuntu, and macOS validation coverage and current boundaries
 - `docs/launch-kit.md`: policy-safe launch copy and outreach plan for real open source discovery

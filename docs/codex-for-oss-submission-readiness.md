@@ -9,6 +9,9 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Project site | https://zlbdh.github.io/maintainer-harness/ |
 | Source repository | https://github.com/zlbdh/maintainer-harness |
 | Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10 |
+| Latest main commit | https://github.com/zlbdh/maintainer-harness/commit/5f1c357636ce58bf354a0e39f0474644c2747cfe |
+| Latest successful CI | https://github.com/zlbdh/maintainer-harness/actions/runs/26821647602 |
+| Latest successful Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26821645827 |
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
@@ -24,6 +27,8 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Redaction guide | `docs/security/redaction-patterns.md` |
 | Pinned feedback issue | https://github.com/zlbdh/maintainer-harness/issues/5 |
 | Pinned first-run issue | https://github.com/zlbdh/maintainer-harness/issues/6 |
+| Star-safe discovery update | https://github.com/zlbdh/maintainer-harness/commit/08163a46095ed2bf930dcb785101a10042de5af6 |
+| Current public metrics | 0 stars, 0 forks, 0 watchers, 3 open issues as of 2026-06-02 |
 
 ## Form Answers
 
@@ -36,6 +41,7 @@ Public answer mapping:
 - Role: primary maintainer
 - Interests: Codex Security and project API credits
 - Qualification answer: use the draft section `Why Does This Repository Qualify? 500 Characters Max`
+- Codex Security justification: use the draft section `Why Does This Project Need Codex Security?`
 - API credits answer: use the draft section `How Will You Use API Credits? 500 Characters Max`
 - Additional notes: use the draft section `Anything Else? 500 Characters Max`
 
@@ -52,8 +58,8 @@ $pattern = '<private-name>|<private-remote>|<local-path>|<private-role>'
 
 The current application audit is passing in the ignored report directory.
 
-## Manual Confirmation Needed
+## Manual Web Form Step
 
-- Confirm how to split applicant name across the form's required last-name and first-name fields.
-- Confirm whether to only fill the form or fill and submit it.
+- Use the ignored local draft for private applicant data and final form values.
+- Submit the web form manually if browser verification requires an interactive Turnstile check.
 - Optionally pin the repository on the GitHub profile UI. The repository README and profile README already link the project, and issues `#5`, `#6`, and `#7` are pinned inside the repository.

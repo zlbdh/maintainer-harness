@@ -8,7 +8,7 @@ Maintainer Harness
 
 ## Repository
 
-Use the public GitHub repository URL after publishing this cleaned repository.
+https://github.com/zlbdh/maintainer-harness
 
 ## Short Description
 
@@ -47,7 +47,11 @@ Early public-ready project. The repository has been generalized from local maint
 
 ## Why Does This Repository Qualify? 500 Characters Max
 
-Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets PR review, maintainer automation, release evidence, and agent security boundaries across multi-repo projects. It now has public CI, security posture gates, and paste-ready Codex Security context, while staying honest about early adoption.
+Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets PR review, maintainer automation, release evidence, and agent security boundaries across multi-repo projects. It has public CI, security posture gates, Codex Security context, and feedback-first discovery materials while staying honest about early adoption.
+
+## Why Does This Project Need Codex Security? 500 Characters Max
+
+Maintainer Harness models agent-assisted OSS maintenance where Codex may read MCP context, propose PR changes, and produce worker output. Codex Security would help stress-test write scopes, path traversal, prompt-injection risks in issue/PR text, secret redaction, dependency evidence, and release gates. The repo already includes a threat model, redaction guide, CI security posture checks, and a remediated path-scope finding.
 
 ## How Will You Use API Credits? 500 Characters Max
 
@@ -65,6 +69,12 @@ The goal is to make agent-assisted OSS maintenance more reproducible and reviewa
 
 This is a new public project, so it does not yet have large adoption metrics. The reason I am applying is to use Codex to improve the harness itself and demonstrate a practical workflow for other open source maintainers who want AI assistance without losing control of scope, security, or release evidence.
 
-## Suggested Project URL Note
+## Current Public Evidence
 
-Before submitting, publish the cleaned repository to GitHub and use that URL. Avoid linking to a private repository or a repository that still contains product-specific names, screenshots, local paths, or ignored legacy artifacts.
+- Project site: https://zlbdh.github.io/maintainer-harness/
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
+- Latest main commit: https://github.com/zlbdh/maintainer-harness/commit/5f1c357636ce58bf354a0e39f0474644c2747cfe
+- Latest successful CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26821647602
+- Latest successful Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26821645827
+- Current metrics: 0 stars, 0 forks, 0 watchers, and 3 open issues as of 2026-06-02.
+- Public growth posture: feedback-first discovery materials are published; the project does not ask for artificial stars.

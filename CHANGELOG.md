@@ -49,6 +49,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public dogfooding run notes under `docs/dogfooding-runs/`, starting with the Codex application hardening run.
 - External validation sprint plan for collecting honest maintainer feedback, first-run reports, and star-safe discovery signals.
 - Script-backed 90% readiness scorecard for the Codex for OSS full-support target.
+- First-run report generator for outside demo feedback.
 
 ### Changed
 
@@ -65,6 +66,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 - Public readiness checks now require the feedback-specific issue templates.
 - Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
+- Launch and share materials now point to the v0.1.11 reviewer-brief release and the 90% readiness threshold.
 
 ## 2026-06-01
 

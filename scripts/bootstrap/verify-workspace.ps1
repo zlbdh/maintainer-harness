@@ -41,7 +41,10 @@ $requiredPaths = @(
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
     'docs\codex-for-oss-submission-readiness.md',
+    'docs\codex-for-oss-reviewer-brief.md',
+    'docs\codex-for-oss-90-scorecard.md',
     'docs\dogfooding-plan.md',
+    'docs\external-validation-sprint.md',
     'docs\index.html',
     'docs\site.css',
     'docs\.nojekyll',
@@ -152,6 +155,8 @@ $requiredPaths = @(
     'scripts\checks\check-public-ready.ps1',
     'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1',
+    'scripts\checks\write-first-run-report.ps1',
+    'scripts\checks\measure-application-readiness.ps1',
     'scripts\checks\run-local-baseline.ps1'
 )
 

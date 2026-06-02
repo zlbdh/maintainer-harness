@@ -53,7 +53,7 @@ Current public launch anchors:
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Source repo: https://github.com/zlbdh/maintainer-harness
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
@@ -69,6 +69,7 @@ Current public launch anchors:
 - Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
 - GitHub profile README: https://github.com/zlbdh/zlbdh
 - First-run feedback template: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
+- First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 
 ## Show HN Draft
@@ -97,6 +98,7 @@ cd maintainer-harness
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\write-first-run-report.ps1
 
 I would like feedback from maintainers who have tried using agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?
 ```
@@ -216,7 +218,7 @@ Use this when the project needs a quick credibility lift before an application
 review. It is intentionally feedback-first: stars are a discovery signal, not
 the ask that opens the conversation.
 
-For the concrete 80% readiness threshold and message templates, see
+For the concrete 90% readiness threshold and message templates, see
 `docs/external-validation-sprint.md`.
 
 | Window | Action | Copy Anchor | Evidence To Record |

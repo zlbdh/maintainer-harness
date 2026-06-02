@@ -67,6 +67,16 @@ https://zlbdh.github.io/maintainer-harness/
 
 ## Feedback Capture
 
+Ask outside reviewers to run:
+
+```powershell
+.\scripts\checks\write-first-run-report.ps1
+```
+
+The script writes an ignored Markdown draft under `reports/first-run/` with
+sanitized command output and the first-run issue link. Reviewers still decide
+what to share publicly; the project should not create feedback on their behalf.
+
 Record each useful response in `docs/launch-log.md` or a GitHub issue:
 
 | Field | Example |
@@ -79,9 +89,9 @@ Record each useful response in `docs/launch-log.md` or a GitHub issue:
 
 Private names are not required. Public URLs are stronger when available.
 
-## 80% Readiness Threshold
+## 90% Readiness Threshold
 
-The application should be re-estimated near 80% only after these public signals
+The application should be re-estimated near 90% only after these public signals
 exist:
 
 | Signal | Target |
@@ -92,7 +102,7 @@ exist:
 | Feedback converted into issue or commit | 1+ |
 | Latest CI and Pages after feedback update | success |
 
-Until then, the honest full-support probability should remain below 80% because
+Until then, the honest full-support probability should remain below 90% because
 external usage is still unproven.
 
 ## What To Do After Feedback Arrives

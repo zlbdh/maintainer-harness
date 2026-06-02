@@ -77,10 +77,15 @@ $supportEvidencePaths = @(
     @{ Check = 'issue-to-review-example'; Path = 'examples\issue-to-review\verification\result.md'; Detail = 'Issue-to-review packet example exists.' },
     @{ Check = 'release-workflow-example'; Path = 'examples\release-workflow\release\release-note.md'; Detail = 'Release workflow packet example exists.' },
     @{ Check = 'submission-readiness'; Path = 'docs\codex-for-oss-submission-readiness.md'; Detail = 'Codex for OSS submission readiness checklist exists.' },
+    @{ Check = 'reviewer-brief'; Path = 'docs\codex-for-oss-reviewer-brief.md'; Detail = 'Codex for OSS reviewer brief exists.' },
+    @{ Check = 'readiness-scorecard'; Path = 'docs\codex-for-oss-90-scorecard.md'; Detail = '90% readiness scorecard exists.' },
+    @{ Check = 'external-validation-sprint'; Path = 'docs\external-validation-sprint.md'; Detail = 'External validation sprint exists.' },
     @{ Check = 'redaction-patterns'; Path = 'docs\security\redaction-patterns.md'; Detail = 'Validation report redaction guide exists.' },
     @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
     @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' },
-    @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' }
+    @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' },
+    @{ Check = 'readiness-script'; Path = 'scripts\checks\measure-application-readiness.ps1'; Detail = 'Readiness measurement script exists.' },
+    @{ Check = 'first-run-report-script'; Path = 'scripts\checks\write-first-run-report.ps1'; Detail = 'First-run report generator exists.' }
 )
 
 foreach ($supportEvidence in $supportEvidencePaths) {

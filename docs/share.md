@@ -21,6 +21,7 @@ cd maintainer-harness
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\write-first-run-report.ps1
 ```
 
 ## Useful Links
@@ -30,13 +31,14 @@ cd maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - First-run feedback template: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
+- First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 

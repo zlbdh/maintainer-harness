@@ -32,6 +32,7 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 | 2026-06-02 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10 | Published | Release anchors the Windows, Ubuntu, and macOS validation gate. | Use as cross-platform validation evidence. |
 | 2026-06-02 | GitHub profile README | https://github.com/zlbdh/zlbdh | Published | Profile now links to Maintainer Harness. | Manually pin repo in GitHub UI. |
 | 2026-06-02 | GitHub issue labels | https://github.com/zlbdh/maintainer-harness/issues | Published | Issues are labeled by area and newcomer path. | Keep labels current as issues change. |
+| 2026-06-02 | Star-safe discovery CTA | https://github.com/zlbdh/maintainer-harness/commit/08163a46095ed2bf930dcb785101a10042de5af6 | Published | README, project site, share page, and launch kit now ask for demo feedback first and stars only as an honest discovery signal. | Use the 48-hour sprint when posting publicly. |
 | TBD | X / Twitter | TBD | Planned | Use `docs/share.md` or `docs/launch-kit.md`. | Record comments and reposts. |
 | TBD | LinkedIn | TBD | Planned | Use `docs/launch-kit.md`. | Record maintainer feedback. |
 | TBD | Show HN | TBD | Planned | Submit only when available to reply. | Convert useful feedback into issues. |

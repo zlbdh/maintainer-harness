@@ -72,6 +72,7 @@ if (Test-Path -LiteralPath $evidencePath) {
 }
 
 $supportEvidencePaths = @(
+    @{ Check = 'project-site'; Path = 'docs\index.html'; Detail = 'GitHub Pages project landing page exists.' },
     @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
     @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' }
 )

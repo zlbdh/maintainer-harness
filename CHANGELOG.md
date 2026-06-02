@@ -21,6 +21,9 @@ This project follows a simple date-based changelog until formal versioned releas
 - Project-specific GitHub labels and a good-first-issue demo feedback path.
 - Share page, launch log, and social preview asset for public launch posts.
 - `v0.1.2` release anchor for the share asset package.
+- GitHub Pages project site under `docs/index.html` with demo commands, evidence links, and feedback routes.
+- Public readiness and workspace checks now require the project site files.
+- `v0.1.3` release anchor for the project site package.
 
 ### Changed
 
@@ -33,6 +36,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Suggested GitHub topics now include developer-tools, GitHub Actions, security tooling, and CLI tooling discovery terms.
 - GitHub Actions now validates the synthetic sample change packet.
 - Suggested repository metadata now points visitors to the demo path.
+- Suggested repository metadata now points visitors to the GitHub Pages project site.
 
 ## 2026-06-01
 

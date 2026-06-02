@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maintainer Harness</title>
+  <meta name="description" content="Scoped change packets for agent-assisted open source maintenance.">
+  <link rel="canonical" href="https://zlbdh.github.io/maintainer-harness/">
+  <meta property="og:title" content="Maintainer Harness">
+  <meta property="og:description" content="Scoped change packets for agent-assisted open source maintenance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zlbdh.github.io/maintainer-harness/">
+  <meta property="og:image" content="https://zlbdh.github.io/maintainer-harness/assets/social-preview.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maintainer Harness">
+  <meta name="twitter:description" content="Scoped change packets for agent-assisted open source maintenance.">
+  <meta name="twitter:image" content="https://zlbdh.github.io/maintainer-harness/assets/social-preview.svg">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="https://github.com/zlbdh/maintainer-harness">Maintainer Harness</a>
+    <nav aria-label="Primary">
+      <a href="#demo">Demo</a>
+      <a href="#evidence">Evidence</a>
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/5">Feedback</a>
+      <a class="nav-action" href="https://github.com/zlbdh/maintainer-harness">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Open source maintainer tool</p>
+        <h1 id="hero-title">Maintainer Harness</h1>
+        <p class="lead">
+          <strong>Scoped packets for agent-assisted maintenance.</strong>
+          Turn Codex and other agent work into change briefs, impact maps, bounded task cards,
+          validation evidence, and release-ready review trails.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/zlbdh/maintainer-harness">Open Repository</a>
+          <a class="button secondary" href="#demo">Try The Demo</a>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="Maintainer Harness preview">
+        <img src="assets/social-preview.svg" alt="Maintainer Harness preview card">
+      </div>
+    </section>
+
+    <section class="signal-band" aria-label="Project signals">
+      <a href="https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml">
+        CI gated
+      </a>
+      <a href="https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.3">
+        v0.1.3 release
+      </a>
+      <a href="https://github.com/zlbdh/maintainer-harness/issues/6">
+        Good first issue
+      </a>
+      <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/security/codex-security-project-overview.md">
+        Security overview
+      </a>
+    </section>
+
+    <section id="demo" class="section split" aria-labelledby="demo-title">
+      <div>
+        <p class="eyebrow">90-second path</p>
+        <h2 id="demo-title">Try it without private repositories.</h2>
+        <p>
+          The sample change packet is synthetic. It validates the workflow shape without
+          cloning product repositories, opening worktrees, or using production credentials.
+        </p>
+      </div>
+      <pre aria-label="Demo commands"><code>git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+.\scripts\checks\validate-repos.ps1
+.\scripts\bootstrap\verify-workspace.ps1
+.\scripts\checks\validate-change.ps1 -Path examples\sample-change
+.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern</code></pre>
+    </section>
+
+    <section id="evidence" class="section" aria-labelledby="evidence-title">
+      <p class="eyebrow">What the harness keeps visible</p>
+      <h2 id="evidence-title">The boring evidence trail agents usually lose.</h2>
+      <div class="grid">
+        <article>
+          <h3>Scope</h3>
+          <p>Each worker receives explicit task cards and allowed paths before implementation starts.</p>
+        </article>
+        <article>
+          <h3>Impact</h3>
+          <p>Change packets keep affected repositories, interfaces, dependencies, and risks in files.</p>
+        </article>
+        <article>
+          <h3>Validation</h3>
+          <p>Commands and skipped checks are recorded as evidence instead of chat-only claims.</p>
+        </article>
+        <article>
+          <h3>Security</h3>
+          <p>MCP examples stay read-only, generated artifacts stay ignored, and posture checks run in CI.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split final" aria-labelledby="contribute-title">
+      <div>
+        <p class="eyebrow">Feedback wanted</p>
+        <h2 id="contribute-title">What would make worker output reviewable enough?</h2>
+        <p>
+          Maintainer feedback is tracked publicly. The easiest contribution is to run the demo and
+          report anything unclear, slow, surprising, or too Windows-specific.
+        </p>
+      </div>
+      <div class="link-list">
+        <a href="https://github.com/zlbdh/maintainer-harness/issues/5">Open feedback issue</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/issues/6">Try the good first issue</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md">Use the share page</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md">Review launch log</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -40,6 +40,7 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 
 | Channel | Best Use | Draft |
 | --- | --- | --- |
+| GitHub Pages project site | Give external visitors one clean project entry point before they inspect repository files. | Publish from `main` / `docs` at https://zlbdh.github.io/maintainer-harness/. |
 | GitHub profile README | Make the project visible from the maintainer profile even before manual pinning. | Published at https://github.com/zlbdh/zlbdh. |
 | GitHub profile pinned repo | Add another fixed profile entry. | Pin `maintainer-harness` manually from the GitHub profile UI; the public API does not expose profile pinning. |
 | Hacker News Show HN | Ask technical maintainers for feedback after the demo path is clear. | Use the Show HN draft below. |
@@ -50,7 +51,9 @@ Maintainer Harness is an open source control plane for maintainers using Codex o
 
 Current public launch anchors:
 
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.2
+- Project site: https://zlbdh.github.io/maintainer-harness/
+- Source repo: https://github.com/zlbdh/maintainer-harness
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.3
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
@@ -101,7 +104,7 @@ It turns Codex/agent work into:
 - release gates
 
 Early, synthetic, and CI-gated:
-https://github.com/zlbdh/maintainer-harness
+https://zlbdh.github.io/maintainer-harness/
 ```
 
 ## X / Twitter Thread
@@ -132,7 +135,7 @@ That makes worker output easier to review and reject.
 4/ The repo is early and uses synthetic examples. That is deliberate. Maintainers can inspect the workflow before connecting real repositories.
 
 Demo:
-https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
+https://zlbdh.github.io/maintainer-harness/
 
 5/ I would love feedback from OSS maintainers who have tried agent-assisted PR review or release work:
 
@@ -162,7 +165,7 @@ I am especially interested in feedback from people who maintain multi-repo proje
 
 What would you need to see before trusting an agent's worker output?
 
-https://github.com/zlbdh/maintainer-harness
+https://zlbdh.github.io/maintainer-harness/
 
 #opensource #maintainers #codex #developerexperience
 ```
@@ -171,7 +174,7 @@ https://github.com/zlbdh/maintainer-harness
 
 ```text
 I am looking for feedback on an early open source maintainer tool:
-https://github.com/zlbdh/maintainer-harness
+https://zlbdh.github.io/maintainer-harness/
 
 It is a file-based control plane for agent-assisted maintenance. Instead of letting an agent work from chat alone, it creates a change brief, impact map, execution plan, bounded task cards, validation evidence, and release gates.
 
@@ -184,6 +187,7 @@ For people who maintain OSS projects: what would make this workflow useful enoug
 
 | Day | Action | Success Signal |
 | --- | --- | --- |
+| 1 | Publish the GitHub Pages project site and set it as the repository homepage. | Visitors get one clean overview, demo path, and feedback route. |
 | 1 | Publish the GitHub profile README and verify topics. | Profile visitors can find the project. |
 | 1 | Pin the repo on the GitHub profile through the GitHub UI. | Profile visitors get a second fixed entry point. |
 | 1 | Post the X short post. | At least one maintainer comment or repost. |

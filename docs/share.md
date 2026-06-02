@@ -4,7 +4,7 @@ This is the compact sharing page for Maintainer Harness. Use it when posting, re
 
 ## Primary Link
 
-https://github.com/zlbdh/maintainer-harness
+https://zlbdh.github.io/maintainer-harness/
 
 ## One-Liner
 
@@ -23,8 +23,10 @@ cd maintainer-harness
 
 ## Useful Links
 
+- Project site: https://zlbdh.github.io/maintainer-harness/
+- Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.2
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.3
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
@@ -37,7 +39,7 @@ I published Maintainer Harness, an open source control plane for agent-assisted 
 It turns vague agent work into scoped change packets, validation evidence, and release-ready review trails.
 
 The demo is synthetic and safe to try from a clean checkout:
-https://github.com/zlbdh/maintainer-harness
+https://zlbdh.github.io/maintainer-harness/
 ```
 
 ## Feedback Prompt

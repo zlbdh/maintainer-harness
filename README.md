@@ -8,6 +8,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **Status:** early public-ready project. The current repository uses synthetic sample repositories so maintainers can inspect the workflow before connecting real projects.
 
+**Project site:** https://zlbdh.github.io/maintainer-harness/
+
 It does not replace your product repositories. It keeps the operational layer around them auditable:
 
 - change intake
@@ -33,7 +35,7 @@ The default sample change is synthetic and safe to run in a clean checkout:
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
 ```
 
-That flow checks the harness, validates a complete sample change packet, and confirms the public security posture. See `docs/demo.md` for a short transcript.
+That flow checks the harness, validates a complete sample change packet, and confirms the public security posture. See `docs/demo.md` for a short transcript and the project site for a shareable overview.
 
 ## Why This Exists
 
@@ -163,6 +165,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
+- `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow
 - `docs/launch-kit.md`: policy-safe launch copy and outreach plan for real open source discovery
 - `docs/share.md`: compact share page with demo commands and canonical links

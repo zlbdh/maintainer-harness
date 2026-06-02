@@ -59,6 +59,8 @@ This project follows a simple date-based changelog until formal versioned releas
   agent replies with reviewable evidence.
 - Non-blocking Codex for OSS readiness summary in the Harness validation
   workflow.
+- `v0.1.13` release anchor for the worker-output reviewability and readiness
+  monitor package.
 
 ### Changed
 
@@ -75,7 +77,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 - Public readiness checks now require the feedback-specific issue templates.
 - Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
-- Launch and share materials now point to the v0.1.12 first-run feedback release and the 90% readiness threshold.
+- Launch and share materials now point to the v0.1.13 reviewability and
+  readiness monitor release.
 - Worker and review response schema titles now use generic Maintainer Harness names.
 
 ## 2026-06-01

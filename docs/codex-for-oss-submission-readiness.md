@@ -8,7 +8,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | --- | --- |
 | Project site | https://zlbdh.github.io/maintainer-harness/ |
 | Source repository | https://github.com/zlbdh/maintainer-harness |
-| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.12 |
+| Latest release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.13 |
 | Reviewer brief commit | https://github.com/zlbdh/maintainer-harness/commit/32e6a0ad378a4e52478d067c8d78d30522b1e0cb |
 | Reviewer brief CI | https://github.com/zlbdh/maintainer-harness/actions/runs/26829792583 |
 | Reviewer brief Pages deployment | https://github.com/zlbdh/maintainer-harness/actions/runs/26829787083 |

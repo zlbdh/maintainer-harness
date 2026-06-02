@@ -53,7 +53,7 @@ Current public launch anchors:
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Source repo: https://github.com/zlbdh/maintainer-harness
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.12
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.13
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6

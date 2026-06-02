@@ -34,9 +34,10 @@ Run the readiness gate before committing:
 
 ```powershell
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
+.\scripts\checks\check-security-posture.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
 
-It should fail before the first commit because public files are still untracked. The sensitive path and content checks should pass.
+Public readiness should fail before the first commit because public files are still untracked. Security posture and sensitive path/content checks should pass.
 
 You can dry-run the publication sequence without changing Git state:
 
@@ -69,6 +70,7 @@ After pushing:
 
 - confirm the repository is public
 - confirm GitHub Actions runs `Harness validation`
+- confirm the security posture step passes
 - confirm the repository page does not show private legacy assets
 - copy the public GitHub URL into the application form
 

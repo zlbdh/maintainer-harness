@@ -3,7 +3,7 @@ mcps:
     status: blueprint
     environment: dev-or-test
     access: readonly
-    owner_scope: wgkj
+    owner_scope: oss-maintainers
     snapshot_required: true
     source_stamp_required: true
     exposes:
@@ -20,7 +20,7 @@ mcps:
     status: blueprint
     environment: dev-or-test
     access: readonly
-    owner_scope: wgkj
+    owner_scope: oss-maintainers
     snapshot_required: true
     source_stamp_required: true
     exposes:
@@ -38,7 +38,7 @@ mcps:
     status: blueprint
     environment: dev-or-test
     access: readonly
-    owner_scope: wgkj
+    owner_scope: oss-maintainers
     snapshot_required: true
     source_stamp_required: true
     exposes:
@@ -54,7 +54,7 @@ mcps:
     status: blueprint
     environment: dev-or-test
     access: readonly
-    owner_scope: wgkj
+    owner_scope: oss-maintainers
     snapshot_required: true
     source_stamp_required: true
     exposes:

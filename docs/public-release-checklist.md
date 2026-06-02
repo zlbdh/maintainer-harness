@@ -36,6 +36,7 @@ Run:
 .\scripts\checks\discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
 .\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
 .\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 ```
 
 Expected result:
@@ -45,6 +46,7 @@ Expected result:
 - sample repositories report warning-level `missing-local-env` until replaced or cloned
 - baseline output is machine-readable JSON when `-Quiet -PassThru` is used
 - public readiness only passes after the repository has a GitHub origin, at least one commit, and no untracked public candidate files
+- security posture passes for required security docs, read-only MCP blueprints, explicit agent scopes, and ignored generated artifacts
 
 ## Application Readiness
 
@@ -53,6 +55,7 @@ Expected result:
 - `.github/` contains issue, pull request, and validation workflow templates.
 - `docs/codex-for-oss-application.md` contains paste-ready form responses.
 - `docs/codex-for-oss-evidence.md` maps repository files to the application claims.
+- `docs/security/` explains the threat model and Codex Security review scope.
 - `examples/sample-change/` demonstrates a safe synthetic workflow.
 
 ## Before Submit

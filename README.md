@@ -110,6 +110,7 @@ The default validation workflow runs on Windows PowerShell and is also wired int
 .\scripts\checks\discover-contracts.ps1 -NoReport -Quiet -PassThru | ConvertTo-Json -Depth 5
 .\scripts\checks\run-local-baseline.ps1 -SkipCommandExecution -Quiet -PassThru | ConvertTo-Json -Depth 5
 .\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 ```
 
 In a fresh checkout, sample repositories are expected to report warning-level `missing-local-env` until you replace or clone them. See `docs/validation.md`.
@@ -133,11 +134,13 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `.github/`: issue and pull request templates
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
+- `docs/security/`: threat model, Codex Security review scope, and security review checklist
 - `docs/github-publication.md`: safe publication steps for GitHub
 - `CHANGELOG.md` and `ROADMAP.md`: project status and planned maintainer workflows
 - `.github/workflows/harness-validation.yml`: public CI entry point
 - `scripts/bootstrap/prepare-publication.ps1`: dry-run/apply helper for the final public commit
 - `scripts/checks/write-application-audit.ps1`: ignored pre-application audit report generator
+- `scripts/checks/check-security-posture.ps1`: CI-friendly security posture gate for agent scopes, MCP safety, and ignored artifacts
 
 ## Public Hygiene
 

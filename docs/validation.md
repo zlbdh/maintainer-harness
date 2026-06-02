@@ -52,6 +52,7 @@ Before applying to an open source support program, run:
 
 ```powershell
 .\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 ```
 
 This check verifies required public files, harness structure, Git commit state, origin host, whether public candidate files are tracked, and whether public candidate paths or contents match project-specific sensitive terms. It intentionally reports failure before the repository has a public GitHub remote and an initial commit.
@@ -64,6 +65,16 @@ For project-specific private names or local paths, pass a one-time pattern from 
 
 CI may use `-SkipSensitivePattern` after the one-time local publication scan has passed.
 
+## Security Posture
+
+Before requesting full open source support or enabling new automation surfaces, run:
+
+```powershell
+.\scripts\checks\check-security-posture.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
+```
+
+This check verifies Codex Security review docs, MCP read-only guarantees, agent write-scope declarations, ignored generated artifacts, private vulnerability reporting, and project-specific sensitive path/content scans.
+
 Use `scripts/bootstrap/prepare-publication.ps1` for a dry-run of staging, remote replacement, and commit creation before changing Git state.
 
 ## Application Audit
@@ -74,4 +85,4 @@ Generate a pre-application report:
 .\scripts\checks\write-application-audit.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
 
-The report is written under `reports/application-audit/`, which is ignored by Git. It checks form-section length, evidence files, workspace structure, sensitive terms, and publication blockers.
+The report is written under `reports/application-audit/`, which is ignored by Git. It checks form-section length, evidence files, workspace structure, sensitive terms, security posture, and publication blockers.

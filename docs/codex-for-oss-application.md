@@ -41,19 +41,19 @@ Early public-ready project. The repository has been generalized from local maint
 - GitHub repository URL: publish this cleaned repository and make it public before submitting.
 - Role: choose `Primary maintainer` if you own and maintain the repository.
 - Organization ID: use the `org-...` value from the OpenAI API Platform organization settings.
-- Interest: select API credits; select Codex Security only if the repository needs security review support.
+- Interest: select API credits, ChatGPT Pro with Codex, and Codex Security.
 
 ## Why Does This Repository Qualify? 500 Characters Max
 
-Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets a program-relevant gap: PR review, maintainer automation, and release evidence across multi-repo projects. It is not popular yet, but it is reusable infrastructure for maintainers who need agents to stay scoped, auditable, and secure.
+Maintainer Harness is an early OSS control plane for safer AI-assisted maintenance. It targets PR review, maintainer automation, release evidence, and agent security boundaries across multi-repo projects. It is not popular yet, but it offers reusable infrastructure for maintainers who need Codex workflows to stay scoped, auditable, and safe.
 
 ## How Will You Use API Credits? 500 Characters Max
 
-I will use API credits to dogfood Codex on the harness itself: generate issue-to-task packets, review worker outputs, summarize validation for PRs/releases, and build reusable synthetic examples. The credits support public maintainer automation and release workflows, not private product development.
+I will use API credits and ChatGPT Pro with Codex to dogfood the harness: generate issue-to-task packets, review worker outputs, stress-test scope boundaries, summarize validation for PRs/releases, and build synthetic examples. Credits support public maintainer automation and security review workflows, not private product development.
 
 ## Anything Else? 500 Characters Max
 
-Public hygiene is built into the repo: product names and local paths are scanned across candidate paths and contents, sample repos replace private checkouts, generated reports/worktrees are ignored, and governance files plus GitHub templates are present. I will submit only the public GitHub URL after the gate passes.
+Please also consider Codex Security. This repo coordinates agent write scopes, MCP context, generated worktrees, validation evidence, and public release gates. I added a threat model, review scope, checklist, and CI security posture check so reviewers can inspect concrete boundaries rather than a generic security claim.
 
 ## Longer Project Narrative
 

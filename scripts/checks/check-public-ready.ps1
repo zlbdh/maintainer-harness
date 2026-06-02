@@ -67,12 +67,16 @@ $requiredPublicPaths = @(
     '.github\ISSUE_TEMPLATE\feature_request.md',
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
+    'docs\security\threat-model.md',
+    'docs\security\codex-security-scope.md',
+    'docs\security\security-review-checklist.md',
     'docs\github-publication.md',
     'docs\public-release-checklist.md',
     'docs\validation.md',
     'examples\sample-change\README.md',
     'repos\repos.yaml',
     'config\agent-registry.yaml',
+    'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1'
 )
 

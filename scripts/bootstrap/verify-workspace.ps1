@@ -40,6 +40,9 @@ $requiredPaths = @(
     'docs\harness-engineering.md',
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
+    'docs\security\threat-model.md',
+    'docs\security\codex-security-scope.md',
+    'docs\security\security-review-checklist.md',
     'docs\github-publication.md',
     'docs\public-release-checklist.md',
     'docs\validation.md',
@@ -100,6 +103,7 @@ $requiredPaths = @(
     'scripts\orchestrator\review-worker-output.ps1',
     'scripts\checks\discover-contracts.ps1',
     'scripts\checks\check-public-ready.ps1',
+    'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1',
     'scripts\checks\run-local-baseline.ps1'
 )

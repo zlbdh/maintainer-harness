@@ -31,3 +31,7 @@ jobs:
       - name: Check public readiness
         shell: pwsh
         run: .\scripts\checks\check-public-ready.ps1 -SkipSensitivePattern
+
+      - name: Check security posture
+        shell: pwsh
+        run: .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern

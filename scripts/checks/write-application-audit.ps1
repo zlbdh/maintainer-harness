@@ -92,6 +92,14 @@ foreach ($finding in @($publicReady.findings)) {
     }
 }
 
+if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
+    $securityPosture = & (Join-Path $repoRoot 'scripts\checks\check-security-posture.ps1') -SensitivePattern $SensitivePattern -PassThru
+} else {
+    $securityPosture = & (Join-Path $repoRoot 'scripts\checks\check-security-posture.ps1') -PassThru
+}
+
+$findings.Add((New-AuditFinding -Status $securityPosture.overall_status -Check 'security-posture' -Detail "Security posture check returned $($securityPosture.overall_status)."))
+
 $failures = @($findings | Where-Object { $_.status -eq 'FAIL' })
 $warnings = @($findings | Where-Object { $_.status -eq 'WARN' })
 $overall = if ($failures.Count -gt 0) { 'FAIL' } elseif ($warnings.Count -gt 0) { 'WARN' } else { 'PASS' }

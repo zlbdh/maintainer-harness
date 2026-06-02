@@ -31,6 +31,8 @@ The project is designed for maintainers of multi-repository open source systems,
 
 See `docs/codex-for-oss-evidence.md` for a file-by-file evidence matrix that maps the repository to maintainer automation, pull request review workflows, release workflows, API credits usage, and security care.
 
+See `docs/codex-for-oss-reviewer-brief.md` for a one-page reviewer brief that explains why an early project with no adoption metrics can still produce useful open source maintainer evidence.
+
 See `docs/dogfooding-plan.md` for the first 30 days of public API-credit-backed dogfooding and `docs/security/codex-security-project-overview.md` for a paste-ready Codex Security threat-model overview.
 
 ## Current Stage
@@ -73,8 +75,9 @@ This is a new public project, so it does not yet have large adoption metrics. Th
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.10
-- Latest main commit: https://github.com/zlbdh/maintainer-harness/commit/5f1c357636ce58bf354a0e39f0474644c2747cfe
-- Latest successful CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26821647602
-- Latest successful Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26821645827
+- Latest main commit: https://github.com/zlbdh/maintainer-harness/commit/216bf991b6c74a1fe3155978ba20e707c7724be6
+- Latest successful CI: https://github.com/zlbdh/maintainer-harness/actions/runs/26822171456
+- Latest successful Pages deployment: https://github.com/zlbdh/maintainer-harness/actions/runs/26822168441
+- Reviewer brief: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-reviewer-brief.md
 - Current metrics: 0 stars, 0 forks, 0 watchers, and 3 open issues as of 2026-06-02.
 - Public growth posture: feedback-first discovery materials are published; the project does not ask for artificial stars.

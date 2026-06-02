@@ -15,6 +15,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Main branch CI history | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
 | Main branch Pages history | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
+| Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
 | Demo path | `docs/demo.md` |
 | Cross-platform validation | `docs/cross-platform-validation.md` |
 | Launch kit | `docs/launch-kit.md` |
@@ -43,7 +44,7 @@ Public answer mapping:
 - Qualification answer: use the draft section `Why Does This Repository Qualify? 500 Characters Max`
 - Codex Security justification: use the draft section `Why Does This Project Need Codex Security?`
 - API credits answer: use the draft section `How Will You Use API Credits? 500 Characters Max`
-- Additional notes: use the draft section `Anything Else? 500 Characters Max`
+- Additional notes: use the draft section `Anything Else? 500 Characters Max` and reference `docs/codex-for-oss-reviewer-brief.md` if space allows.
 
 ## Pre-Submit Gate
 

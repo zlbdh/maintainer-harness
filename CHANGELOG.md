@@ -44,6 +44,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.9` release anchor for submission readiness and public dogfooding tracking.
 - Cross-platform validation gate for Windows, Ubuntu, and macOS.
 - `v0.1.10` release anchor for the cross-platform validation gate.
+- Reviewer brief for Codex for OSS full-support evaluation, including current metrics, early-stage rationale, and 30/60/90 day public commitments.
 
 ### Changed
 
@@ -59,6 +60,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - Suggested repository metadata now points visitors to the GitHub Pages project site.
 - Security posture checks now assert anchored allowed-path glob matching and traversal rejection.
 - Public readiness checks now require the feedback-specific issue templates.
+- Codex for OSS application evidence now links the reviewer brief and latest support request rationale.
 
 ## 2026-06-01
 

@@ -174,6 +174,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
 - `docs/codex-for-oss-submission-readiness.md`: public submission readiness checklist for the application evidence package
+- `docs/codex-for-oss-reviewer-brief.md`: one-page reviewer brief for the full-support request
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow

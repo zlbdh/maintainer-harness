@@ -101,6 +101,9 @@ This project follows a simple date-based changelog until formal versioned releas
   four-step public feedback action path.
 - Issue templates and the issue chooser now point outside reviewers to the
   external review templates and preferred public feedback targets.
+- README, the project site, the external review page, and the share page now
+  expose a shorter first-run feedback route to issue `#6` and a direct
+  reviewability comment route to issue `#5`.
 
 ## 2026-06-01
 

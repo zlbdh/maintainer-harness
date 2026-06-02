@@ -16,6 +16,23 @@ Maintainer Harness turns agent work into scoped change packets, validation evide
 
 ## What To Try
 
+Fastest first-run route:
+
+```powershell
+git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+.\scripts\checks\run-review-demo.ps1
+```
+
+Then paste the generated `Copy This Comment Into Issue #6` block into:
+https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+
+If you only inspected the docs or worker-output example, leave one concrete
+reviewability note here:
+https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+
+Full local check path:
+
 ```powershell
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
@@ -44,7 +61,9 @@ cd maintainer-harness
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
-- Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- First-run feedback issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Reviewability comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+- First-run comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - First-run feedback target: https://github.com/zlbdh/maintainer-harness/issues/6

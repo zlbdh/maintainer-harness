@@ -56,7 +56,7 @@ Current public launch anchors:
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
 - Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
-- Good first issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- First-run feedback issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6

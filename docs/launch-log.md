@@ -6,7 +6,7 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 
 | Date | Stars | Forks | Watchers | Notes |
 | --- | ---: | ---: | ---: | --- |
-| 2026-06-02 | 0 | 0 | 0 | Baseline before public posting. Repo has demo, release, profile README, labels, feedback issue, and good first issue. |
+| 2026-06-02 | 0 | 0 | 0 | Baseline before public posting. Repo has demo, release, profile README, labels, feedback issue, and first-run feedback issue. |
 
 ## Launch Actions
 

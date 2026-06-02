@@ -172,6 +172,40 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
 
 $report | Add-Member -NotePropertyName path -NotePropertyValue $OutPath -Force
 
+$commandSummaryLines = foreach ($result in $results) {
+    "- $($result.label): $($result.status) ($($result.duration_seconds)s)"
+}
+
+$commentLines = @(
+    '## First-run report',
+    '',
+    "I ran the Maintainer Harness review demo on $($report.generated_at).",
+    '',
+    "Result: $($passed.Count) passed, $($failed.Count) failed, $($skipped.Count) skipped.",
+    '',
+    'Environment:',
+    "- OS: $($environment.os)",
+    "- Shell: $($environment.shell)",
+    "- PowerShell version: $($environment.powershell_version)",
+    "- Git version: $($environment.git_version)",
+    '',
+    'Command summary:'
+)
+$commentLines += $commandSummaryLines
+$commentLines += @(
+    '',
+    'First useful file:',
+    '',
+    'First confusing file or command:',
+    '',
+    'Smallest improvement:',
+    '',
+    'I reviewed this comment for secrets, private repository names, tokens, customer data, and production logs before posting.'
+)
+
+$report | Add-Member -NotePropertyName comment_target_url -NotePropertyValue $report.issue_url -Force
+$report | Add-Member -NotePropertyName comment_markdown -NotePropertyValue ($commentLines -join [Environment]::NewLine) -Force
+
 $lines = @(
     '# Maintainer Harness First-Run Report',
     '',
@@ -182,6 +216,19 @@ $lines = @(
     '',
     'Optional fallback: create a new issue with the first-run feedback template if a separate thread is clearer:',
     $report.template_url,
+    '',
+    '## Copy This Comment Into Issue #6',
+    '',
+    'Review and edit this block, then post it as a public comment on:',
+    $report.issue_url,
+    '',
+    '```markdown'
+)
+
+$lines += $commentLines
+
+$lines += @(
+    '```',
     '',
     '## Environment',
     '',

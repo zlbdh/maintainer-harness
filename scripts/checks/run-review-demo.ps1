@@ -53,6 +53,7 @@ Write-Host "First-run feedback issue: $firstRunIssueUrl"
 Write-Host "Review kit: $reviewKitUrl"
 Write-Host "Worker output example: $reviewabilityUrl"
 Write-Host ''
+Write-Host 'Copy the "Copy This Comment Into Issue #6" section from the generated report if you want to share first-run feedback.'
 Write-Host 'Review the generated report before sharing. Remove secrets, private repository names, tokens, customer data, or production logs.'
 Write-Host 'If the workflow is useful after inspection, a real star helps discovery; feedback is the stronger signal.'
 

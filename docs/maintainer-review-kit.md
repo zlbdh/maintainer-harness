@@ -45,6 +45,8 @@ Review it before sharing and remove secrets, private repository names, tokens,
 customer data, or production logs.
 For automatic 90% readiness counting, paste the report as a public comment on
 issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
+The report includes a `Copy This Comment Into Issue #6` block so reviewers do
+not need to trim the full local report by hand.
 
 ## What Feedback Helps Most
 

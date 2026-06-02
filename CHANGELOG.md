@@ -65,6 +65,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - `v0.1.14` release anchor for the one-command external review demo.
 - First-run feedback handoff now points reviewers to issue `#6` first so the
   readiness monitor can count outside reports automatically.
+- First-run reports now include a short copy-ready comment block for issue `#6`.
 
 ### Changed
 

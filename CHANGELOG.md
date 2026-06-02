@@ -39,6 +39,7 @@ This project follows a simple date-based changelog until formal versioned releas
 - First-run feedback and worker-output reviewability issue templates.
 - `v0.1.8` release anchor for feedback conversion templates.
 - Launch materials now record pinned feedback issues `#5` and `#6`.
+- Public Codex for OSS submission readiness checklist.
 
 ### Changed
 

@@ -166,6 +166,7 @@ In a fresh checkout, sample repositories are expected to report warning-level `m
 - `.github/`: issue and pull request templates
 - `docs/codex-for-oss-application.md`: application summary for OpenAI Codex for OSS
 - `docs/codex-for-oss-evidence.md`: evidence matrix for Codex for OSS program fit
+- `docs/codex-for-oss-submission-readiness.md`: public submission readiness checklist for the application evidence package
 - `docs/dogfooding-plan.md`: 30-day public dogfooding plan for API-credit-backed maintainer workflows
 - `docs/index.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site
 - `docs/demo.md`: short demo transcript for the synthetic maintainer workflow

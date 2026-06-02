@@ -40,6 +40,7 @@ $requiredPaths = @(
     'docs\harness-engineering.md',
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
+    'docs\codex-for-oss-submission-readiness.md',
     'docs\dogfooding-plan.md',
     'docs\index.html',
     'docs\site.css',

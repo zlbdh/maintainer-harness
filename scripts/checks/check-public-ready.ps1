@@ -69,6 +69,7 @@ $requiredPublicPaths = @(
     '.github\ISSUE_TEMPLATE\worker_output_reviewability.md',
     'docs\codex-for-oss-application.md',
     'docs\codex-for-oss-evidence.md',
+    'docs\codex-for-oss-submission-readiness.md',
     'docs\dogfooding-plan.md',
     'docs\index.html',
     'docs\site.css',

@@ -26,8 +26,17 @@ macOS or Linux with PowerShell 7:
 pwsh ./scripts/checks/run-review-demo.ps1
 ```
 
+Cloud path if local Git or PowerShell setup would slow you down:
+
+```text
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+```
+
+Codespaces first-run guide:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
+
 The demo runner writes a sanitized report under `reports/first-run/`. You can
-paste the relevant sections here after reviewing them.
+paste the relevant sections here after reviewing them. It does not post comments automatically, does not create stars, and does not register evidence.
 
 To count toward the public readiness gate, add first-run feedback as a comment
 on issue #6 after running the demo:

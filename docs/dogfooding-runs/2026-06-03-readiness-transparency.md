@@ -251,13 +251,28 @@ feedback-driven follow-up artifact. This guard prevents accidental premature
 form-submission recommendations, but it does not create or count external
 signals.
 
+### Continuation: external review handoff check
+
+The continuation added `scripts/checks/check-external-review-handoff.ps1`, a
+focused guard for the public reviewer path. It checks that the external review
+page, maintainer review kit, share page, launch kit, and generated review
+request packet still include issue `#5`, issue `#6`, the current gate status,
+the feedback follow-up template, Windows and `pwsh` demo commands, and
+star-safe language. The first run found that `docs/maintainer-review-kit.md`
+linked the external review page but not the `#templates` copy-ready anchor, so
+the handoff was tightened before wiring the check into CI.
+
+This reduces friction for real outside reviewers. It does not create external
+comments, outside first-run reports, real stars, or feedback-driven follow-up
+artifacts for the 90% submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret
   scan.
 - Security posture check: PASS, including the default high-confidence secret
   scan.
-- Public evidence link checker: PASS, 20 public URLs.
+- Public evidence link checker: PASS, 22 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

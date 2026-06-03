@@ -60,6 +60,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/check-public-ready.ps1
 
+      - name: Check external review handoff
+        shell: pwsh
+        run: ./scripts/checks/check-external-review-handoff.ps1
+
       - name: Check public evidence links
         shell: pwsh
         run: ./scripts/checks/check-public-evidence-links.ps1

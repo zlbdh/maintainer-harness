@@ -6,6 +6,9 @@ critique. The goal is real feedback, not artificial engagement.
 For a web-first handoff, use:
 https://zlbdh.github.io/maintainer-harness/external-review.html
 
+Copy-ready external review templates are here:
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
+
 Current gate status is public here:
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 

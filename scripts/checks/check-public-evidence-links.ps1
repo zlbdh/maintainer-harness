@@ -154,6 +154,11 @@ $links = @(
         RequiredText = 'CurrentGateStatus'
     },
     [pscustomobject]@{
+        Check = 'external-review-handoff-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/check-external-review-handoff.ps1'
+        RequiredText = 'External review handoff'
+    },
+    [pscustomobject]@{
         Check = 'form-submission-gate-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/assert-form-submission-ready.ps1'
         RequiredText = 'Codex for OSS form submission gate'

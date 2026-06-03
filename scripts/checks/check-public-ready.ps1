@@ -142,6 +142,7 @@ $requiredPublicPaths = @(
     'scripts\checks\find-external-feedback-candidates.ps1',
     'scripts\checks\write-external-feedback-review-queue.ps1',
     'scripts\checks\write-review-request-packet.ps1',
+    'scripts\checks\check-external-review-handoff.ps1',
     'scripts\checks\assert-form-submission-ready.ps1'
 )
 
@@ -195,6 +196,9 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'External Feedback Review Queue' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-candidates.json' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
+    @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'External review handoff' },
+    @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'CurrentGateStatus' },
+    @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'Codex for OSS form submission gate' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'ready_for_form_submission' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },

@@ -143,6 +143,14 @@ non-owner candidates:
 .\scripts\checks\find-external-feedback-candidates.ps1
 ```
 
+Before sending a new batch of review requests, verify that the public handoff
+still includes issue `#5`, issue `#6`, the current gate status, the feedback
+follow-up template, and the cross-platform demo commands:
+
+```powershell
+.\scripts\checks\check-external-review-handoff.ps1
+```
+
 The finder excludes owner, bot, duplicate, and already-registered comments,
 then prints guarded `add-external-feedback-evidence.ps1` commands with
 `-Status pending`. Review the public comment before changing a candidate to

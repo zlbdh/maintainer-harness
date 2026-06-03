@@ -50,6 +50,17 @@ https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 这个 tracker 用 `not-sent`、`sent`、`read`、`ran-demo`、`private-feedback`、`public-comment`、`feedback-follow-up`、`declined`、`no-response` 区分状态。只有对方自己发布了可复核的公开 URL 后，才进入候选扫描和证据验证；私聊反馈、owner 评论、小号或受控账号仍然不计数。
 
+## 评论草稿发布前检查
+
+如果朋友或维护者愿意公开评论，但担心不小心贴出本地路径、内部 endpoint、token、客户数据或生产日志，可以先在本地跑评论草稿预检。它只检查文本，不会自动发布评论、创建 star/vote/contact，也不会登记 evidence：
+
+```powershell
+.\scripts\checks\check-reviewer-comment-draft.ps1 -Path .\reports\reviewer-draft.txt -Target reviewability -PassThru
+.\scripts\checks\check-reviewer-comment-draft.ps1 -Text "I reviewed the worker-output example and..." -Target first-run -PassThru
+```
+
+`reviewability` 对应 issue `#5`，`first-run` 对应 issue `#6`，`feedback-follow-up` 对应反馈驱动 follow-up 模板。预检通过只说明草稿没有命中高置信敏感模式；是否公开发布，仍由 reviewer 自己决定。
+
 ## 如果朋友公开评论了
 
 1. 打开评论链接，确认是直接 issue comment URL，形如：

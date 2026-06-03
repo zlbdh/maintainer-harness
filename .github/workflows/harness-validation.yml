@@ -80,6 +80,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/test-external-feedback-candidates.ps1
 
+      - name: Test first-run report generation
+        shell: pwsh
+        run: ./scripts/checks/test-first-run-report.ps1
+
       - name: Test form submission hard gate
         shell: pwsh
         run: ./scripts/checks/test-form-submission-ready.ps1

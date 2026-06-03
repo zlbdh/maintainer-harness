@@ -260,6 +260,35 @@ $commentLines += @(
 
 $report | Add-Member -NotePropertyName comment_markdown -NotePropertyValue ($commentLines -join [Environment]::NewLine) -Force
 
+$commentLinesZh = @(
+    '## First-run report',
+    '',
+    "我从干净 checkout 跑了 Maintainer Harness demo。时间：$($report.generated_at)。",
+    '',
+    "结果：$($passed.Count) 个通过，$($failed.Count) 个失败，$($skipped.Count) 个跳过。",
+    '',
+    '环境：',
+    "- OS：$($environment.os)",
+    "- Shell：$($environment.shell)",
+    "- PowerShell 版本：$($environment.powershell_version)",
+    "- Git 版本：$($environment.git_version)",
+    '',
+    '命令摘要：'
+)
+$commentLinesZh += $commandSummaryLines
+$commentLinesZh += @(
+    '',
+    '第一个有用的文件：',
+    '',
+    '第一个不清楚的文件或命令：',
+    '',
+    '最小改进建议：',
+    '',
+    '我确认这条评论没有 token、私有仓库地址、客户数据或生产日志。'
+)
+
+$report | Add-Member -NotePropertyName comment_markdown_zh -NotePropertyValue ($commentLinesZh -join [Environment]::NewLine) -Force
+
 $clipboardResult = [pscustomobject]@{
     status = 'not-requested'
     message = 'Run with -CopyCommentToClipboard to copy the issue #6 comment block.'
@@ -307,6 +336,19 @@ $lines = @(
 )
 
 $lines += $commentLines
+
+$lines += @(
+    '```',
+    '',
+    '## 中文：复制到 Issue #6 的评论',
+    '',
+    '请先检查和编辑这段内容，再把它作为公开评论发布到：',
+    $report.comment_target_url,
+    '',
+    '```markdown'
+)
+
+$lines += $commentLinesZh
 
 $lines += @(
     '```',

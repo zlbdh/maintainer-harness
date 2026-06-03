@@ -30,6 +30,8 @@ try {
     $validPath = Join-Path $tempRoot 'valid-direct-comment-url.yaml'
     $addInvalidPath = Join-Path $tempRoot 'add-invalid-generic-issue-url.yaml'
     $addValidPath = Join-Path $tempRoot 'add-valid-direct-comment-url.yaml'
+    $addSkipVerifiedPath = Join-Path $tempRoot 'add-skip-verified-direct-comment-url.yaml'
+    $addMissingAnchorPath = Join-Path $tempRoot 'add-missing-anchor-direct-comment-url.yaml'
 
     $invalidContent = @(
         'signals:',
@@ -82,15 +84,53 @@ try {
     Assert-Condition -Condition $addInvalidFailed -Message 'Add helper should reject verified generic issue URLs.'
     Assert-Condition -Condition (-not $addInvalidContent.Contains('bad-verified-generic-url')) -Message 'Add helper must not leave invalid verified evidence in the target file.'
 
+    Write-HarnessTextFile -Path $addSkipVerifiedPath -Content 'signals:'
+    $addSkipVerifiedFailed = $false
+    try {
+        & $addHelper `
+            -Id 'skip-check-verified-direct-comment-url' `
+            -Type 'issue-comment' `
+            -Url 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-4607819981' `
+            -Summary 'Verified evidence should not skip URL reachability checks.' `
+            -Status 'verified' `
+            -Path $addSkipVerifiedPath `
+            -SkipUrlCheck `
+            -PassThru | Out-Null
+    } catch {
+        $addSkipVerifiedFailed = $true
+    }
+
+    $addSkipVerifiedContent = Get-Content -LiteralPath $addSkipVerifiedPath -Raw
+    Assert-Condition -Condition $addSkipVerifiedFailed -Message 'Add helper should reject verified evidence when URL checks are skipped.'
+    Assert-Condition -Condition (-not $addSkipVerifiedContent.Contains('skip-check-verified-direct-comment-url')) -Message 'Add helper must not leave skip-checked verified evidence in the target file.'
+
+    Write-HarnessTextFile -Path $addMissingAnchorPath -Content 'signals:'
+    $addMissingAnchorFailed = $false
+    try {
+        & $addHelper `
+            -Id 'missing-anchor-verified-direct-comment-url' `
+            -Type 'issue-comment' `
+            -Url 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-0000000000' `
+            -Summary 'Verified evidence should prove the direct issue comment anchor exists.' `
+            -Status 'verified' `
+            -Path $addMissingAnchorPath `
+            -PassThru | Out-Null
+    } catch {
+        $addMissingAnchorFailed = $true
+    }
+
+    $addMissingAnchorContent = Get-Content -LiteralPath $addMissingAnchorPath -Raw
+    Assert-Condition -Condition $addMissingAnchorFailed -Message 'Add helper should reject verified evidence when the direct issue comment anchor is missing.'
+    Assert-Condition -Condition (-not $addMissingAnchorContent.Contains('missing-anchor-verified-direct-comment-url')) -Message 'Add helper must not leave missing-anchor verified evidence in the target file.'
+
     Write-HarnessTextFile -Path $addValidPath -Content 'signals:'
     $addValidResult = & $addHelper `
         -Id 'good-verified-direct-comment-url' `
         -Type 'issue-comment' `
-        -Url 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-1234567890' `
+        -Url 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-4607819981' `
         -Summary 'Direct issue comment links can be persisted after validation.' `
         -Status 'verified' `
         -Path $addValidPath `
-        -SkipUrlCheck `
         -PassThru
     $addValidContent = Get-Content -LiteralPath $addValidPath -Raw
     Assert-Condition -Condition ([string]$addValidResult.id -eq 'good-verified-direct-comment-url') -Message 'Add helper should return the persisted valid evidence id.'
@@ -100,6 +140,8 @@ try {
         overall_status = 'PASS'
         generic_issue_url_blocked = $invalidBlocked
         add_invalid_left_clean = (-not $addInvalidContent.Contains('bad-verified-generic-url'))
+        add_skip_verified_left_clean = (-not $addSkipVerifiedContent.Contains('skip-check-verified-direct-comment-url'))
+        add_missing_anchor_left_clean = (-not $addMissingAnchorContent.Contains('missing-anchor-verified-direct-comment-url'))
         add_valid_persisted = $addValidContent.Contains('good-verified-direct-comment-url')
         direct_comment_status = [string]$validResult.overall_status
     }

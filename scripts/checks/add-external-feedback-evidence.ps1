@@ -53,11 +53,31 @@ if ($Date -notmatch '^\d{4}-\d{2}-\d{2}$') {
     throw 'Evidence date must use YYYY-MM-DD.'
 }
 
+if ($Status -eq 'verified' -and $SkipUrlCheck) {
+    throw 'Verified evidence cannot skip URL reachability checks.'
+}
+
 if (-not $SkipUrlCheck) {
     try {
-        $response = Invoke-WebRequest -Uri $Url -Method Head -MaximumRedirection 5
+        $requestParameters = @{
+            Uri = $Url
+            Method = 'Get'
+            MaximumRedirection = 5
+        }
+        if ((Get-Command Invoke-WebRequest).Parameters.ContainsKey('UseBasicParsing')) {
+            $requestParameters['UseBasicParsing'] = $true
+        }
+
+        $response = Invoke-WebRequest @requestParameters
         if ([int]$response.StatusCode -ge 400) {
             throw "HTTP $([int]$response.StatusCode)"
+        }
+
+        if ($Url -match '#(issuecomment-\d+)(?:$|[/?&])') {
+            $commentAnchor = $Matches[1]
+            if ([string]$response.Content -notmatch [regex]::Escape($commentAnchor)) {
+                throw "Direct issue comment anchor not found: $commentAnchor"
+            }
         }
     } catch {
         throw "Evidence URL is not reachable: $($_.Exception.Message)"

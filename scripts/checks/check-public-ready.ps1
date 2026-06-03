@@ -208,6 +208,8 @@ $requiredPublicText = @(
     @{ Path = 'docs\external-review.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = 'docs\external-review.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155' },
     @{ Path = 'docs\external-review.html'; Text = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md' },
+    @{ Path = 'docs\external-review.html'; Text = 'Open Codespaces Demo' },
+    @{ Path = 'docs\external-review.html'; Text = '打开 Codespaces 云端 demo' },
     @{ Path = 'docs\external-review.html'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },

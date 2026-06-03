@@ -24,8 +24,8 @@ $links = [ordered]@{
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
     ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
-    FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5'
-    FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6'
+    FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
+    FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new'
     FollowUpIssue = 'https://github.com/zlbdh/maintainer-harness/issues/7'
     FirstRunTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
 }

@@ -106,6 +106,8 @@ This project follows a simple date-based changelog until formal versioned releas
   reviewability comment route to issue `#5`.
 - External review templates now have copy buttons so outside reviewers can copy
   issue `#5` or issue `#6` comments without trimming a combined block by hand.
+- Generated review packets, demo output, and first-run reports now point public
+  reviewers directly to the issue `#5` and issue `#6` comment boxes.
 
 ## 2026-06-01
 

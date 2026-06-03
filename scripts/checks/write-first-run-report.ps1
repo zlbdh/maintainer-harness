@@ -172,6 +172,7 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
 }
 
 $report | Add-Member -NotePropertyName path -NotePropertyValue $OutPath -Force
+$report | Add-Member -NotePropertyName comment_target_url -NotePropertyValue "$($report.issue_url)#issuecomment-new" -Force
 
 $commandSummaryLines = foreach ($result in $results) {
     "- $($result.label): $($result.status) ($($result.duration_seconds)s)"
@@ -204,7 +205,6 @@ $commentLines += @(
     'I reviewed this comment for secrets, private repository names, tokens, customer data, and production logs before posting.'
 )
 
-$report | Add-Member -NotePropertyName comment_target_url -NotePropertyValue $report.issue_url -Force
 $report | Add-Member -NotePropertyName comment_markdown -NotePropertyValue ($commentLines -join [Environment]::NewLine) -Force
 
 $lines = @(
@@ -213,7 +213,7 @@ $lines = @(
     "Generated: $($report.generated_at)",
     '',
     'Preferred sharing target: paste this as a comment on the pinned first-run issue so the public readiness monitor can count it automatically:',
-    $report.issue_url,
+    $report.comment_target_url,
     '',
     'Optional fallback: create a new issue with the first-run feedback template if a separate thread is clearer:',
     $report.template_url,
@@ -224,7 +224,7 @@ $lines = @(
     '## Copy This Comment Into Issue #6',
     '',
     'Review and edit this block, then post it as a public comment on:',
-    $report.issue_url,
+    $report.comment_target_url,
     '',
     '```markdown'
 )
@@ -287,6 +287,7 @@ Write-HarnessTextFile -Path $OutPath -Content ($lines -join [Environment]::NewLi
 
 Write-Host "First-run report: $OutPath"
 Write-Host "Passed: $($passed.Count); Failed: $($failed.Count); Skipped: $($skipped.Count)"
+Write-Host "First-run comment target: $($report.comment_target_url)"
 Write-Host "External review templates: $($report.external_review_url)"
 
 if ($PassThru) {

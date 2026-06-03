@@ -14,6 +14,10 @@ https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
+## First-run troubleshooting
+
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
+
 ## 中文朋友实测教程
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
@@ -81,6 +85,7 @@ cd maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
 - Public review request packet: https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
+- First-run troubleshooting: https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
 - Copy-ready review comments: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review

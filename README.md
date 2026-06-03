@@ -18,6 +18,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **First-run 中文排障:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
 
+**First-run troubleshooting:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
+
 **Reviewer kit:** if you have five minutes, use
 `docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
 demo, or leave public feedback.
@@ -58,6 +60,7 @@ or `pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard`.
 Use `-OpenCommentTarget` if you also want the issue #6 comment target opened
 after the report is written. The script never posts a comment for you.
 If the command fails, use
+`docs/first-run-troubleshooting.md` or
 `docs/first-run-troubleshooting-zh.md` before posting the failure details.
 If you only inspected the docs or worker-output example, comment on issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new)

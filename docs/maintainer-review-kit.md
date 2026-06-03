@@ -15,6 +15,9 @@ https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 Public review request packet:
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
+First-run troubleshooting:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
+
 That page also includes copy-ready comment templates for issue `#5` and issue
 `#6`. Please use them only after inspecting the project or running the demo.
 
@@ -93,6 +96,8 @@ For automatic 90% readiness counting, paste the report as a public comment on
 issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 The report includes a `Copy This Comment Into Issue #6` block so reviewers do
 not need to trim the full local report by hand.
+If Git, PowerShell, execution policy, or the working directory blocks the demo,
+use `docs/first-run-troubleshooting.md` before posting the failure.
 
 ## What Feedback Helps Most
 

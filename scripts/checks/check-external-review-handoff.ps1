@@ -58,6 +58,7 @@ $links = [ordered]@{
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
     FeedbackFollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
+    FirstRunTroubleshooting = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md'
     FirstRunTroubleshootingZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md'
 }
 
@@ -74,6 +75,7 @@ $fileRequirements = @(
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
             $links.PublicReviewRequest,
+            $links.FirstRunTroubleshooting,
             $links.ChineseFriendGuide,
             $links.FirstRunTroubleshootingZh,
             $windowsDemoCommand,

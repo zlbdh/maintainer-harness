@@ -96,7 +96,7 @@ $links = @(
     [pscustomobject]@{
         Check = 'current-gate-status-comment'
         Url = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
-        RequiredText = 'Maintainer dogfooding update'
+        RequiredText = 'ready_for_form_submission'
     },
     [pscustomobject]@{
         Check = 'readiness-scorecard'

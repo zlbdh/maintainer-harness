@@ -154,6 +154,7 @@ foreach ($relativePath in $requiredPublicPaths) {
 $requiredPublicText = @(
     @{ Path = 'README.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = 'README.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'README.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'docs\index.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = 'docs\index.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = 'docs\index.html'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },

@@ -36,6 +36,14 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 ```
 
+On macOS or Linux with PowerShell 7:
+
+```bash
+git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+pwsh ./scripts/checks/run-review-demo.ps1
+```
+
 Then paste the generated `Copy This Comment Into Issue #6` block into
 issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new).
 If you only inspected the docs or worker-output example, comment on issue
@@ -65,10 +73,17 @@ The project is intentionally repository-agnostic. The default configuration uses
 
 ## Try It In 90 Seconds
 
-The default sample change is synthetic and safe to run in a clean checkout:
+The default sample change is synthetic and safe to run in a clean checkout on
+Windows PowerShell or PowerShell 7:
 
 ```powershell
 .\scripts\checks\run-review-demo.ps1
+```
+
+On macOS or Linux with PowerShell 7:
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1
 ```
 
 That one command runs the public demo checks and writes a paste-ready first-run

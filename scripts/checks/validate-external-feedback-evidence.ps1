@@ -57,14 +57,24 @@ foreach ($signal in $signals) {
     }
 
     if (($signal.PSObject.Properties.Name -contains 'url') -and -not [string]::IsNullOrWhiteSpace([string]$signal.url)) {
+        $urlText = [string]$signal.url
         if ($seenUrls.ContainsKey([string]$signal.url)) {
             $findings.Add((New-FeedbackEvidenceFinding -Status 'FAIL' -Check 'duplicate-url' -Detail "Duplicate url: $($signal.url)."))
         } else {
             $seenUrls[[string]$signal.url] = $true
         }
 
-        if (-not ([string]$signal.url).StartsWith('https://')) {
+        if (-not $urlText.StartsWith('https://')) {
             $findings.Add((New-FeedbackEvidenceFinding -Status 'FAIL' -Check 'public-url' -Detail "$id url must be https."))
+        }
+
+        $isVerified = (($signal.PSObject.Properties.Name -contains 'status') -and [string]$signal.status -eq 'verified')
+        $typeText = if ($signal.PSObject.Properties.Name -contains 'type') { [string]$signal.type } else { '' }
+        $isCommentEvidence = $typeText -in @('issue-comment', 'first-run-report')
+        $isGitHubIssueUrl = $urlText -match '^https://github\.com/[^/]+/[^/]+/issues/\d+(?:$|[?#])'
+        $hasDirectCommentAnchor = $urlText -match '#issuecomment-\d+(?:$|[/?&])'
+        if ($isVerified -and $isCommentEvidence -and $isGitHubIssueUrl -and -not $hasDirectCommentAnchor) {
+            $findings.Add((New-FeedbackEvidenceFinding -Status 'FAIL' -Check 'verified-comment-url' -Detail "$id verified $typeText evidence must link to a direct GitHub issue comment URL."))
         }
     }
 

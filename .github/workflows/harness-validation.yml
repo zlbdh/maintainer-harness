@@ -72,6 +72,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/validate-external-feedback-evidence.ps1
 
+      - name: Test external feedback evidence validation
+        shell: pwsh
+        run: ./scripts/checks/test-external-feedback-evidence-validation.ps1
+
       - name: Test external feedback candidate scanning
         shell: pwsh
         run: ./scripts/checks/test-external-feedback-candidates.ps1

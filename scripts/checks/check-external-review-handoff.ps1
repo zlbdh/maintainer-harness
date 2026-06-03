@@ -114,6 +114,19 @@ $fileRequirements = @(
         )
     },
     [pscustomobject]@{
+        Path = '.github\ISSUE_TEMPLATE\config.yml'
+        Text = @(
+            $links.FeedbackIssue,
+            $links.FirstRunIssue,
+            $links.CodespacesQuickstart,
+            '中文：3 分钟具体反馈',
+            '中文：10 分钟 first-run 报告',
+            '真实看过文档、示例或外部评审页后',
+            '真实跑过 demo 或 Codespaces 路径后',
+            'does not post comments, create stars, or register evidence'
+        )
+    },
+    [pscustomobject]@{
         Path = 'docs\maintainer-review-kit.md'
         Text = @(
             $links.ExternalReviewTemplates,

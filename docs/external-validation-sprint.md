@@ -53,9 +53,13 @@ Before sending a five-person reviewer batch, generate a local manual checklist:
 
 The generated plan is manual-only: it does not contact reviewers, post
 comments, create stars, or register evidence. Use it to track who should get an
-individual request and which public target fits them. It still counts nothing
-until a real outside reviewer publishes a reviewer-visible URL and that URL is
-validated through `docs/external-feedback-evidence.yaml`.
+individual request and which public target fits them. It also writes
+copy-ready one-to-one drafts for maintainer critique, clean first-run testing,
+security-boundary review, Chinese friend review, and feedback-driven follow-up
+so the maintainer can edit a specific message instead of bulk-sending a generic
+ask. It still counts nothing until a real outside reviewer publishes a
+reviewer-visible URL and that URL is validated through
+`docs/external-feedback-evidence.yaml`.
 
 ## Reviewer Routing
 

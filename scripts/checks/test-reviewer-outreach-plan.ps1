@@ -43,6 +43,11 @@ try {
     $onepagerLink = $result.links.PSObject.Properties['FriendOnepagerZh']
     Assert-Condition -Condition ($null -ne $onepagerLink) -Message 'Outreach plan should expose the one-page Chinese friend tutorial link.'
     Assert-Condition -Condition ([string]$onepagerLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md') -Message 'Outreach plan should point to the public one-page Chinese friend tutorial.'
+    $codespacesLink = $result.links.PSObject.Properties['CodespacesQuickstart']
+    Assert-Condition -Condition ($null -ne $codespacesLink) -Message 'Outreach plan should expose the Codespaces quickstart link.'
+    Assert-Condition -Condition ([string]$codespacesLink.Value -eq 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1') -Message 'Outreach plan should point to the Codespaces quickstart.'
+    $snapshotLink = $result.links.PSObject.Properties['CurrentReadinessSnapshot']
+    Assert-Condition -Condition ($null -ne $snapshotLink) -Message 'Outreach plan should expose the current readiness snapshot link.'
 
     $slots = @($result.slots)
     Assert-Condition -Condition ($slots.Count -eq 5) -Message "Expected 5 slots, got $($slots.Count)."
@@ -50,6 +55,8 @@ try {
         Assert-Condition -Condition ([string]$slot.status -eq 'not-sent') -Message "Slot $($slot.id) should start as not-sent."
         Assert-Condition -Condition ([string]$slot.public_target).StartsWith('https://github.com/zlbdh/maintainer-harness/') -Message "Slot $($slot.id) should point to a public GitHub target."
         Assert-Condition -Condition ([string]$slot.counts_when).Contains('verified public URL') -Message "Slot $($slot.id) should explain the verified-public-URL counting rule."
+        Assert-Condition -Condition (-not [string]::IsNullOrWhiteSpace([string]$slot.copy_ready_message)) -Message "Slot $($slot.id) should include a copy-ready one-to-one message."
+        Assert-Condition -Condition ([string]$slot.copy_ready_message).Contains('https://') -Message "Slot $($slot.id) message should include a public link."
     }
 
     $markdown = Get-Content -LiteralPath $result.path -Raw
@@ -62,8 +69,14 @@ try {
         'Self-owned alternate accounts do not count',
         'Private feedback can improve the project, but it does not count',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md',
+        'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1',
+        'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md',
         'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new',
         'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new',
+        'Copy-Ready One-To-One Drafts',
+        'do not bulk-send',
+        'not asking for a star',
+        '能不能帮我真实看一下这个开源项目？不是让你直接 star',
         'docs/external-feedback-evidence.yaml'
     )) {
         Assert-Condition -Condition $markdown.Contains($text) -Message "Markdown outreach plan is missing: $text"

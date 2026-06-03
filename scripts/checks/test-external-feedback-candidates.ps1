@@ -54,6 +54,23 @@ try {
         Assert-Condition -Condition (([string]$candidate.suggested_command).Contains('-Status pending')) -Message 'Suggested command must keep pending status.'
     }
 
+    $queueDirectory = Join-Path $tempRoot 'queue'
+    $queue = & (Join-HarnessPath $repoRoot 'scripts/checks/write-external-feedback-review-queue.ps1') `
+        -Repository 'zlbdh/maintainer-harness' `
+        -FeedbackIssueNumbers @(5, 6) `
+        -FirstRunIssueNumber 6 `
+        -EvidencePath $evidencePath `
+        -AllowHtmlFallback `
+        -HtmlFixtureDirectory $fixtureDirectory `
+        -OutputDirectory $queueDirectory `
+        -PassThru
+
+    $queueMarkdown = Get-Content -LiteralPath $queue.markdown_path -Raw
+    Assert-Condition -Condition ([int]$queue.candidate_count -eq 2) -Message "Expected queue candidate count 2, got $($queue.candidate_count)."
+    Assert-Condition -Condition ($queueMarkdown.Contains('Source: `github-html-fallback`')) -Message 'Queue markdown should include the HTML fallback source.'
+    Assert-Condition -Condition ($queueMarkdown.Contains('HTML fallback candidates are discovery hints only.')) -Message 'Queue markdown should include the fallback review warning.'
+    Assert-Condition -Condition ($queueMarkdown.Contains('-Status pending')) -Message 'Queue markdown should keep pending registration commands.'
+
     $testResult = [pscustomobject]@{
         overall_status = 'PASS'
         candidate_count = [int]$result.candidate_count

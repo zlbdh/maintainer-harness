@@ -6,6 +6,7 @@ param(
     [string]$EvidencePath = 'docs/external-feedback-evidence.yaml',
     [string]$GitHubToken = '',
     [string]$CommentsJsonPath = '',
+    [string]$HtmlFixtureDirectory = '',
     [string]$OutputDirectory = 'reports/readiness',
     [switch]$AllowHtmlFallback,
     [switch]$PassThru
@@ -93,6 +94,9 @@ $finderArgs = @{
 
 if (-not [string]::IsNullOrWhiteSpace($CommentsJsonPath)) {
     $finderArgs.CommentsJsonPath = $CommentsJsonPath
+}
+if (-not [string]::IsNullOrWhiteSpace($HtmlFixtureDirectory)) {
+    $finderArgs.HtmlFixtureDirectory = $HtmlFixtureDirectory
 }
 if ($AllowHtmlFallback) {
     $finderArgs.AllowHtmlFallback = $true

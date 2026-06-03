@@ -1,18 +1,20 @@
 # Codex For OSS Current Readiness Snapshot
 
-This snapshot records a recent verified application-readiness state for
+This snapshot records a recent monitored application-readiness state for
 Maintainer Harness. It is evidence for the review process, not a submission
-approval.
+approval. When the local anonymous GitHub API is rate-limited, this document
+records only the public state and token-backed workflow status that were
+visible during the pass.
 
 ## Snapshot
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T14:10:33.8984648Z` |
+| Checked at UTC | `2026-06-03T16:09:25.6619940Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `bde584c42282f635af030b8bc2952a3cd90ff93c` |
+| Observed commit | `5e808853ffd0c74d248ce44a7fc0191dc9deb2d1` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was attempted first and hit the anonymous GitHub API rate limit; public GitHub HTML, `scripts/checks/write-public-readiness-observation.ps1 -PassThru`, and the token-backed `Codex readiness monitor` run were used for this transparency snapshot |
-| Readiness score | `60/90` estimated from the unchanged hard-gate counts below |
+| Readiness score | `60/90` from the latest API-backed hard-gate state and unchanged public external-signal counts; not a local API-backed approval in this pass |
 | Target score | `90` |
 | Ready for form submission | no |
 | Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
@@ -34,11 +36,11 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890144926 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890143076 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890197631 |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897102232 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897098381 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897194452 |
 | Monitor artifact | present on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 26 public URLs, including `docs/friend-review-guide-zh.md` and the public readiness observation script |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 34 public URLs, including the live external review Codespaces CTAs, `docs/friend-review-guide-zh.md`, and the public readiness observation script |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan and guards that public HTML fallback output is not a form-submission gate |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
@@ -54,9 +56,8 @@ token-backed monitor artifact as the final pre-submit gate once it can be
 inspected by an authenticated actor. The public readiness observation fallback
 recorded 0 external feedback candidates and hard-coded
 `ready_for_form_submission=false`, so it is a status aid rather than an approval
-signal. Documentation-only snapshot refreshes can
-leave the repository HEAD newer than the measured commit listed above; that is
-expected and does not change the external-signal counts.
+signal. This snapshot points at the current main commit, but it still does not
+replace the required API-backed pre-submit readiness measurement.
 
 ## Hard Gates Still Missing
 
@@ -78,8 +79,8 @@ Those owner comments are useful handoff notes, but they are intentionally not
 counted as external feedback. The release anchor, CI runtime hygiene,
 feedback-driven follow-up template, external feedback candidate finder, Chinese
 friend review guide, public readiness observation fallback, Pages handoff links,
-and owner dogfooding follow-ups on main improve the handoff path, but they are
-not counted as external feedback.
+live Codespaces CTA checks, and owner dogfooding follow-ups on main improve the
+handoff path, but they are not counted as external feedback.
 
 ## Next Honest Work
 

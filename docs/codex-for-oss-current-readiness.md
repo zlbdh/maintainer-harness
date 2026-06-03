@@ -20,7 +20,7 @@ are still missing.
 | Readiness score | last local API-backed hard-gate state remains `60/90`; this pass did not produce a refreshed local API-backed score |
 | Target score | `90` |
 | Ready for form submission | no |
-| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
+| Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest Monitoring Attempt
 
@@ -120,7 +120,7 @@ the Chinese friend review guide and first-run troubleshooting paths. Issue
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
 Those owner comments are useful handoff notes, but they are intentionally not
-counted as external feedback. The release anchor, CI runtime hygiene,
+counted as external feedback. The tag anchor, CI runtime hygiene,
 feedback-driven follow-up template, external feedback candidate finder, Chinese
 friend review guide, public readiness observation fallback, Pages handoff links,
 live Codespaces CTA checks, and owner dogfooding follow-ups on main improve the

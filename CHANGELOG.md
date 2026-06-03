@@ -13,20 +13,20 @@ This project follows a simple date-based changelog until formal versioned releas
   external hard gates.
 - Readiness transparency dogfooding run documenting the public status checks,
   CI/Pages timing, link health, and still-missing external signals.
-- `v0.1.16` release anchor for the simplified external first-run handoff,
+- `v0.1.16` tag anchor for the simplified external first-run handoff,
   readiness dogfooding continuation, and current monitor evidence.
 - First-run report JSON summaries so outside reviewers can audit local demo
   results before posting public issue `#6` feedback.
-- `v0.1.17` release anchor for the first-run JSON summary handoff.
+- `v0.1.17` tag anchor for the first-run JSON summary handoff.
 - Guarded external feedback evidence append helper for real public issue
   comments, first-run reports, and feedback follow-up URLs.
-- `v0.1.18` release anchor for the feedback evidence append helper.
+- `v0.1.18` tag anchor for the feedback evidence append helper.
 - Default high-confidence secret scanning in public readiness and security
   posture checks, including CI enforcement.
-- `v0.1.19` release anchor for the default public secret-scan gate.
+- `v0.1.19` tag anchor for the default public secret-scan gate.
 - Cross-platform PowerShell fallback for the default public secret scan so
   macOS and Ubuntu CI do not depend on `rg` being installed.
-- `v0.1.20` release anchor for the cross-platform default secret-scan gate.
+- `v0.1.20` tag anchor for the cross-platform default secret-scan gate.
 
 ### Changed
 
@@ -39,7 +39,7 @@ This project follows a simple date-based changelog until formal versioned releas
   readiness artifact.
 - Public evidence link checks now verify the Codex readiness monitor workflow
   page and raw workflow source.
-- Latest release links now point to `v0.1.20`, which anchors reviewer handoff
+- Latest public anchor links now point to `v0.1.20`, which anchors reviewer handoff
   improvements without counting owner work as external feedback.
 
 ## 2026-06-02
@@ -83,12 +83,12 @@ This project follows a simple date-based changelog until formal versioned releas
 - Cross-platform validation gate for Windows, Ubuntu, and macOS.
 - `v0.1.10` release anchor for the cross-platform validation gate.
 - Reviewer brief for Codex for OSS full-support evaluation, including current metrics, early-stage rationale, and 30/60/90 day public commitments.
-- `v0.1.11` release anchor for the Codex for OSS reviewer brief.
+- `v0.1.11` tag anchor for the Codex for OSS reviewer brief.
 - Public dogfooding run notes under `docs/dogfooding-runs/`, starting with the Codex application hardening run.
 - External validation sprint plan for collecting honest maintainer feedback, first-run reports, and star-safe discovery signals.
 - Script-backed 90% readiness scorecard for the Codex for OSS full-support target.
 - First-run report generator for outside demo feedback.
-- `v0.1.12` release anchor for the first-run report generator.
+- `v0.1.12` tag anchor for the first-run report generator.
 - Authenticated GitHub API support for the 90% readiness monitor.
 - External feedback evidence registry and validator for machine-readable 90% scorekeeping.
 - Maintainer review kit for five-minute outside feedback handoff.
@@ -97,17 +97,17 @@ This project follows a simple date-based changelog until formal versioned releas
   agent replies with reviewable evidence.
 - Non-blocking Codex for OSS readiness summary in the Harness validation
   workflow.
-- `v0.1.13` release anchor for the worker-output reviewability and readiness
+- `v0.1.13` tag anchor for the worker-output reviewability and readiness
   monitor package.
 - One-command review demo runner for outside first-run feedback.
-- `v0.1.14` release anchor for the one-command external review demo.
+- `v0.1.14` tag anchor for the one-command external review demo.
 - First-run feedback handoff now points reviewers to issue `#6` first so the
   readiness monitor can count outside reports automatically.
 - First-run reports now include a short copy-ready comment block for issue `#6`.
 - Scheduled and manual Codex for OSS readiness monitor workflow.
 - GitHub Pages external review path mapping the 90% hard external-signal gates
   to public reviewer actions.
-- `v0.1.15` release anchor for the external review action page.
+- `v0.1.15` tag anchor for the external review action page.
 
 ### Changed
 

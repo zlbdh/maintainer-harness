@@ -98,7 +98,7 @@ cd maintainer-harness
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
+- Latest tag anchor: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Current gate status: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 - Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md

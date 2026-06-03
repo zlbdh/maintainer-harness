@@ -76,7 +76,7 @@ the 90% submission gate.
   https://github.com/zlbdh/maintainer-harness/commit/6aed2e2196e7ee1404fec1a1e1336426afa62563
 - Public readiness gate follow-up:
   https://github.com/zlbdh/maintainer-harness/commit/36b932a17c519093a5a31ac5be2ec4ae257c2df1
-- Latest release anchor:
+- Latest tag anchor:
   https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18
 - Latest readiness check after the follow-up:
   `60/90` on commit `36b932a17c519093a5a31ac5be2ec4ae257c2df1`
@@ -104,7 +104,7 @@ feedback-driven follow-up for the 90% submission gate.
 
 ### Continuation: default public secret scan
 
-- Latest release anchor:
+- Latest tag anchor:
   https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
 - Latest readiness check after the cross-platform fallback:
   `60/90` on commit `7604643f4cd97df97355a5046326790875bc2879`

@@ -102,9 +102,9 @@ $links = @(
         RequiredText = ''
     },
     [pscustomobject]@{
-        Check = 'latest-release'
-        Url = 'https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20'
-        RequiredText = ''
+        Check = 'latest-tag-anchor'
+        Url = 'https://api.github.com/repos/zlbdh/maintainer-harness/git/ref/tags/v0.1.20'
+        RequiredText = 'refs/tags/v0.1.20'
     },
     [pscustomobject]@{
         Check = 'feedback-issue'

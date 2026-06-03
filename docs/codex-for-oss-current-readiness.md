@@ -8,9 +8,9 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T08:22:05.4765017Z` |
+| Checked at UTC | `2026-06-03T08:54:55.8970539Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `dc8faa5eecb669fdbe5d622f2a4bc89141d6984c` |
+| Measured commit | `39202d311eb64a3d621d1439e6fa57659b27a5e8` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` run, cross-checked against the token-backed `Codex readiness monitor` artifact |
 | Readiness score | `60/90` |
 | Target score | `90` |
@@ -34,10 +34,10 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872447631 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872446462 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872496675 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7379236543`, digest `sha256:ec1779ef6c561b7a6cf739f59c8c74f98e47660b9b86f6cf2283ad4f5787ee16` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872925777 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872924488 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26873000055 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7379463838`, digest `sha256:1834bbe9978f88e7fffc3c656ffae762de9cbe7a14576d7d531edd83d186fa06` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 25 public URLs, including `docs/friend-review-guide-zh.md` |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
@@ -46,7 +46,7 @@ approval.
 The local `scripts/checks/measure-application-readiness.ps1 -PassThru` command
 was run first for this monitoring pass and returned a full API-backed result.
 The token-backed GitHub Actions monitor artifact for the same commit was also
-inspected after the previous push. This file records the measured commit, not
+inspected after the latest push. This file records the measured commit, not
 necessarily the commit that last edited this Markdown file; documentation-only
 snapshot refreshes can leave the repository HEAD newer than the measured
 commit. If a future local anonymous GitHub API call is rate-limited, do not

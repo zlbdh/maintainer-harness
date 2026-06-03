@@ -97,10 +97,10 @@ feedback is not enough.
 
 As of the verified 2026-06-03 readiness-monitor artifact recorded in
 `docs/codex-for-oss-current-readiness.md`, Maintainer Harness scores 60/90 on
-commit `dd051ea05c0eb16071342c39f354b0cb4615c4f7`. The required local
-readiness command hit the anonymous GitHub API rate limit for the same
-monitoring pass, so the token-backed post-workflow GitHub Actions monitor
-artifact is the final source of truth:
+commit `39202d311eb64a3d621d1439e6fa57659b27a5e8`. The required local
+readiness command returned a full API-backed result for the same monitoring
+pass, and the token-backed post-workflow GitHub Actions monitor artifact
+confirmed the same score and zero external feedback candidates:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint
@@ -123,5 +123,5 @@ artifact is the final source of truth:
 - FAIL: 0/1 outside first-run report
 - FAIL: 0/1 feedback-driven follow-up artifact
 
-The next work should focus on the external validation sprint rather than adding
-more internal documentation.
+After this transparency refresh, the next work should focus on the external
+validation sprint rather than adding more internal documentation.

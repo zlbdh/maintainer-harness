@@ -176,13 +176,29 @@ This reduces reviewer friction, but it does not count as an external comment,
 outside first-run report, real star, or feedback-driven follow-up for the 90%
 submission gate.
 
+### Continuation: feedback-driven follow-up template
+
+The continuation added `.github/ISSUE_TEMPLATE/feedback_follow_up.md` so real
+external feedback can be converted into a public follow-up issue with the
+source URL, concrete concern, planned change, and verification checklist in one
+place. The template is linked from the issue chooser, external review page,
+launch kit, share page, external validation sprint, and generated review request
+packet.
+
+`scripts/checks/check-public-ready.ps1`,
+`scripts/bootstrap/verify-workspace.ps1`, and
+`scripts/checks/check-public-evidence-links.ps1` now check for the follow-up
+template. This prepares the project to count a real `feedback-follow-up` signal
+when it exists, but the template itself does not count as external feedback,
+outside first-run evidence, a real star, or a feedback-driven follow-up.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret
   scan.
 - Security posture check: PASS, including the default high-confidence secret
   scan.
-- Public evidence link checker: PASS, 18 public URLs.
+- Public evidence link checker: PASS, 19 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

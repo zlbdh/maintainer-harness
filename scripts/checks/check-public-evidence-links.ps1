@@ -134,6 +134,11 @@ $links = @(
         RequiredText = 'Duplicate evidence URL'
     },
     [pscustomobject]@{
+        Check = 'feedback-follow-up-template'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/feedback_follow_up.md'
+        RequiredText = 'Feedback-driven follow-up'
+    },
+    [pscustomobject]@{
         Check = 'review-request-packet-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-review-request-packet.ps1'
         RequiredText = 'CurrentGateStatus'

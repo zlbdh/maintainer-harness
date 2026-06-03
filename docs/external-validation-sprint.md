@@ -54,7 +54,7 @@ Use this routing before sending a request:
 | Maintainer or devtools builder who can inspect examples | One concrete reviewability note. | issue `#5` |
 | Reviewer willing to run a clean checkout | First-run friction report. | issue `#6` |
 | Security-minded reviewer | Write-scope or MCP boundary critique. | issue `#5` |
-| Reviewer whose feedback creates work | Public follow-up issue, commit, or release note. | issue `#7` or linked artifact |
+| Reviewer whose feedback creates work | Public follow-up issue, commit, or release note. | feedback follow-up template, issue `#7`, or linked artifact |
 
 Do not count owner comments, private messages, or stars from people who did not
 inspect the project. Private feedback can guide improvements, but the 90% gate
@@ -142,6 +142,16 @@ Use the guarded append helper when the public URL already exists:
 .\scripts\checks\add-external-feedback-evidence.ps1 -Id 2026-06-03-example -Type first-run-report -Status verified -Url https://example.com/public-report -Summary 'Outside reviewer ran the demo.'
 ```
 
+If feedback creates concrete work, open a public follow-up issue with:
+
+```text
+https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
+```
+
+Only use that template after the public feedback source URL exists. The
+follow-up issue itself can become a `feedback-follow-up` evidence signal after
+it links the external source and describes the concrete change.
+
 The Harness validation workflow also publishes a non-blocking Codex for OSS
 readiness summary on the Windows job, so public reviewers can see whether the
 external-signal gate is still open without treating missing stars as a CI
@@ -169,7 +179,7 @@ external usage is still unproven.
 ## What To Do After Feedback Arrives
 
 1. Add a launch-log row for each public signal.
-2. Convert concrete feedback into an issue or small documentation fix.
+2. Convert concrete feedback into a follow-up issue or small documentation fix.
 3. Run public readiness and security posture checks.
 4. Publish a small release or commit anchor if feedback changes the project.
 5. Update `docs/codex-for-oss-reviewer-brief.md` with the new signal count.

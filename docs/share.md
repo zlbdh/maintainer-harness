@@ -70,6 +70,7 @@ cd maintainer-harness
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Current gate status: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
+- Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 - Feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 - First-run feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - Reviewability comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
@@ -82,6 +83,7 @@ cd maintainer-harness
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
+- Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 
 ## Short Post

@@ -58,6 +58,7 @@ Current public launch anchors:
 - Feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 - First-run feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
+- Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
 - Pinned dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
@@ -76,6 +77,7 @@ Current public launch anchors:
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
+- Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 
 ## Show HN Draft
 

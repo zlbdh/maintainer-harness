@@ -9,6 +9,9 @@ contact_links:
   - name: Read the current readiness gate
     url: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
     about: Check the latest 90% gate status before posting external feedback.
+  - name: Create a feedback-driven follow-up
+    url: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
+    about: Use this only after real public feedback creates a concrete follow-up.
   - name: External review path
     url: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
     about: Use this page for the shortest reviewability and first-run feedback paths.

@@ -30,6 +30,7 @@ $links = [ordered]@{
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
     CurrentReadinessSnapshot = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md'
     FirstRunTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
+    FeedbackFollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
 }
 
 $shortRequest = @"
@@ -122,6 +123,7 @@ $lines = @(
     "- Current gate status: $($links.CurrentGateStatus)",
     "- Current readiness snapshot: $($links.CurrentReadinessSnapshot)",
     "- First-run template: $($links.FirstRunTemplate)",
+    "- Feedback follow-up template: $($links.FeedbackFollowUpTemplate)",
     '',
     '## Who Should Receive This',
     '',
@@ -139,6 +141,7 @@ $lines = @(
     '',
     '- Use issue `#5` for reviewability feedback after inspecting docs, examples, or worker evidence.',
     '- Use issue `#6` for a first-run report after running the demo from a clean checkout.',
+    '- Use the feedback follow-up template only after real public feedback creates concrete work.',
     '- Use issue `#7`, a commit, or a release note only after feedback creates a concrete follow-up.',
     '- Use the current gate status link to see which hard external-signal gaps are still open before commenting.',
     '',
@@ -149,7 +152,7 @@ $lines = @(
     "| 3 min | Name one missing evidence item before accepting agent output. | $($links.FeedbackIssue) |",
     "| 5 min | Run the clean demo and post first-run friction. Windows: `.\scripts\checks\run-review-demo.ps1`; macOS/Linux: `pwsh ./scripts/checks/run-review-demo.ps1`. | $($links.FirstRunIssue) |",
     "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
-    "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FollowUpIssue) |",
+    "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FeedbackFollowUpTemplate) |",
     '',
     '## Short Maintainer Request',
     '',
@@ -176,6 +179,7 @@ $lines = @(
     '- If the response is public somewhere else, add the URL to `docs/external-feedback-evidence.yaml` after verifying it.',
     '- If the response is private, summarize the theme in `docs/launch-log.md` only if it does not reveal private names or private repo details.',
     '- If feedback produces a concrete change, create a public issue, commit, or release link before counting it as a follow-up artifact.',
+    '- Use the feedback follow-up template only when the public feedback source URL already exists.',
     '- Keep stars secondary: feedback is the stronger signal.',
     '',
     '## What Counts Toward The 90% Gate',

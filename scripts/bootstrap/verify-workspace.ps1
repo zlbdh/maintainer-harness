@@ -104,6 +104,7 @@ $requiredPaths = @(
     '.github\ISSUE_TEMPLATE\feature_request.md',
     '.github\ISSUE_TEMPLATE\first_run_feedback.md',
     '.github\ISSUE_TEMPLATE\worker_output_reviewability.md',
+    '.github\ISSUE_TEMPLATE\feedback_follow_up.md',
     'examples',
     'examples\sample-change',
     'examples\sample-change\README.md',

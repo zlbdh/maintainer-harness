@@ -66,9 +66,37 @@ jobs:
             Write-Host 'Codex for OSS readiness gate is still open. Keep collecting real external evidence.'
           }
 
+      - name: Find external feedback candidates
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          $reportDir = New-Item -ItemType Directory -Force -Path reports/readiness
+          $candidates = ./scripts/checks/find-external-feedback-candidates.ps1 -PassThru
+          $jsonPath = Join-Path $reportDir 'external-feedback-candidates.json'
+          $candidates | ConvertTo-Json -Depth 8 | Set-Content -Path $jsonPath -Encoding UTF8
+
+          if ($env:GITHUB_STEP_SUMMARY) {
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '### External feedback candidates'
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Candidate count: {0}' -f $candidates.candidate_count)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'Candidates are not counted until a maintainer reviews the public URL and registers verified evidence.'
+
+            if ($candidates.candidate_count -gt 0) {
+              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
+              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| Issue | Type | Author | URL |'
+              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| ---: | --- | --- | --- |'
+              foreach ($candidate in $candidates.candidates) {
+                Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ("| {0} | {1} | {2} | {3} |" -f $candidate.issue, $candidate.type, $candidate.author, $candidate.url)
+              }
+            }
+          }
+
       - name: Upload readiness report
         uses: actions/upload-artifact@v7
         with:
           name: codex-readiness-report
-          path: reports/readiness/codex-readiness.json
+          path: reports/readiness/*.json
           if-no-files-found: error

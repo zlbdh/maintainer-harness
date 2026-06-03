@@ -196,6 +196,8 @@ $requiredPublicText = @(
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'Harness validation' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'pages build and deployment' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'find-external-feedback-candidates.ps1 -PassThru' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'external-feedback-candidates.json' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/checkout@v6' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/upload-artifact@v7' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },

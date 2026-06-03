@@ -207,6 +207,20 @@ This reduces bookkeeping friction after real public feedback arrives. It does
 not create external comments, outside first-run reports, real stars, or
 feedback-driven follow-ups for the 90% submission gate.
 
+### Continuation: token-backed candidate artifact
+
+The continuation wired the dedicated `Codex readiness monitor` workflow to run
+`scripts/checks/find-external-feedback-candidates.ps1` with `GITHUB_TOKEN` and
+upload `external-feedback-candidates.json` beside `codex-readiness.json`.
+The workflow summary shows the candidate count and reminds maintainers that
+candidates are not counted until the public URL is reviewed and registered as
+verified evidence.
+
+This makes future real feedback easier to catch when local anonymous GitHub API
+checks are rate-limited. It does not create external comments, outside
+first-run reports, real stars, or feedback-driven follow-ups for the 90%
+submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret

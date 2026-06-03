@@ -149,6 +149,10 @@ then prints guarded `add-external-feedback-evidence.ps1` commands with
 `verified`; the script only reduces bookkeeping friction and does not create or
 count feedback by itself.
 
+The token-backed `Codex readiness monitor` workflow also runs this scan and
+uploads `external-feedback-candidates.json` beside `codex-readiness.json`.
+Use the artifact when local anonymous GitHub API checks are rate-limited.
+
 Use the guarded append helper when the public URL already exists:
 
 ```powershell

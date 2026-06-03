@@ -57,6 +57,7 @@ $links = [ordered]@{
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new'
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
     FeedbackFollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
+    ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
 }
 
 $windowsDemoCommand = '.\scripts\checks\run-review-demo.ps1'
@@ -72,8 +73,10 @@ $fileRequirements = @(
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
             $links.PublicReviewRequest,
+            $links.ChineseFriendGuide,
             $windowsDemoCommand,
             $unixDemoCommand,
+            '-CopyCommentToClipboard -OpenCommentTarget',
             'Stars help discovery only after inspection',
             $selfOwnedAccountRule
         )

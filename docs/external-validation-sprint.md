@@ -136,6 +136,12 @@ For machine-readable scorekeeping, add public verified signals to
 .\scripts\checks\validate-external-feedback-evidence.ps1
 ```
 
+Use the guarded append helper when the public URL already exists:
+
+```powershell
+.\scripts\checks\add-external-feedback-evidence.ps1 -Id 2026-06-03-example -Type first-run-report -Status verified -Url https://example.com/public-report -Summary 'Outside reviewer ran the demo.'
+```
+
 The Harness validation workflow also publishes a non-blocking Codex for OSS
 readiness summary on the Windows job, so public reviewers can see whether the
 external-signal gate is still open without treating missing stars as a CI

@@ -16,3 +16,6 @@ signals:
   #   status: verified
   #   url: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-example
   #   summary: Outside maintainer ran the demo and reported first-run friction.
+  #
+  # Safer append helper:
+  #   ./scripts/checks/add-external-feedback-evidence.ps1 -Id 2026-06-03-example -Type first-run-report -Status verified -Url https://example.com/public-report -Summary 'Outside reviewer ran the demo.'

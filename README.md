@@ -267,6 +267,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `scripts/checks/write-application-audit.ps1`: ignored pre-application audit report generator
 - `scripts/checks/run-review-demo.ps1`: one-command external review demo and first-run report handoff
 - `scripts/checks/write-first-run-report.ps1`: ignored first-run report generator for outside demo feedback
+- `scripts/checks/add-external-feedback-evidence.ps1`: guarded append helper for verified public feedback URLs
 - `scripts/checks/write-review-request-packet.ps1`: ignored outreach packet generator for honest maintainer review requests
 - `scripts/checks/check-security-posture.ps1`: CI-friendly security posture gate for agent scopes, MCP safety, and ignored artifacts
 - `.github/workflows/codex-readiness-monitor.yml`: scheduled and manual Codex for OSS readiness monitor

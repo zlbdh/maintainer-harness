@@ -97,6 +97,7 @@ $supportEvidencePaths = @(
     @{ Check = 'feedback-evidence-validator'; Path = 'scripts\checks\validate-external-feedback-evidence.ps1'; Detail = 'External feedback evidence validator exists.' },
     @{ Check = 'review-demo-runner'; Path = 'scripts\checks\run-review-demo.ps1'; Detail = 'One-command external review demo runner exists.' },
     @{ Check = 'first-run-report-script'; Path = 'scripts\checks\write-first-run-report.ps1'; Detail = 'First-run report generator exists.' },
+    @{ Check = 'feedback-evidence-add-script'; Path = 'scripts\checks\add-external-feedback-evidence.ps1'; Detail = 'External feedback evidence append helper exists.' },
     @{ Check = 'review-request-packet-script'; Path = 'scripts\checks\write-review-request-packet.ps1'; Detail = 'Review request packet generator exists.' }
 )
 

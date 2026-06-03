@@ -75,7 +75,7 @@ $links = @(
     },
     [pscustomobject]@{
         Check = 'latest-release'
-        Url = 'https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.17'
+        Url = 'https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18'
         RequiredText = ''
     },
     [pscustomobject]@{
@@ -122,6 +122,11 @@ $links = @(
         Check = 'first-run-report-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-first-run-report.ps1'
         RequiredText = 'comment_target_url'
+    },
+    [pscustomobject]@{
+        Check = 'feedback-evidence-add-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/add-external-feedback-evidence.ps1'
+        RequiredText = 'Duplicate evidence URL'
     },
     [pscustomobject]@{
         Check = 'review-request-packet-script'

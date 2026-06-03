@@ -32,7 +32,7 @@ credits, ChatGPT Pro with Codex, and Codex Security support.
 - Launch log commit: https://github.com/zlbdh/maintainer-harness/commit/5f1c357636ce58bf354a0e39f0474644c2747cfe
 - Application evidence sync: https://github.com/zlbdh/maintainer-harness/commit/216bf991b6c74a1fe3155978ba20e707c7724be6
 - Reviewer brief commit: https://github.com/zlbdh/maintainer-harness/commit/32e6a0ad378a4e52478d067c8d78d30522b1e0cb
-- Reviewer brief release anchor: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
+- Reviewer brief tag anchor: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.11
 - Release anchor sync commit: https://github.com/zlbdh/maintainer-harness/commit/af66e6851f823f813aed1df04ea66b378c352b60
 
 ## Validation

@@ -200,7 +200,7 @@ $effectiveFeedbackFollowUpCount = $FeedbackFollowUpCount + $verifiedFollowUpSign
 
 $findings = New-Object System.Collections.Generic.List[object]
 
-$findings.Add((New-ReadinessFinding -Status 'PASS' -Check 'core-evidence' -Detail 'Repository has public reviewer brief, dogfooding plan, security package, examples, release anchor, and public site.' -Points 35))
+$findings.Add((New-ReadinessFinding -Status 'PASS' -Check 'core-evidence' -Detail 'Repository has public reviewer brief, dogfooding plan, security package, examples, public anchor, and public site.' -Points 35))
 $findings.Add((New-ReadinessFinding -Status 'PASS' -Check 'dogfooding-evidence' -Detail 'Public dogfooding run and external validation sprint are present.' -Points 15))
 
 $starPoints = Get-ClampedPoints -Value ([int]$repo.stargazers_count) -Target $TargetStars -MaxPoints 10

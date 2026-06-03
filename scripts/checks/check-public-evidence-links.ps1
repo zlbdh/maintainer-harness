@@ -124,6 +124,11 @@ $links = @(
         RequiredText = 'Self-owned alternate accounts do not count'
     },
     [pscustomobject]@{
+        Check = 'friend-review-guide-zh'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-guide-zh.md'
+        RequiredText = '先实际打开、阅读或运行，再自行决定是否评论或 star'
+    },
+    [pscustomobject]@{
         Check = 'worker-output-reviewability'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/worker-output-reviewability.md'
         RequiredText = 'Worker Output Reviewability'

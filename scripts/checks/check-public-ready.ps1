@@ -216,6 +216,7 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'External review handoff' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'CurrentGateStatus' },
+    @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'friend-review-guide-zh.md' },
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'Codex for OSS form submission gate' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'ready_for_form_submission' },

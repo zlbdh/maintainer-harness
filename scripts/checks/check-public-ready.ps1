@@ -145,9 +145,12 @@ $requiredPublicPaths = @(
     'scripts\checks\add-external-feedback-evidence.ps1',
     'scripts\checks\find-external-feedback-candidates.ps1',
     'scripts\checks\write-external-feedback-review-queue.ps1',
+    'scripts\checks\test-external-feedback-candidates.ps1',
     'scripts\checks\write-review-request-packet.ps1',
     'scripts\checks\check-external-review-handoff.ps1',
-    'scripts\checks\assert-form-submission-ready.ps1'
+    'scripts\checks\assert-form-submission-ready.ps1',
+    'tests\fixtures\external-feedback-html\5.html',
+    'tests\fixtures\external-feedback-html\6.html'
 )
 
 foreach ($relativePath in $requiredPublicPaths) {
@@ -246,10 +249,14 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'add-external-feedback-evidence.ps1' },
     @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'AllowHtmlFallback' },
     @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'github-html-fallback' },
+    @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'HtmlFixtureDirectory' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'External Feedback Review Queue' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-candidates.json' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'AllowHtmlFallback' },
+    @{ Path = 'scripts\checks\test-external-feedback-candidates.ps1'; Text = 'HtmlFixtureDirectory' },
+    @{ Path = 'scripts\checks\test-external-feedback-candidates.ps1'; Text = 'HTML fallback candidates must stay pending' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'test-external-feedback-candidates.ps1' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'External review handoff' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'CurrentGateStatus' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'RetryCount' },

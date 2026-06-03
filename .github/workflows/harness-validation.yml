@@ -72,6 +72,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/validate-external-feedback-evidence.ps1
 
+      - name: Test external feedback candidate scanning
+        shell: pwsh
+        run: ./scripts/checks/test-external-feedback-candidates.ps1
+
       - name: Exercise review demo runner
         shell: pwsh
         run: ./scripts/checks/run-review-demo.ps1 -SkipCommandExecution -PassThru | ConvertTo-Json -Depth 5

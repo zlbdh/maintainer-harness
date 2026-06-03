@@ -6,6 +6,7 @@ param(
     [string]$EvidencePath = 'docs/external-feedback-evidence.yaml',
     [string]$GitHubToken = '',
     [string]$CommentsJsonPath = '',
+    [string]$HtmlFixtureDirectory = '',
     [switch]$AllowHtmlFallback,
     [switch]$PassThru
 )
@@ -154,13 +155,28 @@ function Get-RegexGroupValue {
 function Get-IssueCommentsFromHtml {
     param(
         [string]$RepositoryName,
-        [int[]]$IssueNumbers
+        [int[]]$IssueNumbers,
+        [string]$FixtureDirectory = ''
     )
 
     $rows = @()
     foreach ($issueNumber in $IssueNumbers) {
-        $issueUrl = "https://github.com/$RepositoryName/issues/$issueNumber"
-        $html = (Invoke-WebRequest -Uri $issueUrl -UseBasicParsing -TimeoutSec 30).Content
+        $html = ''
+        if (-not [string]::IsNullOrWhiteSpace($FixtureDirectory)) {
+            $resolvedFixtureDirectory = Resolve-HarnessRepoPath $FixtureDirectory
+            $fixturePath = Join-Path $resolvedFixtureDirectory "$issueNumber.html"
+            if (-not (Test-Path -LiteralPath $fixturePath)) {
+                $fixturePath = Join-Path $resolvedFixtureDirectory "issue-$issueNumber.html"
+            }
+            if (-not (Test-Path -LiteralPath $fixturePath)) {
+                throw "HTML fixture not found for issue #$issueNumber in $resolvedFixtureDirectory"
+            }
+            $html = Get-Content -LiteralPath $fixturePath -Raw
+        } else {
+            $issueUrl = "https://github.com/$RepositoryName/issues/$issueNumber"
+            $html = (Invoke-WebRequest -Uri $issueUrl -UseBasicParsing -TimeoutSec 30).Content
+        }
+
         $commentBlocks = [regex]::Matches($html, '\{"node":\{"__typename":"IssueComment".*?\},"cursor"', [System.Text.RegularExpressions.RegexOptions]::Singleline)
 
         foreach ($commentBlock in $commentBlocks) {
@@ -253,14 +269,19 @@ foreach ($signal in $existingSignals) {
 }
 
 $usedHtmlFallback = $false
-try {
-    $comments = @(Get-IssueComments -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers -FixturePath $CommentsJsonPath -Headers $headers)
-} catch {
-    if ($AllowHtmlFallback -and [string]::IsNullOrWhiteSpace($CommentsJsonPath) -and ($_.Exception.Message -match 'rate limit|403')) {
-        $comments = @(Get-IssueCommentsFromHtml -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers)
-        $usedHtmlFallback = $true
-    } else {
-        throw
+if (-not [string]::IsNullOrWhiteSpace($HtmlFixtureDirectory)) {
+    $comments = @(Get-IssueCommentsFromHtml -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers -FixtureDirectory $HtmlFixtureDirectory)
+    $usedHtmlFallback = $true
+} else {
+    try {
+        $comments = @(Get-IssueComments -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers -FixturePath $CommentsJsonPath -Headers $headers)
+    } catch {
+        if ($AllowHtmlFallback -and [string]::IsNullOrWhiteSpace($CommentsJsonPath) -and ($_.Exception.Message -match 'rate limit|403')) {
+            $comments = @(Get-IssueCommentsFromHtml -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers)
+            $usedHtmlFallback = $true
+        } else {
+            throw
+        }
     }
 }
 $seen = @{}

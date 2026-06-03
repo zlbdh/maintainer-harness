@@ -326,6 +326,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `scripts/checks/write-review-request-packet.ps1`: ignored outreach packet generator for honest maintainer review requests
 - `scripts/checks/write-public-discovery-plan.ps1`: ignored manual public discovery plan generator for feedback-first posts without votes, stars, automatic posting, or evidence writes
 - `scripts/checks/write-reviewer-followup-tracker.ps1`: ignored manual follow-up tracker for real reviewer statuses, public URL capture, and no-private-feedback counting rules
+- `scripts/checks/check-reviewer-invite-draft.ps1`: local-only preflight for one-to-one reviewer invitation drafts, checking for direct star requests, exchange, paid, bot, self-owned account, copied-comment, and missing inspection-first wording without contacting reviewers
 - `scripts/checks/check-reviewer-comment-draft.ps1`: local-only preflight for issue comment drafts before public posting, checking for secrets, local paths, internal endpoints, and raw sensitive context without posting or counting evidence
 - `scripts/checks/check-security-posture.ps1`: CI-friendly security posture gate for agent scopes, MCP safety, and ignored artifacts
 - `.github/workflows/codex-readiness-monitor.yml`: scheduled and manual Codex for OSS readiness monitor

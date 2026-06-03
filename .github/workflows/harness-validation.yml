@@ -80,6 +80,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/test-reviewer-comment-draft-preflight.ps1
 
+      - name: Test reviewer invite draft preflight
+        shell: pwsh
+        run: ./scripts/checks/test-reviewer-invite-draft-preflight.ps1
+
       - name: Test Codespaces first-run handoff
         shell: pwsh
         run: ./scripts/checks/test-codespaces-first-run-handoff.ps1

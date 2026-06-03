@@ -52,7 +52,23 @@ https://zlbdh.github.io/maintainer-harness/external-review.html#zh-review
 
 不要群发“求支持”。如果要发给多人，也逐个确认对方确实可能看项目或跑 demo。
 
-## 4. 给对方三个路径
+## 4. 邀请草稿发送前预检
+
+如果你不确定文字有没有变成“求 star”“互赞”“没看也能评论”，先把准备发出的私信草稿保存到本地文件，再跑：
+
+```powershell
+.\scripts\checks\check-reviewer-invite-draft.ps1 -Path .\reports\reviewer-invite-draft.txt -Audience zh-friend -PassThru
+```
+
+也可以直接检查一小段文本：
+
+```powershell
+.\scripts\checks\check-reviewer-invite-draft.ps1 -Text "能不能帮我真实看一下这个开源项目？不是让你直接 star，也不是互赞。请先实际打开页面、看文档或跑 demo，再按真实感受决定是否评论或 star。" -Audience zh-friend -PassThru
+```
+
+这个预检只检查草稿，不会联系任何人、不会发消息、不会发评论、不会创建 star，也不会登记 evidence。它会拦截直接求 star、互换/购买互动、小号或受控账号、没看也能评论、替朋友写好评论让对方复制等风险文案。
+
+## 5. 给对方三个路径
 
 只看 3 分钟文档：
 
@@ -90,7 +106,7 @@ pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClip
 
 提醒对方：脚本不会自动发布评论、创建 star 或登记 evidence。
 
-## 5. 发完以后只记录状态，不替人发评论
+## 6. 发完以后只记录状态，不替人发评论
 
 可以在本地记录这些状态：
 
@@ -103,7 +119,7 @@ pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClip
 
 不要替朋友复制评论到 issue。只有对方自己发布、第三方能打开复核的公开链接，才可能进入证据登记。
 
-## 6. 回收公开链接
+## 7. 回收公开链接
 
 如果对方公开评论，请让对方把直接评论链接发回，形如：
 
@@ -125,7 +141,7 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recov
 
 如果只是私聊截图、口头反馈、普通 issue 页面、owner 自己评论、小号评论，都不要登记成 verified evidence。
 
-## 7. 发送后复测
+## 8. 发送后复测
 
 每次出现新的公开反馈后，先扫描候选，再验证 evidence：
 
@@ -137,7 +153,7 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recov
 
 如果本地匿名 GitHub API 限流，不要把 fallback 当 ready。等 reset、使用 token-backed readiness monitor，或带 `GITHUB_TOKEN`/`GH_TOKEN` 重新跑 readiness。
 
-## 8. 什么时候可以通知填表
+## 9. 什么时候可以通知填表
 
 只有这些硬门槛都满足后，才通知填写 OpenAI 表单：
 

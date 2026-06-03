@@ -8,9 +8,9 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T08:54:55.8970539Z` |
+| Checked at UTC | `2026-06-03T10:23:12.5281271Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `39202d311eb64a3d621d1439e6fa57659b27a5e8` |
+| Measured commit | `eed5bb2e1ec7e458931a7c069ecdcbb3f0af9632` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` run, cross-checked against the token-backed `Codex readiness monitor` artifact |
 | Readiness score | `60/90` |
 | Target score | `90` |
@@ -34,10 +34,10 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872925777 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26872924488 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26873000055 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7379463838`, digest `sha256:1834bbe9978f88e7fffc3c656ffae762de9cbe7a14576d7d531edd83d186fa06` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877116541 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877114800 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877151366 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7381269265`, digest `sha256:a66426c3659248d80085e3a5d54ec79c5f7a26057702ccc43606c052ecde1801` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 25 public URLs, including `docs/friend-review-guide-zh.md` |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
@@ -63,15 +63,16 @@ token-backed monitor artifact as the final pre-submit gate.
 | Feedback converted into a public issue or commit | 0 | 1 |
 
 Issue `#5` and issue `#6` each include a maintainer update that routes real
-reviewers to the shortest public review path. Issue `#7` includes the current
-owner dogfooding status comment:
+reviewers to the shortest public review path. Issue `#5`, the GitHub Pages
+home page, and the external review page now link directly to the Chinese friend
+review guide. Issue `#7` includes the owner dogfooding status comment:
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
 Those owner comments are useful handoff notes, but they are intentionally not
 counted as external feedback. The release anchor, CI runtime hygiene,
 feedback-driven follow-up template, external feedback candidate finder, Chinese
-friend review guide, and owner dogfooding follow-ups on main improve the
-handoff path, but they are not counted as external feedback.
+friend review guide, Pages handoff links, and owner dogfooding follow-ups on
+main improve the handoff path, but they are not counted as external feedback.
 
 ## Next Honest Work
 

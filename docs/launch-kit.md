@@ -76,6 +76,7 @@ Current public launch anchors:
 - Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
+- External feedback candidate finder: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/find-external-feedback-candidates.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 - Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 
@@ -245,6 +246,7 @@ For the concrete 90% readiness threshold and message templates, see
 | Hour 4 | Post the short X / Twitter copy with the project site. | Use the short post above. | Post URL and first replies. |
 | Hour 12 | Share the LinkedIn draft with a feedback question. | "What would you need before trusting an agent's worker output?" | Post URL and comments. |
 | Hour 24 | Convert useful replies into GitHub issues or roadmap notes. | Link issue #5, #6, or #7. | Issue URLs and follow-up owner. |
+| Hour 24 | Scan issue #5, #6, and #7 for new public candidates. | `.\scripts\checks\find-external-feedback-candidates.ps1` | Pending evidence commands to review before marking verified. |
 | Hour 36 | Publish a small update if feedback produced a concrete change. | "Here is what changed after first-run feedback." | Commit, release, or issue link. |
 | Hour 48 | Review stars, forks, comments, and traffic. | No vanity claims; report the numbers as-is. | Update `docs/launch-log.md`. |
 

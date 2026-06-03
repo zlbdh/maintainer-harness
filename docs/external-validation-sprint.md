@@ -136,6 +136,19 @@ For machine-readable scorekeeping, add public verified signals to
 .\scripts\checks\validate-external-feedback-evidence.ps1
 ```
 
+Before editing the registry, scan the public feedback issues for new
+non-owner candidates:
+
+```powershell
+.\scripts\checks\find-external-feedback-candidates.ps1
+```
+
+The finder excludes owner, bot, duplicate, and already-registered comments,
+then prints guarded `add-external-feedback-evidence.ps1` commands with
+`-Status pending`. Review the public comment before changing a candidate to
+`verified`; the script only reduces bookkeeping friction and does not create or
+count feedback by itself.
+
 Use the guarded append helper when the public URL already exists:
 
 ```powershell

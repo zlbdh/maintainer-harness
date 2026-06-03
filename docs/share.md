@@ -54,6 +54,7 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 .\scripts\checks\write-first-run-report.ps1
 .\scripts\checks\write-review-request-packet.ps1
+.\scripts\checks\find-external-feedback-candidates.ps1
 ```
 
 ## Useful Links
@@ -82,6 +83,7 @@ cd maintainer-harness
 - Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
+- External feedback candidate finder: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/find-external-feedback-candidates.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 - Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg

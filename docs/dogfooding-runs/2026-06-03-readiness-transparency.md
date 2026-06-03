@@ -192,6 +192,21 @@ template. This prepares the project to count a real `feedback-follow-up` signal
 when it exists, but the template itself does not count as external feedback,
 outside first-run evidence, a real star, or a feedback-driven follow-up.
 
+### Continuation: external feedback candidate finder
+
+The continuation added
+`scripts/checks/find-external-feedback-candidates.ps1`, a read-only helper that
+scans issue `#5`, issue `#6`, and issue `#7` for new non-owner, non-bot public
+comments that are not already present in
+`docs/external-feedback-evidence.yaml`. The script prints guarded
+`add-external-feedback-evidence.ps1` commands with `-Status pending`, so a
+maintainer still has to review the public comment before changing the signal to
+`verified`.
+
+This reduces bookkeeping friction after real public feedback arrives. It does
+not create external comments, outside first-run reports, real stars, or
+feedback-driven follow-ups for the 90% submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret

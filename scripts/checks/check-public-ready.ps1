@@ -139,6 +139,7 @@ $requiredPublicPaths = @(
     'scripts\checks\run-review-demo.ps1',
     'scripts\checks\write-first-run-report.ps1',
     'scripts\checks\add-external-feedback-evidence.ps1',
+    'scripts\checks\find-external-feedback-candidates.ps1',
     'scripts\checks\write-review-request-packet.ps1'
 )
 
@@ -187,6 +188,8 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'CurrentGateStatus' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'scripts\checks\add-external-feedback-evidence.ps1'; Text = 'Duplicate evidence URL' },
+    @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'External feedback candidates' },
+    @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'add-external-feedback-evidence.ps1' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Stars, comments, and reports must come from real inspection.' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'workflow_run:' },

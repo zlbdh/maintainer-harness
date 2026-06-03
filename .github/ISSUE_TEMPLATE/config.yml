@@ -6,6 +6,9 @@ contact_links:
   - name: Post a first-run report
     url: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
     about: Use this after running the clean demo and reviewing the generated report.
+  - name: Run in Codespaces
+    url: https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+    about: Use this cloud path if local setup would block first-run feedback; it does not post comments, create stars, or register evidence.
   - name: Read the current readiness gate
     url: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
     about: Check the latest 90% gate status before posting external feedback.

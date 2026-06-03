@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
     [string]$OutPath = '',
+    [string]$JsonOutPath = '',
     [switch]$SkipCommandExecution,
     [switch]$PassThru
 )
@@ -171,7 +172,12 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
     $OutPath = Join-Path $reportDir ((Get-HarnessTimestamp) + '-first-run-report.md')
 }
 
+if ([string]::IsNullOrWhiteSpace($JsonOutPath)) {
+    $JsonOutPath = [System.IO.Path]::ChangeExtension($OutPath, '.json')
+}
+
 $report | Add-Member -NotePropertyName path -NotePropertyValue $OutPath -Force
+$report | Add-Member -NotePropertyName json_path -NotePropertyValue $JsonOutPath -Force
 $report | Add-Member -NotePropertyName comment_target_url -NotePropertyValue "$($report.issue_url)#issuecomment-new" -Force
 
 $commandSummaryLines = foreach ($result in $results) {
@@ -284,8 +290,10 @@ $lines += @(
 )
 
 Write-HarnessTextFile -Path $OutPath -Content ($lines -join [Environment]::NewLine)
+Write-HarnessJsonFile -Path $JsonOutPath -Data $report
 
 Write-Host "First-run report: $OutPath"
+Write-Host "First-run report JSON: $JsonOutPath"
 Write-Host "Passed: $($passed.Count); Failed: $($failed.Count); Skipped: $($skipped.Count)"
 Write-Host "First-run comment target: $($report.comment_target_url)"
 Write-Host "External review templates: $($report.external_review_url)"

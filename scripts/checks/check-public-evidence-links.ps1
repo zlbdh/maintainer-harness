@@ -75,7 +75,7 @@ $links = @(
     },
     [pscustomobject]@{
         Check = 'latest-release'
-        Url = 'https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.16'
+        Url = 'https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.17'
         RequiredText = ''
     },
     [pscustomobject]@{

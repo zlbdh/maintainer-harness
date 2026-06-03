@@ -38,6 +38,7 @@ $result = [pscustomobject]@{
     generated_at = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
     status = $status
     first_run_report_path = $report.path
+    first_run_report_json_path = $report.json_path
     first_run_issue = $firstRunIssueUrl
     external_review_path = $externalReviewUrl
     review_kit = $reviewKitUrl
@@ -51,6 +52,7 @@ Write-Host ''
 Write-Host 'Maintainer Harness review demo complete.'
 Write-Host "Status: $status"
 Write-Host "First-run report: $($result.first_run_report_path)"
+Write-Host "First-run report JSON: $($result.first_run_report_json_path)"
 Write-Host "First-run feedback comment target: $firstRunIssueUrl"
 Write-Host "External review templates: $externalReviewUrl"
 Write-Host "Review kit: $reviewKitUrl"

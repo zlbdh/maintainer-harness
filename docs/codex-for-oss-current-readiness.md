@@ -15,7 +15,7 @@ approval.
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
-| Latest release anchor | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.16 |
+| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.16 |
 
 ## Current Public Metrics
 
@@ -60,9 +60,9 @@ substitute for the final pre-submit gate.
 Issue `#5` and issue `#6` each include a maintainer update that routes real
 reviewers to the shortest public review path. Those owner comments are useful
 handoff notes, but they are intentionally not counted as external feedback.
-Issue `#7` has no comments in this snapshot. The `v0.1.16` release anchor and
-the owner dogfooding follow-ups on main improve the handoff path, but they are
-not counted as external feedback.
+Issue `#7` has no comments in this snapshot. The release anchor and owner
+dogfooding follow-ups on main improve the handoff path, but they are not
+counted as external feedback.
 
 ## Next Honest Work
 

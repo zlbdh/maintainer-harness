@@ -87,7 +87,10 @@ pwsh ./scripts/checks/run-review-demo.ps1
 ```
 
 That one command runs the public demo checks and writes a paste-ready first-run
-feedback draft under `reports/first-run/`. To run the same checks manually:
+feedback draft plus a machine-readable JSON summary under `reports/first-run/`.
+The JSON file is ignored local evidence for reviewers and follow-up triage; it
+does not count unless the reviewer posts a public issue comment or public URL.
+To run the same checks manually:
 
 ```powershell
 .\scripts\checks\validate-repos.ps1

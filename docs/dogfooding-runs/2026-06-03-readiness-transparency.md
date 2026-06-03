@@ -45,13 +45,39 @@ and avoiding stale CI or Pages run IDs in static evidence.
 - Pages deployment:
   https://github.com/zlbdh/maintainer-harness/actions/runs/26858324953
 
+### Continuation: first-run template friction
+
+- Follow-up commit:
+  https://github.com/zlbdh/maintainer-harness/commit/99765a1cb51d781cad937a78c0828dd278e1bdf3
+- Latest readiness check after the follow-up:
+  `60/90` on commit `99765a1cb51d781cad937a78c0828dd278e1bdf3`
+  at `2026-06-03T03:17:52.1609537Z`.
+- Harness validation:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26861393546
+- Pages deployment:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26861392820
+- Codex readiness monitor:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26861423687
+
+The continuation found a maintainer-owned first-run friction point: the
+`.github/ISSUE_TEMPLATE/first_run_feedback.md` template did not include the
+macOS/Linux `pwsh ./scripts/checks/run-review-demo.ps1` path or the direct issue
+`#6` comment target. Commit `99765a1cb51d781cad937a78c0828dd278e1bdf3` fixed
+that handoff and updated the public readiness gate to keep the template from
+regressing.
+
+This is owner dogfooding evidence only. It does not count as an external
+comment, outside first-run report, real star, or feedback-driven follow-up for
+the 90% submission gate.
+
 ## Validation
 
 - Public readiness check: PASS.
 - Security posture check: PASS.
-- Public evidence link checker: PASS, 14 public URLs.
+- Public evidence link checker: PASS, 16 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
+- Latest Codex readiness monitor: success.
 - External feedback evidence registry: valid and empty.
 
 ## What Remains Weak

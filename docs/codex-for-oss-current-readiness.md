@@ -1,6 +1,6 @@
 # Codex For OSS Current Readiness Snapshot
 
-This snapshot records the latest verified application-readiness state for
+This snapshot records a recent verified application-readiness state for
 Maintainer Harness. It is evidence for the review process, not a submission
 approval.
 
@@ -8,8 +8,9 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T01:31:32.1161808Z` |
+| Checked at UTC | `2026-06-03T03:17:52.1609537Z` |
 | Repository | `zlbdh/maintainer-harness` |
+| Measured main commit | `99765a1cb51d781cad937a78c0828dd278e1bdf3` |
 | Source command | `scripts/checks/measure-application-readiness.ps1 -PassThru` |
 | Readiness score | `60/90` |
 | Target score | `90` |
@@ -32,16 +33,17 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked the required public URLs |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861393546 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861392820 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861423687 |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 16 public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
 For the live main commit, exact CI run IDs, and exact Pages run ID, rerun the
-source command or inspect the latest `codex-readiness-${commit}` artifact from
-the Harness validation workflow. The static snapshot should not be used as a
+source command or inspect the latest `codex-readiness-report` artifact from the
+Codex readiness monitor workflow. The static snapshot should not be used as a
 substitute for the final pre-submit gate.
 
 ## Hard Gates Still Missing
@@ -56,7 +58,9 @@ substitute for the final pre-submit gate.
 Issue `#5` and issue `#6` each include a maintainer update that routes real
 reviewers to the shortest public review path. Those owner comments are useful
 handoff notes, but they are intentionally not counted as external feedback.
-Issue `#7` has no comments in this snapshot.
+Issue `#7` has no comments in this snapshot. The owner dogfooding follow-up in
+commit `99765a1cb51d781cad937a78c0828dd278e1bdf3` improved the first-run issue
+template and public readiness gate, but it is not counted as external feedback.
 
 ## Next Honest Work
 

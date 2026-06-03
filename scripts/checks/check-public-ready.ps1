@@ -218,6 +218,8 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'External review handoff' },
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'CurrentGateStatus' },
+    @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'RetryCount' },
+    @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = '[int]$TimeoutSec = 30' },
     @{ Path = 'scripts\checks\run-review-demo.ps1'; Text = 'CopyCommentToClipboard' },
     @{ Path = 'scripts\checks\write-first-run-report.ps1'; Text = 'CopyCommentToClipboard' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'friend-review-guide-zh.md' },

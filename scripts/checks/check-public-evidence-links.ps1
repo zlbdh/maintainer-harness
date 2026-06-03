@@ -1,6 +1,8 @@
 [CmdletBinding()]
 param(
-    [int]$TimeoutSec = 20,
+    [int]$TimeoutSec = 30,
+    [int]$RetryCount = 2,
+    [int]$RetryDelaySec = 2,
     [switch]$PassThru
 )
 
@@ -29,22 +31,38 @@ function Test-PublicEvidenceUrl {
         [string]$Check,
         [string]$Url,
         [string]$RequiredText,
-        [int]$TimeoutSec
+        [int]$TimeoutSec,
+        [int]$RetryCount,
+        [int]$RetryDelaySec
     )
 
-    try {
-        $response = Invoke-WebRequest `
-            -Uri $Url `
-            -UseBasicParsing `
-            -TimeoutSec $TimeoutSec `
-            -Headers @{ 'User-Agent' = 'maintainer-harness-public-evidence-check' }
-    } catch {
-        return New-LinkFinding -Status 'FAIL' -Check $Check -Detail $_.Exception.Message -Url $Url
+    $attempts = [Math]::Max(1, $RetryCount)
+    $lastError = ''
+    $response = $null
+
+    for ($attempt = 1; $attempt -le $attempts; $attempt++) {
+        try {
+            $response = Invoke-WebRequest `
+                -Uri $Url `
+                -UseBasicParsing `
+                -TimeoutSec $TimeoutSec `
+                -Headers @{ 'User-Agent' = 'maintainer-harness-public-evidence-check' }
+            break
+        } catch {
+            $lastError = $_.Exception.Message
+            if ($attempt -lt $attempts) {
+                Start-Sleep -Seconds $RetryDelaySec
+            }
+        }
+    }
+
+    if ($null -eq $response) {
+        return New-LinkFinding -Status 'FAIL' -Check $Check -Detail "After $attempts attempt(s): $lastError" -Url $Url
     }
 
     $statusCode = [int]$response.StatusCode
     if ($statusCode -lt 200 -or $statusCode -ge 400) {
-        return New-LinkFinding -Status 'FAIL' -Check $Check -Detail "HTTP $statusCode" -Url $Url
+        return New-LinkFinding -Status 'FAIL' -Check $Check -Detail "HTTP $statusCode after $attempt attempt(s)" -Url $Url
     }
 
     if (-not [string]::IsNullOrWhiteSpace($RequiredText)) {
@@ -54,7 +72,7 @@ function Test-PublicEvidenceUrl {
         }
     }
 
-    return New-LinkFinding -Status 'PASS' -Check $Check -Detail "HTTP $statusCode" -Url $Url
+    return New-LinkFinding -Status 'PASS' -Check $Check -Detail "HTTP $statusCode after $attempt attempt(s)" -Url $Url
 }
 
 $links = @(
@@ -190,7 +208,9 @@ $findings = foreach ($link in $links) {
         -Check $link.Check `
         -Url $link.Url `
         -RequiredText $link.RequiredText `
-        -TimeoutSec $TimeoutSec
+        -TimeoutSec $TimeoutSec `
+        -RetryCount $RetryCount `
+        -RetryDelaySec $RetryDelaySec
 }
 
 $failures = @($findings | Where-Object { $_.status -eq 'FAIL' })

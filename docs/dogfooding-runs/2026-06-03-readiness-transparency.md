@@ -70,11 +70,45 @@ This is owner dogfooding evidence only. It does not count as an external
 comment, outside first-run report, real star, or feedback-driven follow-up for
 the 90% submission gate.
 
+### Continuation: feedback evidence helper and monitor refresh
+
+- Feedback evidence helper commit:
+  https://github.com/zlbdh/maintainer-harness/commit/6aed2e2196e7ee1404fec1a1e1336426afa62563
+- Public readiness gate follow-up:
+  https://github.com/zlbdh/maintainer-harness/commit/36b932a17c519093a5a31ac5be2ec4ae257c2df1
+- Latest release anchor:
+  https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18
+- Latest readiness check after the follow-up:
+  `60/90` on commit `36b932a17c519093a5a31ac5be2ec4ae257c2df1`
+  at `2026-06-03T04:31:06.5136652Z`.
+- Harness validation:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26863671307
+- Pages deployment:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26863670744
+- Codex readiness monitor:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26863692203
+- Codex readiness monitor artifact:
+  `codex-readiness-report`, artifact `7375818131`, digest
+  `sha256:06e38c620ac603d3026d52509779bd0170ad95057d722a1254b72b18e3d15a4e`.
+
+The continuation added
+`scripts/checks/add-external-feedback-evidence.ps1`, a guarded append helper
+for `docs/external-feedback-evidence.yaml`. It rejects non-public URLs,
+duplicate IDs, duplicate evidence URLs, and malformed one-line metadata before
+running the external feedback evidence validator. The public readiness gate now
+checks that duplicate evidence URLs remain rejected.
+
+This helper reduces maintainer friction after real public feedback appears. It
+does not count as an external comment, outside first-run report, real star, or
+feedback-driven follow-up for the 90% submission gate.
+
 ## Validation
 
-- Public readiness check: PASS.
-- Security posture check: PASS.
-- Public evidence link checker: PASS, 16 public URLs.
+- Public readiness check: WARN, 0 failures, 1 project-specific
+  sensitive-pattern reminder.
+- Security posture check: WARN, 0 failures, 1 project-specific
+  sensitive-pattern reminder.
+- Public evidence link checker: PASS, 17 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

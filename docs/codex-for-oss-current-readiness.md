@@ -8,14 +8,14 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T04:03:26.2704444Z` |
+| Checked at UTC | `2026-06-03T04:31:06.5136652Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Verified monitor commit | `7bd8bc278d4d399604fdb8d7754456689ffe61d8` |
-| Source command | token-backed `Codex readiness monitor` artifact after local anonymous API limit |
+| Verified monitor commit | `36b932a17c519093a5a31ac5be2ec4ae257c2df1` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru`, cross-checked with token-backed `Codex readiness monitor` artifact |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
-| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.17 |
+| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18 |
 
 ## Current Public Metrics
 
@@ -34,20 +34,20 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862922983 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862922480 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862951914 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375566963`, digest `sha256:99cdfa973164c00bfbf08111e6fa90ac68da4a0be7c6c8e7faa87f2c501340ba` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 16 public URLs |
-| Public readiness | pass | `scripts/checks/check-public-ready.ps1` |
-| Security posture | pass | `scripts/checks/check-security-posture.ps1` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863671307 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863670744 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863692203 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375818131`, digest `sha256:06e38c620ac603d3026d52509779bd0170ad95057d722a1254b72b18e3d15a4e` |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 17 public URLs |
+| Public readiness | warn, no failures | `scripts/checks/check-public-ready.ps1` reported only the project-specific sensitive-pattern reminder |
+| Security posture | warn, no failures | `scripts/checks/check-security-posture.ps1` reported only the project-specific sensitive-pattern reminder |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
-The local anonymous `scripts/checks/measure-application-readiness.ps1 -PassThru`
-run hit the GitHub API rate limit before this snapshot was updated, so the
-token-backed GitHub Actions monitor artifact is the authoritative score for
-this round. This static snapshot can trail its own documentation-only update
-commit; use the latest monitor artifact as the final pre-submit gate.
+The local `scripts/checks/measure-application-readiness.ps1 -PassThru` run
+succeeded for this snapshot and matched the token-backed GitHub Actions monitor
+score. If a future local anonymous GitHub API call is rate-limited, do not treat
+the repository as ready from local output alone; use the latest token-backed
+monitor artifact as the final pre-submit gate.
 
 ## Hard Gates Still Missing
 

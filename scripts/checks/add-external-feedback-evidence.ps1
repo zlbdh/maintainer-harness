@@ -86,9 +86,19 @@ $entryLines = @(
 
 $existingContent = Get-Content -LiteralPath $resolvedPath -Raw
 $separator = if ($existingContent.EndsWith([Environment]::NewLine)) { '' } else { [Environment]::NewLine }
-Write-HarnessTextFile -Path $resolvedPath -Content ($existingContent + $separator + ($entryLines -join [Environment]::NewLine))
+$nextContent = $existingContent + $separator + ($entryLines -join [Environment]::NewLine)
 
-& (Join-HarnessPath (Get-HarnessRepoRoot) 'scripts/checks/validate-external-feedback-evidence.ps1') -Path $Path
+$validationPath = Join-Path ([System.IO.Path]::GetTempPath()) ('maintainer-harness-evidence-' + [System.Guid]::NewGuid().ToString('N') + '.yaml')
+try {
+    Write-HarnessTextFile -Path $validationPath -Content $nextContent
+    & (Join-HarnessPath (Get-HarnessRepoRoot) 'scripts/checks/validate-external-feedback-evidence.ps1') -Path $validationPath
+} finally {
+    if (Test-Path -LiteralPath $validationPath) {
+        Remove-Item -LiteralPath $validationPath -Force
+    }
+}
+
+Write-HarnessTextFile -Path $resolvedPath -Content $nextContent
 
 $result = [pscustomobject]@{
     id = $Id

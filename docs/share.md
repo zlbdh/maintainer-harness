@@ -24,6 +24,14 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 ```
 
+macOS/Linux with PowerShell 7:
+
+```bash
+git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+pwsh ./scripts/checks/run-review-demo.ps1
+```
+
 Then paste the generated `Copy This Comment Into Issue #6` block into:
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 

@@ -60,9 +60,13 @@ private repositories or production credentials.
 Review kit:
 $($links.ReviewKit)
 
-If you run the demo, this command generates a paste-ready local report:
+If you run the clean demo, it generates a paste-ready local report.
 
-.\scripts\checks\write-first-run-report.ps1
+Windows:
+.\scripts\checks\run-review-demo.ps1
+
+macOS/Linux with PowerShell 7:
+pwsh ./scripts/checks/run-review-demo.ps1
 
 Public first-run reports go here:
 $($links.FirstRunIssue)
@@ -135,7 +139,7 @@ $lines = @(
     '| Time | Best action | Public target |',
     '| --- | --- | --- |',
     "| 3 min | Name one missing evidence item before accepting agent output. | $($links.FeedbackIssue) |",
-    "| 5 min | Run the clean demo and post first-run friction. | $($links.FirstRunIssue) |",
+    "| 5 min | Run the clean demo and post first-run friction. Windows: `.\scripts\checks\run-review-demo.ps1`; macOS/Linux: `pwsh ./scripts/checks/run-review-demo.ps1`. | $($links.FirstRunIssue) |",
     "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
     "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FollowUpIssue) |",
     '',

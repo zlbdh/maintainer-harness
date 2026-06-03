@@ -55,6 +55,14 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 ```
 
+On macOS or Linux with PowerShell 7:
+
+```bash
+git clone https://github.com/zlbdh/maintainer-harness.git
+cd maintainer-harness
+pwsh ./scripts/checks/run-review-demo.ps1
+```
+
 To run each check manually:
 
 ```powershell

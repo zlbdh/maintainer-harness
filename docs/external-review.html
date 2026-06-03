@@ -109,13 +109,17 @@
         <h2 id="commands-title">Run the synthetic demo.</h2>
         <p>
           The demo does not need private repositories, credentials, generated worktrees,
-          or production logs. The command prints issue #6 and writes a local report
-          with a copy-ready public comment block.
+          or production logs. Use Windows PowerShell or PowerShell 7 on macOS/Linux.
+          The command prints issue #6 and writes a local report with a copy-ready
+          public comment block.
         </p>
       </div>
       <pre aria-label="Review demo commands"><code>git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
-.\scripts\checks\run-review-demo.ps1</code></pre>
+.\scripts\checks\run-review-demo.ps1
+
+# macOS/Linux with PowerShell 7
+pwsh ./scripts/checks/run-review-demo.ps1</code></pre>
     </section>
 
     <section id="templates" class="section split" aria-labelledby="templates-title">
@@ -149,8 +153,8 @@ Would I try this on a real repo? [yes / no / maybe], because [reason].</code></p
             <button class="copy-button" type="button" data-copy-target="template-first-run">Copy Issue #6 Template</button>
           </div>
           <pre class="template-pre"><code id="template-first-run">I ran the review demo from a clean checkout.
-OS / shell: [for example Windows PowerShell 7]
-Command: .\scripts\checks\run-review-demo.ps1
+OS / shell: [for example Windows PowerShell 7, macOS pwsh, or Ubuntu pwsh]
+Command: [.\scripts\checks\run-review-demo.ps1 or pwsh ./scripts/checks/run-review-demo.ps1]
 Result: [passed / failed / skipped counts]
 First friction:
 - [one thing that slowed me down]

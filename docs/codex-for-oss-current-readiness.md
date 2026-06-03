@@ -8,11 +8,11 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T10:23:12.5281271Z` |
+| Checked at UTC | `2026-06-03T11:01:45.7946827Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `eed5bb2e1ec7e458931a7c069ecdcbb3f0af9632` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` run, cross-checked against the token-backed `Codex readiness monitor` artifact |
-| Readiness score | `60/90` |
+| Measured commit | `22fd0986c404c9e25883cbce66548ad5e37b9843` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was attempted first and hit the anonymous GitHub API rate limit; public GitHub HTML and the token-backed `Codex readiness monitor` run were used for this transparency snapshot |
+| Readiness score | `60/90` estimated from the unchanged hard-gate counts below |
 | Target score | `90` |
 | Ready for form submission | no |
 | Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
@@ -34,24 +34,26 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877116541 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877114800 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26877151366 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7381269265`, digest `sha256:a66426c3659248d80085e3a5d54ec79c5f7a26057702ccc43606c052ecde1801` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880251220 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880249971 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880290890 |
+| Monitor artifact | present on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 25 public URLs, including `docs/friend-review-guide-zh.md` |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
 The local `scripts/checks/measure-application-readiness.ps1 -PassThru` command
-was run first for this monitoring pass and returned a full API-backed result.
-The token-backed GitHub Actions monitor artifact for the same commit was also
-inspected after the latest push. This file records the measured commit, not
-necessarily the commit that last edited this Markdown file; documentation-only
-snapshot refreshes can leave the repository HEAD newer than the measured
-commit. If a future local anonymous GitHub API call is rate-limited, do not
-treat the repository as ready from local output alone; use the latest
-token-backed monitor artifact as the final pre-submit gate.
+was run first for this monitoring pass and stopped at the anonymous GitHub API
+rate limit. Because that failure prevents local API-backed verification, this
+snapshot is not a submission approval. It records the public state that was
+still visible without authentication: 0 stars, 0 forks, 0 watchers, open issues
+`#5`, `#6`, and `#7`, successful current-main validation, successful Pages
+deployment, and a successful token-backed readiness monitor run. Use the latest
+token-backed monitor artifact as the final pre-submit gate once it can be
+inspected by an authenticated actor. Documentation-only snapshot refreshes can
+leave the repository HEAD newer than the measured commit listed above; that is
+expected and does not change the external-signal counts.
 
 ## Hard Gates Still Missing
 
@@ -64,8 +66,9 @@ token-backed monitor artifact as the final pre-submit gate.
 
 Issue `#5` and issue `#6` each include a maintainer update that routes real
 reviewers to the shortest public review path. Issue `#5`, the GitHub Pages
-home page, and the external review page now link directly to the Chinese friend
-review guide. Issue `#7` includes the owner dogfooding status comment:
+home page, the external review page, and the share page now link directly to
+the Chinese friend review guide and first-run troubleshooting paths. Issue
+`#7` includes the owner dogfooding status comment:
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
 Those owner comments are useful handoff notes, but they are intentionally not

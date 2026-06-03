@@ -96,14 +96,14 @@ feedback is not enough.
 ## Current Expected State
 
 As recorded in `docs/codex-for-oss-current-readiness.md`, Maintainer Harness
-still has a `60/90` hard-gate state. The latest local readiness attempt on
-observed main commit `ba04acb13deaceae944d031fa8dd16eff1be402a` hit anonymous
-GitHub API rate limits (`remaining=0`,
-`reset_utc=2026-06-03T20:33:18.0000000Z`), so it did not produce a refreshed
-local API-backed score. The token-backed post-workflow GitHub Actions monitor
-for the same observed commit succeeded and produced a readiness artifact, but a
-new authenticated local or token-backed readiness measurement is still required
-immediately before submission.
+still has a `60/90` hard-gate state. The latest local API-backed readiness
+measurement completed on observed main commit
+`fe2bba6f05446287ce1fa8806e014239b585819b` at
+`2026-06-03T20:33:44.2460711Z`, after the earlier anonymous GitHub API
+rate-limit window reset. The latest Harness validation, Pages deployment, and
+post-workflow Codex readiness monitor are successful, but the hard external
+signal gates are still missing. A fresh API-backed pre-submit measurement is
+still required immediately before submission.
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint

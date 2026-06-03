@@ -81,6 +81,12 @@ $fileRequirements = @(
             $windowsDemoCommand,
             $unixDemoCommand,
             '-CopyCommentToClipboard -OpenCommentTarget',
+            '中文实测路径',
+            '真实看过或跑过，再决定是否评论或 star',
+            '3 分钟评论 #5',
+            '10 分钟跑 demo #6',
+            '复制 #5 模板',
+            '复制 #6 模板',
             'Stars help discovery only after inspection',
             $selfOwnedAccountRule
         )

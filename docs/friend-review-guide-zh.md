@@ -119,6 +119,12 @@ https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 如果命令失败，也可以照样反馈失败点。失败报告比空泛夸奖更有用。
 
+如果卡在 Git、PowerShell、执行策略、路径或复制评论块，可以先看中文排障：
+
+```text
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
+```
+
 ### 4. star 的规则
 
 可以 star，但前提是你真的打开、看过或跑过，并且觉得这个工作流值得推荐给其他维护者。

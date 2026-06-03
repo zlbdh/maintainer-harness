@@ -8,13 +8,14 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T03:17:52.1609537Z` |
+| Checked at UTC | `2026-06-03T03:47:22.2964583Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured main commit | `99765a1cb51d781cad937a78c0828dd278e1bdf3` |
+| Measured main commit | `f35d41571611503406a4e77692851ef31a636053` |
 | Source command | `scripts/checks/measure-application-readiness.ps1 -PassThru` |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
+| Latest release anchor | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.16 |
 
 ## Current Public Metrics
 
@@ -33,9 +34,10 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861393546 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861392820 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26861423687 |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862341961 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862341574 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862366542 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375365536`, digest `sha256:8f12909f7195f5b6c47d7acbe01818bd0b5f042c910beeff978c107ee816db4f` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 16 public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` |
@@ -58,9 +60,9 @@ substitute for the final pre-submit gate.
 Issue `#5` and issue `#6` each include a maintainer update that routes real
 reviewers to the shortest public review path. Those owner comments are useful
 handoff notes, but they are intentionally not counted as external feedback.
-Issue `#7` has no comments in this snapshot. The owner dogfooding follow-up in
-commit `99765a1cb51d781cad937a78c0828dd278e1bdf3` improved the first-run issue
-template and public readiness gate, but it is not counted as external feedback.
+Issue `#7` has no comments in this snapshot. The `v0.1.16` release anchor and
+the owner dogfooding follow-ups on main improve the handoff path, but they are
+not counted as external feedback.
 
 ## Next Honest Work
 

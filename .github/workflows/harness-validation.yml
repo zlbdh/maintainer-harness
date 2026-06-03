@@ -68,6 +68,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/test-reviewer-outreach-plan.ps1
 
+      - name: Test public discovery plan
+        shell: pwsh
+        run: ./scripts/checks/test-public-discovery-plan.ps1
+
       - name: Test Codespaces first-run handoff
         shell: pwsh
         run: ./scripts/checks/test-codespaces-first-run-handoff.ps1

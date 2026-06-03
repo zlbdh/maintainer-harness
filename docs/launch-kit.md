@@ -78,9 +78,20 @@ Current public launch anchors:
 - Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1
 - Review request packet generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-review-request-packet.ps1
+- Public discovery plan generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-public-discovery-plan.ps1
 - External feedback candidate finder: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/find-external-feedback-candidates.ps1
 - Worker output reviewability template: https://github.com/zlbdh/maintainer-harness/issues/new?template=worker_output_reviewability.md
 - Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
+
+## Manual Public Discovery Plan
+
+Generate a local, ignored posting checklist before choosing a public channel:
+
+```powershell
+.\scripts\checks\write-public-discovery-plan.ps1
+```
+
+The generator prepares copy-ready drafts for Show HN, X / Twitter, LinkedIn, and maintainer forums. It does not post anywhere, does not ask for votes, does not create stars, and does not register evidence. Use it only when the maintainer can answer public questions and when the channel is a real fit for maintainer tooling, CI, release evidence, or agent-assisted development.
 
 ## Show HN Draft
 

@@ -116,6 +116,7 @@ try {
 $score = [int](Get-ObjectPropertyValue -InputObject $readiness -Name 'score' -DefaultValue 0)
 $targetScore = [int](Get-ObjectPropertyValue -InputObject $readiness -Name 'target_score' -DefaultValue 90)
 $readyFlag = Test-TruthyValue (Get-ObjectPropertyValue -InputObject $readiness -Name 'ready_for_form_submission' -DefaultValue $false)
+$findings = @(Get-ObjectPropertyValue -InputObject $readiness -Name 'findings' -DefaultValue @())
 
 $gateFailures = New-Object System.Collections.Generic.List[string]
 if (-not $readyFlag) {
@@ -124,6 +125,19 @@ if (-not $readyFlag) {
 
 if ($score -lt $targetScore) {
     $gateFailures.Add(("score {0}/{1} is below target" -f $score, $targetScore))
+}
+
+$findingPointSum = 0
+$findingPointCount = 0
+foreach ($finding in $findings) {
+    if (Test-ObjectProperty -InputObject $finding -Name 'points') {
+        $findingPointSum += [int]$finding.points
+        $findingPointCount += 1
+    }
+}
+
+if ($findingPointCount -gt 0 -and $score -ne $findingPointSum) {
+    $gateFailures.Add(("score {0} does not match findings point sum {1}" -f $score, $findingPointSum))
 }
 
 foreach ($failure in (Get-HardGateFailureMessages -Readiness $readiness)) {

@@ -23,6 +23,7 @@ $repoRoot = Get-HarnessRepoRoot
 $gateScript = Join-HarnessPath $repoRoot 'scripts/checks/assert-form-submission-ready.ps1'
 $notReadyFixture = Join-HarnessPath $repoRoot 'tests/fixtures/readiness/not-ready.json'
 $readyFixture = Join-HarnessPath $repoRoot 'tests/fixtures/readiness/ready.json'
+$scoreMismatchFixture = Join-HarnessPath $repoRoot 'tests/fixtures/readiness/score-mismatch.json'
 
 $notReadyBlocked = $false
 try {
@@ -33,6 +34,16 @@ try {
 }
 
 Assert-Condition -Condition $notReadyBlocked -Message 'Not-ready fixture should block form submission.'
+
+$scoreMismatchBlocked = $false
+try {
+    & $gateScript -ReadinessJsonPath $scoreMismatchFixture -PassThru | Out-Null
+} catch {
+    $scoreMismatchBlocked = $true
+    Assert-Condition -Condition ($_.Exception.Message.Contains('Codex for OSS form submission gate is not ready')) -Message 'Score-mismatch fixture failed for an unexpected reason.'
+}
+
+Assert-Condition -Condition $scoreMismatchBlocked -Message 'Score-mismatch fixture should block form submission.'
 
 $readyResult = & $gateScript -ReadinessJsonPath $readyFixture -PassThru
 $readyPointSum = [int]($readyResult.findings | Measure-Object -Property points -Sum).Sum
@@ -59,6 +70,7 @@ foreach ($check in $requiredChecks) {
 $testResult = [pscustomobject]@{
     overall_status = 'PASS'
     not_ready_blocked = $notReadyBlocked
+    score_mismatch_blocked = $scoreMismatchBlocked
     ready_score = [int]$readyResult.score
     required_gate_count = $requiredChecks.Count
 }

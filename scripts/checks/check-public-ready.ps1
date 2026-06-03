@@ -153,7 +153,8 @@ $requiredPublicPaths = @(
     'tests\fixtures\external-feedback-html\5.html',
     'tests\fixtures\external-feedback-html\6.html',
     'tests\fixtures\readiness\not-ready.json',
-    'tests\fixtures\readiness\ready.json'
+    'tests\fixtures\readiness\ready.json',
+    'tests\fixtures\readiness\score-mismatch.json'
 )
 
 foreach ($relativePath in $requiredPublicPaths) {
@@ -274,10 +275,13 @@ $requiredPublicText = @(
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'Codex for OSS form submission gate' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'ready_for_form_submission' },
+    @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'does not match findings point sum' },
     @{ Path = 'scripts\checks\test-form-submission-ready.ps1'; Text = 'Not-ready fixture should block form submission' },
+    @{ Path = 'scripts\checks\test-form-submission-ready.ps1'; Text = 'Score-mismatch fixture should block form submission' },
     @{ Path = 'scripts\checks\test-form-submission-ready.ps1'; Text = 'external-first-run' },
     @{ Path = 'tests\fixtures\readiness\not-ready.json'; Text = '"ready_for_form_submission": false' },
     @{ Path = 'tests\fixtures\readiness\ready.json'; Text = '"ready_for_form_submission": true' },
+    @{ Path = 'tests\fixtures\readiness\score-mismatch.json'; Text = '"score": 90' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'test-form-submission-ready.ps1' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Stars, comments, and reports must come from real inspection.' },

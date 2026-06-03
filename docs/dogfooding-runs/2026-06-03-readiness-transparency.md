@@ -29,6 +29,7 @@ and avoiding stale CI or Pages run IDs in static evidence.
 | Submission checklist | `docs/codex-for-oss-submission-readiness.md` points form preparation back to the current readiness snapshot. |
 | Public gates | `scripts/checks/check-public-ready.ps1` and `scripts/checks/write-application-audit.ps1` require the readiness snapshot. |
 | Link health | `scripts/checks/check-public-evidence-links.ps1` now checks the public raw readiness snapshot URL. |
+| Token-backed monitor | `.github/workflows/codex-readiness-monitor.yml` now runs after Harness validation or Pages deployment completes so local API rate limits have a better fallback. |
 
 ## Evidence Links
 
@@ -73,3 +74,6 @@ and avoiding stale CI or Pages run IDs in static evidence.
   follow-up.
 - Keep static readiness documents as snapshots; use the readiness script or the
   token-backed GitHub Actions artifact for final pre-submit checks.
+- Prefer the dedicated post-workflow readiness monitor artifact over the
+  validation-job artifact when local API checks are rate-limited, because the
+  validation-job artifact can see its own CI run before it has completed.

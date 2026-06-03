@@ -38,10 +38,13 @@ hygiene, evidence registry format, or security posture drift.
 
 The repository also includes a dedicated `Codex readiness monitor` workflow
 under `.github/workflows/codex-readiness-monitor.yml`. It can be run manually
-or on its six-hour schedule, writes a step summary, and uploads a
+or on its six-hour schedule, and it also runs after the main Harness validation
+or Pages deployment workflows complete. It writes a step summary and uploads a
 `codex-readiness.json` artifact. It uses the GitHub Actions token for
 authenticated API checks so monitoring does not depend on local anonymous rate
-limits.
+limits. The post-workflow trigger is preferred when local checks are
+rate-limited because it runs after the CI/Pages state has settled instead of
+inside the still-running validation job.
 
 Public follow-up evidence is recorded in
 `docs/external-feedback-evidence.yaml` and validated by

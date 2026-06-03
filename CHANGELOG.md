@@ -20,6 +20,9 @@ This project follows a simple date-based changelog until formal versioned releas
   include the current readiness snapshot.
 - Public readiness and application audit now require the readiness transparency
   dogfooding run.
+- Codex readiness monitor now also runs after Harness validation or Pages
+  deployment completes, giving API-limited local checks a post-CI token-backed
+  readiness artifact.
 
 ## 2026-06-02
 

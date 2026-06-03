@@ -165,6 +165,7 @@ $requiredPublicText = @(
     @{ Path = 'docs\external-review.html'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'docs\launch-kit.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },

@@ -98,12 +98,14 @@ Demo path:
 
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
-.\scripts\checks\validate-repos.ps1
-.\scripts\checks\validate-change.ps1 -Path examples\sample-change
-.\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
-.\scripts\checks\validate-change.ps1 -Path examples\release-workflow
-.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
-.\scripts\checks\write-first-run-report.ps1
+.\scripts\checks\run-review-demo.ps1
+
+macOS/Linux with PowerShell 7:
+
+pwsh ./scripts/checks/run-review-demo.ps1
+
+If you run it, the generated report includes a copy-ready block for issue #6:
+https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 I would like feedback from maintainers who have tried using agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?
 ```
@@ -122,6 +124,9 @@ It turns Codex/agent work into:
 
 Early, synthetic, and CI-gated:
 https://zlbdh.github.io/maintainer-harness/
+
+Best feedback path:
+https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 ```
 
 ## X / Twitter Thread
@@ -154,7 +159,11 @@ That makes worker output easier to review and reject.
 Demo:
 https://zlbdh.github.io/maintainer-harness/
 
-5/ I would love feedback from OSS maintainers who have tried agent-assisted PR review or release work:
+5/ The fastest useful response is one concrete note on issue #5, or a first-run report on issue #6 after running:
+
+.\scripts\checks\run-review-demo.ps1
+
+6/ I would love feedback from OSS maintainers who have tried agent-assisted PR review or release work:
 
 What evidence would make a worker output reviewable enough for you?
 ```

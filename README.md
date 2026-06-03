@@ -16,6 +16,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **中文朋友实测教程:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
 
+**中文一页转发教程:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md
+
 **First-run 中文排障:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
 
 **First-run troubleshooting:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md

@@ -162,6 +162,16 @@ $links = @(
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     },
     [pscustomobject]@{
+        Check = 'friend-review-onepager-zh'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-onepager-zh.md'
+        RequiredText = '不是让你直接 star，也不是互赞'
+    },
+    [pscustomobject]@{
+        Check = 'friend-review-onepager-zh-codespaces'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-onepager-zh.md'
+        RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
+    },
+    [pscustomobject]@{
         Check = 'codespaces-first-run-guide'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codespaces-first-run.md'
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'

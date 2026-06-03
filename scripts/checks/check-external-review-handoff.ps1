@@ -60,6 +60,8 @@ $links = [ordered]@{
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
     FirstRunTroubleshooting = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md'
     FirstRunTroubleshootingZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md'
+    CodespacesFirstRun = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md'
+    CodespacesQuickstart = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
 }
 
 $windowsDemoCommand = '.\scripts\checks\run-review-demo.ps1'
@@ -144,6 +146,8 @@ $fileRequirements = @(
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
+            $links.CodespacesFirstRun,
+            $links.CodespacesQuickstart,
             $windowsDemoCommand,
             $unixDemoCommand,
             $selfOwnedAccountRule
@@ -159,6 +163,8 @@ $fileRequirements = @(
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
+            $links.CodespacesFirstRun,
+            $links.CodespacesQuickstart,
             $windowsDemoCommand,
             $unixDemoCommand,
             'CopyRequestToClipboard',
@@ -181,7 +187,7 @@ try {
     if ((Test-Path -LiteralPath $packet.path -PathType Leaf) -and ([string]$packet.path -eq $packetPath)) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet' -Detail "Generated review request packet at $packetPath"))
         $packetContent = Get-Content -LiteralPath $packetPath -Raw
-        foreach ($text in @($links.PublicReviewRequest, $links.ChineseFriendGuide, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand, '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget', '不是让你直接 star', $selfOwnedAccountRule)) {
+        foreach ($text in @($links.PublicReviewRequest, $links.ChineseFriendGuide, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $links.CodespacesFirstRun, $links.CodespacesQuickstart, $windowsDemoCommand, $unixDemoCommand, '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget', '不是让你直接 star', $selfOwnedAccountRule)) {
             if ($packetContent.Contains($text)) {
                 $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet-text' -Detail "Generated packet includes $text"))
             } else {

@@ -19,6 +19,8 @@ the 90% gate.
 - External review path: https://zlbdh.github.io/maintainer-harness/external-review.html
 - Copy-ready comment templates: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
+- Codespaces first-run guide: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
+- Codespaces quickstart: https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 - Worker output reviewability example: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Source repository: https://github.com/zlbdh/maintainer-harness
 - Current gate status: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
@@ -47,6 +49,7 @@ Pick one path. A short concrete note is better than broad praise.
 | --- | --- | --- |
 | 3 min | Inspect the worker-output example and name one evidence gap before accepting agent output. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
 | 5 min | Clone the repo, run the clean demo, and paste the generated first-run block. | https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new |
+| 5 min | Use Codespaces if local Git or PowerShell setup would block a first-run report. | https://codespaces.new/zlbdh/maintainer-harness?quickstart=1 |
 | 5 min | Review the security boundary around scoped writes, read-only MCP context, generated reports, and release evidence. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
 | After feedback | Turn a concrete feedback item into a visible follow-up issue, commit, or release note. | https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md |
 
@@ -64,6 +67,12 @@ On macOS or Linux with PowerShell 7:
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 pwsh ./scripts/checks/run-review-demo.ps1
+```
+
+Cloud path if local Git or PowerShell setup would slow you down:
+
+```text
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 ```
 
 The demo uses synthetic sample packets. It does not require private
@@ -102,6 +111,12 @@ Windows:
 
 macOS/Linux with PowerShell 7:
 pwsh ./scripts/checks/run-review-demo.ps1
+
+Cloud path if local Git or PowerShell setup would slow you down:
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+
+Codespaces first-run guide:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
 
 If you run it, please paste the generated public comment block into issue #6:
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new

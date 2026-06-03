@@ -53,6 +53,8 @@ $links = [ordered]@{
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
+    CodespacesFirstRun = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md'
+    CodespacesQuickstart = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
     ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
@@ -107,8 +109,14 @@ Windows:
 macOS/Linux with PowerShell 7:
 pwsh ./scripts/checks/run-review-demo.ps1
 
+Cloud path if local Git or PowerShell setup would slow you down:
+$($links.CodespacesQuickstart)
+
 Public first-run reports go here:
 $($links.FirstRunIssue)
+
+Codespaces first-run guide:
+$($links.CodespacesFirstRun)
 
 Copy-ready issue #5 and issue #6 comment templates:
 $($links.ExternalReviewTemplates)
@@ -155,6 +163,12 @@ Windows PowerShell：
 macOS/Linux with PowerShell 7：
 pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
 
+如果不想先装 Git 或 PowerShell，可以用 Codespaces 云端路径：
+$($links.CodespacesQuickstart)
+
+Codespaces first-run 指南：
+$($links.CodespacesFirstRun)
+
 如果卡在 Git、PowerShell、执行策略、路径或复制评论块，可以先看中文排障：
 $($links.FirstRunTroubleshootingZh)
 
@@ -194,6 +208,8 @@ $lines = @(
     "- External review templates: $($links.ExternalReviewTemplates)",
     "- Public review request packet: $($links.PublicReviewRequest)",
     "- Chinese friend guide: $($links.ChineseFriendGuide)",
+    "- Codespaces first-run guide: $($links.CodespacesFirstRun)",
+    "- Codespaces quickstart: $($links.CodespacesQuickstart)",
     "- Review kit: $($links.ReviewKit)",
     "- Worker output reviewability: $($links.ReviewabilityExample)",
     "- Source repo: $($links.SourceRepo)",
@@ -233,6 +249,7 @@ $lines = @(
     '| --- | --- | --- |',
     "| 3 min | Name one missing evidence item before accepting agent output. | $($links.FeedbackIssue) |",
     "| 5 min | Run the clean demo and post first-run friction. Windows: `.\scripts\checks\run-review-demo.ps1`; macOS/Linux: `pwsh ./scripts/checks/run-review-demo.ps1`. | $($links.FirstRunIssue) |",
+    "| 5 min | Use Codespaces when local Git or PowerShell setup would block first-run feedback. | $($links.CodespacesQuickstart) |",
     "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
     "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FeedbackFollowUpTemplate) |",
     '',

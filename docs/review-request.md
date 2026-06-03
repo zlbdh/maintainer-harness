@@ -23,10 +23,15 @@ the 90% gate.
 - Codespaces quickstart: https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 - Worker output reviewability example: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Source repository: https://github.com/zlbdh/maintainer-harness
+- Current readiness snapshot: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md
 - Current gate status: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 - Reviewability feedback target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 - First-run report target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - Feedback follow-up template: https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md
+
+Use the external review page and current readiness snapshot for the latest
+review anchors. The original issue `#5` and issue `#6` bodies are historical context and can mention older release anchors, but those issues remain the
+right public comment targets.
 
 ## Who To Ask
 

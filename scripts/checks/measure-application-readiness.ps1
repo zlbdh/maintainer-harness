@@ -59,7 +59,25 @@ function Get-GitHubJson {
         }
         $errorText = "$message $details"
         if ($errorText -match 'rate limit') {
-            throw "GitHub API rate limit exceeded while checking $Url. Set GITHUB_TOKEN or GH_TOKEN, or pass -GitHubToken, so the readiness monitor can use authenticated requests."
+            $rateLimitDetails = ''
+            $response = $_.Exception.Response
+            if ($response -and $response.Headers) {
+                $remaining = $response.Headers['X-RateLimit-Remaining']
+                $reset = $response.Headers['X-RateLimit-Reset']
+                $detailParts = New-Object System.Collections.Generic.List[string]
+                if (-not [string]::IsNullOrWhiteSpace($remaining)) {
+                    $detailParts.Add("remaining=$remaining")
+                }
+                if ($reset -match '^\d+$') {
+                    $resetUtc = [DateTimeOffset]::FromUnixTimeSeconds([int64]$reset).UtcDateTime.ToString('o')
+                    $detailParts.Add("reset_utc=$resetUtc")
+                }
+                if ($detailParts.Count -gt 0) {
+                    $rateLimitDetails = ' ' + ($detailParts -join ' ')
+                }
+            }
+
+            throw "GitHub API rate limit exceeded while checking $Url.$rateLimitDetails Set GITHUB_TOKEN or GH_TOKEN, or pass -GitHubToken, so the readiness monitor can use authenticated requests."
         }
         throw
     }

@@ -249,6 +249,8 @@ $requiredPublicText = @(
     @{ Path = 'docs\external-review.html'; Text = '你觉得有价值再 star' },
     @{ Path = 'docs\external-review.html'; Text = '复制 #5 模板' },
     @{ Path = 'docs\external-review.html'; Text = '复制 #6 模板' },
+    @{ Path = 'docs\external-review.html'; Text = '我确认这条评论没有 token、私有仓库地址、客户数据或生产日志。' },
+    @{ Path = 'docs\external-review.html'; Text = 'I reviewed this comment for secrets, private repository names, tokens, customer data, and production logs before posting.' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '真实朋友、维护者、开发者' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '先实际打开、阅读或运行，再自行决定是否评论或 star' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '不需要为了帮忙 star' },

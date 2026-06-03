@@ -87,6 +87,16 @@ $links = @(
         RequiredText = 'Copy Issue #6 Template'
     },
     [pscustomobject]@{
+        Check = 'external-review-codespaces-cta'
+        Url = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
+        RequiredText = 'Open Codespaces Demo'
+    },
+    [pscustomobject]@{
+        Check = 'external-review-zh-codespaces-cta'
+        Url = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
+        RequiredText = '打开 Codespaces 云端 demo'
+    },
+    [pscustomobject]@{
         Check = 'source-repository'
         Url = 'https://github.com/zlbdh/maintainer-harness'
         RequiredText = ''

@@ -44,6 +44,9 @@ https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 
 如果愿意跑 demo，请把生成的 first-run block 贴到 issue #6：
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+
+如果不想安装 Git 或 PowerShell，可以用 Codespaces 云端路径：
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 ```
 
 ## 30 秒短版
@@ -59,6 +62,9 @@ https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 
 如果愿意跑 demo，按页面里的命令跑完，把生成的 first-run block 贴到 issue #6：
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+
+不想安装 Git 或 PowerShell 的话，直接用 Codespaces：
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 
 你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说，失败反馈更有用。
 ```
@@ -102,7 +108,23 @@ https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 我会不会在真实仓库尝试：[会 / 不会 / 可能会]，原因是：[一句话]
 ```
 
-### 3. 愿意跑 demo 的步骤
+### 3. 不想安装 Git 或 PowerShell：用 Codespaces
+
+如果本地没有 Git、PowerShell，或者只是想最快跑一次 demo，可以直接打开：
+
+```text
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+```
+
+等 Codespaces 打开后，在网页里的终端运行：
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
+```
+
+这个命令会生成本地 first-run 报告、复制中文 issue #6 评论块，并打开 issue #6 评论入口。它不会自动发布评论，不会创建 star，也不会登记 evidence。请先检查生成内容，再决定是否粘贴提交。
+
+### 4. 愿意本地跑 demo 的步骤
 
 Windows PowerShell：
 
@@ -162,13 +184,13 @@ https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
 ```
 
-### 4. star 的规则
+### 5. star 的规则
 
 可以 star，但前提是你真的打开、看过或跑过，并且觉得这个工作流值得推荐给其他维护者。
 
 不需要为了帮忙 star。评论、失败反馈、改进建议通常比 star 更有价值。
 
-### 5. 什么反馈最有用
+### 6. 什么反馈最有用
 
 最有用的是具体句子，例如：
 
@@ -178,7 +200,7 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshoo
 - 哪个安全边界让你放心或不放心
 - 如果你要在真实仓库里用，还缺什么
 
-### 6. 不要这样做
+### 7. 不要这样做
 
 - 不要用小号、第二账号、受控组织账号来评论或 star
 - 不要互换 star

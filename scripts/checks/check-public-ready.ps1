@@ -258,6 +258,8 @@ $requiredPublicText = @(
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '-CommentLanguage zh' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '-RequestKind zh-friend -CopyRequestToClipboard' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = '不会自动发布评论、创建 star 或联系任何人' },
+    @{ Path = 'docs\friend-review-guide-zh.md'; Text = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1' },
+    @{ Path = 'docs\friend-review-guide-zh.md'; Text = '不想安装 Git 或 PowerShell' },
     @{ Path = 'docs\friend-review-guide-zh.md'; Text = 'docs/first-run-troubleshooting-zh.md' },
     @{ Path = 'docs\codespaces-first-run.md'; Text = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1' },
     @{ Path = 'docs\codespaces-first-run.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget' },

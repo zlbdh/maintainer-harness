@@ -146,11 +146,14 @@ $requiredPublicPaths = @(
     'scripts\checks\find-external-feedback-candidates.ps1',
     'scripts\checks\write-external-feedback-review-queue.ps1',
     'scripts\checks\test-external-feedback-candidates.ps1',
+    'scripts\checks\test-form-submission-ready.ps1',
     'scripts\checks\write-review-request-packet.ps1',
     'scripts\checks\check-external-review-handoff.ps1',
     'scripts\checks\assert-form-submission-ready.ps1',
     'tests\fixtures\external-feedback-html\5.html',
-    'tests\fixtures\external-feedback-html\6.html'
+    'tests\fixtures\external-feedback-html\6.html',
+    'tests\fixtures\readiness\not-ready.json',
+    'tests\fixtures\readiness\ready.json'
 )
 
 foreach ($relativePath in $requiredPublicPaths) {
@@ -271,6 +274,11 @@ $requiredPublicText = @(
     @{ Path = 'docs\maintainer-review-kit.md'; Text = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'Codex for OSS form submission gate' },
     @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'ready_for_form_submission' },
+    @{ Path = 'scripts\checks\test-form-submission-ready.ps1'; Text = 'Not-ready fixture should block form submission' },
+    @{ Path = 'scripts\checks\test-form-submission-ready.ps1'; Text = 'external-first-run' },
+    @{ Path = 'tests\fixtures\readiness\not-ready.json'; Text = '"ready_for_form_submission": false' },
+    @{ Path = 'tests\fixtures\readiness\ready.json'; Text = '"ready_for_form_submission": true' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'test-form-submission-ready.ps1' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Stars, comments, and reports must come from real inspection.' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Self-owned alternate accounts do not count' },

@@ -1,0 +1,69 @@
+{
+  "repository": "zlbdh/maintainer-harness",
+  "checked_at_utc": "2026-06-03T00:00:00Z",
+  "main_sha": "ready-fixture",
+  "score": 95,
+  "target_score": 90,
+  "ready_for_form_submission": true,
+  "metrics": {
+    "stars": 5,
+    "forks": 0,
+    "watchers": 0,
+    "subscribers": 0,
+    "open_issues": 4,
+    "external_feedback_comments": 2,
+    "external_first_run_reports": 1,
+    "feedback_follow_up_count": 1,
+    "verified_evidence_signals": 4
+  },
+  "findings": [
+    {
+      "status": "PASS",
+      "check": "core-evidence",
+      "detail": "Repository has the core public evidence package.",
+      "points": 35
+    },
+    {
+      "status": "PASS",
+      "check": "dogfooding-evidence",
+      "detail": "Public dogfooding run and external validation sprint are present.",
+      "points": 15
+    },
+    {
+      "status": "PASS",
+      "check": "external-stars",
+      "detail": "5/5 real stars",
+      "points": 10
+    },
+    {
+      "status": "PASS",
+      "check": "external-feedback-comments",
+      "detail": "2/2 external issue comments across feedback issues",
+      "points": 10
+    },
+    {
+      "status": "PASS",
+      "check": "external-first-run",
+      "detail": "1/1 external first-run report",
+      "points": 10
+    },
+    {
+      "status": "PASS",
+      "check": "feedback-follow-up",
+      "detail": "1/1 feedback-driven public follow-up artifact",
+      "points": 5
+    },
+    {
+      "status": "PASS",
+      "check": "latest-ci",
+      "detail": "Latest Harness validation on main succeeded.",
+      "points": 5
+    },
+    {
+      "status": "PASS",
+      "check": "latest-pages",
+      "detail": "Latest Pages deployment on main succeeded.",
+      "points": 5
+    }
+  ]
+}

@@ -76,6 +76,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/test-external-feedback-candidates.ps1
 
+      - name: Test form submission hard gate
+        shell: pwsh
+        run: ./scripts/checks/test-form-submission-ready.ps1
+
       - name: Exercise review demo runner
         shell: pwsh
         run: ./scripts/checks/run-review-demo.ps1 -SkipCommandExecution -PassThru | ConvertTo-Json -Depth 5

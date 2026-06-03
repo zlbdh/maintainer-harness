@@ -18,6 +18,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **中文一页转发教程:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md
 
+**中文发送前检查清单:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md
+
 **中文反馈回收说明:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md
 
 **First-run 中文排障:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
@@ -300,6 +302,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/dogfooding-runs/`: public dogfooding run notes and validation evidence
 - `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals
 - `docs/maintainer-review-kit.md`: five-minute outside maintainer feedback path
+- `docs/friend-review-send-checklist-zh.md`: Chinese pre-send checklist for one-to-one real friend review outreach without star requests or self-owned accounts
 - `docs/friend-feedback-recovery-zh.md`: Chinese guidance for turning real private/public friend feedback into safe public evidence without counting private messages or self-owned accounts
 - `docs/worker-output-reviewability.md`: good/bad worker output evidence example for maintainer review
 - `docs/index.html`, `docs/external-review.html`, `docs/site.css`, and `docs/.nojekyll`: GitHub Pages project site and external reviewer path

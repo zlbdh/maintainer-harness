@@ -43,6 +43,9 @@ try {
     $onepagerLink = $result.links.PSObject.Properties['FriendOnepagerZh']
     Assert-Condition -Condition ($null -ne $onepagerLink) -Message 'Outreach plan should expose the one-page Chinese friend tutorial link.'
     Assert-Condition -Condition ([string]$onepagerLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md') -Message 'Outreach plan should point to the public one-page Chinese friend tutorial.'
+    $sendChecklistLink = $result.links.PSObject.Properties['FriendSendChecklistZh']
+    Assert-Condition -Condition ($null -ne $sendChecklistLink) -Message 'Outreach plan should expose the Chinese friend send checklist link.'
+    Assert-Condition -Condition ([string]$sendChecklistLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md') -Message 'Outreach plan should point to the public Chinese friend send checklist.'
     $recoveryLink = $result.links.PSObject.Properties['FriendFeedbackRecoveryZh']
     Assert-Condition -Condition ($null -ne $recoveryLink) -Message 'Outreach plan should expose the Chinese friend feedback recovery link.'
     Assert-Condition -Condition ([string]$recoveryLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md') -Message 'Outreach plan should point to the public Chinese friend feedback recovery guide.'
@@ -72,6 +75,7 @@ try {
         'Self-owned alternate accounts do not count',
         'Private feedback can improve the project, but it does not count',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md',
+        'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md',
         'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md',
@@ -81,6 +85,7 @@ try {
         'do not bulk-send',
         'not asking for a star',
         '能不能帮我真实看一下这个开源项目？不是让你直接 star',
+        '发送前检查清单',
         '反馈回来以后怎么判断能不能计数',
         'docs/external-feedback-evidence.yaml'
     )) {

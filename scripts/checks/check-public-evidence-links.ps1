@@ -172,6 +172,11 @@ $links = @(
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     },
     [pscustomobject]@{
+        Check = 'friend-review-send-checklist-zh'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-send-checklist-zh.md'
+        RequiredText = '不是让你直接 star，也不是互赞'
+    },
+    [pscustomobject]@{
         Check = 'friend-feedback-recovery-zh'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-feedback-recovery-zh.md'
         RequiredText = '私聊反馈不能冒充公开证据'

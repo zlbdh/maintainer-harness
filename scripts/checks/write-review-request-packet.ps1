@@ -54,6 +54,7 @@ $links = [ordered]@{
     PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
     ChineseFriendOnepager = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
+    ChineseSendChecklist = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md'
     ChineseFeedbackRecovery = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md'
     CodespacesFirstRun = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md'
     CodespacesQuickstart = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
@@ -156,6 +157,9 @@ $($links.ChineseFriendGuide)
 一页转发教程：
 $($links.ChineseFriendOnepager)
 
+发送前检查清单：
+$($links.ChineseSendChecklist)
+
 反馈回来以后怎么判断能不能计数：
 $($links.ChineseFeedbackRecovery)
 
@@ -217,6 +221,7 @@ $lines = @(
     "- Public review request packet: $($links.PublicReviewRequest)",
     "- Chinese friend guide: $($links.ChineseFriendGuide)",
     "- Chinese one-page friend tutorial: $($links.ChineseFriendOnepager)",
+    "- Chinese send checklist: $($links.ChineseSendChecklist)",
     "- Chinese feedback recovery guide: $($links.ChineseFeedbackRecovery)",
     "- Codespaces first-run guide: $($links.CodespacesFirstRun)",
     "- Codespaces quickstart: $($links.CodespacesQuickstart)",

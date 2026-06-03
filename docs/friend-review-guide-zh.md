@@ -6,6 +6,12 @@
 
 ## 你自己的发送步骤
 
+发送前先用这份检查清单确认不是求 star、群发或小号互动：
+
+```text
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md
+```
+
 1. 选 3 到 5 个真实认识的人，最好是维护过仓库、写过 CI、用过 coding agent、做过 devtools 或能看懂开源项目的人。
 2. 单独私信，不要群发刷屏。把下面的「可以直接发的消息」发给对方。
 3. 明确说“不需要为了帮忙 star”。请对方先看项目页、读文档或跑 demo，再决定是否评论或 star。

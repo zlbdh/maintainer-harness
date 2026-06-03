@@ -26,6 +26,10 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
 
+## 中文发送前检查清单
+
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md
+
 ## 中文反馈回收说明
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md
@@ -98,6 +102,7 @@ cd maintainer-harness
 - Public review request packet: https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 - First-run troubleshooting: https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
 - Codespaces first-run: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
+- Chinese friend send checklist: https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md
 - Chinese friend feedback recovery: https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md
 - Copy-ready review comments: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md

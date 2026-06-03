@@ -20,6 +20,12 @@ GitHub 仓库：
 https://github.com/zlbdh/maintainer-harness
 ```
 
+维护者发送前检查清单：
+
+```text
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md
+```
+
 ## 可以直接发给朋友的消息
 
 ```text

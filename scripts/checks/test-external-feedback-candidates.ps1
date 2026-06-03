@@ -70,6 +70,8 @@ try {
     Assert-Condition -Condition ($queueMarkdown.Contains('Source: `github-html-fallback`')) -Message 'Queue markdown should include the HTML fallback source.'
     Assert-Condition -Condition ($queueMarkdown.Contains('HTML fallback candidates are discovery hints only.')) -Message 'Queue markdown should include the fallback review warning.'
     Assert-Condition -Condition ($queueMarkdown.Contains('-Status pending')) -Message 'Queue markdown should keep pending registration commands.'
+    Assert-Condition -Condition ($queueMarkdown.Contains('https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md')) -Message 'Queue markdown should point maintainers to the feedback follow-up template.'
+    Assert-Condition -Condition ($queueMarkdown.Contains('-Type feedback-follow-up -Status verified')) -Message 'Queue markdown should show how to register a verified feedback follow-up after a public follow-up exists.'
 
     $testResult = [pscustomobject]@{
         overall_status = 'PASS'

@@ -80,6 +80,20 @@ function New-FeedbackQueueMarkdown {
         $lines.Add('')
     }
 
+    $lines.Add('## Feedback Follow-up Conversion')
+    $lines.Add('')
+    $lines.Add('Use this only after a reviewed public feedback candidate creates concrete work. Open a public follow-up issue, commit, release note, or documentation update that links the original public feedback source.')
+    $lines.Add('')
+    $lines.Add('Feedback follow-up template:')
+    $lines.Add('https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md')
+    $lines.Add('')
+    $lines.Add('After the public follow-up exists and links the original public feedback source, register the follow-up artifact:')
+    $lines.Add('')
+    $lines.Add('```powershell')
+    $lines.Add(".\scripts\checks\add-external-feedback-evidence.ps1 -Id YYYY-MM-DD-feedback-follow-up -Type feedback-follow-up -Status verified -Url https://example.com/public-follow-up -Summary 'Concrete feedback was converted into a public follow-up.'")
+    $lines.Add('```')
+    $lines.Add('')
+
     return ($lines -join [Environment]::NewLine)
 }
 

@@ -8,9 +8,9 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T01:18:11.0221731Z` |
+| Checked at UTC | `2026-06-03T01:31:32.1161808Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Main commit | `71737ccd3df23de278060d2eb16251637da7690b` |
+| Source command | `scripts/checks/measure-application-readiness.ps1 -PassThru` |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
@@ -32,12 +32,17 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26857352069 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26857351587 |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked the required public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
+
+For the live main commit, exact CI run IDs, and exact Pages run ID, rerun the
+source command or inspect the latest `codex-readiness-${commit}` artifact from
+the Harness validation workflow. The static snapshot should not be used as a
+substitute for the final pre-submit gate.
 
 ## Hard Gates Still Missing
 

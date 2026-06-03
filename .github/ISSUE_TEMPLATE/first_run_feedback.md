@@ -14,8 +14,16 @@ labels: "area:demo, area:feedback"
 
 ## Commands Tried
 
+Windows PowerShell:
+
 ```powershell
 .\scripts\checks\run-review-demo.ps1
+```
+
+macOS or Linux with PowerShell 7:
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1
 ```
 
 The demo runner writes a sanitized report under `reports/first-run/`. You can
@@ -23,7 +31,7 @@ paste the relevant sections here after reviewing them.
 
 To count toward the public readiness gate, add first-run feedback as a comment
 on issue #6 after running the demo:
-https://github.com/zlbdh/maintainer-harness/issues/6
+https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 External review page with copy-ready issue #5 and issue #6 comment templates:
 https://zlbdh.github.io/maintainer-harness/external-review.html#templates

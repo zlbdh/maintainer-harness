@@ -9,9 +9,9 @@ still missing.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T20:57:24.2019828Z` |
+| Checked at UTC | `2026-06-03T22:12:42.8869524Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `6134ad4bf91dedd59885e9cd154cde817786e5b3` |
+| observed main commit | `0f903e676ba987ed22f09800b9d2ce108fc25ce0` |
 | Source command | local `scripts/checks/write-public-readiness-observation.ps1 -PassThru` after the local anonymous GitHub API readiness check hit rate limits |
 | Readiness score | last API-backed `60/90` hard-gate state; current public fallback is non-authoritative |
 | Target score | `90` |
@@ -24,14 +24,14 @@ The latest local monitoring pass still started with
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
 the submission gate, but the anonymous GitHub API limit was exhausted during
 the post-commit recheck. The failing request reported
-`remaining=0` and `reset_utc=2026-06-03T21:33:20.0000000Z`, so the local
+`remaining=0` and `reset_utc=2026-06-03T22:36:54.0000000Z`, so the local
 post-commit fallback observation must not be treated as form-submission
 evidence.
 
 The last completed API-backed local measurement before that limit window was
 still `60/90`, with `ready_for_form_submission=false`. The token-backed
 Codex readiness monitor also completed successfully for current main commit
-`6134ad4bf91dedd59885e9cd154cde817786e5b3`, but its artifact was not
+`0f903e676ba987ed22f09800b9d2ce108fc25ce0`, but its artifact was not
 anonymously downloadable during this pass. Use the token-backed artifact or a
 fresh authenticated `measure-application-readiness.ps1` run before any form
 submission decision.
@@ -56,7 +56,7 @@ The API-backed issue comment breakdown was:
 | `#6` | 0 |
 | `#7` | 0 |
 
-The supporting public fallback observation at `2026-06-03T20:57:24Z` found 0
+The supporting public fallback observation at `2026-06-03T22:12:42Z` found 0
 stars, 0 forks, 0 watchers, 3 open issues, and 0 external feedback
 candidates. Public HTML fallback observations are discovery and transparency
 hints only; they are not authoritative for form submission.
@@ -64,16 +64,16 @@ hints only; they are not authoritative for form submission.
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`6134ad4bf91dedd59885e9cd154cde817786e5b3` show successful main validation,
+`0f903e676ba987ed22f09800b9d2ce108fc25ce0` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26912378260 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26912374799 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26912423632 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916132172 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916130385 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916170901 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification
@@ -82,7 +82,8 @@ These checks passed in the same monitoring pass:
 
 | Check | Evidence |
 | --- | --- |
-| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 36 public URLs |
+| Reviewer comment draft preflight | `scripts/checks/test-reviewer-comment-draft-preflight.ps1 -PassThru` checked safe drafts, local paths, private endpoints, raw stack traces, and no-post/no-engagement flags |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 38 public URLs |
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
@@ -110,9 +111,9 @@ but they are intentionally not counted as external feedback. The tag anchor,
 CI runtime hygiene, feedback-driven follow-up template, external feedback
 candidate finder, Chinese friend review guide, one-page Chinese review guide,
 copy-ready reviewer outreach drafts, public readiness observation fallback,
-Pages handoff links, live Codespaces CTA checks, issue historical-anchor
-guidance, and owner dogfooding follow-ups on main improve the handoff path,
-but they are not counted as external feedback.
+reviewer comment draft preflight, Pages handoff links, live Codespaces CTA
+checks, issue historical-anchor guidance, and owner dogfooding follow-ups on
+main improve the handoff path, but they are not counted as external feedback.
 
 This snapshot records the observed main commit for this monitoring pass; later documentation-only commits can make repository HEAD newer without changing the
 external-signal counts. It still does not replace the required API-backed pre-submit readiness measurement immediately before form submission.

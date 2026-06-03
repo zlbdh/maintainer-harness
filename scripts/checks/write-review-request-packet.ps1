@@ -22,6 +22,7 @@ $links = [ordered]@{
     ExternalReview = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
+    ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
     ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
@@ -30,6 +31,7 @@ $links = [ordered]@{
     FollowUpIssue = 'https://github.com/zlbdh/maintainer-harness/issues/7'
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
     CurrentReadinessSnapshot = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md'
+    FirstRunTroubleshootingZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md'
     FirstRunTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
     FeedbackFollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
 }
@@ -102,6 +104,34 @@ External review path:
 $($links.ExternalReview)
 "@
 
+$chineseFriendRequest = @"
+能不能帮我真实看一下这个开源项目？不是让你直接 star。
+
+项目页：
+$($links.ProjectSite)
+
+中文实测教程：
+$($links.ChineseFriendGuide)
+
+如果只看文档，请在 issue #5 留一句具体反馈：
+$($links.FeedbackIssue)
+
+如果愿意跑 demo，请按下面命令跑完，把生成的 first-run block 贴到 issue #6：
+$($links.FirstRunIssue)
+
+Windows PowerShell：
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
+
+macOS/Linux with PowerShell 7：
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
+
+如果卡在 Git、PowerShell、执行策略、路径或复制评论块，可以先看中文排障：
+$($links.FirstRunTroubleshootingZh)
+
+脚本不会自动发布评论。请你先检查生成内容，再决定是否粘贴提交。
+你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说。失败反馈也很有用。
+"@
+
 $lines = @(
     '# Maintainer Harness Review Request Packet',
     '',
@@ -117,6 +147,7 @@ $lines = @(
     "- External review path: $($links.ExternalReview)",
     "- External review templates: $($links.ExternalReviewTemplates)",
     "- Public review request packet: $($links.PublicReviewRequest)",
+    "- Chinese friend guide: $($links.ChineseFriendGuide)",
     "- Review kit: $($links.ReviewKit)",
     "- Worker output reviewability: $($links.ReviewabilityExample)",
     "- Source repo: $($links.SourceRepo)",
@@ -125,6 +156,7 @@ $lines = @(
     "- Follow-up issue: $($links.FollowUpIssue)",
     "- Current gate status: $($links.CurrentGateStatus)",
     "- Current readiness snapshot: $($links.CurrentReadinessSnapshot)",
+    "- First-run Chinese troubleshooting: $($links.FirstRunTroubleshootingZh)",
     "- First-run template: $($links.FirstRunTemplate)",
     "- Feedback follow-up template: $($links.FeedbackFollowUpTemplate)",
     '',
@@ -174,6 +206,12 @@ $lines = @(
     '',
     '```text',
     $securityRequest.Trim(),
+    '```',
+    '',
+    '## Chinese Friend Request',
+    '',
+    '```text',
+    $chineseFriendRequest.Trim(),
     '```',
     '',
     '## Evidence Tracking Checklist',

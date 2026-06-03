@@ -154,12 +154,15 @@ $fileRequirements = @(
         Text = @(
             $links.ExternalReviewTemplates,
             $links.PublicReviewRequest,
+            $links.ChineseFriendGuide,
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
             $windowsDemoCommand,
             $unixDemoCommand,
+            '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget',
+            '不是让你直接 star',
             'Do not ask for star trades',
             $selfOwnedAccountRule
         )
@@ -176,7 +179,7 @@ try {
     if ((Test-Path -LiteralPath $packet.path -PathType Leaf) -and ([string]$packet.path -eq $packetPath)) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet' -Detail "Generated review request packet at $packetPath"))
         $packetContent = Get-Content -LiteralPath $packetPath -Raw
-        foreach ($text in @($links.PublicReviewRequest, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand, $selfOwnedAccountRule)) {
+        foreach ($text in @($links.PublicReviewRequest, $links.ChineseFriendGuide, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand, '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget', '不是让你直接 star', $selfOwnedAccountRule)) {
             if ($packetContent.Contains($text)) {
                 $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet-text' -Detail "Generated packet includes $text"))
             } else {

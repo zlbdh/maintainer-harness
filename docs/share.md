@@ -18,6 +18,10 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
 
+## Codespaces first-run
+
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
+
 ## 中文朋友实测教程
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
@@ -43,6 +47,9 @@ git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 pwsh ./scripts/checks/run-review-demo.ps1
 ```
+
+Cloud path without local Git or PowerShell setup:
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 
 Then paste the generated `Copy This Comment Into Issue #6` block into:
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
@@ -86,6 +93,7 @@ cd maintainer-harness
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
 - Public review request packet: https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 - First-run troubleshooting: https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
+- Codespaces first-run: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
 - Copy-ready review comments: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review

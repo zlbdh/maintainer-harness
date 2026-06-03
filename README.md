@@ -20,6 +20,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **First-run troubleshooting:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
 
+**Codespaces first-run:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
+
 **Reviewer kit:** if you have five minutes, use
 `docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
 demo, or leave public feedback.
@@ -51,6 +53,10 @@ git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 pwsh ./scripts/checks/run-review-demo.ps1
 ```
+
+If you do not want to set up local Git or PowerShell first, open the cloud
+first-run path:
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 
 Then paste the generated `Copy This Comment Into Issue #6` block into
 issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new).
@@ -101,6 +107,9 @@ On macOS or Linux with PowerShell 7:
 ```bash
 pwsh ./scripts/checks/run-review-demo.ps1
 ```
+
+Cloud first-run path:
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 
 That one command runs the public demo checks and writes a paste-ready first-run
 feedback draft plus a machine-readable JSON summary under `reports/first-run/`.

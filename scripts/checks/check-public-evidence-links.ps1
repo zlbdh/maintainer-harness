@@ -147,6 +147,16 @@ $links = @(
         RequiredText = '先实际打开、阅读或运行，再自行决定是否评论或 star'
     },
     [pscustomobject]@{
+        Check = 'codespaces-first-run-guide'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codespaces-first-run.md'
+        RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
+    },
+    [pscustomobject]@{
+        Check = 'devcontainer-config'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.devcontainer/devcontainer.json'
+        RequiredText = 'ghcr.io/devcontainers/features/powershell:2'
+    },
+    [pscustomobject]@{
         Check = 'worker-output-reviewability'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/worker-output-reviewability.md'
         RequiredText = 'Worker Output Reviewability'

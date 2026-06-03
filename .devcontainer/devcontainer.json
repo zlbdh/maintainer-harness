@@ -1,0 +1,14 @@
+{
+  "name": "Maintainer Harness Review",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/powershell:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.powershell"
+      ]
+    }
+  }
+}

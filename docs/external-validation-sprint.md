@@ -108,6 +108,17 @@ https://zlbdh.github.io/maintainer-harness/
 
 Ask outside reviewers to run the clean demo from a fresh checkout.
 
+If local Git or PowerShell setup would block a reviewer, send the cloud
+first-run path instead:
+
+```text
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+```
+
+The Codespaces path is only an environment handoff. It does not post comments,
+create stars, or register evidence; the reviewer must still publish a public
+issue `#6` comment or another reviewer-visible URL before anything counts.
+
 Windows PowerShell:
 
 ```powershell

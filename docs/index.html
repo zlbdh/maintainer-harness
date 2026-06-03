@@ -78,6 +78,9 @@
       <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md">
         中文实测教程
       </a>
+      <a href="https://codespaces.new/zlbdh/maintainer-harness?quickstart=1">
+        Codespaces first-run
+      </a>
       <a href="external-review.html#templates">
         Comment templates
       </a>
@@ -98,7 +101,7 @@
       <div class="grid">
         <article>
           <h3>Run</h3>
-          <p>Run <code>.\scripts\checks\run-review-demo.ps1</code>, then paste the generated issue #6 comment block.</p>
+          <p>Run <code>.\scripts\checks\run-review-demo.ps1</code> locally, or use Codespaces if you do not want to set up Git and PowerShell first.</p>
           <p><a href="https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new">Post first-run feedback</a></p>
         </article>
         <article>
@@ -132,7 +135,12 @@
           inspect each gate.
         </p>
       </div>
-      <pre aria-label="Demo commands"><code>git clone https://github.com/zlbdh/maintainer-harness.git
+      <pre aria-label="Demo commands"><code># Cloud path
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+pwsh ./scripts/checks/run-review-demo.ps1
+
+# Local path
+git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 
@@ -179,6 +187,7 @@ pwsh ./scripts/checks/run-review-demo.ps1</code></pre>
         <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md">Use the review kit</a>
         <a href="external-review.html">Use the external review path</a>
         <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md">Send the Chinese friend guide</a>
+        <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md">Use Codespaces first-run</a>
         <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md">Send the review request packet</a>
         <a href="https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md">Compare worker output</a>
         <a href="https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1">Run the review demo</a>

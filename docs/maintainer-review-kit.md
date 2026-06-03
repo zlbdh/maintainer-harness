@@ -25,10 +25,10 @@ Pick one path:
 
 | Path | Time | What to do | Best feedback link |
 | --- | ---: | --- | --- |
-| Review the workflow shape | 3 min | Read the sample issue-to-review packet and say what evidence is missing. | https://github.com/zlbdh/maintainer-harness/issues/5 |
-| Compare worker evidence | 3 min | Read the good/bad worker output example and name the missing evidence. | https://github.com/zlbdh/maintainer-harness/issues/5 |
-| Run the clean demo | 5 min | Clone the repo and run the one-command demo report. | https://github.com/zlbdh/maintainer-harness/issues/6 |
-| Review the security boundary | 5 min | Read the Codex Security overview and flag unsafe agent or MCP assumptions. | https://github.com/zlbdh/maintainer-harness/issues/5 |
+| Review the workflow shape | 3 min | Read the sample issue-to-review packet and say what evidence is missing. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
+| Compare worker evidence | 3 min | Read the good/bad worker output example and name the missing evidence. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
+| Run the clean demo | 5 min | Clone the repo and run the one-command demo report. | https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new |
+| Review the security boundary | 5 min | Read the Codex Security overview and flag unsafe agent or MCP assumptions. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
 
 ## Demo Commands
 
@@ -54,7 +54,7 @@ The final command writes a local Markdown report under `reports/first-run/`.
 Review it before sharing and remove secrets, private repository names, tokens,
 customer data, or production logs.
 For automatic 90% readiness counting, paste the report as a public comment on
-issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6
+issue `#6`: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 The report includes a `Copy This Comment Into Issue #6` block so reviewers do
 not need to trim the full local report by hand.
 

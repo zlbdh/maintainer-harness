@@ -110,6 +110,8 @@ This project follows a simple date-based changelog until formal versioned releas
   reviewers directly to the issue `#5` and issue `#6` comment boxes.
 - Public launch, share, README, and Pages review CTAs now use direct comment-box
   targets for issue `#5` and issue `#6`.
+- Maintainer review, demo, and external validation handoffs now point reviewers
+  to direct issue comment boxes for first-run and reviewability feedback.
 
 ## 2026-06-01
 

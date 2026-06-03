@@ -13,6 +13,8 @@ This project follows a simple date-based changelog until formal versioned releas
   external hard gates.
 - Readiness transparency dogfooding run documenting the public status checks,
   CI/Pages timing, link health, and still-missing external signals.
+- `v0.1.16` release anchor for the simplified external first-run handoff,
+  readiness dogfooding continuation, and current monitor evidence.
 
 ### Changed
 
@@ -25,6 +27,8 @@ This project follows a simple date-based changelog until formal versioned releas
   readiness artifact.
 - Public evidence link checks now verify the Codex readiness monitor workflow
   page and raw workflow source.
+- Latest release links now point to `v0.1.16`, which anchors reviewer handoff
+  improvements without counting owner work as external feedback.
 
 ## 2026-06-02
 

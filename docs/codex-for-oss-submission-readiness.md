@@ -20,6 +20,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Evidence matrix | `docs/codex-for-oss-evidence.md` |
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
 | 90% readiness scorecard | `docs/codex-for-oss-90-scorecard.md` |
+| Current readiness snapshot | `docs/codex-for-oss-current-readiness.md` |
 | Worker output reviewability example | `docs/worker-output-reviewability.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
 | External validation sprint | `docs/external-validation-sprint.md` |
@@ -36,7 +37,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Pinned feedback issue | https://github.com/zlbdh/maintainer-harness/issues/5 |
 | Pinned first-run issue | https://github.com/zlbdh/maintainer-harness/issues/6 |
 | Star-safe discovery update | https://github.com/zlbdh/maintainer-harness/commit/08163a46095ed2bf930dcb785101a10042de5af6 |
-| Current public metrics | Counted by `scripts/checks/measure-application-readiness.ps1` and the scheduled readiness monitor; do not submit until the hard external-signal gates pass. |
+| Current public metrics | Counted by `scripts/checks/measure-application-readiness.ps1`, recorded in `docs/codex-for-oss-current-readiness.md`, and monitored by the scheduled readiness workflow; do not submit until the hard external-signal gates pass. |
 
 ## Form Answers
 

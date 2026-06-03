@@ -99,6 +99,11 @@ $links = @(
         RequiredText = '90% Readiness Scorecard'
     },
     [pscustomobject]@{
+        Check = 'current-readiness-snapshot'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codex-for-oss-current-readiness.md'
+        RequiredText = 'Codex For OSS Current Readiness Snapshot'
+    },
+    [pscustomobject]@{
         Check = 'submission-readiness'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codex-for-oss-submission-readiness.md'
         RequiredText = 'Codex For OSS Submission Readiness'

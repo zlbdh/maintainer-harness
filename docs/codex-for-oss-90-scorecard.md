@@ -78,8 +78,10 @@ feedback is not enough.
 ## Current Expected State
 
 As of the latest full API-backed local check on 2026-06-03, Maintainer Harness
-scores 60/90. Later local anonymous checks may be temporarily blocked by GitHub
-API rate limits, so the scheduled workflow is the preferred ongoing monitor:
+scores 60/90. The concrete public snapshot is recorded in
+`docs/codex-for-oss-current-readiness.md`. Later local anonymous checks may be
+temporarily blocked by GitHub API rate limits, so the scheduled workflow is the
+preferred ongoing monitor:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint

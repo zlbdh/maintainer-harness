@@ -4,6 +4,19 @@ All notable changes to Maintainer Harness will be documented in this file.
 
 This project follows a simple date-based changelog until formal versioned releases begin.
 
+## 2026-06-03
+
+### Added
+
+- Current Codex for OSS readiness snapshot documenting the latest 60/90
+  full-check result, public metrics, successful CI and Pages runs, and missing
+  external hard gates.
+
+### Changed
+
+- Public readiness, application audit, and public evidence link checks now
+  include the current readiness snapshot.
+
 ## 2026-06-02
 
 ### Added

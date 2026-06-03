@@ -56,8 +56,9 @@ token-backed monitor artifact as the final pre-submit gate once it can be
 inspected by an authenticated actor. The public readiness observation fallback
 recorded 0 external feedback candidates and hard-coded
 `ready_for_form_submission=false`, so it is a status aid rather than an approval
-signal. This snapshot points at the current main commit, but it still does not
-replace the required API-backed pre-submit readiness measurement.
+signal. This snapshot records the observed main commit for this monitoring
+pass; later documentation-only commits can make repository HEAD newer without
+changing the external-signal counts. It still does not replace the required API-backed pre-submit readiness measurement.
 
 ## Hard Gates Still Missing
 

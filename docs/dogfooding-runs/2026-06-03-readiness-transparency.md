@@ -213,7 +213,7 @@ feedback-driven follow-ups for the 90% submission gate.
   scan.
 - Security posture check: PASS, including the default high-confidence secret
   scan.
-- Public evidence link checker: PASS, 19 public URLs.
+- Public evidence link checker: PASS, 20 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

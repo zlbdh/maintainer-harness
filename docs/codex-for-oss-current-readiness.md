@@ -8,10 +8,10 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T06:04:04.8439272Z` |
+| Checked at UTC | `2026-06-03T06:28:58.7953077Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `37c5f6e37b8be0e0d181c04e9e8f4e55e1cc6b38` |
-| Source command | token-backed `Codex readiness monitor` artifact after the required local command completed and later anonymous GitHub API follow-up checks became rate-limited |
+| Measured commit | `dd051ea05c0eb16071342c39f354b0cb4615c4f7` |
+| Source command | token-backed `Codex readiness monitor` artifact after the required local command hit the anonymous GitHub API rate limit |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
@@ -34,26 +34,26 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26866800274 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26866799636 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26866831879 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7376952842`, digest `sha256:b5d62197a1c8e7658ada3f47b829c4954c369f54819e1ee08a951e608d55249e` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 19 public URLs |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867714976 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867714526 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867738800 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7377286261`, digest `sha256:a52943f2b667cb72d5c435b87124f6309cdef51dd58eb0c02ed8d5cfd0bbd0ee` |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 20 public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
 The local `scripts/checks/measure-application-readiness.ps1 -PassThru` command
-was run first for this monitoring pass and completed with the same 60/90 gate
-state. Later anonymous GitHub API follow-up checks became rate-limited, so this
-snapshot uses the token-backed GitHub Actions monitor artifact as the final
-source of truth for the measured commit, score, public metrics, and latest
-CI/Pages run IDs. This file records the measured commit, not necessarily the
-commit that last edited this Markdown file; documentation-only snapshot
-refreshes can leave the repository HEAD newer than the measured commit. If a
-future local anonymous GitHub API call is rate-limited, do not treat the
-repository as ready from local output alone; use the latest token-backed monitor
-artifact as the final pre-submit gate.
+was run first for this monitoring pass and hit the anonymous GitHub API rate
+limit, so local output is not treated as ready evidence. This snapshot uses the
+token-backed GitHub Actions monitor artifact as the final source of truth for
+the measured commit, score, public metrics, and latest CI/Pages run IDs. This
+file records the measured commit, not necessarily the commit that last edited
+this Markdown file; documentation-only snapshot refreshes can leave the
+repository HEAD newer than the measured commit. If a future local anonymous
+GitHub API call is rate-limited, do not treat the repository as ready from
+local output alone; use the latest token-backed monitor artifact as the final
+pre-submit gate.
 
 ## Hard Gates Still Missing
 
@@ -71,8 +71,9 @@ https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
 Those owner comments are useful handoff notes, but they are intentionally not
 counted as external feedback. The release anchor, CI runtime hygiene,
-feedback-driven follow-up template, and owner dogfooding follow-ups on main
-improve the handoff path, but they are not counted as external feedback.
+feedback-driven follow-up template, external feedback candidate finder, and
+owner dogfooding follow-ups on main improve the handoff path, but they are not
+counted as external feedback.
 
 ## Next Honest Work
 

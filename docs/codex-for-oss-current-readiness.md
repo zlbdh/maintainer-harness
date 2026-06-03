@@ -8,10 +8,10 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T11:01:45.7946827Z` |
+| Checked at UTC | `2026-06-03T14:10:33.8984648Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `22fd0986c404c9e25883cbce66548ad5e37b9843` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was attempted first and hit the anonymous GitHub API rate limit; public GitHub HTML and the token-backed `Codex readiness monitor` run were used for this transparency snapshot |
+| Measured commit | `bde584c42282f635af030b8bc2952a3cd90ff93c` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was attempted first and hit the anonymous GitHub API rate limit; public GitHub HTML, `scripts/checks/write-public-readiness-observation.ps1 -PassThru`, and the token-backed `Codex readiness monitor` run were used for this transparency snapshot |
 | Readiness score | `60/90` estimated from the unchanged hard-gate counts below |
 | Target score | `90` |
 | Ready for form submission | no |
@@ -34,12 +34,12 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880251220 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880249971 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26880290890 |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890144926 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890143076 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26890197631 |
 | Monitor artifact | present on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 25 public URLs, including `docs/friend-review-guide-zh.md` |
-| Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 26 public URLs, including `docs/friend-review-guide-zh.md` and the public readiness observation script |
+| Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan and guards that public HTML fallback output is not a form-submission gate |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
@@ -51,7 +51,10 @@ still visible without authentication: 0 stars, 0 forks, 0 watchers, open issues
 `#5`, `#6`, and `#7`, successful current-main validation, successful Pages
 deployment, and a successful token-backed readiness monitor run. Use the latest
 token-backed monitor artifact as the final pre-submit gate once it can be
-inspected by an authenticated actor. Documentation-only snapshot refreshes can
+inspected by an authenticated actor. The public readiness observation fallback
+recorded 0 external feedback candidates and hard-coded
+`ready_for_form_submission=false`, so it is a status aid rather than an approval
+signal. Documentation-only snapshot refreshes can
 leave the repository HEAD newer than the measured commit listed above; that is
 expected and does not change the external-signal counts.
 
@@ -74,8 +77,9 @@ https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 Those owner comments are useful handoff notes, but they are intentionally not
 counted as external feedback. The release anchor, CI runtime hygiene,
 feedback-driven follow-up template, external feedback candidate finder, Chinese
-friend review guide, Pages handoff links, and owner dogfooding follow-ups on
-main improve the handoff path, but they are not counted as external feedback.
+friend review guide, public readiness observation fallback, Pages handoff links,
+and owner dogfooding follow-ups on main improve the handoff path, but they are
+not counted as external feedback.
 
 ## Next Honest Work
 

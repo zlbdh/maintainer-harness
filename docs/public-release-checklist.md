@@ -67,4 +67,7 @@ Expected result:
 - Replace any private or legacy `origin` remote before pushing.
 - Push to a public GitHub repository.
 - Confirm GitHub Actions passes on the public repository.
+- Run `.\scripts\checks\assert-form-submission-ready.ps1` before any support
+  form submission recommendation; it must fail until the 90% external-signal
+  gate is real.
 - Use the public repository URL in the application form.

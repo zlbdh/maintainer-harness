@@ -21,6 +21,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Reviewer brief | `docs/codex-for-oss-reviewer-brief.md` |
 | 90% readiness scorecard | `docs/codex-for-oss-90-scorecard.md` |
 | Current readiness snapshot | `docs/codex-for-oss-current-readiness.md` |
+| Pre-submit hard gate | `scripts/checks/assert-form-submission-ready.ps1` |
 | Worker output reviewability example | `docs/worker-output-reviewability.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
 | Readiness transparency dogfooding run | `docs/dogfooding-runs/2026-06-03-readiness-transparency.md` |
@@ -66,11 +67,12 @@ $pattern = '<private-name>|<private-remote>|<local-path>|<private-role>'
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern $pattern
 .\scripts\checks\write-application-audit.ps1 -SensitivePattern $pattern
 .\scripts\checks\measure-application-readiness.ps1
+.\scripts\checks\assert-form-submission-ready.ps1
 ```
 
 The current application audit is passing in the ignored report directory.
-The readiness score intentionally exits non-zero until the 90% external-signal
-gate is reached.
+The readiness score and pre-submit assertion intentionally exit non-zero until
+the 90% external-signal gate is reached.
 
 ## Manual Web Form Step
 

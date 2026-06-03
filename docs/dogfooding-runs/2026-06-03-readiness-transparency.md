@@ -235,6 +235,22 @@ This improves follow-up handling after real public comments arrive. It does
 not create external comments, outside first-run reports, real stars, or
 feedback-driven follow-ups for the 90% submission gate.
 
+### Continuation: pre-submit form hard gate
+
+The continuation added `scripts/checks/assert-form-submission-ready.ps1`, a
+hard pre-submit assertion that calls the same readiness measurement by default
+and refuses to pass unless `ready_for_form_submission` is true, the score is at
+least 90, and the hard gates for stars, external comments, first-run feedback,
+feedback-driven follow-up, CI, and Pages are all passing. The script also
+accepts a readiness JSON fixture path so the not-ready and ready behaviors can
+be tested without depending on live GitHub API calls.
+
+The current public state still blocks submission at `60/90`: 0/5 real stars,
+0/2 external feedback comments, 0/1 external first-run report, and 0/1
+feedback-driven follow-up artifact. This guard prevents accidental premature
+form-submission recommendations, but it does not create or count external
+signals.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret

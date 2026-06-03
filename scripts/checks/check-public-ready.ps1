@@ -141,7 +141,8 @@ $requiredPublicPaths = @(
     'scripts\checks\add-external-feedback-evidence.ps1',
     'scripts\checks\find-external-feedback-candidates.ps1',
     'scripts\checks\write-external-feedback-review-queue.ps1',
-    'scripts\checks\write-review-request-packet.ps1'
+    'scripts\checks\write-review-request-packet.ps1',
+    'scripts\checks\assert-form-submission-ready.ps1'
 )
 
 foreach ($relativePath in $requiredPublicPaths) {
@@ -194,6 +195,8 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'External Feedback Review Queue' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-candidates.json' },
     @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
+    @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'Codex for OSS form submission gate' },
+    @{ Path = 'scripts\checks\assert-form-submission-ready.ps1'; Text = 'ready_for_form_submission' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Stars, comments, and reports must come from real inspection.' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'workflow_run:' },

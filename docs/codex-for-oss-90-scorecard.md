@@ -16,6 +16,17 @@ Run:
 .\scripts\checks\measure-application-readiness.ps1
 ```
 
+Before telling the maintainer to submit the OpenAI form, also run the hard
+pre-submit assertion:
+
+```powershell
+.\scripts\checks\assert-form-submission-ready.ps1
+```
+
+The assertion calls the same readiness measurement by default and exits
+non-zero unless `ready_for_form_submission` is true, the score is at least 90,
+and every hard gate below is passing.
+
 For continuous monitoring, set `GITHUB_TOKEN` or `GH_TOKEN` before running the
 script. Anonymous GitHub API calls can be rate-limited, which makes the score
 temporarily unverifiable even when the repository itself is public.
@@ -105,6 +116,8 @@ artifact is the final source of truth:
   public feedback into an auditable follow-up artifact
 - PASS: external feedback candidate finder is available and avoids counting
   owner, bot, duplicate, or already-registered comments
+- PASS: pre-submit form gate is available and blocks submission while any hard
+  external-signal gate is missing
 - FAIL: 0/5 real stars
 - FAIL: 0/2 external issue comments
 - FAIL: 0/1 outside first-run report

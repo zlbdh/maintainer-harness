@@ -204,3 +204,6 @@ external usage is still unproven.
 6. Run `scripts/checks/measure-application-readiness.ps1` with `GITHUB_TOKEN`
    or `GH_TOKEN` set so the 90% monitor does not depend on anonymous API
    limits.
+7. Run `scripts/checks/assert-form-submission-ready.ps1` immediately before
+   telling the maintainer to submit; it must fail until the score is at least
+   90 and all hard external-signal gates pass.

@@ -169,6 +169,7 @@ $requiredPaths = @(
     'scripts\checks\write-external-feedback-review-queue.ps1',
     'scripts\checks\write-review-request-packet.ps1',
     'scripts\checks\measure-application-readiness.ps1',
+    'scripts\checks\assert-form-submission-ready.ps1',
     'scripts\checks\validate-external-feedback-evidence.ps1',
     'scripts\checks\run-local-baseline.ps1'
 )

@@ -4,6 +4,18 @@
 
 请不要让对方为了帮忙而直接点赞。请不要交换 star、购买互动、使用机器人、群发拉票，或让没有看过项目的人评论。Self-owned alternate accounts do not count as external validation.
 
+## 你自己的发送步骤
+
+1. 选 3 到 5 个真实认识的人，最好是维护过仓库、写过 CI、用过 coding agent、做过 devtools 或能看懂开源项目的人。
+2. 单独私信，不要群发刷屏。把下面的「可以直接发的消息」发给对方。
+3. 明确说“不需要为了帮忙 star”。请对方先看项目页、读文档或跑 demo，再决定是否评论或 star。
+4. 如果对方只愿意看 3 分钟，请让他去 issue #5 留一个具体 reviewability 反馈。
+5. 如果对方愿意跑 5 到 10 分钟，请让他按 demo 步骤跑一次，并把生成的 first-run block 贴到 issue #6。
+6. 如果对方只私下回复你，也可以用于改进项目，但不要把它当成公开外部证据计数。
+7. 如果对方公开留下了评论、first-run 报告或反馈驱动 follow-up，把公开链接发回来，后续再登记到 `docs/external-feedback-evidence.yaml`。
+
+最重要的是：不要催 star，不要暗示“帮我点一下就行”。要问“哪里不清楚、哪里不可信、哪里跑不起来”。
+
 ## 可以直接发的消息
 
 ```text
@@ -24,6 +36,23 @@ https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 
 如果愿意跑 demo，请把生成的 first-run block 贴到 issue #6：
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+```
+
+## 30 秒短版
+
+```text
+能不能帮我真实看一下这个开源项目？不是让你直接 star。
+
+项目页：
+https://zlbdh.github.io/maintainer-harness/
+
+如果只看文档，麻烦在 issue #5 留一句具体反馈：什么证据会让你愿意接受 agent 的输出？
+https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+
+如果愿意跑 demo，按页面里的命令跑完，把生成的 first-run block 贴到 issue #6：
+https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+
+你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说，失败反馈更有用。
 ```
 
 ## 朋友实际操作步骤

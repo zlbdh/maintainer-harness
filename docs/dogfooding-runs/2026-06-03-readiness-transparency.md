@@ -160,13 +160,29 @@ This improves CI maintainability and keeps the public readiness snapshot
 current. It does not count as an external comment, outside first-run report,
 real star, or feedback-driven follow-up for the 90% submission gate.
 
+### Continuation: GitHub issue chooser direct feedback links
+
+The continuation found one remaining handoff friction point: the GitHub issue
+chooser had feedback-specific templates, but its contact links did not directly
+route outside reviewers to the public issue `#5`, issue `#6`, or current issue
+`#7` gate status. The issue chooser now exposes direct links for reviewability
+feedback, first-run reports, and the current readiness gate before the generic
+external review page. The worker-output reviewability template also points to
+the issue `#5` comment box directly.
+
+`scripts/checks/check-public-ready.ps1` now checks those direct links so the
+external feedback handoff cannot silently drift back to a less useful route.
+This reduces reviewer friction, but it does not count as an external comment,
+outside first-run report, real star, or feedback-driven follow-up for the 90%
+submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret
   scan.
 - Security posture check: PASS, including the default high-confidence secret
   scan.
-- Public evidence link checker: PASS, 17 public URLs.
+- Public evidence link checker: PASS, 18 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

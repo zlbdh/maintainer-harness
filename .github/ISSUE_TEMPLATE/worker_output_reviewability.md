@@ -12,7 +12,7 @@ labels: "area:feedback, question"
 
 To count toward the public readiness gate, add reviewability feedback as a
 comment on issue #5 after inspecting the project:
-https://github.com/zlbdh/maintainer-harness/issues/5
+https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 
 External review page with copy-ready comment templates:
 https://zlbdh.github.io/maintainer-harness/external-review.html#templates

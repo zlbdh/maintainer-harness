@@ -1,5 +1,14 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Comment on reviewability feedback issue
+    url: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+    about: Use this after inspecting the docs, examples, or worker-output evidence.
+  - name: Post a first-run report
+    url: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
+    about: Use this after running the clean demo and reviewing the generated report.
+  - name: Read the current readiness gate
+    url: https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
+    about: Check the latest 90% gate status before posting external feedback.
   - name: External review path
     url: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
     about: Use this page for the shortest reviewability and first-run feedback paths.

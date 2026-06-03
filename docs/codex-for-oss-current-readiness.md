@@ -10,7 +10,7 @@ approval.
 | --- | --- |
 | Checked at UTC | `2026-06-03T04:31:06.5136652Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Verified monitor commit | `36b932a17c519093a5a31ac5be2ec4ae257c2df1` |
+| Measured commit | `36b932a17c519093a5a31ac5be2ec4ae257c2df1` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru`, cross-checked with token-backed `Codex readiness monitor` artifact |
 | Readiness score | `60/90` |
 | Target score | `90` |
@@ -45,9 +45,12 @@ approval.
 
 The local `scripts/checks/measure-application-readiness.ps1 -PassThru` run
 succeeded for this snapshot and matched the token-backed GitHub Actions monitor
-score. If a future local anonymous GitHub API call is rate-limited, do not treat
-the repository as ready from local output alone; use the latest token-backed
-monitor artifact as the final pre-submit gate.
+score. This file records the measured commit, not necessarily the commit that
+last edited this Markdown file; documentation-only snapshot refreshes can leave
+the repository HEAD one commit newer than the measured commit. If a future local
+anonymous GitHub API call is rate-limited, do not treat the repository as ready
+from local output alone; use the latest token-backed monitor artifact as the
+final pre-submit gate.
 
 ## Hard Gates Still Missing
 

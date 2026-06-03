@@ -5,6 +5,7 @@ param(
     [int]$FirstRunIssueNumber = 6,
     [string]$EvidencePath = '',
     [string]$RepoHtmlPath = '',
+    [string]$ActionsHtmlPath = '',
     [string]$HtmlFixtureDirectory = '',
     [string]$OutputDirectory = '',
     [switch]$PassThru
@@ -94,6 +95,29 @@ function Get-PublicObservationMetrics {
     }
 }
 
+function Get-PublicObservationActionRuns {
+    param(
+        [string]$Repository,
+        [string]$Html
+    )
+
+    $pattern = '/' + [regex]::Escape($Repository) + '/actions/runs/(\d+)'
+    $runIds = [System.Collections.Generic.List[string]]::new()
+
+    foreach ($match in [regex]::Matches($Html, $pattern)) {
+        $runId = [string]$match.Groups[1].Value
+        if (-not $runIds.Contains($runId)) {
+            $runIds.Add($runId)
+        }
+    }
+
+    return [pscustomobject]@{
+        source = 'github-html-fallback'
+        note = 'Action run IDs are public HTML hints only. Use the token-backed workflow artifact or authenticated API before form submission.'
+        latest_run_ids = @($runIds)
+    }
+}
+
 $repoRoot = Get-HarnessRepoRoot
 
 if ([string]::IsNullOrWhiteSpace($EvidencePath)) {
@@ -109,9 +133,22 @@ $timestamp = Get-PublicObservationTimestamp
 $jsonPath = Join-Path $OutputDirectory ($timestamp + '-public-readiness-observation.json')
 $markdownPath = Join-Path $OutputDirectory ($timestamp + '-public-readiness-observation.md')
 $repoUrl = "https://github.com/$Repository"
+$actionsUrl = "https://github.com/$Repository/actions?query=branch%3Amain"
 
 $repoHtml = Get-PublicObservationHtml -Url $repoUrl -Path $RepoHtmlPath
 $metrics = Get-PublicObservationMetrics -Html $repoHtml
+
+try {
+    $actionsHtml = Get-PublicObservationHtml -Url $actionsUrl -Path $ActionsHtmlPath
+    $actionRuns = Get-PublicObservationActionRuns -Repository $Repository -Html $actionsHtml
+} catch {
+    $actionRuns = [pscustomobject]@{
+        source = 'github-html-fallback'
+        note = 'Action run IDs could not be observed from public HTML during this pass. Use the token-backed workflow artifact or authenticated API before form submission.'
+        latest_run_ids = @()
+        error = $_.Exception.Message
+    }
+}
 
 $candidateArgs = @{
     Repository = $Repository
@@ -136,6 +173,7 @@ $result = [pscustomobject]@{
     ready_for_form_submission = $false
     reason = $reason
     metrics = $metrics
+    action_runs = $actionRuns
     external_feedback_candidates = [pscustomobject]@{
         candidate_count = [int]$candidateResult.candidate_count
         source = [string]$candidateResult.source
@@ -164,6 +202,13 @@ $lines = @(
     "| Forks | $($metrics.forks) |",
     "| Watchers | $($metrics.watchers) |",
     "| Open issues | $($metrics.open_issues) |",
+    '',
+    '## Public Actions Observation',
+    '',
+    "Source: $($result.action_runs.source)",
+    "Latest observed run IDs: $((@($result.action_runs.latest_run_ids) -join ', '))",
+    '',
+    $result.action_runs.note,
     '',
     '## External Feedback Candidate Observation',
     '',

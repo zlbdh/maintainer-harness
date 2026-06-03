@@ -47,10 +47,10 @@ The local `scripts/checks/measure-application-readiness.ps1 -PassThru` run
 succeeded for this snapshot and matched the token-backed GitHub Actions monitor
 score. This file records the measured commit, not necessarily the commit that
 last edited this Markdown file; documentation-only snapshot refreshes can leave
-the repository HEAD one commit newer than the measured commit. If a future local
-anonymous GitHub API call is rate-limited, do not treat the repository as ready
-from local output alone; use the latest token-backed monitor artifact as the
-final pre-submit gate.
+the repository HEAD newer than the measured commit. If a future local anonymous
+GitHub API call is rate-limited, do not treat the repository as ready from local
+output alone; use the latest token-backed monitor artifact as the final
+pre-submit gate.
 
 ## Hard Gates Still Missing
 

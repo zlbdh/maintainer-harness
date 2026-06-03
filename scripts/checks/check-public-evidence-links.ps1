@@ -222,6 +222,16 @@ $links = @(
         RequiredText = 'not an API-backed readiness gate'
     },
     [pscustomobject]@{
+        Check = 'reviewer-invite-draft-preflight-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/check-reviewer-invite-draft.ps1'
+        RequiredText = 'Local-only check; no messages, contacts, comments, stars, votes, or evidence entries were created.'
+    },
+    [pscustomobject]@{
+        Check = 'reviewer-invite-draft-preflight-test'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/test-reviewer-invite-draft-preflight.ps1'
+        RequiredText = 'Direct star request should fail'
+    },
+    [pscustomobject]@{
         Check = 'reviewer-comment-draft-preflight-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/check-reviewer-comment-draft.ps1'
         RequiredText = 'Local-only check; no comments, stars, votes, contacts, or evidence entries were created.'

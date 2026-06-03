@@ -140,6 +140,7 @@ $requiredPublicPaths = @(
     'scripts\checks\write-first-run-report.ps1',
     'scripts\checks\add-external-feedback-evidence.ps1',
     'scripts\checks\find-external-feedback-candidates.ps1',
+    'scripts\checks\write-external-feedback-review-queue.ps1',
     'scripts\checks\write-review-request-packet.ps1'
 )
 
@@ -190,14 +191,18 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\add-external-feedback-evidence.ps1'; Text = 'Duplicate evidence URL' },
     @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'External feedback candidates' },
     @{ Path = 'scripts\checks\find-external-feedback-candidates.ps1'; Text = 'add-external-feedback-evidence.ps1' },
+    @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'External Feedback Review Queue' },
+    @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-candidates.json' },
+    @{ Path = 'scripts\checks\write-external-feedback-review-queue.ps1'; Text = 'external-feedback-review-queue.md' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Ready for form submission | no' },
     @{ Path = 'docs\codex-for-oss-current-readiness.md'; Text = 'Stars, comments, and reports must come from real inspection.' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'workflow_run:' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'Harness validation' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'pages build and deployment' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },
-    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'find-external-feedback-candidates.ps1 -PassThru' },
-    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'external-feedback-candidates.json' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'write-external-feedback-review-queue.ps1 -PassThru' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'external-feedback-review-queue.md' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'reports/readiness/*' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/checkout@v6' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/upload-artifact@v7' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },

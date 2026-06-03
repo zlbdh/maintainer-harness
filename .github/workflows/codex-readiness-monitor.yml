@@ -71,16 +71,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          $reportDir = New-Item -ItemType Directory -Force -Path reports/readiness
-          $candidates = ./scripts/checks/find-external-feedback-candidates.ps1 -PassThru
-          $jsonPath = Join-Path $reportDir 'external-feedback-candidates.json'
-          $candidates | ConvertTo-Json -Depth 8 | Set-Content -Path $jsonPath -Encoding UTF8
+          $queue = ./scripts/checks/write-external-feedback-review-queue.ps1 -PassThru
+          $candidates = Get-Content -Path $queue.json_path -Raw | ConvertFrom-Json
 
           if ($env:GITHUB_STEP_SUMMARY) {
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '### External feedback candidates'
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Candidate count: {0}' -f $candidates.candidate_count)
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'Review queue: `external-feedback-review-queue.md`'
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
             Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'Candidates are not counted until a maintainer reviews the public URL and registers verified evidence.'
 
@@ -98,5 +97,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: codex-readiness-report
-          path: reports/readiness/*.json
+          path: reports/readiness/*
           if-no-files-found: error

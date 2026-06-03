@@ -139,6 +139,11 @@ $links = @(
         RequiredText = 'External feedback candidates'
     },
     [pscustomobject]@{
+        Check = 'feedback-review-queue-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-external-feedback-review-queue.ps1'
+        RequiredText = 'External Feedback Review Queue'
+    },
+    [pscustomobject]@{
         Check = 'feedback-follow-up-template'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/feedback_follow_up.md'
         RequiredText = 'Feedback-driven follow-up'

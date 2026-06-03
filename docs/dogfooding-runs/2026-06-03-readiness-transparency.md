@@ -211,8 +211,8 @@ feedback-driven follow-ups for the 90% submission gate.
 
 The continuation wired the dedicated `Codex readiness monitor` workflow to run
 `scripts/checks/find-external-feedback-candidates.ps1` with `GITHUB_TOKEN` and
-upload `external-feedback-candidates.json` beside `codex-readiness.json`.
-The workflow summary shows the candidate count and reminds maintainers that
+upload `external-feedback-candidates.json` beside `codex-readiness.json`. The
+workflow summary shows the candidate count and reminds maintainers that
 candidates are not counted until the public URL is reviewed and registered as
 verified evidence.
 
@@ -220,6 +220,20 @@ This makes future real feedback easier to catch when local anonymous GitHub API
 checks are rate-limited. It does not create external comments, outside
 first-run reports, real stars, or feedback-driven follow-ups for the 90%
 submission gate.
+
+### Continuation: external feedback review queue
+
+The continuation added
+`scripts/checks/write-external-feedback-review-queue.ps1`, which turns the
+candidate scan into `external-feedback-candidates.json` and a Markdown
+`external-feedback-review-queue.md` with pending registration commands. The
+dedicated readiness monitor now uploads the whole `reports/readiness` directory
+so reviewers can inspect both the machine-readable candidate list and the
+human-readable queue.
+
+This improves follow-up handling after real public comments arrive. It does
+not create external comments, outside first-run reports, real stars, or
+feedback-driven follow-ups for the 90% submission gate.
 
 ## Validation
 

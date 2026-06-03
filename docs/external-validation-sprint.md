@@ -150,8 +150,9 @@ then prints guarded `add-external-feedback-evidence.ps1` commands with
 count feedback by itself.
 
 The token-backed `Codex readiness monitor` workflow also runs this scan and
-uploads `external-feedback-candidates.json` beside `codex-readiness.json`.
-Use the artifact when local anonymous GitHub API checks are rate-limited.
+uploads `external-feedback-candidates.json` plus
+`external-feedback-review-queue.md` beside `codex-readiness.json`. Use those
+artifacts when local anonymous GitHub API checks are rate-limited.
 
 Use the guarded append helper when the public URL already exists:
 

@@ -36,6 +36,12 @@ https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 External review page with copy-ready issue #5 and issue #6 comment templates:
 https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
+First-run troubleshooting:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
+
+中文排障:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md
+
 Only paste a report after you actually ran the demo or inspected the project.
 
 ## Result
@@ -43,6 +49,12 @@ Only paste a report after you actually ran the demo or inspected the project.
 - Passed:
 - Failed:
 - Slow or confusing:
+
+## If It Failed
+
+- Key error output, 3-10 lines:
+- What would have helped:
+- Did the troubleshooting page cover this case? yes / no / not checked
 
 ## First Useful File
 

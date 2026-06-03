@@ -187,6 +187,11 @@ $links = @(
         RequiredText = 'CurrentGateStatus'
     },
     [pscustomobject]@{
+        Check = 'reviewer-outreach-plan-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-reviewer-outreach-plan.ps1'
+        RequiredText = 'Manual outreach only'
+    },
+    [pscustomobject]@{
         Check = 'external-review-handoff-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/check-external-review-handoff.ps1'
         RequiredText = 'External review handoff'

@@ -45,6 +45,18 @@ copy-ready comment templates for issue `#5` and issue `#6`.
 For local copy-paste request drafts, run
 `scripts/checks/write-review-request-packet.ps1`.
 
+Before sending a five-person reviewer batch, generate a local manual checklist:
+
+```powershell
+.\scripts\checks\write-reviewer-outreach-plan.ps1
+```
+
+The generated plan is manual-only: it does not contact reviewers, post
+comments, create stars, or register evidence. Use it to track who should get an
+individual request and which public target fits them. It still counts nothing
+until a real outside reviewer publishes a reviewer-visible URL and that URL is
+validated through `docs/external-feedback-evidence.yaml`.
+
 ## Reviewer Routing
 
 Use this routing before sending a request:

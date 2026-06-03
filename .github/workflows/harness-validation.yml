@@ -64,6 +64,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/check-external-review-handoff.ps1
 
+      - name: Test reviewer outreach plan
+        shell: pwsh
+        run: ./scripts/checks/test-reviewer-outreach-plan.ps1
+
       - name: Check public evidence links
         shell: pwsh
         run: ./scripts/checks/check-public-evidence-links.ps1

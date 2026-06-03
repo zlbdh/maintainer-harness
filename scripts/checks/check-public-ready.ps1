@@ -148,6 +148,33 @@ foreach ($relativePath in $requiredPublicPaths) {
     }
 }
 
+$requiredPublicText = @(
+    @{ Path = 'README.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
+    @{ Path = 'README.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'docs\index.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
+    @{ Path = 'docs\index.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'docs\external-review.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
+    @{ Path = 'docs\external-review.html'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
+    @{ Path = 'docs\launch-kit.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = 'docs\share.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
+    @{ Path = 'docs\share.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' }
+)
+
+foreach ($snippet in $requiredPublicText) {
+    $fullPath = Join-HarnessPath $repoRoot $snippet.Path
+    if (-not (Test-Path -LiteralPath $fullPath)) {
+        continue
+    }
+
+    $content = Get-Content -LiteralPath $fullPath -Raw
+    if ($content.Contains($snippet.Text)) {
+        $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'review-comment-target' -Detail "$($snippet.Path) includes $($snippet.Text)"))
+    } else {
+        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'review-comment-target' -Detail "$($snippet.Path) is missing $($snippet.Text)"))
+    }
+}
+
 if (-not $SkipHarnessValidation) {
     try {
         & (Join-HarnessPath $repoRoot 'scripts/checks/validate-repos.ps1') -Quiet | Out-Null

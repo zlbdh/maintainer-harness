@@ -55,8 +55,8 @@ Current public launch anchors:
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15
 - CI workflow: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml
-- Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
-- First-run feedback issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+- First-run feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
@@ -70,7 +70,7 @@ Current public launch anchors:
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 - Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
 - GitHub profile README: https://github.com/zlbdh/zlbdh
-- First-run feedback target: https://github.com/zlbdh/maintainer-harness/issues/6
+- First-run feedback target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - First-run feedback template fallback: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
 - Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1

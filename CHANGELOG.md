@@ -108,6 +108,8 @@ This project follows a simple date-based changelog until formal versioned releas
   issue `#5` or issue `#6` comments without trimming a combined block by hand.
 - Generated review packets, demo output, and first-run reports now point public
   reviewers directly to the issue `#5` and issue `#6` comment boxes.
+- Public launch, share, README, and Pages review CTAs now use direct comment-box
+  targets for issue `#5` and issue `#6`.
 
 ## 2026-06-01
 

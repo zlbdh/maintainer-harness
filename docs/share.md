@@ -60,13 +60,13 @@ cd maintainer-harness
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
 - Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
-- Feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
-- First-run feedback issue: https://github.com/zlbdh/maintainer-harness/issues/6
+- Feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
+- First-run feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - Reviewability comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 - First-run comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - Pinned feedback issue: https://github.com/zlbdh/maintainer-harness/issues/5
 - Pinned first-run issue: https://github.com/zlbdh/maintainer-harness/issues/6
-- First-run feedback target: https://github.com/zlbdh/maintainer-harness/issues/6
+- First-run feedback target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 - First-run feedback template fallback: https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md
 - Review demo runner: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/run-review-demo.ps1
 - First-run report generator: https://github.com/zlbdh/maintainer-harness/blob/main/scripts/checks/write-first-run-report.ps1

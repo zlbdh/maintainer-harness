@@ -23,8 +23,8 @@ worker output with evidence a maintainer can actually review.
 
 | Time | Best action | Public link |
 | --- | --- | --- |
-| 3 min | Say what evidence is missing before accepting agent output. | [Issue #5](https://github.com/zlbdh/maintainer-harness/issues/5) |
-| 5 min | Run the clean demo and post first-run friction. | [Issue #6](https://github.com/zlbdh/maintainer-harness/issues/6) |
+| 3 min | Say what evidence is missing before accepting agent output. | [Issue #5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new) |
+| 5 min | Run the clean demo and post first-run friction. | [Issue #6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new) |
 | After inspection | Use the copy-ready comment templates if they match what you actually saw. | [External review templates](https://zlbdh.github.io/maintainer-harness/external-review.html#templates) |
 | After feedback | Track any concrete follow-up as a public issue, commit, or release note. | [Issue #7](https://github.com/zlbdh/maintainer-harness/issues/7) |
 
@@ -45,8 +45,8 @@ with one concrete evidence gap instead.
 **Share or star:** if the demo is useful, share the project site or star the
 repository so other maintainers can find it. Feedback is more valuable than a
 vanity metric; the best starting points are issue
-[#5](https://github.com/zlbdh/maintainer-harness/issues/5) for reviewability
-feedback and issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6)
+[#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new) for reviewability
+feedback and issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new)
 for first-run friction.
 
 It does not replace your product repositories. It keeps the operational layer around them auditable:

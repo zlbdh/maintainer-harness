@@ -45,6 +45,21 @@ copy-ready comment templates for issue `#5` and issue `#6`.
 For local copy-paste request drafts, run
 `scripts/checks/write-review-request-packet.ps1`.
 
+## Reviewer Routing
+
+Use this routing before sending a request:
+
+| Reviewer fit | Ask for | Public target |
+| --- | --- | --- |
+| Maintainer or devtools builder who can inspect examples | One concrete reviewability note. | issue `#5` |
+| Reviewer willing to run a clean checkout | First-run friction report. | issue `#6` |
+| Security-minded reviewer | Write-scope or MCP boundary critique. | issue `#5` |
+| Reviewer whose feedback creates work | Public follow-up issue, commit, or release note. | issue `#7` or linked artifact |
+
+Do not count owner comments, private messages, or stars from people who did not
+inspect the project. Private feedback can guide improvements, but the 90% gate
+needs public reviewer-visible signals.
+
 ## Message Template
 
 ```text

@@ -19,6 +19,20 @@ The generated packet includes the external review templates, issue `#5`,
 issue `#6`, and issue `#7` so reviewers can choose the shortest public feedback
 path.
 
+## Reviewer Fit
+
+Send the review request to people who can judge at least one part of the
+workflow:
+
+- open source maintainers who review pull requests or releases
+- devtools builders working on CI, agent workflows, or release evidence
+- engineers who have tried coding agents in real repositories
+- security-minded reviewers who can evaluate write scopes and evidence trails
+
+Do not send this as a star request to people who cannot inspect the project.
+Owner comments, private messages, and uninspected stars do not count toward the
+90% gate.
+
 ## Five-Minute Review Path
 
 Pick one path:
@@ -29,6 +43,9 @@ Pick one path:
 | Compare worker evidence | 3 min | Read the good/bad worker output example and name the missing evidence. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
 | Run the clean demo | 5 min | Clone the repo and run the one-command demo report. | https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new |
 | Review the security boundary | 5 min | Read the Codex Security overview and flag unsafe agent or MCP assumptions. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
+
+Use issue `#7`, a commit, or a release note only after feedback produces a
+concrete follow-up artifact.
 
 ## Demo Commands
 

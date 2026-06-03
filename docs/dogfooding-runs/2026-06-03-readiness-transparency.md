@@ -282,6 +282,23 @@ check this public packet. This lowers the friction of real outreach, but it
 does not count as an external comment, outside first-run report, real star, or
 feedback-driven follow-up for the 90% submission gate.
 
+### Continuation: self-owned account integrity rule
+
+The continuation added an explicit evidence-integrity rule after the maintainer
+asked whether creating another GitHub account would help. It does not: self-owned
+alternate accounts, controlled organization accounts, close proxy accounts, and
+author-loop interactions are not external validation.
+
+The rule is now present in the external review page, maintainer review kit,
+public review request packet, share page, launch kit, and generated review
+request packet. `scripts/checks/check-external-review-handoff.ps1` and
+`scripts/checks/check-public-ready.ps1` verify the rule so it cannot silently
+drop out of the reviewer handoff.
+
+This protects the evidence chain from artificial engagement. It does not create
+external comments, outside first-run reports, real stars, or feedback-driven
+follow-up artifacts for the 90% submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret

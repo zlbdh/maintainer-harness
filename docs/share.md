@@ -121,3 +121,4 @@ If this workflow is useful, a star helps other maintainers discover it. The most
 Avoid asking for star trades, bulk upvotes, automated engagement, or support
 from people who have not seen the project. The project is stronger when stars
 come from people who understand what the harness is trying to make safer.
+Self-owned alternate accounts do not count as external validation.

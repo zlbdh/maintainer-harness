@@ -61,6 +61,7 @@ $links = [ordered]@{
 
 $windowsDemoCommand = '.\scripts\checks\run-review-demo.ps1'
 $unixDemoCommand = 'pwsh ./scripts/checks/run-review-demo.ps1'
+$selfOwnedAccountRule = 'Self-owned alternate accounts do not count'
 
 $fileRequirements = @(
     [pscustomobject]@{
@@ -73,7 +74,8 @@ $fileRequirements = @(
             $links.PublicReviewRequest,
             $windowsDemoCommand,
             $unixDemoCommand,
-            'Stars help discovery only after inspection'
+            'Stars help discovery only after inspection',
+            $selfOwnedAccountRule
         )
     },
     [pscustomobject]@{
@@ -86,7 +88,8 @@ $fileRequirements = @(
             $links.CurrentGateStatus,
             $windowsDemoCommand,
             $unixDemoCommand,
-            'Do not send this as a star request'
+            'Do not send this as a star request',
+            $selfOwnedAccountRule
         )
     },
     [pscustomobject]@{
@@ -100,7 +103,8 @@ $fileRequirements = @(
             $links.FeedbackFollowUpTemplate,
             $windowsDemoCommand,
             $unixDemoCommand,
-            'Avoid asking for star trades'
+            'Avoid asking for star trades',
+            $selfOwnedAccountRule
         )
     },
     [pscustomobject]@{
@@ -112,7 +116,21 @@ $fileRequirements = @(
             $links.PublicReviewRequest,
             $windowsDemoCommand,
             $unixDemoCommand,
-            'Do not buy stars'
+            'Do not buy stars',
+            $selfOwnedAccountRule
+        )
+    },
+    [pscustomobject]@{
+        Path = 'docs\review-request.md'
+        Text = @(
+            $links.ExternalReviewTemplates,
+            $links.FeedbackIssue,
+            $links.FirstRunIssue,
+            $links.CurrentGateStatus,
+            $links.FeedbackFollowUpTemplate,
+            $windowsDemoCommand,
+            $unixDemoCommand,
+            $selfOwnedAccountRule
         )
     },
     [pscustomobject]@{
@@ -126,7 +144,8 @@ $fileRequirements = @(
             $links.FeedbackFollowUpTemplate,
             $windowsDemoCommand,
             $unixDemoCommand,
-            'Do not ask for star trades'
+            'Do not ask for star trades',
+            $selfOwnedAccountRule
         )
     }
 )
@@ -141,7 +160,7 @@ try {
     if ((Test-Path -LiteralPath $packet.path -PathType Leaf) -and ([string]$packet.path -eq $packetPath)) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet' -Detail "Generated review request packet at $packetPath"))
         $packetContent = Get-Content -LiteralPath $packetPath -Raw
-        foreach ($text in @($links.PublicReviewRequest, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand)) {
+        foreach ($text in @($links.PublicReviewRequest, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand, $selfOwnedAccountRule)) {
             if ($packetContent.Contains($text)) {
                 $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet-text' -Detail "Generated packet includes $text"))
             } else {

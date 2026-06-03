@@ -41,6 +41,7 @@ workflow:
 Do not send this as a star request to people who cannot inspect the project.
 Owner comments, private messages, and uninspected stars do not count toward the
 90% gate.
+Self-owned alternate accounts do not count as external validation.
 
 ## Five-Minute Review Path
 
@@ -113,6 +114,10 @@ count:
 - a public first-run report on issue `#6`
 - a public issue, commit, or release created from feedback
 - a real star from someone who inspected the workflow
+
+Self-owned alternate accounts do not count. Do not use a second account or a
+controlled proxy account to create stars, comments, reports, forks, watchers, or
+follow-up artifacts for the readiness gate.
 
 Machine-readable evidence is recorded in `docs/external-feedback-evidence.yaml`
 only after the public URL exists. Private messages can inform improvements, but

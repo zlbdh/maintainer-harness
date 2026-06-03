@@ -5,6 +5,7 @@ This kit is for growing real open source discovery without buying stars, asking 
 ## Ground Rules
 
 - Do not buy stars, use bots, trade stars, or ask friends to upvote.
+- Self-owned alternate accounts do not count as external validation.
 - Ask for feedback, not vanity metrics.
 - Share the repository only where maintainer tooling, agent workflows, CI, or open source release process are on topic.
 - Make it easy to try the project before asking anyone to care about it.
@@ -262,6 +263,10 @@ Do not use:
 ```text
 Star-for-star, paid stars, bot engagement, private group upvote requests, or "please star even if you have not tried it."
 ```
+
+Self-owned alternate accounts do not count. Do not use a second account,
+controlled organization account, or close proxy to create stars, forks,
+watchers, comments, first-run reports, or feedback-driven follow-ups.
 
 ## Metrics To Track
 

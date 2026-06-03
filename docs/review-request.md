@@ -8,6 +8,11 @@ Do not ask for star trades, paid stars, bots, bulk upvotes, or support from
 people who have not inspected the project. A star is useful only after someone
 has looked at the workflow and finds it worth recommending.
 
+Self-owned alternate accounts do not count as external validation. Do not use a
+second account, a controlled organization account, or a close proxy to create
+stars, comments, forks, watchers, first-run reports, or feedback follow-ups for
+the 90% gate.
+
 ## Fast Links
 
 - Project site: https://zlbdh.github.io/maintainer-harness/
@@ -128,6 +133,9 @@ Only public, reviewer-visible signals count:
 - a public first-run report on issue `#6`
 - a public feedback-driven issue, commit, or release
 - a real star from someone who inspected the workflow
+
+Self-owned alternate accounts do not count, even if they are public. Evidence
+must come from a real outside reviewer who can inspect or run the workflow.
 
 If feedback arrives somewhere else publicly, verify it before recording it in
 `docs/external-feedback-evidence.yaml`. If feedback is private, use it to

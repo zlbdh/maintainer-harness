@@ -121,7 +121,7 @@ $links = @(
     [pscustomobject]@{
         Check = 'public-review-request'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/review-request.md'
-        RequiredText = 'Maintainer Harness Review Request'
+        RequiredText = 'Self-owned alternate accounts do not count'
     },
     [pscustomobject]@{
         Check = 'worker-output-reviewability'

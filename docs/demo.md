@@ -43,7 +43,8 @@ To run the checks manually:
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
-.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 ```
 
 If anything is confusing, generate a paste-ready first-run feedback draft:

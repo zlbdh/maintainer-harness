@@ -102,12 +102,28 @@ This helper reduces maintainer friction after real public feedback appears. It
 does not count as an external comment, outside first-run report, real star, or
 feedback-driven follow-up for the 90% submission gate.
 
+### Continuation: default public secret scan
+
+- Latest release anchor:
+  https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.19
+
+The continuation replaced the previous `-SkipSensitivePattern` CI posture with
+a default high-confidence secret-value scan in
+`scripts/checks/check-public-ready.ps1` and
+`scripts/checks/check-security-posture.ps1`. Reviewers still can pass a
+project-specific `-SensitivePattern` for local names, endpoints, or private
+roles that a generic scanner cannot know.
+
+This makes the public/security posture gates stricter and more reproducible. It
+does not count as an external comment, outside first-run report, real star, or
+feedback-driven follow-up for the 90% submission gate.
+
 ## Validation
 
-- Public readiness check: WARN, 0 failures, 1 project-specific
-  sensitive-pattern reminder.
-- Security posture check: WARN, 0 failures, 1 project-specific
-  sensitive-pattern reminder.
+- Public readiness check: PASS, including the default high-confidence secret
+  scan.
+- Security posture check: PASS, including the default high-confidence secret
+  scan.
 - Public evidence link checker: PASS, 17 public URLs.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.

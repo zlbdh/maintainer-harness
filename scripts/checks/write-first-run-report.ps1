@@ -137,8 +137,8 @@ $steps = @(
     },
     [pscustomobject]@{
         Label = 'security-posture'
-        Command = '.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern'
-        Runner = { & (Join-HarnessPath $repoRoot 'scripts/checks/check-security-posture.ps1') -SkipSensitivePattern }
+        Command = '.\scripts\checks\check-security-posture.ps1'
+        Runner = { & (Join-HarnessPath $repoRoot 'scripts/checks/check-security-posture.ps1') }
     }
 )
 

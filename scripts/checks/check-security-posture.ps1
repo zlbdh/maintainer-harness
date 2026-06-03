@@ -215,13 +215,18 @@ foreach ($redactionCheck in $redactionChecks) {
 
 if ($SkipSensitivePattern) {
     $findings.Add((New-SecurityPostureFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail 'Sensitive pattern check intentionally skipped.'))
-} elseif (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
-    $publicReady = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-ready.ps1') -SensitivePattern $SensitivePattern -PassThru
+} else {
+    $publicReadyArgs = @{
+        PassThru = $true
+    }
+    if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
+        $publicReadyArgs.SensitivePattern = $SensitivePattern
+    }
+
+    $publicReady = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-ready.ps1') @publicReadyArgs
     foreach ($finding in @($publicReady.findings | Where-Object { $_.check -in @('sensitive-path', 'sensitive-pattern') })) {
         $findings.Add((New-SecurityPostureFinding -Status $finding.status -Check "public-ready-$($finding.check)" -Detail $finding.detail))
     }
-} else {
-    $findings.Add((New-SecurityPostureFinding -Status 'WARN' -Check 'sensitive-pattern' -Detail 'No sensitive pattern was provided; run a project-specific scan before publication or application submission.'))
 }
 
 $failures = @($findings | Where-Object { $_.status -eq 'FAIL' })

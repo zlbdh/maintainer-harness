@@ -38,7 +38,15 @@ Run this before sharing validation evidence in a pull request, issue, release no
 1. Confirm the complete report remains under an ignored path such as `reports/local-validation/`.
 2. Copy only the command, status, and maintainer-relevant finding into a tracked file.
 3. Replace private values with stable placeholders such as `<local-path>` or `<secret-redacted>`.
-4. Run a project-specific scan:
+4. Run the default high-confidence secret scan:
+
+```powershell
+.\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
+```
+
+5. Add a project-specific scan for local names, endpoints, or roles that the
+   default high-confidence pattern cannot know:
 
 ```powershell
 $pattern = "<legacy-name>|<private-remote>|<local-path>|<private-role>"
@@ -46,7 +54,7 @@ $pattern = "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern $pattern
 ```
 
-5. Inspect ignored files before publishing:
+6. Inspect ignored files before publishing:
 
 ```powershell
 git status --short --ignored

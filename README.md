@@ -98,10 +98,14 @@ To run the same checks manually:
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
-.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 ```
 
-That flow checks the harness, validates a complete sample change packet, and confirms the public security posture. See `docs/demo.md` for a short transcript and the project site for a shareable overview.
+That flow checks the harness, validates complete sample change packets, runs
+the default high-confidence secret scan, and confirms the public security
+posture. See `docs/demo.md` for a short transcript and the project site for a
+shareable overview.
 
 If you want to report first-run friction, generate a paste-ready issue draft:
 

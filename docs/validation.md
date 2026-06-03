@@ -83,7 +83,8 @@ For project-specific private names or local paths, pass a one-time pattern from 
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
 
-CI may use `-SkipSensitivePattern` after the one-time local publication scan has passed.
+CI runs the default high-confidence scan. Use `-SkipSensitivePattern` only for
+local diagnostics when a separate project-specific scan has already been run.
 
 ## Security Posture
 

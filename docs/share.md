@@ -49,7 +49,8 @@ cd maintainer-harness
 .\scripts\checks\validate-change.ps1 -Path examples\sample-change
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
-.\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
+.\scripts\checks\check-public-ready.ps1
+.\scripts\checks\check-security-posture.ps1
 .\scripts\checks\run-review-demo.ps1
 .\scripts\checks\write-first-run-report.ps1
 .\scripts\checks\write-review-request-packet.ps1
@@ -66,7 +67,7 @@ cd maintainer-harness
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
-- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18
+- Latest release: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.19
 - 30-day dogfooding tracker: https://github.com/zlbdh/maintainer-harness/issues/7
 - Feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new
 - First-run feedback comment target: https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new

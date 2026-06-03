@@ -31,8 +31,8 @@ Use PowerShell 7 or newer where possible. The same command shape works on Window
 ./scripts/checks/validate-change.ps1 -Path examples/sample-change
 ./scripts/checks/validate-change.ps1 -Path examples/issue-to-review
 ./scripts/checks/validate-change.ps1 -Path examples/release-workflow
-./scripts/checks/check-public-ready.ps1 -SkipSensitivePattern
-./scripts/checks/check-security-posture.ps1 -SkipSensitivePattern
+./scripts/checks/check-public-ready.ps1
+./scripts/checks/check-security-posture.ps1
 ```
 
 ## Current Boundary

@@ -44,6 +44,10 @@ function Quote-CmdArgument {
     return '"' + ($Value -replace '"', '\"') + '"'
 }
 
+function Get-DefaultSensitivePattern {
+    return '(?i)(gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{30,}|sk-(?:proj-)?[A-Za-z0-9_-]{32,}|AKIA[0-9A-Z]{16}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|postgres(?:ql)?://[^\s:@]+:[^\s:@]+@|mongodb(?:\+srv)?://[^\s:@]+:[^\s:@]+@|mysql://[^\s:@]+:[^\s:@]+@)'
+}
+
 $repoRoot = Get-HarnessRepoRoot
 $findings = New-Object System.Collections.Generic.List[object]
 
@@ -203,6 +207,16 @@ foreach ($snippet in $requiredPublicText) {
     }
 }
 
+$workflowPath = Join-HarnessPath $repoRoot '.github\workflows\harness-validation.yml'
+if (Test-Path -LiteralPath $workflowPath) {
+    $workflowText = Get-Content -LiteralPath $workflowPath -Raw
+    if ($workflowText -match 'check-(public-ready|security-posture)\.ps1\s+-SkipSensitivePattern') {
+        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'workflow-sensitive-scan' -Detail 'Harness validation skips the public sensitive pattern scan.'))
+    } else {
+        $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'workflow-sensitive-scan' -Detail 'Harness validation runs the public sensitive pattern scan.'))
+    }
+}
+
 if (-not $SkipHarnessValidation) {
     try {
         & (Join-HarnessPath $repoRoot 'scripts/checks/validate-repos.ps1') -Quiet | Out-Null
@@ -243,33 +257,38 @@ if ($untracked.ok -and -not [string]::IsNullOrWhiteSpace($untracked.text)) {
     $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'tracked-public-files' -Detail 'No untracked public candidate files detected.'))
 }
 
+$effectiveSensitivePattern = $SensitivePattern
+$sensitivePatternLabel = 'custom sensitive pattern'
+if ([string]::IsNullOrWhiteSpace($effectiveSensitivePattern)) {
+    $effectiveSensitivePattern = Get-DefaultSensitivePattern
+    $sensitivePatternLabel = 'default high-confidence secret pattern'
+}
+
 if ($SkipSensitivePattern) {
     $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail 'Sensitive pattern check intentionally skipped.'))
-} elseif (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {
+} else {
     $publicPathList = Invoke-GitText -Command 'git ls-files --cached --others --exclude-standard'
     if ($publicPathList.ok) {
         $matchedPaths = @($publicPathList.text -split "`n" | Where-Object {
-            -not [string]::IsNullOrWhiteSpace($_) -and ($_ -match $SensitivePattern)
+            -not [string]::IsNullOrWhiteSpace($_) -and ($_ -match $effectiveSensitivePattern)
         })
         if ($matchedPaths.Count -gt 0) {
-            $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-path' -Detail "$($matchedPaths.Count) public candidate paths match the sensitive pattern."))
+            $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-path' -Detail "$($matchedPaths.Count) public candidate paths match the $sensitivePatternLabel."))
         } else {
-            $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-path' -Detail 'No public candidate path matches found.'))
+            $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-path' -Detail "No public candidate path matches the $sensitivePatternLabel."))
         }
     } else {
         $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-path' -Detail $publicPathList.text))
     }
 
-    $rg = Invoke-HarnessCommand -WorkingDirectory $repoRoot -Command ("rg --hidden -n {0} -S -g {1}" -f (Quote-CmdArgument $SensitivePattern), (Quote-CmdArgument '!.git/**'))
+    $rg = Invoke-HarnessCommand -WorkingDirectory $repoRoot -Command ("rg --hidden -n {0} -S -g {1}" -f (Quote-CmdArgument $effectiveSensitivePattern), (Quote-CmdArgument '!.git/**'))
     if ($rg.ExitCode -eq 0) {
-        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail 'Sensitive pattern matched in public candidate files.'))
+        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail "The $sensitivePatternLabel matched in public candidate files."))
     } elseif ($rg.ExitCode -eq 1) {
-        $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail 'No sensitive pattern matches found.'))
+        $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail "No $sensitivePatternLabel matches found."))
     } else {
         $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail (Normalize-HarnessText $rg.Output)))
     }
-} else {
-    $findings.Add((New-PublicReadyFinding -Status 'WARN' -Check 'sensitive-pattern' -Detail 'No sensitive pattern was provided; run project-specific scan before publication.'))
 }
 
 $failed = @($findings | Where-Object { $_.status -eq 'FAIL' })

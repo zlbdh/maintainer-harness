@@ -147,6 +147,11 @@ $links = @(
         RequiredText = '先实际打开、阅读或运行，再自行决定是否评论或 star'
     },
     [pscustomobject]@{
+        Check = 'friend-review-guide-zh-codespaces'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-guide-zh.md'
+        RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
+    },
+    [pscustomobject]@{
         Check = 'codespaces-first-run-guide'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codespaces-first-run.md'
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'

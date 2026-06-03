@@ -348,6 +348,7 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\check-external-review-handoff.ps1'; Text = 'CurrentGateStatus' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'RetryCount' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = '[int]$TimeoutSec = 30' },
+    @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'friend-review-guide-zh-codespaces' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'issue-template-config' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'first-run-feedback-template' },
     @{ Path = 'scripts\checks\check-public-evidence-links.ps1'; Text = 'raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/config.yml' },

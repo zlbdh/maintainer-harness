@@ -132,6 +132,34 @@ This makes the public/security posture gates stricter and more reproducible. It
 does not count as an external comment, outside first-run report, real star, or
 feedback-driven follow-up for the 90% submission gate.
 
+### Continuation: Node 24 CI hygiene and current monitor refresh
+
+- CI runtime compatibility commit:
+  https://github.com/zlbdh/maintainer-harness/commit/655877c77770cb0393007a0ad7e9868e908b35ea
+- Current readiness check:
+  `60/90` on commit `655877c77770cb0393007a0ad7e9868e908b35ea`
+  at `2026-06-03T05:33:04.0750159Z`.
+- Harness validation:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26865666866
+- Pages deployment:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26865666279
+- Codex readiness monitor:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26865695846
+- Codex readiness monitor artifact:
+  `codex-readiness-report`, artifact `7376520337`, digest
+  `sha256:c91501dbb9b6c208ee7c4fc4ebacc78bb1a3f572cc0b2e1ba1ee31808f73d9cd`.
+
+The continuation moved the public validation workflows to Node 24-compatible
+GitHub Actions versions (`actions/checkout@v6` and
+`actions/upload-artifact@v7`) and kept the explicit Node 24 runtime opt-in in
+place. The required local readiness command completed without anonymous API
+rate limiting, and the token-backed post-workflow monitor reported the same
+score and missing gates.
+
+This improves CI maintainability and keeps the public readiness snapshot
+current. It does not count as an external comment, outside first-run report,
+real star, or feedback-driven follow-up for the 90% submission gate.
+
 ## Validation
 
 - Public readiness check: PASS, including the default high-confidence secret
@@ -151,7 +179,7 @@ feedback-driven follow-up for the 90% submission gate.
 - 0/1 external first-run report on issue `#6`.
 - 0/1 feedback-driven public issue or commit.
 - Issue `#5` and issue `#6` only contain owner routing comments.
-- Issue `#7` has no comments.
+- Issue `#7` only contains the owner dogfooding status comment.
 
 ## Follow-Up
 

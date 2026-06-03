@@ -80,18 +80,18 @@ feedback is not enough.
 
 ## Current Expected State
 
-As of the latest token-backed readiness monitor artifact on 2026-06-03,
-Maintainer Harness scores 60/90 on commit
-`7604643f4cd97df97355a5046326790875bc2879`. The concrete public snapshot is
-recorded in `docs/codex-for-oss-current-readiness.md`. The required local
-readiness command was run for the same monitoring pass, but anonymous GitHub API
-calls were rate-limited; in that case the scheduled or post-workflow GitHub
-Actions monitor remains the preferred ongoing source of truth:
+As of the verified 2026-06-03 readiness-monitor artifact recorded in
+`docs/codex-for-oss-current-readiness.md`, Maintainer Harness scores 60/90 on
+commit `655877c77770cb0393007a0ad7e9868e908b35ea`. The required local
+readiness command completed for the same monitoring pass and matches the
+token-backed post-workflow GitHub Actions monitor artifact:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint
 - PASS: latest main CI and Pages deployment
 - PASS: latest post-workflow Codex readiness monitor
+- PASS: GitHub Actions workflows now target Node 24-compatible action versions
+  for checkout and artifact upload
 - PASS: public readiness and security posture, including the default
   high-confidence secret scan
 - PASS: worker output reviewability example is now included in the public

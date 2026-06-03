@@ -20,6 +20,10 @@ body {
   font-family: "Segoe UI", Verdana, sans-serif;
 }
 
+button {
+  font: inherit;
+}
+
 a { color: inherit; }
 
 .site-header,
@@ -226,10 +230,17 @@ h3 {
   align-items: start;
 }
 
+.split > *,
+.grid > * {
+  min-width: 0;
+}
+
 pre {
   overflow-x: auto;
   margin: 0;
   padding: 22px;
+  max-width: 100%;
+  min-width: 0;
   min-height: 260px;
   background: #111827;
   color: #f9fafb;
@@ -266,6 +277,71 @@ article:nth-child(4) { border-top: 5px solid var(--ink); }
 article p {
   font-size: 16px;
   line-height: 1.55;
+}
+
+.template-list {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.template-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: auto;
+  overflow: hidden;
+}
+
+.template-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.template-card-header h3 {
+  margin: 0;
+}
+
+.copy-button {
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 800;
+  text-align: left;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.copy-button[data-copied="true"] {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.template-pre {
+  min-height: auto;
+  padding: 18px;
+  box-shadow: none;
+}
+
+.template-pre code {
+  min-width: 0;
+}
+
+.template-link {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--blue);
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .final { padding-bottom: 92px; }
@@ -349,4 +425,13 @@ article p {
   }
 
   code { font-size: 14px; }
+
+  .template-card-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
 }

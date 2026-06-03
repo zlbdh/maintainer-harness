@@ -104,6 +104,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - README, the project site, the external review page, and the share page now
   expose a shorter first-run feedback route to issue `#6` and a direct
   reviewability comment route to issue `#5`.
+- External review templates now have copy buttons so outside reviewers can copy
+  issue `#5` or issue `#6` comments without trimming a combined block by hand.
 
 ## 2026-06-01
 

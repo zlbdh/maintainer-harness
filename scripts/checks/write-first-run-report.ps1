@@ -3,6 +3,7 @@ param(
     [string]$OutPath = '',
     [string]$JsonOutPath = '',
     [switch]$SkipCommandExecution,
+    [switch]$CopyCommentToClipboard,
     [switch]$PassThru
 )
 
@@ -90,6 +91,32 @@ function Invoke-FirstRunStep {
         status = $status
         duration_seconds = $duration
         output_excerpt = @(Get-FirstRunOutputExcerpt -Lines $outputLines)
+    }
+}
+
+function Copy-FirstRunCommentToClipboard {
+    param(
+        [string]$CommentMarkdown
+    )
+
+    if ($null -eq (Get-Command -Name Set-Clipboard -ErrorAction SilentlyContinue)) {
+        return [pscustomobject]@{
+            status = 'unavailable'
+            message = 'Set-Clipboard is not available in this shell.'
+        }
+    }
+
+    try {
+        Set-Clipboard -Value $CommentMarkdown -ErrorAction Stop
+        return [pscustomobject]@{
+            status = 'copied'
+            message = 'The issue #6 first-run comment block was copied to the clipboard.'
+        }
+    } catch {
+        return [pscustomobject]@{
+            status = 'failed'
+            message = $_.Exception.Message
+        }
     }
 }
 
@@ -213,6 +240,18 @@ $commentLines += @(
 
 $report | Add-Member -NotePropertyName comment_markdown -NotePropertyValue ($commentLines -join [Environment]::NewLine) -Force
 
+$clipboardResult = [pscustomobject]@{
+    status = 'not-requested'
+    message = 'Run with -CopyCommentToClipboard to copy the issue #6 comment block.'
+}
+
+if ($CopyCommentToClipboard) {
+    $clipboardResult = Copy-FirstRunCommentToClipboard -CommentMarkdown $report.comment_markdown
+}
+
+$report | Add-Member -NotePropertyName clipboard_status -NotePropertyValue $clipboardResult.status -Force
+$report | Add-Member -NotePropertyName clipboard_message -NotePropertyValue $clipboardResult.message -Force
+
 $lines = @(
     '# Maintainer Harness First-Run Report',
     '',
@@ -297,6 +336,9 @@ Write-Host "First-run report JSON: $JsonOutPath"
 Write-Host "Passed: $($passed.Count); Failed: $($failed.Count); Skipped: $($skipped.Count)"
 Write-Host "First-run comment target: $($report.comment_target_url)"
 Write-Host "External review templates: $($report.external_review_url)"
+if ($CopyCommentToClipboard) {
+    Write-Host "Clipboard: $($report.clipboard_status) - $($report.clipboard_message)"
+}
 
 if ($PassThru) {
     return $report

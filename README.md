@@ -50,6 +50,9 @@ pwsh ./scripts/checks/run-review-demo.ps1
 
 Then paste the generated `Copy This Comment Into Issue #6` block into
 issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new).
+If you want the sanitized issue #6 comment block copied after the report is
+generated, run `.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard`
+or `pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard`.
 If you only inspected the docs or worker-output example, comment on issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new)
 with one concrete evidence gap instead.
@@ -94,6 +97,8 @@ That one command runs the public demo checks and writes a paste-ready first-run
 feedback draft plus a machine-readable JSON summary under `reports/first-run/`.
 The JSON file is ignored local evidence for reviewers and follow-up triage; it
 does not count unless the reviewer posts a public issue comment or public URL.
+Use `-CopyCommentToClipboard` when you want the generated issue #6 comment
+block copied for easier review and paste.
 To run the same checks manually:
 
 ```powershell
@@ -116,6 +121,9 @@ If you want to report first-run friction, generate a paste-ready issue draft:
 ```powershell
 .\scripts\checks\write-first-run-report.ps1
 ```
+
+Add `-CopyCommentToClipboard` to copy the generated issue #6 comment block
+after the report is written.
 
 If you want a local packet for asking maintainers to review the project:
 

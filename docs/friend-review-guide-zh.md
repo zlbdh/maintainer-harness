@@ -75,12 +75,24 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1
 ```
 
+如果想少一步复制，可以运行：
+
+```powershell
+.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard
+```
+
 macOS 或 Linux，需要先装 PowerShell 7，然后运行：
 
 ```bash
 git clone https://github.com/zlbdh/maintainer-harness.git
 cd maintainer-harness
 pwsh ./scripts/checks/run-review-demo.ps1
+```
+
+也可以运行：
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard
 ```
 
 跑完后，脚本会生成一个本地报告，里面有 `Copy This Comment Into Issue #6`。请复制那段，贴到 issue #6：

@@ -2,6 +2,7 @@
 param(
     [string]$OutPath = '',
     [switch]$SkipCommandExecution,
+    [switch]$CopyCommentToClipboard,
     [switch]$PassThru
 )
 
@@ -29,6 +30,10 @@ if ($SkipCommandExecution) {
     $arguments.SkipCommandExecution = $true
 }
 
+if ($CopyCommentToClipboard) {
+    $arguments.CopyCommentToClipboard = $true
+}
+
 $report = & $firstRunScript @arguments
 $failedCount = [int]$report.failed_count
 $skippedCount = [int]$report.skipped_count
@@ -46,6 +51,8 @@ $result = [pscustomobject]@{
     passed_count = [int]$report.passed_count
     failed_count = $failedCount
     skipped_count = $skippedCount
+    clipboard_status = $report.clipboard_status
+    clipboard_message = $report.clipboard_message
 }
 
 Write-Host ''
@@ -57,6 +64,9 @@ Write-Host "First-run feedback comment target: $firstRunIssueUrl"
 Write-Host "External review templates: $externalReviewUrl"
 Write-Host "Review kit: $reviewKitUrl"
 Write-Host "Worker output example: $reviewabilityUrl"
+if ($CopyCommentToClipboard) {
+    Write-Host "Clipboard: $($result.clipboard_status) - $($result.clipboard_message)"
+}
 Write-Host ''
 Write-Host 'Copy the "Copy This Comment Into Issue #6" section from the generated report if you want to share first-run feedback.'
 Write-Host 'Review the generated report before sharing. Remove secrets, private repository names, tokens, customer data, or production logs.'

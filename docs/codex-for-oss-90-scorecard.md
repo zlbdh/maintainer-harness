@@ -96,14 +96,14 @@ feedback is not enough.
 ## Current Expected State
 
 As recorded in `docs/codex-for-oss-current-readiness.md`, Maintainer Harness
-still has a `60/90` hard-gate state. The last local API-backed readiness
-measurement completed on commit
-`9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115`; after the latest
-documentation-only snapshot refresh, the observed main commit is
-`13935bbe390ef0a2c9816ca9bc6338818b533bf5`. Local anonymous API checks can
-still be rate-limited, so the token-backed post-workflow GitHub Actions monitor
-is the preferred supporting monitor until a new authenticated local readiness
-measurement is available immediately before submission.
+still has a `60/90` hard-gate state. The latest local readiness attempt on
+observed main commit `ba04acb13deaceae944d031fa8dd16eff1be402a` hit anonymous
+GitHub API rate limits (`remaining=0`,
+`reset_utc=2026-06-03T20:33:18.0000000Z`), so it did not produce a refreshed
+local API-backed score. The token-backed post-workflow GitHub Actions monitor
+for the same observed commit succeeded and produced a readiness artifact, but a
+new authenticated local or token-backed readiness measurement is still required
+immediately before submission.
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint

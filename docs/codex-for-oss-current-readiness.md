@@ -1,71 +1,37 @@
 # Codex For OSS Current Readiness Snapshot
 
 This snapshot records the latest tracked readiness state for Maintainer
-Harness and the latest local monitoring attempt. It is evidence for the review
-process, not a submission approval. The latest local monitoring attempt hit
-anonymous GitHub API rate limits after the current documentation-only refresh,
-so the last local API-backed readiness score remains the previous `60/90`
-hard-gate state. The public package is healthy, but real external usage signals
-are still missing.
+Harness. It is evidence for the review process, not a submission approval.
+The current public package is healthy, but real external usage signals are
+still missing, and the latest local monitoring pass could not refresh the
+API-backed score because anonymous GitHub API quota was exhausted.
 
 ## Snapshot
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T19:17:55.1189452Z` |
+| Checked at UTC | `2026-06-03T20:15:26.1014791Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `13935bbe390ef0a2c9816ca9bc6338818b533bf5` |
-| Last API-backed measured commit | `9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was run first but hit anonymous GitHub API rate limits after commit `13935bbe390ef0a2c9816ca9bc6338818b533bf5`; the last local API-backed result remains the `9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115` measurement, and later public HTML fallback checks were used only as supporting status checks |
-| Readiness score | last local API-backed hard-gate state remains `60/90`; this pass did not produce a refreshed local API-backed score |
+| observed main commit | `ba04acb13deaceae944d031fa8dd16eff1be402a` |
+| Local source command | `scripts/checks/measure-application-readiness.ps1 -PassThru` was run first and failed with GitHub anonymous API rate limiting: `remaining=0`, `reset_utc=2026-06-03T20:33:18.0000000Z` |
+| Public fallback source | `reports/public-readiness-observation/20260604-041515-public-readiness-observation.md` |
+| Readiness score | still tracked as the previous `60/90` hard-gate state; this pass did not produce a refreshed local API-backed score |
 | Target score | `90` |
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest Monitoring Attempt
 
-The latest local monitoring pass at `2026-06-03T19:17:55Z` ran
-`scripts/checks/measure-application-readiness.ps1 -PassThru` first. That command
-failed because the local anonymous GitHub API quota was exhausted and no
-authenticated `GITHUB_TOKEN` or `GH_TOKEN` was available in the environment.
-Per the submission gate rules, that failed local check is not a readiness
-approval.
+The latest local monitoring pass ran
+`scripts/checks/measure-application-readiness.ps1 -PassThru` before any other
+checks, as required by the submission gate. That command failed because local
+anonymous GitHub API quota was exhausted and no authenticated `GITHUB_TOKEN` or
+`GH_TOKEN` was available in the environment. Per the submission gate rules,
+that failed local check is not a readiness approval.
 
-The last local API-backed readiness measurement completed earlier at
-`2026-06-03T19:05:27Z` for commit
-`9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115`. That score remains `60/90` and
-`ready_for_form_submission=false`.
-
-| Metric | API-backed value |
-| --- | ---: |
-| Stars | 0 |
-| Forks | 0 |
-| Watchers | 0 |
-| Subscribers | 0 |
-| Open issues | 3 |
-| External feedback comments counted | 0 |
-| External first-run reports counted | 0 |
-| Feedback-driven follow-up artifacts counted | 0 |
-| Verified evidence signals | 0 |
-
-The API-backed issue comment breakdown was:
-
-| Issue | External comments counted |
-| --- | ---: |
-| `#5` | 0 |
-| `#6` | 0 |
-| `#7` | 0 |
-
-After the documentation-only snapshot refresh was pushed to
-`13935bbe390ef0a2c9816ca9bc6338818b533bf5`, a supporting public HTML fallback
-observation at `2026-06-03T19:17:55Z` still found 0 external feedback
-candidates.
-
-## Supporting Public Observation
-
-Public HTML fallback observations are not authoritative for form submission.
-They are used only to avoid missing obvious public-status drift while local
-anonymous GitHub API access is limited.
+The supporting public HTML fallback observation at `2026-06-03T20:15:26Z`
+still found 0 external feedback candidates and recorded the same public repo
+counters seen in the GitHub HTML pages.
 
 | Public fallback metric | Observed value |
 | --- | ---: |
@@ -75,33 +41,38 @@ anonymous GitHub API access is limited.
 | Open issues | 3 |
 | External feedback candidates | 0 |
 
-The public observation surfaced the latest run IDs `26907153014`,
-`26907106191`, `26907099502`, `26906161645`, `26906116010`, and `26906110186`
-as HTML hints. They support monitoring continuity, but they do not replace the
-required API-backed pre-submit readiness measurement or the token-backed
-workflow artifact.
+Public HTML fallback observations are not authoritative for form submission.
+They are used only to avoid missing obvious public-status drift while local
+anonymous GitHub API access is limited.
 
-## Latest Main Validation
+## Token-Backed Workflow Status
+
+The latest public workflow pages for observed main commit
+`ba04acb13deaceae944d031fa8dd16eff1be402a` show successful main validation,
+Pages deployment, and post-workflow Codex readiness monitoring. The readiness
+monitor artifact is produced on the run page, but it was not anonymously
+downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907106191 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907099502 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907153014 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26910184191 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26910180327 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26910237195 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 36 public URLs, including the live external review Codespaces CTAs, `docs/friend-review-guide-zh.md`, the public readiness observation script, and feedback evidence helpers |
-| Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan and guards that public HTML fallback output is not a form-submission gate |
-| Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
-| External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
-| Form submission gate tests | pass | `scripts/checks/test-form-submission-ready.ps1` confirms the not-ready fixture blocks submission |
 
-The public readiness observation fallback recorded 0 stars, 0 forks, 0
-watchers, 3 open issues, 0 external feedback candidates, and hard-coded
-`ready_for_form_submission=false`, so it is a status aid rather than an
-approval signal. This snapshot records the observed main commit for this
-monitoring pass; later documentation-only commits can make repository HEAD newer without changing the external-signal counts. It still does not replace
-the required API-backed pre-submit readiness measurement immediately before
-form submission.
+## Local Verification
+
+These checks passed in the same monitoring pass:
+
+| Check | Evidence |
+| --- | --- |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 36 public URLs |
+| Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
+| Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
+| External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
+| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 0 signals and passed the empty registry check |
+| External feedback queue | `scripts/checks/write-external-feedback-review-queue.ps1 -AllowHtmlFallback -PassThru` found 0 candidates |
+| Form submission gate tests | `scripts/checks/test-form-submission-ready.ps1 -PassThru` confirmed the not-ready and score-mismatch fixtures block submission |
 
 ## Hard Gates Still Missing
 
@@ -112,19 +83,21 @@ form submission.
 | External first-run report on issue `#6` | 0 | 1 |
 | Feedback converted into a public issue or commit | 0 | 1 |
 
-Issue `#5` and issue `#6` each include a maintainer update that routes real
-reviewers to the shortest public review path. Issue `#5`, the GitHub Pages
-home page, the external review page, and the share page now link directly to
-the Chinese friend review guide and first-run troubleshooting paths. Issue
-`#7` includes the owner dogfooding status comment:
+Issue `#5` and issue `#6` remain the shortest public feedback routes, and
+issue `#7` includes the owner dogfooding status comment:
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
-Those owner comments are useful handoff notes, but they are intentionally not
-counted as external feedback. The tag anchor, CI runtime hygiene,
-feedback-driven follow-up template, external feedback candidate finder, Chinese
-friend review guide, public readiness observation fallback, Pages handoff links,
-live Codespaces CTA checks, and owner dogfooding follow-ups on main improve the
-handoff path, but they are not counted as external feedback.
+Owner comments, local reports, copied review packets, generated outreach plans,
+and public fallback observations are useful handoff or transparency evidence,
+but they are intentionally not counted as external feedback. The tag anchor,
+CI runtime hygiene, feedback-driven follow-up template, external feedback
+candidate finder, Chinese friend review guide, one-page Chinese review guide,
+public readiness observation fallback, Pages handoff links, live Codespaces
+CTA checks, and owner dogfooding follow-ups on main improve the handoff path,
+but they are not counted as external feedback.
+
+This snapshot records the observed main commit for this monitoring pass; later documentation-only commits can make repository HEAD newer without changing the
+external-signal counts. It still does not replace the required API-backed pre-submit readiness measurement immediately before form submission.
 
 ## Next Honest Work
 

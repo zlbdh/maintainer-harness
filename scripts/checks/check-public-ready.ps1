@@ -163,7 +163,11 @@ $requiredPublicText = @(
     @{ Path = 'docs\external-validation-sprint.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = 'docs\demo.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = 'docs\share.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
-    @{ Path = 'docs\share.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' }
+    @{ Path = 'docs\share.md'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'actions/upload-artifact@v4' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness-${{ github.sha }}' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness.json' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness.md' }
 )
 
 foreach ($snippet in $requiredPublicText) {

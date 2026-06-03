@@ -115,6 +115,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Public evidence links now have a dedicated checker covering the project site,
   external review page, latest release, pinned issues, and key raw evidence
   files.
+- Harness validation now uploads token-backed Codex readiness JSON and Markdown
+  artifacts from the Windows validation job for each commit.
 
 ## 2026-06-01
 

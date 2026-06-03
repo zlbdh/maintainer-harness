@@ -76,24 +76,45 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           $readiness = ./scripts/checks/measure-application-readiness.ps1 -PassThru
-          $readiness | ConvertTo-Json -Depth 8
+          $readinessJson = $readiness | ConvertTo-Json -Depth 8
+          $readinessJson
+
+          $readinessDir = Join-Path $PWD 'reports/application-audit'
+          New-Item -ItemType Directory -Path $readinessDir -Force | Out-Null
+          $readinessJson | Set-Content -Path (Join-Path $readinessDir 'codex-readiness.json') -Encoding utf8
+
+          $summaryLines = @(
+            '### Codex for OSS readiness',
+            '',
+            ('Score: {0}/{1}' -f $readiness.score, $readiness.target_score),
+            ('Ready for form submission: {0}' -f $readiness.ready_for_form_submission),
+            '',
+            'This step reports the hard external-signal gate. A score below 90 does not fail CI.',
+            '',
+            '| Status | Check | Detail | Points |',
+            '| --- | --- | --- | ---: |'
+          )
+
+          foreach ($finding in $readiness.findings) {
+            $detail = ([string]$finding.detail) -replace '\|', '/'
+            $summaryLines += ("| {0} | {1} | {2} | {3} |" -f $finding.status, $finding.check, $detail, $finding.points)
+          }
+
+          $summaryLines | Set-Content -Path (Join-Path $readinessDir 'codex-readiness.md') -Encoding utf8
 
           if ($env:GITHUB_STEP_SUMMARY) {
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '### Codex for OSS readiness'
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Score: {0}/{1}' -f $readiness.score, $readiness.target_score)
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ('Ready for form submission: {0}' -f $readiness.ready_for_form_submission)
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value 'This step reports the hard external-signal gate. A score below 90 does not fail CI.'
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ''
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| Status | Check | Detail | Points |'
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '| --- | --- | --- | ---: |'
-
-            foreach ($finding in $readiness.findings) {
-              $detail = ([string]$finding.detail) -replace '\|', '/'
-              Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value ("| {0} | {1} | {2} | {3} |" -f $finding.status, $finding.check, $detail, $finding.points)
-            }
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value $summaryLines
           }
+
+      - name: Upload Codex readiness artifact
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-readiness-${{ github.sha }}
+          path: |
+            reports/application-audit/codex-readiness.json
+            reports/application-audit/codex-readiness.md
+          if-no-files-found: error
 
       - name: Check security posture
         shell: pwsh

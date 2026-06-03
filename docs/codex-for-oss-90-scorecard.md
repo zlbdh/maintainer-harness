@@ -30,10 +30,11 @@ URL is added as a verified `first-run-report` signal in
 `docs/external-feedback-evidence.yaml`.
 
 GitHub Actions also runs the readiness monitor on the Windows validation job
-with `GITHUB_TOKEN` and writes a non-blocking step summary. A score below 90
-stays visible but does not fail CI; CI failures are reserved for broken
-repository structure, public hygiene, evidence registry format, or security
-posture drift.
+with `GITHUB_TOKEN`, writes a non-blocking step summary, and uploads
+`codex-readiness.json` plus `codex-readiness.md` as a
+`codex-readiness-${commit}` artifact. A score below 90 stays visible but does
+not fail CI; CI failures are reserved for broken repository structure, public
+hygiene, evidence registry format, or security posture drift.
 
 The repository also includes a dedicated `Codex readiness monitor` workflow
 under `.github/workflows/codex-readiness-monitor.yml`. It can be run manually

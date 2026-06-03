@@ -2,33 +2,39 @@
 
 This snapshot records the latest tracked readiness state for Maintainer
 Harness and the latest local monitoring attempt. It is evidence for the review
-process, not a submission approval. The latest local readiness measurement
-completed with API-backed GitHub data and still reports the same `60/90`
-hard-gate state: the public package is healthy, but real external usage signals
+process, not a submission approval. The latest local monitoring attempt hit
+anonymous GitHub API rate limits after the current documentation-only refresh,
+so the last local API-backed readiness score remains the previous `60/90`
+hard-gate state. The public package is healthy, but real external usage signals
 are still missing.
 
 ## Snapshot
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T19:05:27.6810559Z` |
+| Checked at UTC | `2026-06-03T19:17:55.1189452Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115` |
+| observed main commit | `13935bbe390ef0a2c9816ca9bc6338818b533bf5` |
 | Last API-backed measured commit | `9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was run first and returned an API-backed readiness result; later public HTML fallback checks were used only as supporting status checks |
-| Readiness score | `60/90` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was run first but hit anonymous GitHub API rate limits after commit `13935bbe390ef0a2c9816ca9bc6338818b533bf5`; the last local API-backed result remains the `9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115` measurement, and later public HTML fallback checks were used only as supporting status checks |
+| Readiness score | last local API-backed hard-gate state remains `60/90`; this pass did not produce a refreshed local API-backed score |
 | Target score | `90` |
 | Ready for form submission | no |
 | Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest Monitoring Attempt
 
-The latest local monitoring pass at `2026-06-03T19:05:27Z` ran
+The latest local monitoring pass at `2026-06-03T19:17:55Z` ran
 `scripts/checks/measure-application-readiness.ps1 -PassThru` first. That command
-returned an API-backed result for commit
-`9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115`.
+failed because the local anonymous GitHub API quota was exhausted and no
+authenticated `GITHUB_TOKEN` or `GH_TOKEN` was available in the environment.
+Per the submission gate rules, that failed local check is not a readiness
+approval.
 
-The score remains `60/90` and `ready_for_form_submission=false`.
+The last local API-backed readiness measurement completed earlier at
+`2026-06-03T19:05:27Z` for commit
+`9e25b615c8e3ddefa4c6ccaf5ce6695cea88c115`. That score remains `60/90` and
+`ready_for_form_submission=false`.
 
 | Metric | API-backed value |
 | --- | ---: |
@@ -50,11 +56,10 @@ The API-backed issue comment breakdown was:
 | `#6` | 0 |
 | `#7` | 0 |
 
-After the readiness command completed, a direct candidate-queue scan hit the
-local anonymous GitHub API rate limit on the issue-comments endpoint. That
-later rate limit does not make the repository ready and does not override the
-API-backed readiness result above. A supporting public HTML fallback observation
-at `2026-06-03T19:07:23Z` still found 0 external feedback candidates.
+After the documentation-only snapshot refresh was pushed to
+`13935bbe390ef0a2c9816ca9bc6338818b533bf5`, a supporting public HTML fallback
+observation at `2026-06-03T19:17:55Z` still found 0 external feedback
+candidates.
 
 ## Supporting Public Observation
 
@@ -70,19 +75,19 @@ anonymous GitHub API access is limited.
 | Open issues | 3 |
 | External feedback candidates | 0 |
 
-The public observation surfaced the latest run IDs `26906161645`,
-`26906116010`, `26906110186`, `26904758798`, `26904714949`, and
-`26904710122` as HTML hints. They support monitoring continuity, but they do
-not replace the required API-backed pre-submit readiness measurement or the
-token-backed workflow artifact.
+The public observation surfaced the latest run IDs `26907153014`,
+`26907106191`, `26907099502`, `26906161645`, `26906116010`, and `26906110186`
+as HTML hints. They support monitoring continuity, but they do not replace the
+required API-backed pre-submit readiness measurement or the token-backed
+workflow artifact.
 
 ## Latest Main Validation
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26906116010 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26906110186 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26906161645 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907106191 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907099502 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26907153014 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 36 public URLs, including the live external review Codespaces CTAs, `docs/friend-review-guide-zh.md`, the public readiness observation script, and feedback evidence helpers |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan and guards that public HTML fallback output is not a form-submission gate |

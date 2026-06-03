@@ -81,6 +81,14 @@ cd maintainer-harness
 .\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard
 ```
 
+如果还想让脚本跑完后打开 issue #6 评论入口，可以运行：
+
+```powershell
+.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+```
+
+这个开关只会打开浏览器里的 issue #6 评论页，不会自动发布评论。请先检查剪贴板里的内容，再决定是否粘贴提交。
+
 macOS 或 Linux，需要先装 PowerShell 7，然后运行：
 
 ```bash
@@ -94,6 +102,14 @@ pwsh ./scripts/checks/run-review-demo.ps1
 ```bash
 pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard
 ```
+
+如果还想打开 issue #6 评论入口：
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+```
+
+这个开关只会打开浏览器里的 issue #6 评论页，不会自动发布评论。请先检查生成内容，再决定是否粘贴提交。
 
 跑完后，脚本会生成一个本地报告，里面有 `Copy This Comment Into Issue #6`。请复制那段，贴到 issue #6：
 

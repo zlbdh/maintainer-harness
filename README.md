@@ -53,6 +53,8 @@ issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 If you want the sanitized issue #6 comment block copied after the report is
 generated, run `.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard`
 or `pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard`.
+Use `-OpenCommentTarget` if you also want the issue #6 comment target opened
+after the report is written. The script never posts a comment for you.
 If you only inspected the docs or worker-output example, comment on issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new)
 with one concrete evidence gap instead.
@@ -99,6 +101,8 @@ The JSON file is ignored local evidence for reviewers and follow-up triage; it
 does not count unless the reviewer posts a public issue comment or public URL.
 Use `-CopyCommentToClipboard` when you want the generated issue #6 comment
 block copied for easier review and paste.
+Use `-OpenCommentTarget` when you want the issue #6 comment target opened in
+your browser after the report is written.
 To run the same checks manually:
 
 ```powershell
@@ -124,6 +128,8 @@ If you want to report first-run friction, generate a paste-ready issue draft:
 
 Add `-CopyCommentToClipboard` to copy the generated issue #6 comment block
 after the report is written.
+Add `-OpenCommentTarget` to open the issue #6 comment target without posting
+anything automatically.
 
 If you want a local packet for asking maintainers to review the project:
 

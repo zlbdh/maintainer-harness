@@ -4,6 +4,7 @@ param(
     [string]$JsonOutPath = '',
     [switch]$SkipCommandExecution,
     [switch]$CopyCommentToClipboard,
+    [switch]$OpenCommentTarget,
     [switch]$PassThru
 )
 
@@ -111,6 +112,25 @@ function Copy-FirstRunCommentToClipboard {
         return [pscustomobject]@{
             status = 'copied'
             message = 'The issue #6 first-run comment block was copied to the clipboard.'
+        }
+    } catch {
+        return [pscustomobject]@{
+            status = 'failed'
+            message = $_.Exception.Message
+        }
+    }
+}
+
+function Open-FirstRunCommentTarget {
+    param(
+        [string]$CommentTargetUrl
+    )
+
+    try {
+        Start-Process $CommentTargetUrl -ErrorAction Stop
+        return [pscustomobject]@{
+            status = 'opened'
+            message = 'Opened the issue #6 comment target in the default browser.'
         }
     } catch {
         return [pscustomobject]@{
@@ -252,6 +272,18 @@ if ($CopyCommentToClipboard) {
 $report | Add-Member -NotePropertyName clipboard_status -NotePropertyValue $clipboardResult.status -Force
 $report | Add-Member -NotePropertyName clipboard_message -NotePropertyValue $clipboardResult.message -Force
 
+$openTargetResult = [pscustomobject]@{
+    status = 'not-requested'
+    message = 'Run with -OpenCommentTarget to open the issue #6 comment target.'
+}
+
+if ($OpenCommentTarget) {
+    $openTargetResult = Open-FirstRunCommentTarget -CommentTargetUrl $report.comment_target_url
+}
+
+$report | Add-Member -NotePropertyName open_comment_target_status -NotePropertyValue $openTargetResult.status -Force
+$report | Add-Member -NotePropertyName open_comment_target_message -NotePropertyValue $openTargetResult.message -Force
+
 $lines = @(
     '# Maintainer Harness First-Run Report',
     '',
@@ -338,6 +370,9 @@ Write-Host "First-run comment target: $($report.comment_target_url)"
 Write-Host "External review templates: $($report.external_review_url)"
 if ($CopyCommentToClipboard) {
     Write-Host "Clipboard: $($report.clipboard_status) - $($report.clipboard_message)"
+}
+if ($OpenCommentTarget) {
+    Write-Host "Open comment target: $($report.open_comment_target_status) - $($report.open_comment_target_message)"
 }
 
 if ($PassThru) {

@@ -3,6 +3,7 @@ param(
     [string]$OutPath = '',
     [switch]$SkipCommandExecution,
     [switch]$CopyCommentToClipboard,
+    [switch]$OpenCommentTarget,
     [switch]$PassThru
 )
 
@@ -34,6 +35,10 @@ if ($CopyCommentToClipboard) {
     $arguments.CopyCommentToClipboard = $true
 }
 
+if ($OpenCommentTarget) {
+    $arguments.OpenCommentTarget = $true
+}
+
 $report = & $firstRunScript @arguments
 $failedCount = [int]$report.failed_count
 $skippedCount = [int]$report.skipped_count
@@ -53,6 +58,8 @@ $result = [pscustomobject]@{
     skipped_count = $skippedCount
     clipboard_status = $report.clipboard_status
     clipboard_message = $report.clipboard_message
+    open_comment_target_status = $report.open_comment_target_status
+    open_comment_target_message = $report.open_comment_target_message
 }
 
 Write-Host ''
@@ -66,6 +73,9 @@ Write-Host "Review kit: $reviewKitUrl"
 Write-Host "Worker output example: $reviewabilityUrl"
 if ($CopyCommentToClipboard) {
     Write-Host "Clipboard: $($result.clipboard_status) - $($result.clipboard_message)"
+}
+if ($OpenCommentTarget) {
+    Write-Host "Open comment target: $($result.open_comment_target_status) - $($result.open_comment_target_message)"
 }
 Write-Host ''
 Write-Host 'Copy the "Copy This Comment Into Issue #6" section from the generated report if you want to share first-run feedback.'

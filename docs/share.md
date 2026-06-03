@@ -47,6 +47,10 @@ Optional clipboard helper after the report is written:
 `.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard`
 or `pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard`
 
+Optional issue #6 browser handoff without posting automatically:
+`.\scripts\checks\run-review-demo.ps1 -OpenCommentTarget`
+or `pwsh ./scripts/checks/run-review-demo.ps1 -OpenCommentTarget`
+
 If you only inspected the docs or worker-output example, leave one concrete
 reviewability note here:
 https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new

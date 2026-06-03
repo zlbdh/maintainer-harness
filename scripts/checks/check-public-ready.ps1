@@ -182,6 +182,7 @@ $requiredPublicText = @(
     @{ Path = 'README.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'README.md'; Text = '-CopyCommentToClipboard' },
     @{ Path = 'README.md'; Text = '-OpenCommentTarget' },
+    @{ Path = 'README.md'; Text = '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget' },
     @{ Path = '.github\ISSUE_TEMPLATE\config.yml'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new' },
     @{ Path = '.github\ISSUE_TEMPLATE\config.yml'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new' },
     @{ Path = '.github\ISSUE_TEMPLATE\config.yml'; Text = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155' },

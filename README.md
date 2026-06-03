@@ -65,6 +65,9 @@ issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 If you want the sanitized issue #6 comment block copied after the report is
 generated, run `.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard`
 or `pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard`.
+For Chinese reviewers, use `.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget`
+or `pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget`
+to copy the Chinese issue #6 block and open the comment target.
 Use `-OpenCommentTarget` if you also want the issue #6 comment target opened
 after the report is written. The script never posts a comment for you.
 If the command fails, use
@@ -121,6 +124,9 @@ Use `-CopyCommentToClipboard` when you want the generated issue #6 comment
 block copied for easier review and paste.
 Use `-OpenCommentTarget` when you want the issue #6 comment target opened in
 your browser after the report is written.
+Use `-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget` when a
+Chinese-speaking reviewer wants the Chinese issue #6 block copied and the
+comment target opened after the report is written.
 To run the same checks manually:
 
 ```powershell

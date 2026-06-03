@@ -186,8 +186,11 @@ $requiredPublicText = @(
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'Harness validation' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'pages build and deployment' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },
-    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'actions/upload-artifact@v4' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/checkout@v6' },
+    @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'actions/upload-artifact@v7' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'FORCE_JAVASCRIPT_ACTIONS_TO_NODE24' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'actions/checkout@v6' },
+    @{ Path = '.github\workflows\harness-validation.yml'; Text = 'actions/upload-artifact@v7' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness-${{ github.sha }}' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness.json' },
     @{ Path = '.github\workflows\harness-validation.yml'; Text = 'codex-readiness.md' }

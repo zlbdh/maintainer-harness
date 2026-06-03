@@ -27,7 +27,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Measure Codex for OSS readiness
         id: readiness
@@ -67,7 +67,7 @@ jobs:
           }
 
       - name: Upload readiness report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: codex-readiness-report
           path: reports/readiness/codex-readiness.json

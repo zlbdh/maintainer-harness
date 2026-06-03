@@ -21,12 +21,16 @@ function Assert-Condition {
 
 $repoRoot = Get-HarnessRepoRoot
 $reportScript = Join-HarnessPath $repoRoot 'scripts/checks/write-first-run-report.ps1'
+$demoScript = Join-HarnessPath $repoRoot 'scripts/checks/run-review-demo.ps1'
 $tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ('maintainer-harness-first-run-test-' + [System.Guid]::NewGuid().ToString('N'))
 
 try {
     New-Item -ItemType Directory -Path $tempRoot -Force | Out-Null
     $reportPath = Join-Path $tempRoot 'first-run-report.md'
     $jsonPath = Join-Path $tempRoot 'first-run-report.json'
+    $zhReportPath = Join-Path $tempRoot 'first-run-report-zh.md'
+    $zhJsonPath = Join-Path $tempRoot 'first-run-report-zh.json'
+    $demoReportPath = Join-Path $tempRoot 'demo-first-run-report-zh.md'
 
     $result = & $reportScript `
         -OutPath $reportPath `
@@ -48,11 +52,31 @@ try {
     Assert-Condition -Condition $reportContent.Contains('```markdown') -Message 'Markdown report should keep fenced copy blocks.'
     Assert-Condition -Condition $jsonContent.Contains('comment_markdown_zh') -Message 'JSON report should include the Chinese comment block for auditability.'
 
+    $zhResult = & $reportScript `
+        -OutPath $zhReportPath `
+        -JsonOutPath $zhJsonPath `
+        -SkipCommandExecution `
+        -CommentLanguage zh `
+        -PassThru
+
+    Assert-Condition -Condition ([string]$zhResult.comment_language -eq 'zh') -Message 'Chinese first-run report should record the selected comment language.'
+    Assert-Condition -Condition ([string]$zhResult.selected_comment_markdown).Contains('我从干净 checkout 跑了 Maintainer Harness demo') -Message 'Chinese first-run report should select the Chinese issue #6 comment block.'
+    Assert-Condition -Condition ([string]$zhResult.clipboard_message).Contains('中文') -Message 'Chinese first-run report clipboard guidance should mention the Chinese comment block.'
+
+    $demoResult = & $demoScript `
+        -OutPath $demoReportPath `
+        -SkipCommandExecution `
+        -CommentLanguage zh `
+        -PassThru
+
+    Assert-Condition -Condition ([string]$demoResult.comment_language -eq 'zh') -Message 'Review demo runner should pass the selected Chinese comment language through.'
+
     $testResult = [pscustomobject]@{
         overall_status = 'PASS'
         markdown_path = $reportPath
         json_path = $jsonPath
         chinese_comment_available = $true
+        chinese_comment_selectable = $true
         skipped_count = [int]$result.skipped_count
     }
 

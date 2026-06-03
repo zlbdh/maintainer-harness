@@ -5,6 +5,8 @@ param(
     [switch]$SkipCommandExecution,
     [switch]$CopyCommentToClipboard,
     [switch]$OpenCommentTarget,
+    [ValidateSet('en', 'zh')]
+    [string]$CommentLanguage = 'en',
     [switch]$PassThru
 )
 
@@ -97,13 +99,14 @@ function Invoke-FirstRunStep {
 
 function Copy-FirstRunCommentToClipboard {
     param(
-        [string]$CommentMarkdown
+        [string]$CommentMarkdown,
+        [string]$LanguageLabel = 'English'
     )
 
     if ($null -eq (Get-Command -Name Set-Clipboard -ErrorAction SilentlyContinue)) {
         return [pscustomobject]@{
             status = 'unavailable'
-            message = 'Set-Clipboard is not available in this shell.'
+            message = "Set-Clipboard is not available in this shell. The $LanguageLabel issue #6 comment block was not copied."
         }
     }
 
@@ -111,7 +114,7 @@ function Copy-FirstRunCommentToClipboard {
         Set-Clipboard -Value $CommentMarkdown -ErrorAction Stop
         return [pscustomobject]@{
             status = 'copied'
-            message = 'The issue #6 first-run comment block was copied to the clipboard.'
+            message = "The $LanguageLabel issue #6 first-run comment block was copied to the clipboard."
         }
     } catch {
         return [pscustomobject]@{
@@ -289,13 +292,23 @@ $commentLinesZh += @(
 
 $report | Add-Member -NotePropertyName comment_markdown_zh -NotePropertyValue ($commentLinesZh -join [Environment]::NewLine) -Force
 
+$languageLabel = if ($CommentLanguage -eq 'zh') { '中文' } else { 'English' }
+$selectedCommentMarkdown = if ($CommentLanguage -eq 'zh') {
+    [string]$report.comment_markdown_zh
+} else {
+    [string]$report.comment_markdown
+}
+
+$report | Add-Member -NotePropertyName comment_language -NotePropertyValue $CommentLanguage -Force
+$report | Add-Member -NotePropertyName selected_comment_markdown -NotePropertyValue $selectedCommentMarkdown -Force
+
 $clipboardResult = [pscustomobject]@{
     status = 'not-requested'
-    message = 'Run with -CopyCommentToClipboard to copy the issue #6 comment block.'
+    message = "Run with -CopyCommentToClipboard to copy the $languageLabel issue #6 comment block."
 }
 
 if ($CopyCommentToClipboard) {
-    $clipboardResult = Copy-FirstRunCommentToClipboard -CommentMarkdown $report.comment_markdown
+    $clipboardResult = Copy-FirstRunCommentToClipboard -CommentMarkdown $report.selected_comment_markdown -LanguageLabel $languageLabel
 }
 
 $report | Add-Member -NotePropertyName clipboard_status -NotePropertyValue $clipboardResult.status -Force

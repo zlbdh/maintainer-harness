@@ -211,7 +211,11 @@ pwsh ./scripts/checks/run-review-demo.ps1
 
 # Optional: copy the issue #6 block and open the comment target without posting
 .\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
-pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget</code></pre>
+pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+
+# Optional Chinese issue #6 block
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget</code></pre>
     </section>
 
     <section id="templates" class="section split" aria-labelledby="templates-title">

@@ -107,13 +107,13 @@ cd maintainer-harness
 如果想少一步复制，可以运行：
 
 ```powershell
-.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard
 ```
 
 如果还想让脚本跑完后打开 issue #6 评论入口，可以运行：
 
 ```powershell
-.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
 ```
 
 这个开关只会打开浏览器里的 issue #6 评论页，不会自动发布评论。请先检查剪贴板里的内容，再决定是否粘贴提交。
@@ -129,13 +129,13 @@ pwsh ./scripts/checks/run-review-demo.ps1
 也可以运行：
 
 ```bash
-pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard
 ```
 
 如果还想打开 issue #6 评论入口：
 
 ```bash
-pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
 ```
 
 这个开关只会打开浏览器里的 issue #6 评论页，不会自动发布评论。请先检查生成内容，再决定是否粘贴提交。

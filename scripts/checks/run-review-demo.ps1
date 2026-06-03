@@ -4,6 +4,8 @@ param(
     [switch]$SkipCommandExecution,
     [switch]$CopyCommentToClipboard,
     [switch]$OpenCommentTarget,
+    [ValidateSet('en', 'zh')]
+    [string]$CommentLanguage = 'en',
     [switch]$PassThru
 )
 
@@ -21,6 +23,7 @@ $externalReviewUrl = 'https://zlbdh.github.io/maintainer-harness/external-review
 
 $arguments = @{
     PassThru = $true
+    CommentLanguage = $CommentLanguage
 }
 
 if (-not [string]::IsNullOrWhiteSpace($OutPath)) {
@@ -56,6 +59,7 @@ $result = [pscustomobject]@{
     passed_count = [int]$report.passed_count
     failed_count = $failedCount
     skipped_count = $skippedCount
+    comment_language = $report.comment_language
     clipboard_status = $report.clipboard_status
     clipboard_message = $report.clipboard_message
     open_comment_target_status = $report.open_comment_target_status
@@ -71,6 +75,7 @@ Write-Host "First-run feedback comment target: $firstRunIssueUrl"
 Write-Host "External review templates: $externalReviewUrl"
 Write-Host "Review kit: $reviewKitUrl"
 Write-Host "Worker output example: $reviewabilityUrl"
+Write-Host "Issue #6 comment language: $($result.comment_language)"
 if ($CopyCommentToClipboard) {
     Write-Host "Clipboard: $($result.clipboard_status) - $($result.clipboard_message)"
 }

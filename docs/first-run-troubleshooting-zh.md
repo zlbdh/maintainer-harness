@@ -107,19 +107,19 @@ pwsh ./scripts/checks/run-review-demo.ps1
 可以让脚本复制 issue #6 的评论块：
 
 ```powershell
-.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard
 ```
 
 也可以让脚本跑完后打开 issue #6 评论页：
 
 ```powershell
-.\scripts\checks\run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+.\scripts\checks\run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
 ```
 
 macOS 或 Linux：
 
 ```bash
-pwsh ./scripts/checks/run-review-demo.ps1 -CopyCommentToClipboard -OpenCommentTarget
+pwsh ./scripts/checks/run-review-demo.ps1 -CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget
 ```
 
 `-OpenCommentTarget` 只会打开浏览器里的评论页，不会自动发布评论。请先检查生成内容，再决定是否粘贴提交。

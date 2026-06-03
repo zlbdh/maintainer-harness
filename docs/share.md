@@ -14,6 +14,10 @@ https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
+## 中文朋友实测教程
+
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
+
 ## One-Liner
 
 Maintainer Harness turns agent work into scoped change packets, validation evidence, and release-ready review trails.

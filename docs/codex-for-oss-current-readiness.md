@@ -8,9 +8,9 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T06:28:58.7953077Z` |
+| Checked at UTC | `2026-06-03T07:58:01.6875039Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `dd051ea05c0eb16071342c39f354b0cb4615c4f7` |
+| Measured commit | `58f00780c5a8a2db3c482d5203434fdb57cffe25` |
 | Source command | token-backed `Codex readiness monitor` artifact after the required local command hit the anonymous GitHub API rate limit |
 | Readiness score | `60/90` |
 | Target score | `90` |
@@ -34,11 +34,11 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867714976 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867714526 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26867738800 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7377286261`, digest `sha256:a52943f2b667cb72d5c435b87124f6309cdef51dd58eb0c02ed8d5cfd0bbd0ee` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 20 public URLs |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26871528837 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26871528081 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26871568542 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7378837143`, digest `sha256:249be7262b27d52ed18f3a9fdfee55433ec827e9c7c085a165f414b4acfa7955` |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 24 public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
@@ -89,4 +89,4 @@ focus on the external validation sprint:
   warranted
 
 Stars, comments, and reports must come from real inspection. Do not buy,
-exchange, script, or otherwise manufacture engagement.
+exchange, script, or otherwise manufacture engagement. Self-owned alternate accounts do not count as external validation.

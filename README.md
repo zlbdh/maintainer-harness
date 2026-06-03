@@ -14,6 +14,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **Public review request:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
+**中文朋友实测教程:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
+
 **Reviewer kit:** if you have five minutes, use
 `docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
 demo, or leave public feedback.

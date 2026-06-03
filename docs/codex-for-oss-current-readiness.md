@@ -8,14 +8,14 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T03:47:22.2964583Z` |
+| Checked at UTC | `2026-06-03T04:03:26.2704444Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured main commit | `f35d41571611503406a4e77692851ef31a636053` |
-| Source command | `scripts/checks/measure-application-readiness.ps1 -PassThru` |
+| Verified monitor commit | `7bd8bc278d4d399604fdb8d7754456689ffe61d8` |
+| Source command | token-backed `Codex readiness monitor` artifact after local anonymous API limit |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
-| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.16 |
+| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.17 |
 
 ## Current Public Metrics
 
@@ -34,19 +34,20 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862341961 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862341574 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862366542 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375365536`, digest `sha256:8f12909f7195f5b6c47d7acbe01818bd0b5f042c910beeff978c107ee816db4f` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862922983 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862922480 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26862951914 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375566963`, digest `sha256:99cdfa973164c00bfbf08111e6fa90ac68da4a0be7c6c8e7faa87f2c501340ba` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 16 public URLs |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
-For the live main commit, exact CI run IDs, and exact Pages run ID, rerun the
-source command or inspect the latest `codex-readiness-report` artifact from the
-Codex readiness monitor workflow. The static snapshot should not be used as a
-substitute for the final pre-submit gate.
+The local anonymous `scripts/checks/measure-application-readiness.ps1 -PassThru`
+run hit the GitHub API rate limit before this snapshot was updated, so the
+token-backed GitHub Actions monitor artifact is the authoritative score for
+this round. This static snapshot can trail its own documentation-only update
+commit; use the latest monitor artifact as the final pre-submit gate.
 
 ## Hard Gates Still Missing
 

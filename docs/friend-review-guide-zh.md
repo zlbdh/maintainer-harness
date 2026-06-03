@@ -16,6 +16,14 @@
 
 最重要的是：不要催 star，不要暗示“帮我点一下就行”。要问“哪里不清楚、哪里不可信、哪里跑不起来”。
 
+如果你想从本地生成并复制一条中文邀请消息，可以在仓库里运行：
+
+```powershell
+.\scripts\checks\write-review-request-packet.ps1 -RequestKind zh-friend -CopyRequestToClipboard
+```
+
+这个命令只复制邀请文本，不会自动发布评论、创建 star 或联系任何人。
+
 ## 可以直接发的消息
 
 ```text

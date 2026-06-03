@@ -161,6 +161,8 @@ $fileRequirements = @(
             $links.FeedbackFollowUpTemplate,
             $windowsDemoCommand,
             $unixDemoCommand,
+            'CopyRequestToClipboard',
+            'RequestKind',
             '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget',
             '不是让你直接 star',
             'Do not ask for star trades',
@@ -188,6 +190,19 @@ try {
         }
     } else {
         $findings.Add((New-HandoffFinding -Status 'FAIL' -Check 'generated-packet' -Detail 'Review request packet was not generated at the requested path.'))
+    }
+
+    $zhPacket = & (Join-HarnessPath $repoRoot 'scripts/checks/write-review-request-packet.ps1') -OutPath $packetPath -RequestKind 'zh-friend' -PassThru
+    if ([string]$zhPacket.selected_request_kind -eq 'zh-friend') {
+        $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-request-selection' -Detail 'Generated packet selected zh-friend request kind.'))
+    } else {
+        $findings.Add((New-HandoffFinding -Status 'FAIL' -Check 'generated-request-selection' -Detail 'Generated packet did not select zh-friend request kind.'))
+    }
+
+    if (([string]$zhPacket.selected_request_text).Contains('不是让你直接 star') -and ([string]$zhPacket.selected_request_text).Contains('-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget')) {
+        $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-request-selection' -Detail 'Generated packet exposes the Chinese friend request text.'))
+    } else {
+        $findings.Add((New-HandoffFinding -Status 'FAIL' -Check 'generated-request-selection' -Detail 'Generated packet is missing the selected Chinese friend request text.'))
     }
 } finally {
     if (Test-Path -LiteralPath $packetPath -PathType Leaf) {

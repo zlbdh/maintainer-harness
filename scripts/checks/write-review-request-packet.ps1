@@ -1,6 +1,9 @@
 [CmdletBinding()]
 param(
     [string]$OutPath = '',
+    [ValidateSet('maintainer', 'first-run', 'security', 'zh-friend')]
+    [string]$RequestKind = 'maintainer',
+    [switch]$CopyRequestToClipboard,
     [switch]$PassThru
 )
 
@@ -8,6 +11,33 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 . (Join-Path $PSScriptRoot '../lib/HarnessRepoTools.ps1')
+
+function Copy-ReviewRequestToClipboard {
+    param(
+        [string]$RequestText,
+        [string]$RequestKind
+    )
+
+    if ($null -eq (Get-Command -Name Set-Clipboard -ErrorAction SilentlyContinue)) {
+        return [pscustomobject]@{
+            status = 'unavailable'
+            message = "Set-Clipboard is not available in this shell. The $RequestKind review request was not copied."
+        }
+    }
+
+    try {
+        Set-Clipboard -Value $RequestText -ErrorAction Stop
+        return [pscustomobject]@{
+            status = 'copied'
+            message = "The $RequestKind review request was copied to the clipboard."
+        }
+    } catch {
+        return [pscustomobject]@{
+            status = 'failed'
+            message = $_.Exception.Message
+        }
+    }
+}
 
 $repoRoot = Get-HarnessRepoRoot
 $timestamp = Get-HarnessTimestamp
@@ -132,6 +162,22 @@ $($links.FirstRunTroubleshootingZh)
 你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说。失败反馈也很有用。
 "@
 
+$copyableRequests = [ordered]@{
+    maintainer = $shortRequest.Trim()
+    'first-run' = $firstRunRequest.Trim()
+    security = $securityRequest.Trim()
+    'zh-friend' = $chineseFriendRequest.Trim()
+}
+$selectedRequestText = [string]$copyableRequests[$RequestKind]
+$clipboardResult = [pscustomobject]@{
+    status = 'not-requested'
+    message = "Run with -CopyRequestToClipboard to copy the $RequestKind review request."
+}
+
+if ($CopyRequestToClipboard) {
+    $clipboardResult = Copy-ReviewRequestToClipboard -RequestText $selectedRequestText -RequestKind $RequestKind
+}
+
 $lines = @(
     '# Maintainer Harness Review Request Packet',
     '',
@@ -190,6 +236,16 @@ $lines = @(
     "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
     "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FeedbackFollowUpTemplate) |",
     '',
+    '## Clipboard Helper',
+    '',
+    'Use this when you want one copy-ready request instead of the full packet:',
+    '',
+    '```powershell',
+    '.\scripts\checks\write-review-request-packet.ps1 -RequestKind zh-friend -CopyRequestToClipboard',
+    '```',
+    '',
+    'This only copies text to your clipboard. It does not post comments, create stars, or contact reviewers automatically.',
+    '',
     '## Short Maintainer Request',
     '',
     '```text',
@@ -238,10 +294,18 @@ Write-HarnessTextFile -Path $OutPath -Content ($lines -join [Environment]::NewLi
 $packet = [pscustomobject]@{
     generated_at = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
     path = $OutPath
+    selected_request_kind = $RequestKind
+    selected_request_text = $selectedRequestText
+    clipboard_result = $clipboardResult
     links = [pscustomobject]$links
 }
 
 Write-Host "Review request packet: $OutPath"
+Write-Host "Selected request: $RequestKind"
+
+if ($CopyRequestToClipboard) {
+    Write-Host $clipboardResult.message
+}
 
 if ($PassThru) {
     return $packet

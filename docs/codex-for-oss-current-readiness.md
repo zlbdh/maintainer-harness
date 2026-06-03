@@ -19,6 +19,28 @@ visible during the pass.
 | Ready for form submission | no |
 | Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
+## Latest Monitoring Attempt
+
+The latest local monitoring pass at `2026-06-03T17:53:26Z` ran
+`scripts/checks/measure-application-readiness.ps1 -PassThru` first, but the
+anonymous GitHub API request was rate-limited. That failure is intentionally
+not treated as readiness evidence.
+
+The supporting public HTML fallback observation remained unchanged:
+
+| Public fallback metric | Observed value |
+| --- | ---: |
+| Stars | 0 |
+| Forks | 0 |
+| Watchers | 0 |
+| Open issues | 3 |
+| External feedback candidates | 0 |
+
+The public observation also surfaced the latest run IDs
+`26902010577`, `26901942278`, and `26901937893` as HTML hints only. They do
+not replace the required API-backed pre-submit readiness measurement or the
+token-backed workflow artifact.
+
 ## Current Public Metrics
 
 | Metric | Value |

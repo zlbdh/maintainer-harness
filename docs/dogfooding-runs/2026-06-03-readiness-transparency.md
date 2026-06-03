@@ -105,14 +105,16 @@ feedback-driven follow-up for the 90% submission gate.
 ### Continuation: default public secret scan
 
 - Latest release anchor:
-  https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.19
+  https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
 
 The continuation replaced the previous `-SkipSensitivePattern` CI posture with
 a default high-confidence secret-value scan in
 `scripts/checks/check-public-ready.ps1` and
 `scripts/checks/check-security-posture.ps1`. Reviewers still can pass a
 project-specific `-SensitivePattern` for local names, endpoints, or private
-roles that a generic scanner cannot know.
+roles that a generic scanner cannot know. The first CI attempt exposed an
+`rg` availability difference on macOS and Ubuntu, so the scanner now uses a
+PowerShell file scan over `git ls-files` instead of requiring `rg`.
 
 This makes the public/security posture gates stricter and more reproducible. It
 does not count as an external comment, outside first-run report, real star, or

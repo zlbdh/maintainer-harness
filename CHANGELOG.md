@@ -24,6 +24,9 @@ This project follows a simple date-based changelog until formal versioned releas
 - Default high-confidence secret scanning in public readiness and security
   posture checks, including CI enforcement.
 - `v0.1.19` release anchor for the default public secret-scan gate.
+- Cross-platform PowerShell fallback for the default public secret scan so
+  macOS and Ubuntu CI do not depend on `rg` being installed.
+- `v0.1.20` release anchor for the cross-platform default secret-scan gate.
 
 ### Changed
 
@@ -36,7 +39,7 @@ This project follows a simple date-based changelog until formal versioned releas
   readiness artifact.
 - Public evidence link checks now verify the Codex readiness monitor workflow
   page and raw workflow source.
-- Latest release links now point to `v0.1.19`, which anchors reviewer handoff
+- Latest release links now point to `v0.1.20`, which anchors reviewer handoff
   improvements without counting owner work as external feedback.
 
 ## 2026-06-02

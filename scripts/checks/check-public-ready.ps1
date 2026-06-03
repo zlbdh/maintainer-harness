@@ -38,12 +38,6 @@ function Invoke-GitText {
     }
 }
 
-function Quote-CmdArgument {
-    param([string]$Value)
-
-    return '"' + ($Value -replace '"', '\"') + '"'
-}
-
 function Get-DefaultSensitivePattern {
     return '(?i)(gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{30,}|sk-(?:proj-)?[A-Za-z0-9_-]{32,}|AKIA[0-9A-Z]{16}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|postgres(?:ql)?://[^\s:@]+:[^\s:@]+@|mongodb(?:\+srv)?://[^\s:@]+:[^\s:@]+@|mysql://[^\s:@]+:[^\s:@]+@)'
 }
@@ -268,10 +262,10 @@ if ($SkipSensitivePattern) {
     $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail 'Sensitive pattern check intentionally skipped.'))
 } else {
     $publicPathList = Invoke-GitText -Command 'git ls-files --cached --others --exclude-standard'
+    $publicCandidatePaths = @()
     if ($publicPathList.ok) {
-        $matchedPaths = @($publicPathList.text -split "`n" | Where-Object {
-            -not [string]::IsNullOrWhiteSpace($_) -and ($_ -match $effectiveSensitivePattern)
-        })
+        $publicCandidatePaths = @($publicPathList.text -split "`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+        $matchedPaths = @($publicCandidatePaths | Where-Object { $_ -match $effectiveSensitivePattern })
         if ($matchedPaths.Count -gt 0) {
             $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-path' -Detail "$($matchedPaths.Count) public candidate paths match the $sensitivePatternLabel."))
         } else {
@@ -281,13 +275,27 @@ if ($SkipSensitivePattern) {
         $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-path' -Detail $publicPathList.text))
     }
 
-    $rg = Invoke-HarnessCommand -WorkingDirectory $repoRoot -Command ("rg --hidden -n {0} -S -g {1}" -f (Quote-CmdArgument $effectiveSensitivePattern), (Quote-CmdArgument '!.git/**'))
-    if ($rg.ExitCode -eq 0) {
-        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail "The $sensitivePatternLabel matched in public candidate files."))
-    } elseif ($rg.ExitCode -eq 1) {
-        $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail "No $sensitivePatternLabel matches found."))
+    if ($publicPathList.ok) {
+        $matchedContentPaths = New-Object System.Collections.Generic.List[string]
+        foreach ($relativePath in $publicCandidatePaths) {
+            $candidatePath = Join-HarnessPath $repoRoot $relativePath
+            if (-not (Test-Path -LiteralPath $candidatePath -PathType Leaf)) {
+                continue
+            }
+
+            $content = Get-Content -LiteralPath $candidatePath -Raw
+            if ($content -match $effectiveSensitivePattern) {
+                $matchedContentPaths.Add($relativePath)
+            }
+        }
+
+        if ($matchedContentPaths.Count -gt 0) {
+            $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail ("The {0} matched {1} public candidate files: {2}" -f $sensitivePatternLabel, $matchedContentPaths.Count, (($matchedContentPaths | Select-Object -First 5) -join ', '))))
+        } else {
+            $findings.Add((New-PublicReadyFinding -Status 'PASS' -Check 'sensitive-pattern' -Detail "No $sensitivePatternLabel matches found."))
+        }
     } else {
-        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail (Normalize-HarnessText $rg.Output)))
+        $findings.Add((New-PublicReadyFinding -Status 'FAIL' -Check 'sensitive-pattern' -Detail $publicPathList.text))
     }
 }
 

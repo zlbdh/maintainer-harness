@@ -187,6 +187,16 @@ $links = @(
         RequiredText = 'not an API-backed readiness gate'
     },
     [pscustomobject]@{
+        Check = 'issue-template-config'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/config.yml'
+        RequiredText = 'Run in Codespaces'
+    },
+    [pscustomobject]@{
+        Check = 'first-run-feedback-template'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/first_run_feedback.md'
+        RequiredText = 'Codespaces first-run guide'
+    },
+    [pscustomobject]@{
         Check = 'feedback-follow-up-template'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/feedback_follow_up.md'
         RequiredText = 'Feedback-driven follow-up'

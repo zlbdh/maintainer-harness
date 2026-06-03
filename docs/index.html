@@ -117,6 +117,7 @@
         <p>
           The sample packets are synthetic. They validate the workflow shape without
           cloning product repositories, opening worktrees, or using production credentials.
+          Use Windows PowerShell or PowerShell 7 on macOS/Linux.
         </p>
       </div>
       <pre aria-label="Demo commands"><code>git clone https://github.com/zlbdh/maintainer-harness.git
@@ -127,7 +128,10 @@ cd maintainer-harness
 .\scripts\checks\validate-change.ps1 -Path examples\issue-to-review
 .\scripts\checks\validate-change.ps1 -Path examples\release-workflow
 .\scripts\checks\check-security-posture.ps1 -SkipSensitivePattern
-.\scripts\checks\run-review-demo.ps1</code></pre>
+.\scripts\checks\run-review-demo.ps1
+
+# macOS/Linux with PowerShell 7
+pwsh ./scripts/checks/run-review-demo.ps1</code></pre>
     </section>
 
     <section id="evidence" class="section" aria-labelledby="evidence-title">

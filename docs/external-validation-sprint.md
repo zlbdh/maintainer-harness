@@ -94,10 +94,18 @@ https://zlbdh.github.io/maintainer-harness/
 
 ## Feedback Capture
 
-Ask outside reviewers to run:
+Ask outside reviewers to run the clean demo from a fresh checkout.
+
+Windows PowerShell:
 
 ```powershell
 .\scripts\checks\run-review-demo.ps1
+```
+
+macOS or Linux with PowerShell 7:
+
+```bash
+pwsh ./scripts/checks/run-review-demo.ps1
 ```
 
 The script writes an ignored Markdown draft under `reports/first-run/` with

@@ -10,11 +10,11 @@ visible during the pass.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T16:09:25.6619940Z` |
+| Checked at UTC | `2026-06-03T17:29:19.9060498Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Observed commit | `5e808853ffd0c74d248ce44a7fc0191dc9deb2d1` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` was attempted first and hit the anonymous GitHub API rate limit; public GitHub HTML, `scripts/checks/write-public-readiness-observation.ps1 -PassThru`, and the token-backed `Codex readiness monitor` run were used for this transparency snapshot |
-| Readiness score | `60/90` from the latest API-backed hard-gate state and unchanged public external-signal counts; not a local API-backed approval in this pass |
+| observed main commit | `0e65b297a0694ad8ce63c64d94f954611b9c4be1` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` returned an API-backed measurement; `scripts/checks/write-public-readiness-observation.ps1 -PassThru` and the token-backed `Codex readiness monitor` run were used as supporting public-status checks |
+| Readiness score | `60/90` from the API-backed hard-gate state; not a submission approval because the external-signal gates are still missing |
 | Target score | `90` |
 | Ready for form submission | no |
 | Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
@@ -36,29 +36,22 @@ visible during the pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897102232 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897098381 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26897194452 |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26901444312 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26901442524 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26901491892 |
 | Monitor artifact | present on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
-| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 34 public URLs, including the live external review Codespaces CTAs, `docs/friend-review-guide-zh.md`, and the public readiness observation script |
+| Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 36 public URLs, including the live external review Codespaces CTAs, `docs/friend-review-guide-zh.md`, the public readiness observation script, and feedback evidence helpers |
 | Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan and guards that public HTML fallback output is not a form-submission gate |
 | Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
 The local `scripts/checks/measure-application-readiness.ps1 -PassThru` command
-was run first for this monitoring pass and stopped at the anonymous GitHub API
-rate limit. Because that failure prevents local API-backed verification, this
-snapshot is not a submission approval. It records the public state that was
-still visible without authentication: 0 stars, 0 forks, 0 watchers, open issues
-`#5`, `#6`, and `#7`, successful current-main validation, successful Pages
-deployment, and a successful token-backed readiness monitor run. Use the latest
-token-backed monitor artifact as the final pre-submit gate once it can be
-inspected by an authenticated actor. The public readiness observation fallback
-recorded 0 external feedback candidates and hard-coded
-`ready_for_form_submission=false`, so it is a status aid rather than an approval
-signal. This snapshot records the observed main commit for this monitoring
-pass; later documentation-only commits can make repository HEAD newer without
-changing the external-signal counts. It still does not replace the required API-backed pre-submit readiness measurement.
+was run first for this monitoring pass and returned the API-backed state above:
+0 stars, 0 forks, 0 watchers, open issues `#5`, `#6`, and `#7`, successful
+current-main validation, successful Pages deployment, and zero external feedback
+signals. The public readiness observation fallback also recorded 0 external
+feedback candidates and hard-coded `ready_for_form_submission=false`, so it is a
+status aid rather than an approval signal. This snapshot records the observed main commit for this monitoring pass; later documentation-only commits can make repository HEAD newer without changing the external-signal counts. It still does not replace the required API-backed pre-submit readiness measurement.
 
 ## Hard Gates Still Missing
 

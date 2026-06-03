@@ -95,12 +95,12 @@ feedback is not enough.
 
 ## Current Expected State
 
-As of the verified 2026-06-03 readiness-monitor artifact recorded in
+As of the verified 2026-06-03 API-backed readiness measurement recorded in
 `docs/codex-for-oss-current-readiness.md`, Maintainer Harness scores 60/90 on
-commit `39202d311eb64a3d621d1439e6fa57659b27a5e8`. The required local
+commit `0e65b297a0694ad8ce63c64d94f954611b9c4be1`. The required local
 readiness command returned a full API-backed result for the same monitoring
-pass, and the token-backed post-workflow GitHub Actions monitor artifact
-confirmed the same score and zero external feedback candidates:
+pass, and the token-backed post-workflow GitHub Actions monitor run confirmed
+the same score and zero external feedback candidates:
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint

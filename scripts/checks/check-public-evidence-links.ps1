@@ -172,6 +172,11 @@ $links = @(
         RequiredText = 'External Feedback Review Queue'
     },
     [pscustomobject]@{
+        Check = 'public-readiness-observation-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-public-readiness-observation.ps1'
+        RequiredText = 'not an API-backed readiness gate'
+    },
+    [pscustomobject]@{
         Check = 'feedback-follow-up-template'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/feedback_follow_up.md'
         RequiredText = 'Feedback-driven follow-up'

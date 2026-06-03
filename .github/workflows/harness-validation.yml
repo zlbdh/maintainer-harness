@@ -80,6 +80,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/test-external-feedback-candidates.ps1
 
+      - name: Test public readiness observation
+        shell: pwsh
+        run: ./scripts/checks/test-public-readiness-observation.ps1
+
       - name: Test first-run report generation
         shell: pwsh
         run: ./scripts/checks/test-first-run-report.ps1

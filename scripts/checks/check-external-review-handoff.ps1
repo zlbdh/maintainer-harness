@@ -58,6 +58,7 @@ $links = [ordered]@{
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
     FeedbackFollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
+    ChineseFriendOnepager = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
     FirstRunTroubleshooting = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md'
     FirstRunTroubleshootingZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting-zh.md'
     CodespacesFirstRun = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md'
@@ -80,6 +81,7 @@ $fileRequirements = @(
             $links.CodespacesQuickstart,
             $links.FirstRunTroubleshooting,
             $links.ChineseFriendGuide,
+            $links.ChineseFriendOnepager,
             $links.FirstRunTroubleshootingZh,
             $windowsDemoCommand,
             $unixDemoCommand,
@@ -161,6 +163,7 @@ $fileRequirements = @(
             $links.ExternalReviewTemplates,
             $links.PublicReviewRequest,
             $links.ChineseFriendGuide,
+            $links.ChineseFriendOnepager,
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
@@ -189,7 +192,7 @@ try {
     if ((Test-Path -LiteralPath $packet.path -PathType Leaf) -and ([string]$packet.path -eq $packetPath)) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet' -Detail "Generated review request packet at $packetPath"))
         $packetContent = Get-Content -LiteralPath $packetPath -Raw
-        foreach ($text in @($links.PublicReviewRequest, $links.ChineseFriendGuide, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $links.CodespacesFirstRun, $links.CodespacesQuickstart, $windowsDemoCommand, $unixDemoCommand, '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget', '不是让你直接 star', $selfOwnedAccountRule)) {
+        foreach ($text in @($links.PublicReviewRequest, $links.ChineseFriendGuide, $links.ChineseFriendOnepager, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $links.CodespacesFirstRun, $links.CodespacesQuickstart, $windowsDemoCommand, $unixDemoCommand, '-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget', '不是让你直接 star', $selfOwnedAccountRule)) {
             if ($packetContent.Contains($text)) {
                 $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet-text' -Detail "Generated packet includes $text"))
             } else {
@@ -207,7 +210,7 @@ try {
         $findings.Add((New-HandoffFinding -Status 'FAIL' -Check 'generated-request-selection' -Detail 'Generated packet did not select zh-friend request kind.'))
     }
 
-    if (([string]$zhPacket.selected_request_text).Contains('不是让你直接 star') -and ([string]$zhPacket.selected_request_text).Contains('-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget')) {
+    if (([string]$zhPacket.selected_request_text).Contains('不是让你直接 star') -and ([string]$zhPacket.selected_request_text).Contains($links.ChineseFriendOnepager) -and ([string]$zhPacket.selected_request_text).Contains('-CommentLanguage zh -CopyCommentToClipboard -OpenCommentTarget')) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-request-selection' -Detail 'Generated packet exposes the Chinese friend request text.'))
     } else {
         $findings.Add((New-HandoffFinding -Status 'FAIL' -Check 'generated-request-selection' -Detail 'Generated packet is missing the selected Chinese friend request text.'))

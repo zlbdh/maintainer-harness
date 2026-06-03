@@ -53,6 +53,7 @@ $links = [ordered]@{
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
+    ChineseFriendOnepager = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
     CodespacesFirstRun = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md'
     CodespacesQuickstart = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
@@ -151,6 +152,9 @@ $($links.ProjectSite)
 中文实测教程：
 $($links.ChineseFriendGuide)
 
+一页转发教程：
+$($links.ChineseFriendOnepager)
+
 如果只看文档，请在 issue #5 留一句具体反馈：
 $($links.FeedbackIssue)
 
@@ -208,6 +212,7 @@ $lines = @(
     "- External review templates: $($links.ExternalReviewTemplates)",
     "- Public review request packet: $($links.PublicReviewRequest)",
     "- Chinese friend guide: $($links.ChineseFriendGuide)",
+    "- Chinese one-page friend tutorial: $($links.ChineseFriendOnepager)",
     "- Codespaces first-run guide: $($links.CodespacesFirstRun)",
     "- Codespaces quickstart: $($links.CodespacesQuickstart)",
     "- Review kit: $($links.ReviewKit)",

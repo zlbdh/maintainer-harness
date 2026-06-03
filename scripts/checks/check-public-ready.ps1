@@ -306,6 +306,7 @@ $requiredPublicText = @(
     @{ Path = 'docs\share.md'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'CurrentGateStatus' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md' },
+    @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1' },
     @{ Path = 'scripts\checks\write-review-request-packet.ps1'; Text = 'pwsh ./scripts/checks/run-review-demo.ps1' },

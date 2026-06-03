@@ -222,6 +222,16 @@ $links = @(
         RequiredText = 'not an API-backed readiness gate'
     },
     [pscustomobject]@{
+        Check = 'reviewer-comment-draft-preflight-script'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/check-reviewer-comment-draft.ps1'
+        RequiredText = 'Local-only check; no comments, stars, votes, contacts, or evidence entries were created.'
+    },
+    [pscustomobject]@{
+        Check = 'reviewer-comment-draft-preflight-test'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/test-reviewer-comment-draft-preflight.ps1'
+        RequiredText = 'Raw stack trace draft should fail'
+    },
+    [pscustomobject]@{
         Check = 'issue-template-config'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/ISSUE_TEMPLATE/config.yml'
         RequiredText = 'Run in Codespaces'

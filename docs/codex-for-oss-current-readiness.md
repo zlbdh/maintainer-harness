@@ -8,14 +8,14 @@ approval.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T04:31:06.5136652Z` |
+| Checked at UTC | `2026-06-03T04:58:17.5335964Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| Measured commit | `36b932a17c519093a5a31ac5be2ec4ae257c2df1` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru`, cross-checked with token-backed `Codex readiness monitor` artifact |
+| Measured commit | `7604643f4cd97df97355a5046326790875bc2879` |
+| Source command | token-backed `Codex readiness monitor` artifact after the local required check was blocked by anonymous GitHub API rate limits |
 | Readiness score | `60/90` |
 | Target score | `90` |
 | Ready for form submission | no |
-| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.18 |
+| Release anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Current Public Metrics
 
@@ -34,23 +34,24 @@ approval.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863671307 |
-| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863670744 |
-| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26863692203 |
-| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7375818131`, digest `sha256:06e38c620ac603d3026d52509779bd0170ad95057d722a1254b72b18e3d15a4e` |
+| Harness validation | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26864633867 |
+| GitHub Pages deployment | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26864633435 |
+| Codex readiness monitor | success at snapshot time | https://github.com/zlbdh/maintainer-harness/actions/runs/26864653122 |
+| Monitor artifact | success at snapshot time | `codex-readiness-report`, artifact `7376155107`, digest `sha256:4461f169bff85f82acd0d5c92f3a4e5cd4aeab2b956a703582b071687927e2d1` |
 | Public evidence link health | pass | `scripts/checks/check-public-evidence-links.ps1` checked 17 public URLs |
-| Public readiness | warn, no failures | `scripts/checks/check-public-ready.ps1` reported only the project-specific sensitive-pattern reminder |
-| Security posture | warn, no failures | `scripts/checks/check-security-posture.ps1` reported only the project-specific sensitive-pattern reminder |
+| Public readiness | pass | `scripts/checks/check-public-ready.ps1` includes the default high-confidence secret scan |
+| Security posture | pass | `scripts/checks/check-security-posture.ps1` includes the default high-confidence secret scan |
 | External feedback registry | pass | `docs/external-feedback-evidence.yaml` is valid and currently empty |
 
-The local `scripts/checks/measure-application-readiness.ps1 -PassThru` run
-succeeded for this snapshot and matched the token-backed GitHub Actions monitor
-score. This file records the measured commit, not necessarily the commit that
-last edited this Markdown file; documentation-only snapshot refreshes can leave
-the repository HEAD newer than the measured commit. If a future local anonymous
-GitHub API call is rate-limited, do not treat the repository as ready from local
-output alone; use the latest token-backed monitor artifact as the final
-pre-submit gate.
+The local `scripts/checks/measure-application-readiness.ps1 -PassThru` command
+was run first for this monitoring pass, but the local anonymous GitHub API
+request was rate-limited. This snapshot therefore uses the token-backed GitHub
+Actions monitor artifact for the score and public metrics. This file records
+the measured commit, not necessarily the commit that last edited this Markdown
+file; documentation-only snapshot refreshes can leave the repository HEAD newer
+than the measured commit. If a future local anonymous GitHub API call is
+rate-limited, do not treat the repository as ready from local output alone; use
+the latest token-backed monitor artifact as the final pre-submit gate.
 
 ## Hard Gates Still Missing
 

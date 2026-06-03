@@ -106,6 +106,18 @@ feedback-driven follow-up for the 90% submission gate.
 
 - Latest release anchor:
   https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
+- Latest readiness check after the cross-platform fallback:
+  `60/90` on commit `7604643f4cd97df97355a5046326790875bc2879`
+  at `2026-06-03T04:58:17.5335964Z`.
+- Harness validation:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26864633867
+- Pages deployment:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26864633435
+- Codex readiness monitor:
+  https://github.com/zlbdh/maintainer-harness/actions/runs/26864653122
+- Codex readiness monitor artifact:
+  `codex-readiness-report`, artifact `7376155107`, digest
+  `sha256:4461f169bff85f82acd0d5c92f3a4e5cd4aeab2b956a703582b071687927e2d1`.
 
 The continuation replaced the previous `-SkipSensitivePattern` CI posture with
 a default high-confidence secret-value scan in

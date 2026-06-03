@@ -7,6 +7,7 @@ param(
     [string]$GitHubToken = '',
     [string]$CommentsJsonPath = '',
     [string]$OutputDirectory = 'reports/readiness',
+    [switch]$AllowHtmlFallback,
     [switch]$PassThru
 )
 
@@ -36,6 +37,11 @@ function New-FeedbackQueueMarkdown {
     $lines.Add(('Repository: `{0}`' -f $CandidateReport.repository))
     $lines.Add(("Checked issues: {0}" -f (($CandidateReport.checked_issues | ForEach-Object { "#$_" }) -join ', ')))
     $lines.Add(('Candidate count: `{0}`' -f $CandidateReport.candidate_count))
+    $lines.Add(('Source: `{0}`' -f $CandidateReport.source))
+    if (-not [string]::IsNullOrWhiteSpace([string]$CandidateReport.note)) {
+        $lines.Add('')
+        $lines.Add([string]$CandidateReport.note)
+    }
     $lines.Add('')
     $lines.Add('Candidates are review tasks, not evidence. Do not mark a signal verified until the public URL has been inspected and the reviewer is not the repository owner or a bot.')
     $lines.Add('')
@@ -87,6 +93,9 @@ $finderArgs = @{
 
 if (-not [string]::IsNullOrWhiteSpace($CommentsJsonPath)) {
     $finderArgs.CommentsJsonPath = $CommentsJsonPath
+}
+if ($AllowHtmlFallback) {
+    $finderArgs.AllowHtmlFallback = $true
 }
 
 $candidateReport = & (Join-HarnessPath (Get-HarnessRepoRoot) 'scripts/checks/find-external-feedback-candidates.ps1') @finderArgs

@@ -143,6 +143,19 @@ non-owner candidates:
 .\scripts\checks\find-external-feedback-candidates.ps1
 ```
 
+If the local anonymous GitHub comments API is rate-limited, use the public HTML
+fallback as a discovery queue only:
+
+```powershell
+.\scripts\checks\find-external-feedback-candidates.ps1 -AllowHtmlFallback
+.\scripts\checks\write-external-feedback-review-queue.ps1 -AllowHtmlFallback
+```
+
+HTML fallback candidates must stay `pending` until a maintainer opens the
+public URL, confirms the reviewer is outside the author loop, and verifies the
+feedback content. The fallback is for not missing real comments during local
+rate limits; it is not a readiness shortcut.
+
 Before sending a new batch of review requests, verify that the public handoff
 still includes issue `#5`, issue `#6`, the current gate status, the feedback
 follow-up template, and the cross-platform demo commands:

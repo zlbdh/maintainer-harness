@@ -6,6 +6,7 @@ param(
     [string]$EvidencePath = 'docs/external-feedback-evidence.yaml',
     [string]$GitHubToken = '',
     [string]$CommentsJsonPath = '',
+    [switch]$AllowHtmlFallback,
     [switch]$PassThru
 )
 
@@ -125,6 +126,76 @@ function Get-IssueComments {
     return @($rows)
 }
 
+function ConvertFrom-HtmlJsonString {
+    param([string]$Value)
+
+    if ([string]::IsNullOrWhiteSpace($Value)) {
+        return ''
+    }
+
+    return [System.Text.RegularExpressions.Regex]::Unescape($Value).Trim()
+}
+
+function Get-RegexGroupValue {
+    param(
+        [string]$Text,
+        [string]$Pattern,
+        [int]$Group = 1
+    )
+
+    $match = [regex]::Match($Text, $Pattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
+    if (-not $match.Success) {
+        return ''
+    }
+
+    return $match.Groups[$Group].Value
+}
+
+function Get-IssueCommentsFromHtml {
+    param(
+        [string]$RepositoryName,
+        [int[]]$IssueNumbers
+    )
+
+    $rows = @()
+    foreach ($issueNumber in $IssueNumbers) {
+        $issueUrl = "https://github.com/$RepositoryName/issues/$issueNumber"
+        $html = (Invoke-WebRequest -Uri $issueUrl -UseBasicParsing -TimeoutSec 30).Content
+        $commentBlocks = [regex]::Matches($html, '\{"node":\{"__typename":"IssueComment".*?\},"cursor"', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+
+        foreach ($commentBlock in $commentBlocks) {
+            $block = $commentBlock.Value
+            $commentId = Get-RegexGroupValue -Text $block -Pattern '"databaseId":(\d+)'
+            $authorType = Get-RegexGroupValue -Text $block -Pattern '"issue":\{.*?\},"author":\{"__typename":"([^"]+)","login":"([^"]+)"' -Group 1
+            $login = Get-RegexGroupValue -Text $block -Pattern '"issue":\{.*?\},"author":\{"__typename":"([^"]+)","login":"([^"]+)"' -Group 2
+            $association = Get-RegexGroupValue -Text $block -Pattern '"authorAssociation":"([^"]*)"'
+            $commentUrl = ConvertFrom-HtmlJsonString (Get-RegexGroupValue -Text $block -Pattern '"url":"(https://github\.com/[^"]+#issuecomment-\d+)"')
+            $body = ConvertFrom-HtmlJsonString (Get-RegexGroupValue -Text $block -Pattern '"body":"((?:\\.|[^"\\])*)","bodyVersion"')
+            $createdAt = Get-RegexGroupValue -Text $block -Pattern '"createdAt":"([^"]+)"'
+
+            if ([string]::IsNullOrWhiteSpace($commentUrl) -and -not [string]::IsNullOrWhiteSpace($commentId)) {
+                $commentUrl = "https://github.com/$RepositoryName/issues/$issueNumber#issuecomment-$commentId"
+            }
+
+            $rows += [pscustomobject]@{
+                issue_number = $issueNumber
+                id = $commentId
+                user = [pscustomobject]@{
+                    login = $login
+                    type = $authorType
+                }
+                author_association = $association
+                html_url = $commentUrl
+                body = $body
+                created_at = $createdAt
+                source = 'github-html-fallback'
+            }
+        }
+    }
+
+    return @($rows)
+}
+
 function ConvertTo-CommandScalar {
     param([string]$Value)
 
@@ -181,7 +252,17 @@ foreach ($signal in $existingSignals) {
     }
 }
 
-$comments = @(Get-IssueComments -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers -FixturePath $CommentsJsonPath -Headers $headers)
+$usedHtmlFallback = $false
+try {
+    $comments = @(Get-IssueComments -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers -FixturePath $CommentsJsonPath -Headers $headers)
+} catch {
+    if ($AllowHtmlFallback -and [string]::IsNullOrWhiteSpace($CommentsJsonPath) -and ($_.Exception.Message -match 'rate limit|403')) {
+        $comments = @(Get-IssueCommentsFromHtml -RepositoryName $Repository -IssueNumbers $FeedbackIssueNumbers)
+        $usedHtmlFallback = $true
+    } else {
+        throw
+    }
+}
 $seen = @{}
 $candidates = @()
 
@@ -237,7 +318,8 @@ $result = [pscustomobject]@{
     checked_issues = @($FeedbackIssueNumbers)
     candidate_count = @($candidates).Count
     candidates = @($candidates)
-    note = 'Review each candidate before changing status to verified. Owner, bot, duplicate, and already-registered comments are excluded.'
+    source = $(if ($usedHtmlFallback) { 'github-html-fallback' } elseif ([string]::IsNullOrWhiteSpace($CommentsJsonPath)) { 'github-api' } else { 'fixture' })
+    note = $(if ($usedHtmlFallback) { 'HTML fallback candidates are discovery hints only. Review each public URL before registering evidence, and keep status pending until the reviewer and feedback are verified.' } else { 'Review each candidate before changing status to verified. Owner, bot, duplicate, and already-registered comments are excluded.' })
 }
 
 if ($PassThru) {

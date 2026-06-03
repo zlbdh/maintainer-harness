@@ -90,6 +90,7 @@ $supportEvidencePaths = @(
     @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' },
     @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' },
     @{ Check = 'feedback-evidence-lib'; Path = 'scripts\lib\HarnessFeedbackEvidence.ps1'; Detail = 'External feedback evidence parser exists.' },
+    @{ Check = 'public-evidence-link-check'; Path = 'scripts\checks\check-public-evidence-links.ps1'; Detail = 'Public evidence link checker exists.' },
     @{ Check = 'readiness-script'; Path = 'scripts\checks\measure-application-readiness.ps1'; Detail = 'Readiness measurement script exists.' },
     @{ Check = 'feedback-evidence-validator'; Path = 'scripts\checks\validate-external-feedback-evidence.ps1'; Detail = 'External feedback evidence validator exists.' },
     @{ Check = 'review-demo-runner'; Path = 'scripts\checks\run-review-demo.ps1'; Detail = 'One-command external review demo runner exists.' },
@@ -118,6 +119,13 @@ try {
     $findings.Add((New-AuditFinding -Status 'PASS' -Check 'external-feedback-evidence-validation' -Detail 'External feedback evidence registry validates.'))
 } catch {
     $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'external-feedback-evidence-validation' -Detail $_.Exception.Message))
+}
+
+try {
+    $publicEvidenceLinks = & (Join-HarnessPath $repoRoot 'scripts/checks/check-public-evidence-links.ps1') -PassThru
+    $findings.Add((New-AuditFinding -Status $publicEvidenceLinks.overall_status -Check 'public-evidence-links' -Detail "Public evidence link check returned $($publicEvidenceLinks.overall_status) across $($publicEvidenceLinks.checked_count) URLs."))
+} catch {
+    $findings.Add((New-AuditFinding -Status 'FAIL' -Check 'public-evidence-links' -Detail $_.Exception.Message))
 }
 
 if (-not [string]::IsNullOrWhiteSpace($SensitivePattern)) {

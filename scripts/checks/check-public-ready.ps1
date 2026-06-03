@@ -132,6 +132,7 @@ $requiredPublicPaths = @(
     'scripts\lib\HarnessPathScope.ps1',
     'scripts\checks\check-security-posture.ps1',
     'scripts\checks\write-application-audit.ps1',
+    'scripts\checks\check-public-evidence-links.ps1',
     'scripts\checks\measure-application-readiness.ps1',
     'scripts\checks\validate-external-feedback-evidence.ps1',
     'scripts\checks\run-review-demo.ps1',

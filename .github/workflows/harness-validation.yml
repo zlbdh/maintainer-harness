@@ -57,6 +57,10 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/check-public-ready.ps1 -SkipSensitivePattern
 
+      - name: Check public evidence links
+        shell: pwsh
+        run: ./scripts/checks/check-public-evidence-links.ps1
+
       - name: Validate external feedback evidence
         shell: pwsh
         run: ./scripts/checks/validate-external-feedback-evidence.ps1

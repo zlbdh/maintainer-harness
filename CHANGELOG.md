@@ -112,6 +112,9 @@ This project follows a simple date-based changelog until formal versioned releas
   targets for issue `#5` and issue `#6`.
 - Maintainer review, demo, and external validation handoffs now point reviewers
   to direct issue comment boxes for first-run and reviewability feedback.
+- Public evidence links now have a dedicated checker covering the project site,
+  external review page, latest release, pinned issues, and key raw evidence
+  files.
 
 ## 2026-06-01
 

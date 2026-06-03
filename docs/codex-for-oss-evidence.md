@@ -28,6 +28,7 @@ The application is positioned around maintainership value rather than popularity
 | Public dogfooding evidence | `docs/dogfooding-runs/2026-06-02-application-hardening.md` records the first Codex-assisted application hardening run, produced artifacts, validation gates, and remaining weak signals. |
 | External validation plan | `docs/external-validation-sprint.md` defines the honest path for turning weak external usage into public maintainer feedback, first-run reports, and star-safe discovery signals. |
 | Public launch readiness | `docs/index.html`, `docs/external-review.html`, the GitHub Pages project site at `https://zlbdh.github.io/maintainer-harness/`, `docs/demo.md`, `docs/share.md`, `docs/launch-kit.md`, `docs/launch-log.md`, `docs/codex-for-oss-submission-readiness.md`, the `v0.1.15` external review path release, pinned issues `#5`, `#6`, and `#7`, feedback-specific issue templates, labels, and the public profile README at `https://github.com/zlbdh/zlbdh` make the repository easier to try, share, critique, and contribute to without artificial star growth. |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1` verifies that the project site, external review page, release, pinned issues, and key raw evidence files remain reachable before the application evidence is used. |
 | Cross-platform validation | `.github/workflows/harness-validation.yml`, `scripts/lib/HarnessRepoTools.ps1`, and `docs/cross-platform-validation.md` keep the public validation gate runnable on Windows, Ubuntu, and macOS while clearly limiting worker orchestration claims until dogfooding feedback arrives. |
 
 ## Why This Is Useful Despite Early Adoption
@@ -73,6 +74,7 @@ The final application should only be submitted after:
 
 ```powershell
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
+.\scripts\checks\check-public-evidence-links.ps1
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern "<legacy-name>|<private-remote>|<local-path>|<private-role>"
 ```
 

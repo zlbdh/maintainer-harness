@@ -60,6 +60,7 @@ Run these from the repository root before submitting:
 ```powershell
 $pattern = '<private-name>|<private-remote>|<local-path>|<private-role>'
 .\scripts\checks\check-public-ready.ps1 -SensitivePattern $pattern
+.\scripts\checks\check-public-evidence-links.ps1
 .\scripts\checks\check-security-posture.ps1 -SensitivePattern $pattern
 .\scripts\checks\write-application-audit.ps1 -SensitivePattern $pattern
 .\scripts\checks\measure-application-readiness.ps1

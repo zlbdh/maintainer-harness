@@ -40,6 +40,16 @@ https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 如果对方不愿公开，尊重这个选择。私聊内容可以用来改文档或脚本，但不要写进公开 evidence 计数。
 
+## 本地跟进 tracker
+
+如果已经发给多位真实朋友或维护者，可以生成一个本地 ignored 的跟进表，只记录状态，不自动联系任何人，也不登记 evidence：
+
+```powershell
+.\scripts\checks\write-reviewer-followup-tracker.ps1
+```
+
+这个 tracker 用 `not-sent`、`sent`、`read`、`ran-demo`、`private-feedback`、`public-comment`、`feedback-follow-up`、`declined`、`no-response` 区分状态。只有对方自己发布了可复核的公开 URL 后，才进入候选扫描和证据验证；私聊反馈、owner 评论、小号或受控账号仍然不计数。
+
 ## 如果朋友公开评论了
 
 1. 打开评论链接，确认是直接 issue comment URL，形如：

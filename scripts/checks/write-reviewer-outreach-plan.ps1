@@ -69,6 +69,7 @@ $links = [ordered]@{
     ChinesePath = 'https://zlbdh.github.io/maintainer-harness/external-review.html#zh-review'
     ReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     FriendGuideZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
+    FriendOnepagerZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new'
     FollowUpTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md'
@@ -119,6 +120,7 @@ $lines = @(
     "- Chinese reviewer path: $($links.ChinesePath)",
     "- Review request packet: $($links.ReviewRequest)",
     "- Chinese friend guide: $($links.FriendGuideZh)",
+    "- Chinese one-page friend tutorial: $($links.FriendOnepagerZh)",
     "- Issue #5 reviewability target: $($links.FeedbackIssue)",
     "- Issue #6 first-run target: $($links.FirstRunIssue)",
     "- Feedback follow-up template: $($links.FollowUpTemplate)",

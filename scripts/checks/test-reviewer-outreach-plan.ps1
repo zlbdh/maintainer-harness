@@ -40,6 +40,9 @@ try {
     Assert-Condition -Condition (-not [bool]$result.evidence_policy.self_owned_alternate_accounts_count) -Message 'Self-owned alternate accounts must not count.'
     Assert-Condition -Condition (-not [bool]$result.evidence_policy.private_feedback_counts) -Message 'Private feedback must not count.'
     Assert-Condition -Condition ([bool]$result.evidence_policy.public_verified_url_required) -Message 'Counting should require a verified public URL.'
+    $onepagerLink = $result.links.PSObject.Properties['FriendOnepagerZh']
+    Assert-Condition -Condition ($null -ne $onepagerLink) -Message 'Outreach plan should expose the one-page Chinese friend tutorial link.'
+    Assert-Condition -Condition ([string]$onepagerLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md') -Message 'Outreach plan should point to the public one-page Chinese friend tutorial.'
 
     $slots = @($result.slots)
     Assert-Condition -Condition ($slots.Count -eq 5) -Message "Expected 5 slots, got $($slots.Count)."
@@ -58,6 +61,7 @@ try {
         'does not register evidence',
         'Self-owned alternate accounts do not count',
         'Private feedback can improve the project, but it does not count',
+        'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md',
         'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new',
         'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new',
         'docs/external-feedback-evidence.yaml'

@@ -320,6 +320,7 @@ $requiredPublicText = @(
     @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'automatic_contact = $false' },
     @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'creates_engagement = $false' },
     @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'registers_evidence = $false' },
+    @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md' },
     @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'Self-owned alternate accounts do not count' },
     @{ Path = 'scripts\checks\write-reviewer-outreach-plan.ps1'; Text = 'Private feedback can improve the project, but it does not count' },
     @{ Path = 'scripts\checks\test-reviewer-outreach-plan.ps1'; Text = 'Outreach plan must not contact reviewers automatically' },

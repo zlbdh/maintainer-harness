@@ -113,6 +113,7 @@ function Get-OutreachMessageText {
                 '',
                 "入口页：$($Links['ExternalReview'])",
                 "一页中文教程：$($Links['FriendOnepagerZh'])",
+                "反馈回来以后怎么判断能不能计数：$($Links['FriendFeedbackRecoveryZh'])",
                 '',
                 '你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说。失败反馈比空泛夸奖更有用。'
             ) -join [Environment]::NewLine
@@ -156,6 +157,7 @@ $links = [ordered]@{
     ReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     FriendGuideZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
     FriendOnepagerZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
+    FriendFeedbackRecoveryZh = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md'
     CodespacesQuickstart = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     CurrentReadinessSnapshot = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
@@ -210,6 +212,7 @@ $lines = @(
     "- Review request packet: $($links.ReviewRequest)",
     "- Chinese friend guide: $($links.FriendGuideZh)",
     "- Chinese one-page friend tutorial: $($links.FriendOnepagerZh)",
+    "- Chinese friend feedback recovery: $($links.FriendFeedbackRecoveryZh)",
     "- Codespaces quickstart: $($links.CodespacesQuickstart)",
     "- Current readiness snapshot: $($links.CurrentReadinessSnapshot)",
     "- Issue #5 reviewability target: $($links.FeedbackIssue)",

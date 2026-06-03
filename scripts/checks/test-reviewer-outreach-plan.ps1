@@ -43,6 +43,9 @@ try {
     $onepagerLink = $result.links.PSObject.Properties['FriendOnepagerZh']
     Assert-Condition -Condition ($null -ne $onepagerLink) -Message 'Outreach plan should expose the one-page Chinese friend tutorial link.'
     Assert-Condition -Condition ([string]$onepagerLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md') -Message 'Outreach plan should point to the public one-page Chinese friend tutorial.'
+    $recoveryLink = $result.links.PSObject.Properties['FriendFeedbackRecoveryZh']
+    Assert-Condition -Condition ($null -ne $recoveryLink) -Message 'Outreach plan should expose the Chinese friend feedback recovery link.'
+    Assert-Condition -Condition ([string]$recoveryLink.Value -eq 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md') -Message 'Outreach plan should point to the public Chinese friend feedback recovery guide.'
     $codespacesLink = $result.links.PSObject.Properties['CodespacesQuickstart']
     Assert-Condition -Condition ($null -ne $codespacesLink) -Message 'Outreach plan should expose the Codespaces quickstart link.'
     Assert-Condition -Condition ([string]$codespacesLink.Value -eq 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1') -Message 'Outreach plan should point to the Codespaces quickstart.'
@@ -69,6 +72,7 @@ try {
         'Self-owned alternate accounts do not count',
         'Private feedback can improve the project, but it does not count',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md',
+        'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md',
         'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1',
         'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md',
         'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new',
@@ -77,6 +81,7 @@ try {
         'do not bulk-send',
         'not asking for a star',
         '能不能帮我真实看一下这个开源项目？不是让你直接 star',
+        '反馈回来以后怎么判断能不能计数',
         'docs/external-feedback-evidence.yaml'
     )) {
         Assert-Condition -Condition $markdown.Contains($text) -Message "Markdown outreach plan is missing: $text"

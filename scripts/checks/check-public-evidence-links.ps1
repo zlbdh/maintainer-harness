@@ -172,6 +172,11 @@ $links = @(
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'
     },
     [pscustomobject]@{
+        Check = 'friend-feedback-recovery-zh'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-feedback-recovery-zh.md'
+        RequiredText = '私聊反馈不能冒充公开证据'
+    },
+    [pscustomobject]@{
         Check = 'codespaces-first-run-guide'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codespaces-first-run.md'
         RequiredText = 'https://codespaces.new/zlbdh/maintainer-harness?quickstart=1'

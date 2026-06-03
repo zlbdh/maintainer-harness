@@ -16,6 +16,12 @@
 
 最重要的是：不要催 star，不要暗示“帮我点一下就行”。要问“哪里不清楚、哪里不可信、哪里跑不起来”。
 
+如果对方先私聊回复，或者公开评论后需要判断能不能计数，按反馈回收说明处理：
+
+```text
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md
+```
+
 如果你想从本地生成并复制一条中文邀请消息，可以在仓库里运行：
 
 ```powershell
@@ -209,3 +215,13 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshoo
 - 不要复制模板后不改就发
 
 这次需要的是真实外部看过、试过、想过之后的反馈。
+
+## 8. 反馈回来以后怎么办
+
+如果朋友只私聊回复，这条反馈可以用来改项目，但不要当公开外部证据计数。请先征得对方同意，让对方自己把一个简短版本发到 issue `#5` 或 issue `#6`。
+
+如果朋友公开评论了，请打开直接评论链接，确认作者、内容、敏感信息和 `#issuecomment-...` 锚点，再按反馈回收说明登记：
+
+```text
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recovery-zh.md
+```

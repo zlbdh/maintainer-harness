@@ -9,29 +9,31 @@ still missing.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T23:22:47.9889247Z` |
+| Checked at UTC | `2026-06-03T23:30:27.5872793Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `e435522ea3b4c1d42edf1aa6970047f8413eac92` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` attempted, then public `scripts/checks/write-public-readiness-observation.ps1 -PassThru` fallback |
-| Readiness score | last API-backed `60/90` hard-gate state; latest local API check was rate-limited |
+| observed main commit | `4b30a585e75da4535d5b4413128eaced2a5790ba` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` |
+| Readiness score | API-backed `60/90` hard-gate state |
 | Target score | `90` |
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest API-Backed Measurement And Current Observation
 
-The latest local monitoring pass attempted
+The latest local monitoring pass completed
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
-the submission gate, but anonymous GitHub API access was rate-limited
-(`remaining=0`, `reset_utc=2026-06-03T23:39:27Z`). This fallback snapshot is
-therefore not form-submission evidence. The latest successful API-backed state
-remains `60/90`, with `ready_for_form_submission=false`, because the
-external-signal hard gates are missing. The token-backed Codex readiness
-monitor completed successfully for observed main commit
-`e435522ea3b4c1d42edf1aa6970047f8413eac92`.
+the submission gate. It returned an API-backed `60/90`, with
+`ready_for_form_submission=false`, because the external-signal hard gates are
+missing. A follow-up anonymous API scan for additional feedback candidates then
+hit the local rate limit (`remaining=0`,
+`reset_utc=2026-06-03T23:39:27Z`), so the later public fallback observation is
+not form-submission evidence. The token-backed Codex readiness monitor
+completed successfully for observed main commit
+`4b30a585e75da4535d5b4413128eaced2a5790ba`.
 
-Use the token-backed artifact or a fresh authenticated
-`measure-application-readiness.ps1` run before any form submission decision.
+Use the token-backed artifact or a fresh authenticated/API-backed
+`measure-application-readiness.ps1` run immediately before any form submission
+decision.
 
 | Metric | API-backed value |
 | --- | ---: |
@@ -53,7 +55,7 @@ The API-backed issue comment breakdown was:
 | `#6` | 0 |
 | `#7` | 0 |
 
-The supporting public fallback observation at `2026-06-03T23:22:47Z` found 0
+The supporting public fallback observation at `2026-06-03T23:33:47Z` found 0
 stars, 0 forks, 0 watchers, 3 open issues, and 0 external feedback candidates.
 Public fallback observations are discovery and transparency hints only; they
 are not authoritative for form submission.
@@ -61,16 +63,16 @@ are not authoritative for form submission.
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`e435522ea3b4c1d42edf1aa6970047f8413eac92` show successful main validation,
+`4b30a585e75da4535d5b4413128eaced2a5790ba` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919207597 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919207056 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919248738 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919452473 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919451701 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919508359 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification
@@ -86,8 +88,8 @@ These checks passed in the same monitoring pass:
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
 | External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 0 signals and passed the empty registry check |
-| External feedback queue | `scripts/checks/find-external-feedback-candidates.ps1 -AllowHtmlFallback -PassThru` found 0 candidates |
-| Public fallback observation | `scripts/checks/write-public-readiness-observation.ps1 -PassThru` recorded the current main run IDs and 0 public external candidates, but remained `authoritative_for_submission=false` |
+| External feedback queue | a follow-up anonymous API candidate scan hit GitHub rate limits after the API-backed readiness measurement; the public fallback observation still found 0 candidates and remained non-authoritative |
+| Public fallback observation | `scripts/checks/write-public-readiness-observation.ps1 -PassThru` recorded latest public run IDs including `26919508359`, `26919452473`, and `26919451701`, and 0 public external candidates, but remained `authoritative_for_submission=false` |
 | Chinese issue chooser route | `.github/ISSUE_TEMPLATE/config.yml` now routes Chinese 3-minute feedback and 10-minute first-run reports to pinned public comment targets |
 | Form submission gate tests | `scripts/checks/test-form-submission-ready.ps1 -PassThru` confirmed the not-ready and score-mismatch fixtures block submission |
 

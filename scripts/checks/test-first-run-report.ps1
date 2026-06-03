@@ -62,6 +62,8 @@ try {
     Assert-Condition -Condition ([string]$zhResult.comment_language -eq 'zh') -Message 'Chinese first-run report should record the selected comment language.'
     Assert-Condition -Condition ([string]$zhResult.selected_comment_markdown).Contains('我从干净 checkout 跑了 Maintainer Harness demo') -Message 'Chinese first-run report should select the Chinese issue #6 comment block.'
     Assert-Condition -Condition ([string]$zhResult.clipboard_message).Contains('中文') -Message 'Chinese first-run report clipboard guidance should mention the Chinese comment block.'
+    Assert-Condition -Condition ([string]$zhResult.clipboard_message).Contains('https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new') -Message 'Clipboard fallback guidance should include the manual issue #6 comment target.'
+    Assert-Condition -Condition ([string]$zhResult.open_comment_target_message).Contains('https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new') -Message 'Open-target fallback guidance should include the manual issue #6 comment target.'
 
     $demoResult = & $demoScript `
         -OutPath $demoReportPath `
@@ -70,6 +72,7 @@ try {
         -PassThru
 
     Assert-Condition -Condition ([string]$demoResult.comment_language -eq 'zh') -Message 'Review demo runner should pass the selected Chinese comment language through.'
+    Assert-Condition -Condition ([string]$demoResult.open_comment_target_message).Contains('https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new') -Message 'Review demo runner should expose the manual issue #6 target even when browser opening is not requested.'
 
     $testResult = [pscustomobject]@{
         overall_status = 'PASS'

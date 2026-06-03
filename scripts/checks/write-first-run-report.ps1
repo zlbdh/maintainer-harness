@@ -100,13 +100,14 @@ function Invoke-FirstRunStep {
 function Copy-FirstRunCommentToClipboard {
     param(
         [string]$CommentMarkdown,
-        [string]$LanguageLabel = 'English'
+        [string]$LanguageLabel = 'English',
+        [string]$CommentTargetUrl = ''
     )
 
     if ($null -eq (Get-Command -Name Set-Clipboard -ErrorAction SilentlyContinue)) {
         return [pscustomobject]@{
             status = 'unavailable'
-            message = "Set-Clipboard is not available in this shell. The $LanguageLabel issue #6 comment block was not copied."
+            message = "Set-Clipboard is not available in this shell. The $LanguageLabel issue #6 comment block was not copied. Copy it from the generated report and post manually to $CommentTargetUrl."
         }
     }
 
@@ -119,7 +120,7 @@ function Copy-FirstRunCommentToClipboard {
     } catch {
         return [pscustomobject]@{
             status = 'failed'
-            message = $_.Exception.Message
+            message = "$($_.Exception.Message) Copy the $LanguageLabel issue #6 comment block from the generated report and post manually to $CommentTargetUrl."
         }
     }
 }
@@ -138,7 +139,7 @@ function Open-FirstRunCommentTarget {
     } catch {
         return [pscustomobject]@{
             status = 'failed'
-            message = $_.Exception.Message
+            message = "$($_.Exception.Message) Open the issue #6 comment target manually: $CommentTargetUrl."
         }
     }
 }
@@ -304,11 +305,11 @@ $report | Add-Member -NotePropertyName selected_comment_markdown -NotePropertyVa
 
 $clipboardResult = [pscustomobject]@{
     status = 'not-requested'
-    message = "Run with -CopyCommentToClipboard to copy the $languageLabel issue #6 comment block."
+    message = "Run with -CopyCommentToClipboard to copy the $languageLabel issue #6 comment block, or copy it from the generated report and post manually to $($report.comment_target_url)."
 }
 
 if ($CopyCommentToClipboard) {
-    $clipboardResult = Copy-FirstRunCommentToClipboard -CommentMarkdown $report.selected_comment_markdown -LanguageLabel $languageLabel
+    $clipboardResult = Copy-FirstRunCommentToClipboard -CommentMarkdown $report.selected_comment_markdown -LanguageLabel $languageLabel -CommentTargetUrl $report.comment_target_url
 }
 
 $report | Add-Member -NotePropertyName clipboard_status -NotePropertyValue $clipboardResult.status -Force
@@ -316,7 +317,7 @@ $report | Add-Member -NotePropertyName clipboard_message -NotePropertyValue $cli
 
 $openTargetResult = [pscustomobject]@{
     status = 'not-requested'
-    message = 'Run with -OpenCommentTarget to open the issue #6 comment target.'
+    message = "Run with -OpenCommentTarget to open the issue #6 comment target, or open it manually: $($report.comment_target_url)."
 }
 
 if ($OpenCommentTarget) {

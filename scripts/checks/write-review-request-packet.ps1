@@ -21,6 +21,7 @@ $links = [ordered]@{
     ProjectSite = 'https://zlbdh.github.io/maintainer-harness/'
     ExternalReview = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
+    PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     ReviewKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md'
     ReviewabilityExample = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md'
     SourceRepo = 'https://github.com/zlbdh/maintainer-harness'
@@ -114,6 +115,7 @@ $lines = @(
     "- Project site: $($links.ProjectSite)",
     "- External review path: $($links.ExternalReview)",
     "- External review templates: $($links.ExternalReviewTemplates)",
+    "- Public review request packet: $($links.PublicReviewRequest)",
     "- Review kit: $($links.ReviewKit)",
     "- Worker output reviewability: $($links.ReviewabilityExample)",
     "- Source repo: $($links.SourceRepo)",

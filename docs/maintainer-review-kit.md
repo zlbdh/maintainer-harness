@@ -12,6 +12,9 @@ https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 Current gate status is public here:
 https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
 
+Public review request packet:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
+
 That page also includes copy-ready comment templates for issue `#5` and issue
 `#6`. Please use them only after inspecting the project or running the demo.
 

@@ -10,6 +10,10 @@ https://zlbdh.github.io/maintainer-harness/
 
 https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
+## Public Review Request
+
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
+
 ## One-Liner
 
 Maintainer Harness turns agent work into scoped change packets, validation evidence, and release-ready review trails.
@@ -64,6 +68,7 @@ cd maintainer-harness
 - Source repo: https://github.com/zlbdh/maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
+- Public review request packet: https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 - Copy-ready review comments: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Worker output reviewability: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review

@@ -258,13 +258,29 @@ focused guard for the public reviewer path. It checks that the external review
 page, maintainer review kit, share page, launch kit, and generated review
 request packet still include issue `#5`, issue `#6`, the current gate status,
 the feedback follow-up template, Windows and `pwsh` demo commands, and
-star-safe language. The first run found that `docs/maintainer-review-kit.md`
-linked the external review page but not the `#templates` copy-ready anchor, so
-the handoff was tightened before wiring the check into CI.
+star-safe wording.
 
-This reduces friction for real outside reviewers. It does not create external
-comments, outside first-run reports, real stars, or feedback-driven follow-up
-artifacts for the 90% submission gate.
+The first run found that `docs/maintainer-review-kit.md` linked the external
+review page but not the `#templates` copy-ready anchor, so the handoff was
+tightened before wiring the check into CI.
+
+This reduces reviewer-link drift while keeping the score honest. It does not
+count as an external comment, outside first-run report, real star, or
+feedback-driven follow-up for the 90% submission gate.
+
+### Continuation: public review request packet
+
+The continuation added `docs/review-request.md`, a public copy-ready packet for
+asking real maintainers, devtools builders, or security-minded reviewers for a
+five-minute critique. The packet links the external review page, issue `#5`,
+issue `#6`, current gate status, the feedback follow-up template, and the
+cross-platform demo commands while repeating the star-safe rules.
+
+The external review page, project site, maintainer review kit, share page,
+launch kit, generated request packet, and public readiness gate now link or
+check this public packet. This lowers the friction of real outreach, but it
+does not count as an external comment, outside first-run report, real star, or
+feedback-driven follow-up for the 90% submission gate.
 
 ## Validation
 
@@ -272,7 +288,8 @@ artifacts for the 90% submission gate.
   scan.
 - Security posture check: PASS, including the default high-confidence secret
   scan.
-- Public evidence link checker: PASS, 22 public URLs.
+- Public evidence link checker: PASS, 24 public URLs after the public review
+  request packet is published.
 - Latest main Harness validation: success.
 - Latest main Pages deployment: success.
 - Latest Codex readiness monitor: success.

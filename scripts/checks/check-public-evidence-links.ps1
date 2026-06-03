@@ -119,6 +119,11 @@ $links = @(
         RequiredText = 'Maintainer Review Kit'
     },
     [pscustomobject]@{
+        Check = 'public-review-request'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/review-request.md'
+        RequiredText = 'Maintainer Harness Review Request'
+    },
+    [pscustomobject]@{
         Check = 'worker-output-reviewability'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/worker-output-reviewability.md'
         RequiredText = 'Worker Output Reviewability'

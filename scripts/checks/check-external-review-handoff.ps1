@@ -52,6 +52,7 @@ $findings = New-Object System.Collections.Generic.List[object]
 
 $links = [ordered]@{
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
+    PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new'
     CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
@@ -69,6 +70,7 @@ $fileRequirements = @(
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
             $links.FeedbackFollowUpTemplate,
+            $links.PublicReviewRequest,
             $windowsDemoCommand,
             $unixDemoCommand,
             'Stars help discovery only after inspection'
@@ -78,6 +80,7 @@ $fileRequirements = @(
         Path = 'docs\maintainer-review-kit.md'
         Text = @(
             $links.ExternalReviewTemplates,
+            $links.PublicReviewRequest,
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
@@ -90,6 +93,7 @@ $fileRequirements = @(
         Path = 'docs\share.md'
         Text = @(
             $links.ExternalReviewTemplates,
+            $links.PublicReviewRequest,
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
@@ -105,6 +109,7 @@ $fileRequirements = @(
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.FeedbackFollowUpTemplate,
+            $links.PublicReviewRequest,
             $windowsDemoCommand,
             $unixDemoCommand,
             'Do not buy stars'
@@ -114,6 +119,7 @@ $fileRequirements = @(
         Path = 'scripts\checks\write-review-request-packet.ps1'
         Text = @(
             $links.ExternalReviewTemplates,
+            $links.PublicReviewRequest,
             $links.FeedbackIssue,
             $links.FirstRunIssue,
             $links.CurrentGateStatus,
@@ -135,7 +141,7 @@ try {
     if ((Test-Path -LiteralPath $packet.path -PathType Leaf) -and ([string]$packet.path -eq $packetPath)) {
         $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet' -Detail "Generated review request packet at $packetPath"))
         $packetContent = Get-Content -LiteralPath $packetPath -Raw
-        foreach ($text in @($links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand)) {
+        foreach ($text in @($links.PublicReviewRequest, $links.FeedbackIssue, $links.FirstRunIssue, $links.CurrentGateStatus, $links.FeedbackFollowUpTemplate, $windowsDemoCommand, $unixDemoCommand)) {
             if ($packetContent.Contains($text)) {
                 $findings.Add((New-HandoffFinding -Status 'PASS' -Check 'generated-packet-text' -Detail "Generated packet includes $text"))
             } else {

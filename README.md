@@ -12,6 +12,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **External review path:** https://zlbdh.github.io/maintainer-harness/external-review.html
 
+**Public review request:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
+
 **Reviewer kit:** if you have five minutes, use
 `docs/maintainer-review-kit.md` to inspect the workflow shape, run the clean
 demo, or leave public feedback.
@@ -118,6 +120,9 @@ If you want a local packet for asking maintainers to review the project:
 ```powershell
 .\scripts\checks\write-review-request-packet.ps1
 ```
+
+For a public copy that can be sent without generating a local file, use
+`docs/review-request.md`.
 
 ## Why This Exists
 

@@ -127,6 +127,16 @@ $links = @(
         Check = 'review-request-packet-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-review-request-packet.ps1'
         RequiredText = 'ExternalReviewTemplates'
+    },
+    [pscustomobject]@{
+        Check = 'codex-readiness-monitor-workflow'
+        Url = 'https://github.com/zlbdh/maintainer-harness/actions/workflows/codex-readiness-monitor.yml'
+        RequiredText = ''
+    },
+    [pscustomobject]@{
+        Check = 'codex-readiness-monitor-source'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/.github/workflows/codex-readiness-monitor.yml'
+        RequiredText = 'workflow_run:'
     }
 )
 

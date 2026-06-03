@@ -23,6 +23,8 @@ This project follows a simple date-based changelog until formal versioned releas
 - Codex readiness monitor now also runs after Harness validation or Pages
   deployment completes, giving API-limited local checks a post-CI token-backed
   readiness artifact.
+- Public evidence link checks now verify the Codex readiness monitor workflow
+  page and raw workflow source.
 
 ## 2026-06-02
 

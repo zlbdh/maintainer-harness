@@ -94,6 +94,11 @@ $links = @(
         RequiredText = ''
     },
     [pscustomobject]@{
+        Check = 'current-gate-status-comment'
+        Url = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
+        RequiredText = 'Maintainer dogfooding update'
+    },
+    [pscustomobject]@{
         Check = 'readiness-scorecard'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codex-for-oss-90-scorecard.md'
         RequiredText = '90% Readiness Scorecard'
@@ -131,7 +136,7 @@ $links = @(
     [pscustomobject]@{
         Check = 'review-request-packet-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-review-request-packet.ps1'
-        RequiredText = 'ExternalReviewTemplates'
+        RequiredText = 'CurrentGateStatus'
     },
     [pscustomobject]@{
         Check = 'codex-readiness-monitor-workflow'

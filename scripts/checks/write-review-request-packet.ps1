@@ -27,6 +27,8 @@ $links = [ordered]@{
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
     FirstRunIssue = 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new'
     FollowUpIssue = 'https://github.com/zlbdh/maintainer-harness/issues/7'
+    CurrentGateStatus = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
+    CurrentReadinessSnapshot = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/codex-for-oss-current-readiness.md'
     FirstRunTemplate = 'https://github.com/zlbdh/maintainer-harness/issues/new?template=first_run_feedback.md'
 }
 
@@ -45,6 +47,9 @@ $($links.ExternalReviewTemplates)
 
 Worker output example:
 $($links.ReviewabilityExample)
+
+Current gate status:
+$($links.CurrentGateStatus)
 
 The most useful feedback is one concrete answer:
 What evidence would make an agent worker output reviewable enough for you to
@@ -114,6 +119,8 @@ $lines = @(
     "- Feedback issue: $($links.FeedbackIssue)",
     "- First-run issue: $($links.FirstRunIssue)",
     "- Follow-up issue: $($links.FollowUpIssue)",
+    "- Current gate status: $($links.CurrentGateStatus)",
+    "- Current readiness snapshot: $($links.CurrentReadinessSnapshot)",
     "- First-run template: $($links.FirstRunTemplate)",
     '',
     '## Who Should Receive This',
@@ -133,6 +140,7 @@ $lines = @(
     '- Use issue `#5` for reviewability feedback after inspecting docs, examples, or worker evidence.',
     '- Use issue `#6` for a first-run report after running the demo from a clean checkout.',
     '- Use issue `#7`, a commit, or a release note only after feedback creates a concrete follow-up.',
+    '- Use the current gate status link to see which hard external-signal gaps are still open before commenting.',
     '',
     '## Outside Reviewer Action Path',
     '',

@@ -6,6 +6,9 @@ critique. The goal is real feedback, not artificial engagement.
 For a web-first handoff, use:
 https://zlbdh.github.io/maintainer-harness/external-review.html
 
+Current gate status is public here:
+https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155
+
 That page also includes copy-ready comment templates for issue `#5` and issue
 `#6`. Please use them only after inspecting the project or running the demo.
 
@@ -16,8 +19,8 @@ To generate a local copy-paste request packet, run:
 ```
 
 The generated packet includes the external review templates, issue `#5`,
-issue `#6`, and issue `#7` so reviewers can choose the shortest public feedback
-path.
+issue `#6`, issue `#7`, and the current readiness gate status so reviewers can
+choose the shortest public feedback path.
 
 ## Reviewer Fit
 

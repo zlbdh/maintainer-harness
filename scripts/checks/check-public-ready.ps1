@@ -76,6 +76,7 @@ $requiredPublicPaths = @(
     'docs\codex-for-oss-current-readiness.md',
     'docs\external-feedback-evidence.yaml',
     'docs\dogfooding-plan.md',
+    'docs\dogfooding-runs\2026-06-03-readiness-transparency.md',
     'docs\external-validation-sprint.md',
     'docs\maintainer-review-kit.md',
     'docs\worker-output-reviewability.md',

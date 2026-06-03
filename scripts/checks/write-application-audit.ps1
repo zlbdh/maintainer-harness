@@ -88,6 +88,7 @@ $supportEvidencePaths = @(
     @{ Check = 'worker-output-reviewability'; Path = 'docs\worker-output-reviewability.md'; Detail = 'Worker output reviewability example exists.' },
     @{ Check = 'redaction-patterns'; Path = 'docs\security\redaction-patterns.md'; Detail = 'Validation report redaction guide exists.' },
     @{ Check = 'dogfooding-plan'; Path = 'docs\dogfooding-plan.md'; Detail = 'Public dogfooding plan exists.' },
+    @{ Check = 'readiness-transparency-run'; Path = 'docs\dogfooding-runs\2026-06-03-readiness-transparency.md'; Detail = 'Readiness transparency dogfooding run exists.' },
     @{ Check = 'codex-security-overview'; Path = 'docs\security\codex-security-project-overview.md'; Detail = 'Paste-ready Codex Security project overview exists.' },
     @{ Check = 'codex-security-review-pass'; Path = 'docs\security\codex-security-review-pass-2026-06-02.md'; Detail = 'First Codex Security review pass exists.' },
     @{ Check = 'feedback-evidence-lib'; Path = 'scripts\lib\HarnessFeedbackEvidence.ps1'; Detail = 'External feedback evidence parser exists.' },

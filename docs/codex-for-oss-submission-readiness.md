@@ -23,6 +23,7 @@ This checklist records the public evidence that supports the Maintainer Harness 
 | Current readiness snapshot | `docs/codex-for-oss-current-readiness.md` |
 | Worker output reviewability example | `docs/worker-output-reviewability.md` |
 | First public dogfooding run | `docs/dogfooding-runs/2026-06-02-application-hardening.md` |
+| Readiness transparency dogfooding run | `docs/dogfooding-runs/2026-06-03-readiness-transparency.md` |
 | External validation sprint | `docs/external-validation-sprint.md` |
 | Demo path | `docs/demo.md` |
 | Cross-platform validation | `docs/cross-platform-validation.md` |

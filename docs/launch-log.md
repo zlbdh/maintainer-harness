@@ -40,6 +40,7 @@ Track public launch actions here. The goal is to learn from real maintainer feed
 | 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.13 | Published | Release anchor for worker-output reviewability and readiness monitoring. | Use as the newest application evidence anchor. |
 | 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.14 | Published | Release anchor for the one-command external review demo. | Use as the newest application evidence anchor. |
 | 2026-06-03 | GitHub release | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.15 | Published | Release anchor for the external review action page. | Use as the newest application evidence anchor. |
+| 2026-06-03 | Readiness transparency run | https://github.com/zlbdh/maintainer-harness/blob/main/docs/dogfooding-runs/2026-06-03-readiness-transparency.md | Published | Current readiness score, public metrics, link health, CI/Pages timing, and missing external gates are recorded without counting owner comments as feedback. | Use this as the public status trail while waiting for real external signals. |
 | TBD | X / Twitter | TBD | Planned | Use `docs/share.md` or `docs/launch-kit.md`. | Record comments and reposts. |
 | TBD | LinkedIn | TBD | Planned | Use `docs/launch-kit.md`. | Record maintainer feedback. |
 | TBD | Show HN | TBD | Planned | Submit only when available to reply. | Convert useful feedback into issues. |

@@ -9,32 +9,26 @@ still missing.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-03T22:12:42.8869524Z` |
+| Checked at UTC | `2026-06-03T22:39:31.1568988Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `0f903e676ba987ed22f09800b9d2ce108fc25ce0` |
-| Source command | local `scripts/checks/write-public-readiness-observation.ps1 -PassThru` after the local anonymous GitHub API readiness check hit rate limits |
-| Readiness score | last API-backed `60/90` hard-gate state; current public fallback is non-authoritative |
+| observed main commit | `68ed68cce5e2383c0df78532d4c74bcb3ff6164e` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` |
+| Readiness score | API-backed `60/90` hard-gate state |
 | Target score | `90` |
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest API-Backed Measurement And Current Observation
 
-The latest local monitoring pass still started with
+The latest local monitoring pass ran
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
-the submission gate, but the anonymous GitHub API limit was exhausted during
-the post-commit recheck. The failing request reported
-`remaining=0` and `reset_utc=2026-06-03T22:36:54.0000000Z`, so the local
-post-commit fallback observation must not be treated as form-submission
-evidence.
+the submission gate. The API-backed result is still `60/90`, with
+`ready_for_form_submission=false`, because the external-signal hard gates are
+missing. The token-backed Codex readiness monitor also completed successfully
+for observed main commit `68ed68cce5e2383c0df78532d4c74bcb3ff6164e`.
 
-The last completed API-backed local measurement before that limit window was
-still `60/90`, with `ready_for_form_submission=false`. The token-backed
-Codex readiness monitor also completed successfully for current main commit
-`0f903e676ba987ed22f09800b9d2ce108fc25ce0`, but its artifact was not
-anonymously downloadable during this pass. Use the token-backed artifact or a
-fresh authenticated `measure-application-readiness.ps1` run before any form
-submission decision.
+Use the token-backed artifact or a fresh authenticated
+`measure-application-readiness.ps1` run before any form submission decision.
 
 | Metric | API-backed value |
 | --- | ---: |
@@ -56,24 +50,24 @@ The API-backed issue comment breakdown was:
 | `#6` | 0 |
 | `#7` | 0 |
 
-The supporting public fallback observation at `2026-06-03T22:12:42Z` found 0
-stars, 0 forks, 0 watchers, 3 open issues, and 0 external feedback
-candidates. Public HTML fallback observations are discovery and transparency
-hints only; they are not authoritative for form submission.
+The supporting public fallback observation at `2026-06-03T22:39:33Z` found 0
+stars, 0 forks, 0 watchers, 3 open issues, and 0 external feedback candidates.
+Public fallback observations are discovery and transparency hints only; they
+are not authoritative for form submission.
 
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`0f903e676ba987ed22f09800b9d2ce108fc25ce0` show successful main validation,
+`68ed68cce5e2383c0df78532d4c74bcb3ff6164e` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916132172 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916130385 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26916170901 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26917007749 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26917006856 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26917043493 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification
@@ -83,7 +77,7 @@ These checks passed in the same monitoring pass:
 | Check | Evidence |
 | --- | --- |
 | Reviewer comment draft preflight | `scripts/checks/test-reviewer-comment-draft-preflight.ps1 -PassThru` checked safe drafts, local paths, private endpoints, raw stack traces, and no-post/no-engagement flags |
-| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 38 public URLs |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 40 public URLs |
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |

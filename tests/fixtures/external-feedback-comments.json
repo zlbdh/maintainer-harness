@@ -1,0 +1,40 @@
+{
+  "comments": [
+    {
+      "issue_number": 6,
+      "id": 7001,
+      "author_association": "OWNER",
+      "html_url": "https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-7001",
+      "created_at": "2026-06-04T00:00:00Z",
+      "body": "Owner seed comment.",
+      "user": {
+        "login": "zlbdh",
+        "type": "User"
+      }
+    },
+    {
+      "issue_number": 6,
+      "id": 7002,
+      "author_association": "NONE",
+      "html_url": "https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-7002",
+      "created_at": "2026-06-04T00:05:00Z",
+      "body": "I ran the demo from a clean checkout and hit a concrete first-run issue.",
+      "user": {
+        "login": "fixture-api-reviewer",
+        "type": "User"
+      }
+    },
+    {
+      "issue_number": 6,
+      "id": 7003,
+      "author_association": "NONE",
+      "html_url": "https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-7003",
+      "created_at": "2026-06-04T00:10:00Z",
+      "body": "Automated noise.",
+      "user": {
+        "login": "fixture-bot",
+        "type": "Bot"
+      }
+    }
+  ]
+}

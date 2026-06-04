@@ -83,6 +83,27 @@ function Get-GitHubJson {
     }
 }
 
+function Get-GitHubJsonItems {
+    param(
+        [string]$Url,
+        [hashtable]$Headers
+    )
+
+    $value = Get-GitHubJson -Url $Url -Headers $Headers
+    if ($null -eq $value) {
+        return
+    }
+
+    if ($value -is [System.Array]) {
+        foreach ($item in $value) {
+            $item
+        }
+        return
+    }
+
+    $value
+}
+
 function New-ReadinessFinding {
     param(
         [ValidateSet('PASS', 'WARN', 'FAIL')]
@@ -169,7 +190,7 @@ $issueCommentBreakdown = @()
 $apiExternalCommentUrls = @{}
 
 foreach ($issueNumber in $FeedbackIssueNumbers) {
-    $comments = @(Get-GitHubJson -Url "https://api.github.com/repos/$Repository/issues/$issueNumber/comments?per_page=100" -Headers $githubHeaders)
+    $comments = @(Get-GitHubJsonItems -Url "https://api.github.com/repos/$Repository/issues/$issueNumber/comments?per_page=100" -Headers $githubHeaders)
     $external = @($comments | Where-Object {
         ($null -ne $_) -and
         ($_.PSObject.Properties.Name -contains 'user') -and

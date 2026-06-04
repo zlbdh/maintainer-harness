@@ -21,6 +21,7 @@ function Assert-Condition {
 
 $repoRoot = Get-HarnessRepoRoot
 $fixtureDirectory = Join-HarnessPath $repoRoot 'tests/fixtures/external-feedback-html'
+$commentsFixturePath = Join-HarnessPath $repoRoot 'tests/fixtures/external-feedback-comments.json'
 $tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ('maintainer-harness-feedback-test-' + [System.Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $tempRoot -Force | Out-Null
 $evidencePath = Join-Path $tempRoot 'external-feedback-evidence.yaml'
@@ -53,6 +54,19 @@ try {
         Assert-Condition -Condition ([string]$candidate.suggested_status -eq 'pending') -Message 'HTML fallback candidates must stay pending.'
         Assert-Condition -Condition (([string]$candidate.suggested_command).Contains('-Status pending')) -Message 'Suggested command must keep pending status.'
     }
+
+    $apiResult = & (Join-HarnessPath $repoRoot 'scripts/checks/find-external-feedback-candidates.ps1') `
+        -Repository 'zlbdh/maintainer-harness' `
+        -FeedbackIssueNumbers @(6) `
+        -FirstRunIssueNumber 6 `
+        -EvidencePath $evidencePath `
+        -CommentsJsonPath $commentsFixturePath `
+        -PassThru
+
+    Assert-Condition -Condition ([int]$apiResult.candidate_count -eq 1) -Message "Expected one API-shaped fixture candidate, got $($apiResult.candidate_count)."
+    Assert-Condition -Condition ([string]$apiResult.source -eq 'fixture') -Message "Expected fixture source, got $($apiResult.source)."
+    Assert-Condition -Condition ([string]$apiResult.candidates[0].author -eq 'fixture-api-reviewer') -Message 'API-shaped fixture external author was not parsed.'
+    Assert-Condition -Condition ([string]$apiResult.candidates[0].type -eq 'first-run-report') -Message 'API-shaped issue #6 candidate should be first-run-report.'
 
     $queueDirectory = Join-Path $tempRoot 'queue'
     $queue = & (Join-HarnessPath $repoRoot 'scripts/checks/write-external-feedback-review-queue.ps1') `

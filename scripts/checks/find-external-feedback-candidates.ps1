@@ -94,6 +94,27 @@ function Get-GitHubJson {
     }
 }
 
+function Get-GitHubJsonItems {
+    param(
+        [string]$Url,
+        [hashtable]$Headers
+    )
+
+    $value = Get-GitHubJson -Url $Url -Headers $Headers
+    if ($null -eq $value) {
+        return
+    }
+
+    if ($value -is [System.Array]) {
+        foreach ($item in $value) {
+            $item
+        }
+        return
+    }
+
+    $value
+}
+
 function Get-CommentsFromFixture {
     param([string]$Path)
 
@@ -122,7 +143,7 @@ function Get-IssueComments {
         $page = 1
         while ($true) {
             $url = "https://api.github.com/repos/$RepositoryName/issues/$issueNumber/comments?per_page=100&page=$page"
-            $comments = @(Get-GitHubJson -Url $url -Headers $Headers)
+            $comments = @(Get-GitHubJsonItems -Url $url -Headers $Headers)
             foreach ($comment in $comments) {
                 $rows += [pscustomobject]@{
                     issue_number = $issueNumber

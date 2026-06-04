@@ -8,7 +8,8 @@ evidence, but still lacks external usage signals.
 
 Collect real maintainer signals within 24-48 hours:
 
-- 3-5 stars from people who have actually inspected the project
+- 5+ inspected recommendation stars from people who have actually inspected the
+  project and would point another maintainer to it
 - 2 issue comments from maintainers or devtools builders
 - 1 first-run report from someone outside the author loop
 - 1 public follow-up issue or roadmap update created from that feedback
@@ -16,6 +17,8 @@ Collect real maintainer signals within 24-48 hours:
 Do not buy stars, trade stars, use bots, or ask people to star without looking
 at the project. The strongest signal is a maintainer saying what would make the
 workflow reviewable enough to try.
+Use `docs/recommendation-check.md` before treating any star as a readiness signal;
+unclear value should become concrete feedback instead.
 
 ## Why This Matters For The Application
 
@@ -92,7 +95,7 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit
 The most useful feedback is not "looks good" -- it is:
 What evidence would make an agent worker output reviewable enough for you to accept, reject, or request changes?
 
-If the workflow is useful after inspecting it, a star helps other maintainers discover it. Feedback is more valuable than the star.
+If the workflow is useful enough after inspecting it that you would recommend it to another maintainer, a star helps discovery. If the value is unclear, concrete feedback is more valuable than the star.
 ```
 
 ## Short Public Post
@@ -151,7 +154,7 @@ Record each useful response in `docs/launch-log.md` or a GitHub issue:
 | --- | --- |
 | Date | 2026-06-02 |
 | Channel | GitHub issue, X, LinkedIn, direct maintainer message |
-| Signal | star, issue comment, first-run report, roadmap suggestion |
+| Signal | inspected recommendation star, issue comment, first-run report, roadmap suggestion |
 | Feedback theme | validation clarity, scope safety, platform friction, release evidence |
 | Follow-up artifact | issue URL, commit URL, release URL |
 
@@ -233,7 +236,7 @@ exist:
 
 | Signal | Target |
 | --- | ---: |
-| Stars from real readers | 5+ |
+| Inspected recommendation stars from real readers | 5+ |
 | Public issue comments or first-run reports | 2+ |
 | Outside first-run report | 1+ |
 | Feedback converted into issue or commit | 1+ |

@@ -136,6 +136,10 @@ they do not count as public external evidence.
 
 ## Star-Safe Note
 
-If the workflow is useful after inspection, a star helps other maintainers find
-it. Feedback is more useful than the star, and star trades, paid stars, bots, or
-bulk engagement are not acceptable.
+Only star when you could honestly recommend the workflow to another maintainer
+after inspecting it, running the demo, or reviewing the evidence examples. If
+the value is unclear, leave a concrete issue `#5` or `#6` comment instead.
+
+Do not star only to help the author, satisfy a request, trade engagement, or
+support a project you did not inspect. Feedback is more useful than the star,
+and star trades, paid stars, bots, or bulk engagement are not acceptable.

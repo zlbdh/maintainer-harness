@@ -150,10 +150,12 @@ For maintainers using Codex or other coding agents: what evidence would make a w
 Use this only after giving people the demo link or asking for feedback:
 
 ```text
-If this workflow is useful, a star helps other maintainers discover it. The most helpful response is still feedback on what evidence would make agent output reviewable.
+If this workflow is useful enough that you would recommend it to another maintainer after inspecting it, a star helps discovery. If the value is unclear, the most helpful response is concrete feedback on what evidence would make agent output reviewable.
 ```
 
 Avoid asking for star trades, bulk upvotes, automated engagement, or support
 from people who have not seen the project. The project is stronger when stars
 come from people who understand what the harness is trying to make safer.
+Do not star only to help the author, satisfy a request, or support a project
+you did not inspect.
 Self-owned alternate accounts do not count as external validation.

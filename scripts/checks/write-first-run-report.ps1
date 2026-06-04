@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$OutPath = '',
     [string]$JsonOutPath = '',
@@ -340,6 +340,18 @@ $lines = @(
     '',
     'External review page with copy-ready issue #5 and issue #6 comment templates:',
     $report.external_review_url,
+    '',
+    '## What This Demo Shows',
+    '',
+    'Maintainer Harness does not make an agent more autonomous. It turns a change into reviewable evidence: repository metadata, workspace checks, sample change packets, security posture, and a paste-ready first-run report.',
+    '',
+    'Start here after the command finishes:',
+    '',
+    '- If `Passed` is 6 and `Failed` is 0, skim this generated report first, then post only feedback that matches what you actually saw to issue #6.',
+    '- If a command failed, copy the key 3-10 error lines and say what would have helped.',
+    '- If you want the idea before posting, open the review kit or worker-output example printed by the demo.',
+    '',
+    '中文提示：这套工具不会替你自动发评论或刷星；它把 demo 结果、证据和下一步反馈路径整理出来，方便你决定是否公开反馈。',
     '',
     '## Copy This Comment Into Issue #6',
     '',

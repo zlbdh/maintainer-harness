@@ -77,6 +77,9 @@ after the report is written. The script never posts a comment for you.
 If the command fails, use
 `docs/first-run-troubleshooting.md` or
 `docs/first-run-troubleshooting-zh.md` before posting the failure details.
+Windows PowerShell 5.1 is supported in current checkouts; if an older checkout
+shows mojibake Chinese text or `ParserError`, pull the latest commit or run the
+demo with PowerShell 7 (`pwsh`) as a temporary workaround.
 If you only inspected the docs or worker-output example, comment on issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new)
 with one concrete evidence gap instead.

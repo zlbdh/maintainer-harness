@@ -29,6 +29,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
+      - name: Test PowerShell source encoding
+        shell: pwsh
+        run: ./scripts/checks/test-powershell-source-encoding.ps1
+
       - name: Validate repository metadata
         shell: pwsh
         run: ./scripts/checks/validate-repos.ps1

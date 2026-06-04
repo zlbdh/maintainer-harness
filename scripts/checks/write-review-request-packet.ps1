@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$OutPath = '',
     [ValidateSet('maintainer', 'first-run', 'security', 'zh-friend')]

@@ -1,4 +1,4 @@
-signals:
+﻿signals:
   # Record only public, reviewer-visible evidence here.
   # Supported type values:
   # - issue-comment
@@ -19,3 +19,16 @@ signals:
   #
   # Safer append helper:
   #   ./scripts/checks/add-external-feedback-evidence.ps1 -Id 2026-06-03-example -Type first-run-report -Status verified -Url https://example.com/public-report -Summary 'Outside reviewer ran the demo.'
+
+  - id: '2026-06-04-issue-6-comment-4619954549'
+    date: '2026-06-04'
+    type: first-run-report
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-4619954549'
+    summary: 'Outside reviewer ran a clean Windows PowerShell 5.1 first-run and reported UTF-8/CP936 ParserError friction.'
+  - id: '2026-06-04-issue-6-comment-4619330008'
+    date: '2026-06-04'
+    type: first-run-report
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-4619330008'
+    summary: 'Outside reviewer ran the Codespaces first-run successfully and reported newcomer next-step confusion.'

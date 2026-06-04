@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [switch]$PassThru
 )
@@ -48,6 +48,8 @@ try {
     Assert-Condition -Condition ($result.PSObject.Properties.Name -contains 'comment_markdown_zh') -Message 'First-run report result should include a Chinese issue #6 comment block.'
     Assert-Condition -Condition ([string]$result.comment_markdown_zh).Contains('我从干净 checkout 跑了 Maintainer Harness demo') -Message 'Chinese issue #6 comment block should describe the demo run.'
     Assert-Condition -Condition ([string]$result.comment_markdown_zh).Contains('我确认这条评论没有 token、私有仓库地址、客户数据或生产日志') -Message 'Chinese issue #6 comment block should keep the public-safety review line.'
+    Assert-Condition -Condition $reportContent.Contains('## What This Demo Shows') -Message 'Markdown report should explain what the demo proves for first-time reviewers.'
+    Assert-Condition -Condition $reportContent.Contains('Start here after the command finishes') -Message 'Markdown report should tell first-time reviewers what to inspect next.'
     Assert-Condition -Condition $reportContent.Contains('## 中文：复制到 Issue #6 的评论') -Message 'Markdown report should expose a Chinese copy-ready issue #6 section.'
     Assert-Condition -Condition $reportContent.Contains('```markdown') -Message 'Markdown report should keep fenced copy blocks.'
     Assert-Condition -Condition $jsonContent.Contains('comment_markdown_zh') -Message 'JSON report should include the Chinese comment block for auditability.'

@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 function Get-HarnessRepoRoot {
     return (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path

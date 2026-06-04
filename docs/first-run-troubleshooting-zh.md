@@ -78,6 +78,22 @@ powershell -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1
 pwsh -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1
 ```
 
+### Windows PowerShell 出现中文乱码或 ParserError
+
+现象可能类似：
+
+```text
+Unexpected token '缁撴灉...' in expression or statement.
+```
+
+当前版本已经把含非 ASCII 文本的 PowerShell 源文件保存为 UTF-8 with BOM，
+让 Windows PowerShell 5.1 能正确解析。如果你在较旧 checkout 里遇到这个问题：
+
+- 先运行 `git pull`，再重新跑命令。
+- 如果本地文件是从别处复制来的，建议重新 clone 一份干净仓库。
+- 临时绕过方式是安装 PowerShell 7，然后运行
+  `pwsh ./scripts/checks/run-review-demo.ps1`。
+
 ### 不在仓库根目录
 
 现象通常是脚本路径找不到：

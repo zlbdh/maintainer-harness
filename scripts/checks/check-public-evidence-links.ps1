@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [int]$TimeoutSec = 30,
     [int]$RetryCount = 2,
@@ -200,6 +200,11 @@ $links = @(
         Check = 'first-run-report-script'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/write-first-run-report.ps1'
         RequiredText = 'comment_target_url'
+    },
+    [pscustomobject]@{
+        Check = 'powershell-source-encoding-test'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/scripts/checks/test-powershell-source-encoding.ps1'
+        RequiredText = 'PowerShell source with non-ASCII bytes must be UTF-8 with BOM for Windows PowerShell 5.1.'
     },
     [pscustomobject]@{
         Check = 'feedback-evidence-add-script'

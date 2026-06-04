@@ -81,6 +81,23 @@ Or with PowerShell 7:
 pwsh -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1
 ```
 
+### Windows PowerShell Shows Mojibake Or ParserError
+
+You may see corrupted Chinese text or a parser error before the demo starts:
+
+```text
+Unexpected token '缁撴灉...' in expression or statement.
+```
+
+Current checkouts save non-ASCII PowerShell source files as UTF-8 with BOM so
+Windows PowerShell 5.1 can parse them correctly. If you hit this in an older
+checkout:
+
+- Run `git pull` and try the command again.
+- If local files were copied from somewhere else, clone a fresh copy.
+- As a temporary workaround, install PowerShell 7 and run
+  `pwsh ./scripts/checks/run-review-demo.ps1`.
+
 ### The Script Path Is Not Found
 
 You may see:

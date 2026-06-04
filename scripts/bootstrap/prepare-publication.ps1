@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$GitHubRemote = '',
     [string]$CommitMessage = '初始化通用开源维护控制平面',

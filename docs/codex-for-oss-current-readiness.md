@@ -18,6 +18,21 @@ still incomplete.
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
+## Latest API-Limited Observation
+
+After later documentation-only commits, the observed public `main` commit is
+`e8a9c9022657679542adebaedc33700b824c2511`. A fresh local retry at
+`2026-06-04T11:01Z` still hit the anonymous GitHub API rate limit, with reset
+reported as `2026-06-04T11:14:48Z`, so this later observation is not an API-backed submission gate.
+
+Public fallback checks still show the hard star gate missing: the repository
+page shows `Star 0`, `Fork 0`, and `Issues 3`, while the workflow badges show
+Harness validation, Pages deployment, and Codex readiness monitor as passing.
+Issue `#6` has two non-owner first-run comments, and issue `#5` / issue `#7`
+have no non-owner comments. The public issue `#7` current gate status comment
+was refreshed to point reviewers at the current `85/90` state, the local API
+rate-limit caveat, and the remaining `external-stars` 0/5 blocker.
+
 ## Latest API-Backed Measurement
 
 The latest local monitoring pass completed

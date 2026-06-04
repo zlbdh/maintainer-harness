@@ -127,6 +127,11 @@ $links = @(
         RequiredText = 'ready_for_form_submission'
     },
     [pscustomobject]@{
+        Check = 'current-gate-status-comment-star-gate'
+        Url = 'https://github.com/zlbdh/maintainer-harness/issues/7#issuecomment-4609294155'
+        RequiredText = 'external-stars'
+    },
+    [pscustomobject]@{
         Check = 'readiness-scorecard'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/codex-for-oss-90-scorecard.md'
         RequiredText = '90% Readiness Scorecard'

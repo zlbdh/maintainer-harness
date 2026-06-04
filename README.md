@@ -84,8 +84,9 @@ If you only inspected the docs or worker-output example, comment on issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new)
 with one concrete evidence gap instead.
 
-**Share or star:** if the demo is useful, share the project site or star the
-repository so other maintainers can find it. Feedback is more valuable than a
+**After inspection:** if the demo is useful enough to recommend, share the
+project site or star the repository so other maintainers can find it. If it is
+not useful, leave a concrete comment instead. Feedback is more valuable than a
 vanity metric; the best starting points are issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new) for reviewability
 feedback and issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new)

@@ -9,9 +9,9 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-04T08:27:12.1053698Z` |
+| Checked at UTC | `2026-06-04T09:17:06.7207158Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `28e6948dc6851a46766d9cd640322e61068bc500` |
+| observed main commit | `dccf8d170c877ffada79f37d9454cc766b84aa36` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` attempted; anonymous GitHub API was rate-limited |
 | Readiness score | latest API-backed `85/90` hard-gate state; current public fallback is still not submission-ready |
 | Target score | `90` |
@@ -23,7 +23,7 @@ still incomplete.
 The latest local monitoring pass attempted
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
 the submission gate, but anonymous GitHub API access was rate-limited
-(`remaining=0`, reset UTC `2026-06-04T08:45:02.0000000Z`). This pass therefore
+(`remaining=0`, reset UTC `2026-06-04T09:45:56.0000000Z`). This pass therefore
 is not authoritative for form submission.
 
 The latest API-backed measurement remains `85/90`, with
@@ -33,12 +33,13 @@ The latest API-backed measurement remains `85/90`, with
 `docs/external-feedback-evidence.yaml`, and one feedback-driven public commit
 follow-up is registered. That API-backed issue comment scan counted the two
 public non-owner issue `#6` comments directly. The current public repository
-view for observed main commit `28e6948dc6851a46766d9cd640322e61068bc500`
-still shows 0 real stars, so the external-stars hard gate remains red.
+view for observed main commit `dccf8d170c877ffada79f37d9454cc766b84aa36`
+shows `Star 0`, `Fork 0`, and `Issues 3`, so the external-stars hard gate
+remains red.
 
 The latest token-backed Harness validation, Pages deployment, and Codex
 readiness monitor completed successfully for observed main commit
-`28e6948dc6851a46766d9cd640322e61068bc500`.
+`dccf8d170c877ffada79f37d9454cc766b84aa36`.
 
 Use the token-backed artifact or a fresh authenticated/API-backed
 `measure-application-readiness.ps1` run immediately before any form submission
@@ -71,16 +72,16 @@ registry.
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`28e6948dc6851a46766d9cd640322e61068bc500` show successful main validation,
+`dccf8d170c877ffada79f37d9454cc766b84aa36` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939868384 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939867556 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939908804 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26942288121 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26942287109 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26942352750 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification
@@ -95,7 +96,7 @@ latest successful targeted validations unless their files change.
 | Reviewer comment draft preflight | `scripts/checks/test-reviewer-comment-draft-preflight.ps1 -PassThru` checked safe drafts, local paths, private endpoints, raw stack traces, and no-post/no-engagement flags |
 | Reviewer invite draft preflight | `scripts/checks/test-reviewer-invite-draft-preflight.ps1 -PassThru` checks star-safe one-to-one invitation drafts without contacting reviewers or creating engagement |
 | PowerShell source encoding | `scripts/checks/test-powershell-source-encoding.ps1 -PassThru` confirmed 48 tracked PowerShell source files and 0 UTF-8 BOM violations |
-| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 43 public URLs |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 45 public URLs |
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |

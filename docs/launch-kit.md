@@ -267,7 +267,7 @@ For the concrete 90% readiness threshold and message templates, see
 Good star wording:
 
 ```text
-If this workflow is useful, a star helps other maintainers find it. Feedback on the demo is even more useful right now.
+If this workflow is useful enough to recommend after inspection, a star helps other maintainers find it. If not, concrete demo feedback is more useful right now.
 ```
 
 Do not use:

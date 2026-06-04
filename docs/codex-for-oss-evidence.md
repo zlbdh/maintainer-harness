@@ -78,7 +78,7 @@ This is a practical fit for open source maintainers who want AI assistance while
 - The first public dogfooding run shows that the project is already using Codex-style workflows to improve its own application evidence, while recording weak signals honestly.
 - The readiness transparency dogfooding run shows that score checks, CI/Pages timing, public link health, and missing external gates are being recorded publicly instead of hidden in local notes.
 - The external validation sprint and 90% scorecard make the readiness threshold explicit: real stars, public maintainer comments, outside first-run feedback, and a feedback-driven follow-up artifact.
-- The current readiness snapshot keeps the public application status honest by showing the latest 60/90 score, successful CI and Pages runs, and the missing external hard gates.
+- The current readiness snapshot keeps the public application status honest by showing the latest API-backed `85/90` state, successful CI, Pages, and readiness monitor runs, passing public feedback gates, and the remaining `external-stars` 0/5 blocker.
 - The first-run report generator gives outside reviewers a paste-ready, sanitized issue draft after running the demo commands.
 - The first-run report generator also writes a Chinese copy-ready issue `#6` block for reviewers who ran the demo but do not want to rewrite the result in English.
 - The first-run report generator supports `-CommentLanguage zh` so the clipboard helper can copy the Chinese issue `#6` block while still requiring the reviewer to inspect and post it manually.

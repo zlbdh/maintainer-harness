@@ -9,11 +9,11 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-04T07:45:01.8341333Z` |
+| Checked at UTC | `2026-06-04T07:49:50.5216465Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `f7be17165c86c9b0e5383772bcb6c9fad12cf54d` |
+| observed main commit | `e82bfbf8da99f9051b5956492a1fc92125e9bf88` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` |
-| Readiness score | API-backed `80/90` hard-gate state |
+| Readiness score | API-backed `85/90` hard-gate state |
 | Target score | `90` |
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
@@ -22,15 +22,16 @@ still incomplete.
 
 The latest local monitoring pass completed
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
-the submission gate. It returned an API-backed `80/90`, with
+the submission gate. It returned an API-backed `85/90`, with
 `ready_for_form_submission=false`. Two manually verified public issue `#6`
 first-run reports are now registered in
-`docs/external-feedback-evidence.yaml`, but the repository still has 0 real
-stars and no registered feedback-driven public follow-up artifact.
+`docs/external-feedback-evidence.yaml`, and one feedback-driven public commit
+follow-up is registered. The repository still has 0 real stars, so the
+external-stars hard gate remains red.
 
 The latest token-backed Harness validation, Pages deployment, and Codex
 readiness monitor completed successfully for observed main commit
-`f7be17165c86c9b0e5383772bcb6c9fad12cf54d`.
+`e82bfbf8da99f9051b5956492a1fc92125e9bf88`.
 
 Use the token-backed artifact or a fresh authenticated/API-backed
 `measure-application-readiness.ps1` run immediately before any form submission
@@ -45,8 +46,8 @@ decision.
 | Open issues | 3 |
 | External feedback comments counted | 2 |
 | External first-run reports counted | 2 |
-| Feedback-driven follow-up artifacts counted | 0 |
-| Verified evidence signals | 2 |
+| Feedback-driven follow-up artifacts counted | 1 |
+| Verified evidence signals | 3 |
 
 The API-backed issue comment breakdown was:
 
@@ -63,7 +64,7 @@ registry after manual review of direct `#issuecomment-...` URLs.
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`f7be17165c86c9b0e5383772bcb6c9fad12cf54d` show successful main validation,
+`e82bfbf8da99f9051b5956492a1fc92125e9bf88` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
@@ -83,12 +84,12 @@ These checks passed in the same monitoring pass:
 | --- | --- |
 | Reviewer comment draft preflight | `scripts/checks/test-reviewer-comment-draft-preflight.ps1 -PassThru` checked safe drafts, local paths, private endpoints, raw stack traces, and no-post/no-engagement flags |
 | Reviewer invite draft preflight | `scripts/checks/test-reviewer-invite-draft-preflight.ps1 -PassThru` checks star-safe one-to-one invitation drafts without contacting reviewers or creating engagement |
-| PowerShell source encoding | `scripts/checks/test-powershell-source-encoding.ps1 -PassThru` confirmed 47 tracked PowerShell source files and 0 UTF-8 BOM violations |
-| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 42 public URLs |
+| PowerShell source encoding | `scripts/checks/test-powershell-source-encoding.ps1 -PassThru` confirmed 48 tracked PowerShell source files and 0 UTF-8 BOM violations |
+| Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 43 public URLs |
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
-| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 2 verified first-run reports |
+| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 3 verified signals: 2 first-run reports and 1 feedback follow-up |
 | Windows PowerShell 5.1 / CP936 demo | `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1 -CommentLanguage zh` under code page 936 completed with `Passed: 6; Failed: 0; Skipped: 0` |
 | Chinese issue chooser route | `.github/ISSUE_TEMPLATE/config.yml` now routes Chinese 3-minute feedback and 10-minute first-run reports to pinned public comment targets |
 | Form submission gate tests | `scripts/checks/test-form-submission-ready.ps1 -PassThru` confirmed the not-ready and score-mismatch fixtures block submission |
@@ -100,7 +101,7 @@ These checks passed in the same monitoring pass:
 | Real stars from people who inspected the project | 0 | 5 |
 | External issue comments or first-run reports | 2 | 2 |
 | External first-run report on issue `#6` | 2 | 1 |
-| Feedback converted into a public issue or commit | 0 | 1 |
+| Feedback converted into a public issue or commit | 1 | 1 |
 
 Issue `#5` and issue `#6` remain the shortest public feedback routes, and
 issue `#7` includes the owner dogfooding status comment:
@@ -126,8 +127,6 @@ external-signal counts. It still does not replace the required API-backed pre-su
 Do not ask the maintainer to submit the OpenAI form yet. The next work should
 focus on the external validation sprint:
 
-- publish the feedback-driven Windows PowerShell / first-run clarity follow-up
-  commit and register its public URL
 - invite real maintainers to inspect the project or run the demo
 - route any additional first-run reports to issue `#6`
 - route worker-output reviewability comments to issue `#5`

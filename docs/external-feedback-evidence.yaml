@@ -32,3 +32,9 @@
     status: verified
     url: 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-4619330008'
     summary: 'Outside reviewer ran the Codespaces first-run successfully and reported newcomer next-step confusion.'
+  - id: '2026-06-04-feedback-follow-up-e82bfbf'
+    date: '2026-06-04'
+    type: feedback-follow-up
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/commit/e82bfbf'
+    summary: 'Feedback-driven commit fixed Windows PowerShell 5.1 source encoding and first-run newcomer next-step guidance.'

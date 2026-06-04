@@ -41,7 +41,7 @@ try {
     Assert-Condition -Condition (-not [bool]$result.policy.self_owned_alternate_accounts_count) -Message 'Self-owned alternate accounts must not count.'
     Assert-Condition -Condition ([bool]$result.policy.public_verified_url_required) -Message 'Counting should require a verified public URL.'
 
-    foreach ($propertyName in @('ProjectSite', 'ExternalReview', 'LaunchKit', 'SharePage', 'FeedbackIssue', 'FirstRunIssue', 'FollowUpTemplate', 'CurrentReadinessSnapshot')) {
+    foreach ($propertyName in @('ProjectSite', 'ExternalReview', 'RecommendationCheck', 'LaunchKit', 'SharePage', 'FeedbackIssue', 'FirstRunIssue', 'FollowUpTemplate', 'CurrentReadinessSnapshot')) {
         $property = $result.links.PSObject.Properties[$propertyName]
         Assert-Condition -Condition ($null -ne $property) -Message "Public discovery plan should expose $propertyName."
         Assert-Condition -Condition ([string]$property.Value).StartsWith('https://') -Message "$propertyName should be a public URL."
@@ -71,6 +71,8 @@ try {
         'Maintainer forum',
         'https://zlbdh.github.io/maintainer-harness/',
         'https://zlbdh.github.io/maintainer-harness/external-review.html',
+        'https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md',
+        'Use the recommendation check to keep comment, share, and star decisions inspection-first.',
         'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new',
         'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new',
         'find-external-feedback-candidates.ps1 -AllowHtmlFallback',

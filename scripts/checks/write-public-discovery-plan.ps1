@@ -69,6 +69,9 @@ function Get-PublicDiscoveryPost {
                 'If you run it, the generated report includes a copy-ready issue #6 first-run block:',
                 $Links.FirstRunIssue,
                 '',
+                'If you are unsure whether to comment, share, or star after inspection, use this neutral decision boundary:',
+                $Links.RecommendationCheck,
+                '',
                 'I would like feedback from maintainers who have tried agents for PR review, release work, or cross-repo changes. What evidence would you need before trusting a worker output?'
             ) -join [Environment]::NewLine
         }
@@ -82,7 +85,10 @@ function Get-PublicDiscoveryPost {
                 $Links.ProjectSite,
                 '',
                 'Most useful feedback: what evidence would make agent output reviewable enough to trust?',
-                $Links.ExternalReview
+                $Links.ExternalReview,
+                '',
+                'Comment/share/star boundary after inspection:',
+                $Links.RecommendationCheck
             ) -join [Environment]::NewLine
         }
         'LinkedIn' {
@@ -97,6 +103,9 @@ function Get-PublicDiscoveryPost {
                 '',
                 'What would you need to see before trusting an agent worker output?',
                 '',
+                'Recommendation boundary for comment/share/star after inspection:',
+                $Links.RecommendationCheck,
+                '',
                 $Links.ProjectSite
             ) -join [Environment]::NewLine
         }
@@ -109,7 +118,10 @@ function Get-PublicDiscoveryPost {
                 '',
                 'The repo is intentionally synthetic for now, so it can be tried without private code. The highest-risk areas are agent write scopes, read-only MCP context, ignored generated artifacts, and evidence handling before releases.',
                 '',
-                'For people who maintain OSS projects: what would make this workflow useful enough to try on a real issue?'
+                'For people who maintain OSS projects: what would make this workflow useful enough to try on a real issue?',
+                '',
+                'If you inspect it and are unsure whether to comment, share, or star, this checklist explains the boundary:',
+                $Links.RecommendationCheck
             ) -join [Environment]::NewLine
         }
         default {
@@ -139,6 +151,7 @@ if ([string]::IsNullOrWhiteSpace($OutPath)) {
 $links = [ordered]@{
     ProjectSite = 'https://zlbdh.github.io/maintainer-harness/'
     ExternalReview = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
+    RecommendationCheck = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md'
     LaunchKit = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-kit.md'
     SharePage = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md'
     FeedbackIssue = 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new'
@@ -184,11 +197,13 @@ $lines = @(
     '',
     'Self-owned alternate accounts do not count as external validation.',
     'Do not ask friends to upvote, comment, repost, or star unless they inspected the project and choose to do so themselves.',
+    'Use the recommendation check to keep comment, share, and star decisions inspection-first.',
     '',
     '## Links',
     '',
     "- Project site: $($links.ProjectSite)",
     "- External review page: $($links.ExternalReview)",
+    "- Recommendation check: $($links.RecommendationCheck)",
     "- Launch kit: $($links.LaunchKit)",
     "- Share page: $($links.SharePage)",
     "- Issue #5 feedback target: $($links.FeedbackIssue)",

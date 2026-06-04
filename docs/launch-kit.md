@@ -70,6 +70,7 @@ Current public launch anchors:
 - Issue-to-review example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/issue-to-review
 - Release workflow example: https://github.com/zlbdh/maintainer-harness/tree/main/examples/release-workflow
 - Share page: https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md
+- Recommendation check: https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 - Social preview: https://github.com/zlbdh/maintainer-harness/blob/main/docs/assets/social-preview.svg
 - Launch log: https://github.com/zlbdh/maintainer-harness/blob/main/docs/launch-log.md
 - GitHub profile README: https://github.com/zlbdh/zlbdh
@@ -91,7 +92,7 @@ Generate a local, ignored posting checklist before choosing a public channel:
 .\scripts\checks\write-public-discovery-plan.ps1
 ```
 
-The generator prepares copy-ready drafts for Show HN, X / Twitter, LinkedIn, and maintainer forums. It does not post anywhere, does not ask for votes, does not create stars, and does not register evidence. Use it only when the maintainer can answer public questions and when the channel is a real fit for maintainer tooling, CI, release evidence, or agent-assisted development.
+The generator prepares copy-ready drafts for Show HN, X / Twitter, LinkedIn, and maintainer forums, plus a recommendation-check link so readers can decide whether to comment, share, or star after inspection. It does not post anywhere, does not ask for votes, does not create stars, and does not register evidence. Use it only when the maintainer can answer public questions and when the channel is a real fit for maintainer tooling, CI, release evidence, or agent-assisted development.
 
 ## Show HN Draft
 

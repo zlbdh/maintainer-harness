@@ -19,6 +19,7 @@ the 90% gate.
 - External review path: https://zlbdh.github.io/maintainer-harness/external-review.html
 - Copy-ready comment templates: https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
+- Recommendation check: https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 - Codespaces first-run guide: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
 - Codespaces quickstart: https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
 - Worker output reviewability example: https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
@@ -56,6 +57,7 @@ Pick one path. A short concrete note is better than broad praise.
 | 5 min | Clone the repo, run the clean demo, and paste the generated first-run block. | https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new |
 | 5 min | Use Codespaces if local Git or PowerShell setup would block a first-run report. | https://codespaces.new/zlbdh/maintainer-harness?quickstart=1 |
 | 5 min | Review the security boundary around scoped writes, read-only MCP context, generated reports, and release evidence. | https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new |
+| After inspection | Decide whether the honest signal is comment, share, or star. | https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md |
 | After feedback | Turn a concrete feedback item into a visible follow-up issue, commit, or release note. | https://github.com/zlbdh/maintainer-harness/issues/new?template=feedback_follow_up.md |
 
 ## Demo Commands
@@ -95,6 +97,10 @@ evidence, release gates, and security boundaries.
 The fastest path is here:
 https://zlbdh.github.io/maintainer-harness/external-review.html#templates
 
+If you are unsure whether the honest signal is comment, share, or star after
+inspection, use this neutral boundary:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
+
 The worker-output example is here:
 https://github.com/zlbdh/maintainer-harness/blob/main/docs/worker-output-reviewability.md
 
@@ -127,6 +133,10 @@ If you run it, please paste the generated public comment block into issue #6:
 https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new
 
 Short friction reports are more useful than praise.
+
+If you are unsure whether to comment, share, or star after the run, use this
+boundary:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 ```
 
 ## Security Boundary Request
@@ -140,6 +150,9 @@ evidence, and release decisions.
 
 Review path:
 https://zlbdh.github.io/maintainer-harness/external-review.html
+
+Recommendation boundary after inspection:
+https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 
 Feedback target:
 https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new

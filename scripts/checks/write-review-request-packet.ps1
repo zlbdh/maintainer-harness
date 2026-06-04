@@ -52,6 +52,7 @@ $links = [ordered]@{
     ExternalReview = 'https://zlbdh.github.io/maintainer-harness/external-review.html'
     ExternalReviewTemplates = 'https://zlbdh.github.io/maintainer-harness/external-review.html#templates'
     PublicReviewRequest = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md'
+    RecommendationCheck = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md'
     ChineseFriendGuide = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md'
     ChineseFriendOnepager = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-onepager-zh.md'
     ChineseSendChecklist = 'https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md'
@@ -90,6 +91,10 @@ $($links.ReviewabilityExample)
 Current gate status:
 $($links.CurrentGateStatus)
 
+If you are unsure whether the honest signal is comment, share, or star after
+inspection, use this neutral boundary:
+$($links.RecommendationCheck)
+
 The most useful feedback is one concrete answer:
 What evidence would make an agent worker output reviewable enough for you to
 accept, reject, or request changes?
@@ -124,6 +129,9 @@ $($links.CodespacesFirstRun)
 Copy-ready issue #5 and issue #6 comment templates:
 $($links.ExternalReviewTemplates)
 
+Comment/share/star boundary after inspection:
+$($links.RecommendationCheck)
+
 If a separate thread is clearer, the template is here:
 $($links.FirstRunTemplate)
 "@
@@ -143,6 +151,9 @@ $($links.FeedbackIssue)
 
 External review path:
 $($links.ExternalReview)
+
+Recommendation boundary after inspection:
+$($links.RecommendationCheck)
 "@
 
 $chineseFriendRequest = @"
@@ -186,6 +197,9 @@ $($links.FirstRunTroubleshootingZh)
 
 脚本不会自动发布评论。请你先检查生成内容，再决定是否粘贴提交。
 你觉得有价值再 star；没价值、不清楚、跑失败，都请直接说。失败反馈也很有用。
+
+如果不确定该评论、分享还是 star，可以先看这个判断边界：
+$($links.RecommendationCheck)
 "@
 
 $copyableRequests = [ordered]@{
@@ -219,6 +233,7 @@ $lines = @(
     "- External review path: $($links.ExternalReview)",
     "- External review templates: $($links.ExternalReviewTemplates)",
     "- Public review request packet: $($links.PublicReviewRequest)",
+    "- Recommendation check: $($links.RecommendationCheck)",
     "- Chinese friend guide: $($links.ChineseFriendGuide)",
     "- Chinese one-page friend tutorial: $($links.ChineseFriendOnepager)",
     "- Chinese send checklist: $($links.ChineseSendChecklist)",
@@ -256,6 +271,7 @@ $lines = @(
     '- Use issue `#6` for a first-run report after running the demo from a clean checkout.',
     '- Use the feedback follow-up template only after real public feedback creates concrete work.',
     '- Use issue `#7`, a commit, or a release note only after feedback creates a concrete follow-up.',
+    '- Use the recommendation check when a reviewer is unsure whether to comment, share, or star after inspection.',
     '- Use the current gate status link to see which hard external-signal gaps are still open before commenting.',
     '',
     '## Outside Reviewer Action Path',
@@ -266,6 +282,7 @@ $lines = @(
     "| 5 min | Run the clean demo and post first-run friction. Windows: `.\scripts\checks\run-review-demo.ps1`; macOS/Linux: `pwsh ./scripts/checks/run-review-demo.ps1`. | $($links.FirstRunIssue) |",
     "| 5 min | Use Codespaces when local Git or PowerShell setup would block first-run feedback. | $($links.CodespacesQuickstart) |",
     "| After inspection | Use the copy-ready templates only if they match what you actually saw. | $($links.ExternalReviewTemplates) |",
+    "| After inspection | Decide whether the honest signal is comment, share, or star. | $($links.RecommendationCheck) |",
     "| After feedback | Track a concrete follow-up as a public issue, commit, or release note. | $($links.FeedbackFollowUpTemplate) |",
     '',
     '## Clipboard Helper',
@@ -311,6 +328,7 @@ $lines = @(
     '- If feedback produces a concrete change, create a public issue, commit, or release link before counting it as a follow-up artifact.',
     '- Use the feedback follow-up template only when the public feedback source URL already exists.',
     '- Keep stars secondary: feedback is the stronger signal.',
+    '- Use the recommendation check before treating a star as an inspected recommendation.',
     '',
     '## What Counts Toward The 90% Gate',
     '',

@@ -9,36 +9,42 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-04T08:07:37.2972482Z` |
+| Checked at UTC | `2026-06-04T08:27:12.1053698Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `e05cda12afc62007c81ae37f58b5eefbca0abff6` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` |
-| Readiness score | API-backed `85/90` hard-gate state |
+| observed main commit | `28e6948dc6851a46766d9cd640322e61068bc500` |
+| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` attempted; anonymous GitHub API was rate-limited |
+| Readiness score | latest API-backed `85/90` hard-gate state; current public fallback is still not submission-ready |
 | Target score | `90` |
 | Ready for form submission | no |
 | Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
 
 ## Latest API-Backed Measurement And Current Observation
 
-The latest local monitoring pass completed
+The latest local monitoring pass attempted
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
-the submission gate. It returned an API-backed `85/90`, with
-`ready_for_form_submission=false`. Two manually verified public issue `#6`
-first-run reports are now registered in
+the submission gate, but anonymous GitHub API access was rate-limited
+(`remaining=0`, reset UTC `2026-06-04T08:45:02.0000000Z`). This pass therefore
+is not authoritative for form submission.
+
+The latest API-backed measurement remains `85/90`, with
+`ready_for_form_submission=false`, from observed main commit
+`e05cda12afc62007c81ae37f58b5eefbca0abff6`. Two manually verified public issue
+`#6` first-run reports are registered in
 `docs/external-feedback-evidence.yaml`, and one feedback-driven public commit
-follow-up is registered. The API-backed issue comment scan now also counts the
-two public non-owner issue `#6` comments directly. The repository still has 0
-real stars, so the external-stars hard gate remains red.
+follow-up is registered. That API-backed issue comment scan counted the two
+public non-owner issue `#6` comments directly. The current public repository
+view for observed main commit `28e6948dc6851a46766d9cd640322e61068bc500`
+still shows 0 real stars, so the external-stars hard gate remains red.
 
 The latest token-backed Harness validation, Pages deployment, and Codex
 readiness monitor completed successfully for observed main commit
-`e05cda12afc62007c81ae37f58b5eefbca0abff6`.
+`28e6948dc6851a46766d9cd640322e61068bc500`.
 
 Use the token-backed artifact or a fresh authenticated/API-backed
 `measure-application-readiness.ps1` run immediately before any form submission
 decision.
 
-| Metric | API-backed value |
+| Metric | Latest API-backed value / current public observation |
 | --- | ---: |
 | Stars | 0 |
 | Forks | 0 |
@@ -65,21 +71,24 @@ registry.
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`e05cda12afc62007c81ae37f58b5eefbca0abff6` show successful main validation,
+`28e6948dc6851a46766d9cd640322e61068bc500` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939058088 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939056524 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939115253 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939868384 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939867556 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939908804 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification
 
-These checks passed in the same monitoring pass:
+These checks are the current tracked verification set. In this pass, link
+health, public readiness, security posture, and external feedback registry were
+rerun; rows for targeted demo and form-gate coverage are retained from the
+latest successful targeted validations unless their files change.
 
 | Check | Evidence |
 | --- | --- |
@@ -91,6 +100,7 @@ These checks passed in the same monitoring pass:
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
 | External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 3 verified signals: 2 first-run reports and 1 feedback follow-up |
+| Inspection-first star language | `scripts/checks/check-public-ready.ps1 -PassThru` confirms README and Pages copy ask readers to star/share only after inspection and only if useful enough to recommend |
 | Windows PowerShell 5.1 / CP936 demo | `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1 -CommentLanguage zh` under code page 936 completed with `Passed: 6; Failed: 0; Skipped: 0` |
 | Chinese issue chooser route | `.github/ISSUE_TEMPLATE/config.yml` now routes Chinese 3-minute feedback and 10-minute first-run reports to pinned public comment targets |
 | Form submission gate tests | `scripts/checks/test-form-submission-ready.ps1 -PassThru` confirmed the not-ready and score-mismatch fixtures block submission |

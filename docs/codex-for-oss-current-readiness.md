@@ -9,9 +9,9 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-04T07:49:50.5216465Z` |
+| Checked at UTC | `2026-06-04T08:07:37.2972482Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `e82bfbf8da99f9051b5956492a1fc92125e9bf88` |
+| observed main commit | `e05cda12afc62007c81ae37f58b5eefbca0abff6` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` |
 | Readiness score | API-backed `85/90` hard-gate state |
 | Target score | `90` |
@@ -26,12 +26,13 @@ the submission gate. It returned an API-backed `85/90`, with
 `ready_for_form_submission=false`. Two manually verified public issue `#6`
 first-run reports are now registered in
 `docs/external-feedback-evidence.yaml`, and one feedback-driven public commit
-follow-up is registered. The repository still has 0 real stars, so the
-external-stars hard gate remains red.
+follow-up is registered. The API-backed issue comment scan now also counts the
+two public non-owner issue `#6` comments directly. The repository still has 0
+real stars, so the external-stars hard gate remains red.
 
 The latest token-backed Harness validation, Pages deployment, and Codex
 readiness monitor completed successfully for observed main commit
-`e82bfbf8da99f9051b5956492a1fc92125e9bf88`.
+`e05cda12afc62007c81ae37f58b5eefbca0abff6`.
 
 Use the token-backed artifact or a fresh authenticated/API-backed
 `measure-application-readiness.ps1` run immediately before any form submission
@@ -54,26 +55,26 @@ The API-backed issue comment breakdown was:
 | Issue | External comments counted |
 | --- | ---: |
 | `#5` | 0 |
-| `#6` | 0 |
+| `#6` | 2 |
 | `#7` | 0 |
 
-The direct GitHub comments API did not add extra unregistered comments in this
-measurement. The counted first-run reports came from the verified evidence
-registry after manual review of direct `#issuecomment-...` URLs.
+The direct GitHub comments API did not add extra unregistered comments beyond
+the two already reviewed public issue `#6` first-run reports in the evidence
+registry.
 
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`e82bfbf8da99f9051b5956492a1fc92125e9bf88` show successful main validation,
+`e05cda12afc62007c81ae37f58b5eefbca0abff6` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page, but it was not anonymously
 downloadable during this pass.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919898746 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919897959 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26919937346 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939058088 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939056524 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26939115253 |
 | Monitor artifact | produced on the run page, but not anonymously downloadable during this pass | `codex-readiness-report` |
 
 ## Local Verification

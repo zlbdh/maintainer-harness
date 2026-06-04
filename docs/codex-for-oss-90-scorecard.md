@@ -96,13 +96,14 @@ feedback is not enough.
 ## Current Expected State
 
 As recorded in `docs/codex-for-oss-current-readiness.md`, Maintainer Harness
-still has a `60/90` hard-gate state. The latest local API-backed readiness
-measurement completed on observed main commit
-`4b30a585e75da4535d5b4413128eaced2a5790ba` at
-`2026-06-03T23:30:27.5872793Z`. The latest Harness validation, Pages
-deployment, and post-workflow Codex readiness monitor are successful, but the
-hard external signal gates are still missing. A fresh API-backed pre-submit
-measurement is still required immediately before submission.
+currently has an API-backed `85/90` hard-gate state. The latest recorded
+readiness measurement completed on observed main commit
+`18ec7e950002b2a5e0fdf4374c923feeab840c3a` at
+`2026-06-04T10:26:25.3650463Z`. The latest Harness validation, Pages
+deployment, and post-workflow Codex readiness monitor are successful. The
+external feedback, external first-run, and feedback follow-up gates are now
+passing; the hard external star gate remains missing. A fresh API-backed
+pre-submit measurement is still required immediately before submission.
 
 - PASS: core public evidence package
 - PASS: public dogfooding evidence and external validation sprint
@@ -120,10 +121,10 @@ measurement is still required immediately before submission.
   owner, bot, duplicate, or already-registered comments
 - PASS: pre-submit form gate is available and blocks submission while any hard
   external-signal gate is missing
+- PASS: 2/2 external issue comments across feedback issues
+- PASS: 2/1 external first-run reports on issue #6
+- PASS: 1/1 feedback-driven issue or commit artifacts recorded
 - FAIL: 0/5 real stars
-- FAIL: 0/2 external issue comments
-- FAIL: 0/1 outside first-run report
-- FAIL: 0/1 feedback-driven follow-up artifact
 
 After this transparency refresh, the next work should focus on the external
 validation sprint rather than adding more internal documentation.

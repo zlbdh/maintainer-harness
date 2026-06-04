@@ -233,6 +233,15 @@ $verifiedFollowUpSignals = @($verifiedEvidenceSignals | Where-Object {
     ($_.type -eq 'feedback-follow-up')
 })
 
+$registeredFirstRunSignals = @($verifiedEvidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'type') -and
+    ($_.type -eq 'first-run-report')
+})
+$registeredIssueCommentSignals = @($verifiedEvidenceSignals | Where-Object {
+    ($_.PSObject.Properties.Name -contains 'type') -and
+    ($_.type -eq 'issue-comment')
+})
+
 $externalFeedbackComments += $verifiedIssueCommentSignals.Count
 $externalFirstRunReports += $verifiedFirstRunSignals.Count
 $effectiveFeedbackFollowUpCount = $FeedbackFollowUpCount + $verifiedFollowUpSignals.Count
@@ -293,6 +302,11 @@ $result = [pscustomobject]@{
     evidence_signal_breakdown = [pscustomobject]@{
         verified_issue_comment_signals = $verifiedIssueCommentSignals.Count
         verified_first_run_signals = $verifiedFirstRunSignals.Count
+        verified_follow_up_signals = $verifiedFollowUpSignals.Count
+    }
+    registered_evidence_breakdown = [pscustomobject]@{
+        verified_issue_comment_signals = $registeredIssueCommentSignals.Count
+        verified_first_run_signals = $registeredFirstRunSignals.Count
         verified_follow_up_signals = $verifiedFollowUpSignals.Count
     }
     latest_ci = New-WorkflowRunSummary $latestHarnessRun

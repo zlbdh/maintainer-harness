@@ -12,6 +12,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **External review path:** https://zlbdh.github.io/maintainer-harness/external-review.html
 
+**Recommendation check:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
+
 **Public review request:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
 
 **中文朋友实测教程:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-guide-zh.md
@@ -91,6 +93,8 @@ vanity metric; the best starting points are issue
 [#5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new) for reviewability
 feedback and issue [#6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new)
 for first-run friction.
+Use `docs/recommendation-check.md` if you need a neutral decision boundary for
+whether to comment, share, or star after inspection.
 
 It does not replace your product repositories. It keeps the operational layer around them auditable:
 
@@ -306,6 +310,7 @@ GitHub Actions runs the public validation gate on Windows, Ubuntu, and macOS. In
 - `docs/dogfooding-runs/`: public dogfooding run notes and validation evidence
 - `docs/external-validation-sprint.md`: 24-48 hour plan for collecting honest maintainer feedback signals
 - `docs/maintainer-review-kit.md`: five-minute outside maintainer feedback path
+- `docs/recommendation-check.md`: neutral boundary for when inspected reviewers should comment, share, or star
 - `docs/friend-review-send-checklist-zh.md`: Chinese pre-send checklist for one-to-one real friend review outreach without star requests or self-owned accounts
 - `docs/friend-feedback-recovery-zh.md`: Chinese guidance for turning real private/public friend feedback into safe public evidence without counting private messages or self-owned accounts
 - `docs/worker-output-reviewability.md`: good/bad worker output evidence example for maintainer review

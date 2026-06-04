@@ -100,6 +100,7 @@ cd maintainer-harness
 - Demo: https://github.com/zlbdh/maintainer-harness/blob/main/docs/demo.md
 - Maintainer review kit: https://github.com/zlbdh/maintainer-harness/blob/main/docs/maintainer-review-kit.md
 - Public review request packet: https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
+- Recommendation check: https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 - First-run troubleshooting: https://github.com/zlbdh/maintainer-harness/blob/main/docs/first-run-troubleshooting.md
 - Codespaces first-run: https://github.com/zlbdh/maintainer-harness/blob/main/docs/codespaces-first-run.md
 - Chinese friend send checklist: https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-review-send-checklist-zh.md

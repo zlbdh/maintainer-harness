@@ -109,17 +109,17 @@ $links = @(
     [pscustomobject]@{
         Check = 'feedback-issue'
         Url = 'https://github.com/zlbdh/maintainer-harness/issues/5'
-        RequiredText = ''
+        RequiredText = 'v0.1.20'
     },
     [pscustomobject]@{
         Check = 'first-run-issue'
         Url = 'https://github.com/zlbdh/maintainer-harness/issues/6'
-        RequiredText = ''
+        RequiredText = 'Windows PowerShell 5.1 / CP936 encoding issue'
     },
     [pscustomobject]@{
         Check = 'dogfooding-tracker-issue'
         Url = 'https://github.com/zlbdh/maintainer-harness/issues/7'
-        RequiredText = ''
+        RequiredText = 'Days 1-7: record first-run feedback'
     },
     [pscustomobject]@{
         Check = 'current-gate-status-comment'

@@ -614,6 +614,8 @@ $requiredPublicText = @(
     @{ Path = 'docs\codex-for-oss-90-scorecard.md'; Text = 'FAIL: 0/5 real stars' },
     @{ Path = 'docs\launch-log.md'; Text = 'Issue #7 current gate status refresh' },
     @{ Path = 'docs\launch-log.md'; Text = 'Current API-backed 85/90 snapshot after gate comment refresh' },
+    @{ Path = 'docs\launch-log.md'; Text = 'Pinned issue body anchor refresh' },
+    @{ Path = 'docs\launch-log.md'; Text = 'Public handoff clarity only' },
     @{ Path = 'docs\launch-log.md'; Text = 'not a form-submission approval' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'workflow_run:' },
     @{ Path = '.github\workflows\codex-readiness-monitor.yml'; Text = 'Harness validation' },

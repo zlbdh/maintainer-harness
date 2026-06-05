@@ -98,8 +98,8 @@ feedback is not enough.
 As recorded in `docs/codex-for-oss-current-readiness.md`, Maintainer Harness
 currently has an API-backed `85/90` hard-gate state. The latest recorded
 readiness measurement completed on observed main commit
-`be3049e7309c338a047246ebb50567eee7727b0e` at
-`2026-06-05T05:56:31.3688113Z`. The latest Harness validation, Pages
+`72d7ae1717256fb36ee0aec7fc0fe4360cd12302` at
+`2026-06-05T06:42:50.4963740Z`. The latest Harness validation, Pages
 deployment, and post-workflow Codex readiness monitor are successful. The
 external feedback, external first-run, and feedback follow-up gates are now
 passing; the hard external star gate remains missing. A fresh API-backed
@@ -121,9 +121,9 @@ pre-submit measurement is still required immediately before submission.
   owner, bot, duplicate, or already-registered comments
 - PASS: pre-submit form gate is available and blocks submission while any hard
   external-signal gate is missing
-- PASS: 3/2 external issue comments across feedback issues
+- PASS: 4/2 external issue comments across feedback issues
 - PASS: 3/1 external first-run reports on issue #6
-- PASS: 2/1 feedback-driven issue or commit artifacts recorded
+- PASS: 3/1 feedback-driven issue or commit artifacts recorded
 - FAIL: 0/5 real stars
 
 After this transparency refresh, the next work should focus on the external

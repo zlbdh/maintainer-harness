@@ -9,9 +9,9 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-05T05:56:31.3688113Z` |
+| Checked at UTC | `2026-06-05T06:42:50.4963740Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `be3049e7309c338a047246ebb50567eee7727b0e` |
+| observed main commit | `72d7ae1717256fb36ee0aec7fc0fe4360cd12302` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` completed with GitHub API access |
 | Readiness score | API-backed `85/90` hard-gate state; still not submission-ready |
 | Target score | `90` |
@@ -24,18 +24,19 @@ The latest local monitoring pass completed
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
 the submission gate, with GitHub API access. The result is `85/90`, with
 `ready_for_form_submission=false`, for observed main commit
-`be3049e7309c338a047246ebb50567eee7727b0e`.
+`72d7ae1717256fb36ee0aec7fc0fe4360cd12302`.
 
-Three manually verified public issue `#6` first-run reports are registered in
-`docs/external-feedback-evidence.yaml`, and two feedback-driven public commit
-follow-ups are registered. The API-backed issue comment scan counted the three
-public non-owner issue `#6` comments directly. The current public repository
-view and API metrics show `Star 0`, `Fork 0`, `Watchers 0`, `Subscribers 0`,
-and `Issues 3`, so the external-stars hard gate remains red.
+One manually verified public issue `#5` reviewability comment, three public
+issue `#6` first-run reports, and three feedback-driven public commit
+follow-ups are registered in `docs/external-feedback-evidence.yaml`. The
+API-backed issue comment scan counted one public non-owner issue `#5` comment
+and three public non-owner issue `#6` comments directly. The current public
+repository view and API metrics show `Star 0`, `Fork 0`, `Watchers 0`,
+`Subscribers 0`, and `Issues 3`, so the external-stars hard gate remains red.
 
 The latest Harness validation, Pages deployment, and Codex readiness monitor
 completed successfully for observed main commit
-`be3049e7309c338a047246ebb50567eee7727b0e`.
+`72d7ae1717256fb36ee0aec7fc0fe4360cd12302`.
 
 The public issue `#7` current gate status comment was refreshed after an
 earlier anonymous API rate-limit window and now points reviewers at the current
@@ -53,43 +54,42 @@ decision.
 | Watchers | 0 |
 | Subscribers | 0 |
 | Open issues | 3 |
-| External feedback comments counted | 3 |
+| External feedback comments counted | 4 |
 | External first-run reports counted | 3 |
-| Feedback-driven follow-up artifacts counted | 2 |
-| Verified evidence signals | 5 |
+| Feedback-driven follow-up artifacts counted | 3 |
+| Verified evidence signals | 7 |
 
 The API-backed issue comment breakdown was:
 
 | Issue | External comments counted |
 | --- | ---: |
-| `#5` | 0 |
+| `#5` | 1 |
 | `#6` | 3 |
 | `#7` | 0 |
 
-The direct GitHub comments API did not add extra unregistered comments beyond
-the three already reviewed public issue `#6` first-run reports in the evidence
-registry.
+The direct GitHub comments API matches the reviewed public issue-comment and
+first-run report evidence in the registry.
 
 The registered evidence registry breakdown was:
 
 | Signal type | Verified count |
 | --- | ---: |
-| Issue comment signals | 0 |
+| Issue comment signals | 1 |
 | First-run report signals | 3 |
-| Feedback follow-up signals | 2 |
+| Feedback follow-up signals | 3 |
 
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`be3049e7309c338a047246ebb50567eee7727b0e` show successful main validation,
+`72d7ae1717256fb36ee0aec7fc0fe4360cd12302` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998161291 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998160691 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998189479 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999295441 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999294786 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999326263 |
 | Monitor artifact | produced on the run page | `codex-readiness-report` |
 
 ## Local Verification
@@ -108,7 +108,7 @@ latest successful targeted validations unless their files change.
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
-| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1` found 5 verified signals: 3 first-run reports and 2 feedback follow-ups |
+| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1` found 7 verified signals: 1 issue comment, 3 first-run reports, and 3 feedback follow-ups |
 | First-run report template | `scripts/checks/test-first-run-report.ps1` confirmed the generated issue `#6` comment block asks reviewers to add concrete run-specific detail before posting |
 | Inspection-first star language | `scripts/checks/check-public-ready.ps1 -PassThru` confirms README and Pages copy ask readers to star/share only after inspection and only if useful enough to recommend |
 | Windows PowerShell 5.1 / CP936 demo | `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1 -CommentLanguage zh` under code page 936 completed with `Passed: 6; Failed: 0; Skipped: 0` |
@@ -120,9 +120,9 @@ latest successful targeted validations unless their files change.
 | Gate | Current | Required |
 | --- | ---: | ---: |
 | Real stars from people who inspected the project | 0 | 5 |
-| External issue comments or first-run reports | 3 | 2 |
+| External issue comments or first-run reports | 4 | 2 |
 | External first-run report on issue `#6` | 3 | 1 |
-| Feedback converted into a public issue or commit | 2 | 1 |
+| Feedback converted into a public issue or commit | 3 | 1 |
 
 Issue `#5` and issue `#6` remain the shortest public feedback routes, and
 issue `#7` includes the owner dogfooding status comment:
@@ -146,7 +146,8 @@ external-signal counts. It still does not replace the required API-backed pre-su
 ## Next Honest Work
 
 Do not ask the maintainer to submit the OpenAI form yet. The next work should
-focus on the external validation sprint:
+focus on real recommendation signals from people who inspected the project,
+while keeping the external validation sprint open for additional critique:
 
 - invite real maintainers to inspect the project or run the demo
 - route any additional first-run reports to issue `#6`

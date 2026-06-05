@@ -20,6 +20,9 @@ This project follows a simple date-based changelog until formal versioned releas
 - Latest public anchor links now point to `v0.1.21`, which anchors verified
   external first-run reports, reviewability feedback, and follow-up commits
   without counting owner work as external engagement.
+- Harness validation now runs the security posture gate before the informational
+  Codex readiness artifact upload, and the Windows-only readiness report upload
+  no longer turns an otherwise passing validation job red.
 
 ## 2026-06-03
 

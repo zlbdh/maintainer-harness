@@ -124,8 +124,13 @@ jobs:
         shell: pwsh
         run: ./scripts/checks/run-review-demo.ps1 -SkipCommandExecution -PassThru | ConvertTo-Json -Depth 5
 
+      - name: Check security posture
+        shell: pwsh
+        run: ./scripts/checks/check-security-posture.ps1
+
       - name: Report Codex for OSS readiness
         if: matrix.os == 'windows-latest'
+        continue-on-error: true
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -163,6 +168,7 @@ jobs:
 
       - name: Upload Codex readiness artifact
         if: matrix.os == 'windows-latest'
+        continue-on-error: true
         uses: actions/upload-artifact@v7
         with:
           name: codex-readiness-${{ github.sha }}
@@ -170,7 +176,3 @@ jobs:
             reports/application-audit/codex-readiness.json
             reports/application-audit/codex-readiness.md
           if-no-files-found: error
-
-      - name: Check security posture
-        shell: pwsh
-        run: ./scripts/checks/check-security-posture.ps1

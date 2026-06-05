@@ -9,9 +9,9 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-04T11:16:01.9739243Z` |
+| Checked at UTC | `2026-06-05T05:56:31.3688113Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `93d5639478d5dad1916a03cae2f2bcf7759cd976` |
+| observed main commit | `be3049e7309c338a047246ebb50567eee7727b0e` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` completed with GitHub API access |
 | Readiness score | API-backed `85/90` hard-gate state; still not submission-ready |
 | Target score | `90` |
@@ -24,18 +24,18 @@ The latest local monitoring pass completed
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
 the submission gate, with GitHub API access. The result is `85/90`, with
 `ready_for_form_submission=false`, for observed main commit
-`93d5639478d5dad1916a03cae2f2bcf7759cd976`.
+`be3049e7309c338a047246ebb50567eee7727b0e`.
 
-Two manually verified public issue `#6` first-run reports are registered in
-`docs/external-feedback-evidence.yaml`, and one feedback-driven public commit
-follow-up is registered. The API-backed issue comment scan counted the two
+Three manually verified public issue `#6` first-run reports are registered in
+`docs/external-feedback-evidence.yaml`, and two feedback-driven public commit
+follow-ups are registered. The API-backed issue comment scan counted the three
 public non-owner issue `#6` comments directly. The current public repository
 view and API metrics show `Star 0`, `Fork 0`, `Watchers 0`, `Subscribers 0`,
 and `Issues 3`, so the external-stars hard gate remains red.
 
 The latest Harness validation, Pages deployment, and Codex readiness monitor
 completed successfully for observed main commit
-`93d5639478d5dad1916a03cae2f2bcf7759cd976`.
+`be3049e7309c338a047246ebb50567eee7727b0e`.
 
 The public issue `#7` current gate status comment was refreshed after an
 earlier anonymous API rate-limit window and now points reviewers at the current
@@ -53,21 +53,21 @@ decision.
 | Watchers | 0 |
 | Subscribers | 0 |
 | Open issues | 3 |
-| External feedback comments counted | 2 |
-| External first-run reports counted | 2 |
-| Feedback-driven follow-up artifacts counted | 1 |
-| Verified evidence signals | 3 |
+| External feedback comments counted | 3 |
+| External first-run reports counted | 3 |
+| Feedback-driven follow-up artifacts counted | 2 |
+| Verified evidence signals | 5 |
 
 The API-backed issue comment breakdown was:
 
 | Issue | External comments counted |
 | --- | ---: |
 | `#5` | 0 |
-| `#6` | 2 |
+| `#6` | 3 |
 | `#7` | 0 |
 
 The direct GitHub comments API did not add extra unregistered comments beyond
-the two already reviewed public issue `#6` first-run reports in the evidence
+the three already reviewed public issue `#6` first-run reports in the evidence
 registry.
 
 The registered evidence registry breakdown was:
@@ -75,21 +75,21 @@ The registered evidence registry breakdown was:
 | Signal type | Verified count |
 | --- | ---: |
 | Issue comment signals | 0 |
-| First-run report signals | 2 |
-| Feedback follow-up signals | 1 |
+| First-run report signals | 3 |
+| Feedback follow-up signals | 2 |
 
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`93d5639478d5dad1916a03cae2f2bcf7759cd976` show successful main validation,
+`be3049e7309c338a047246ebb50567eee7727b0e` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26947860052 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26947858871 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26947900377 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998161291 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998160691 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26998189479 |
 | Monitor artifact | produced on the run page | `codex-readiness-report` |
 
 ## Local Verification
@@ -103,12 +103,13 @@ latest successful targeted validations unless their files change.
 | --- | --- |
 | Reviewer comment draft preflight | `scripts/checks/test-reviewer-comment-draft-preflight.ps1 -PassThru` checked safe drafts, local paths, private endpoints, raw stack traces, and no-post/no-engagement flags |
 | Reviewer invite draft preflight | `scripts/checks/test-reviewer-invite-draft-preflight.ps1 -PassThru` checks star-safe one-to-one invitation drafts without contacting reviewers or creating engagement |
-| PowerShell source encoding | `scripts/checks/test-powershell-source-encoding.ps1 -PassThru` confirmed 48 tracked PowerShell source files and 0 UTF-8 BOM violations |
+| PowerShell source encoding | `scripts/checks/test-powershell-source-encoding.ps1` passed after the latest first-run template update |
 | Public evidence link health | `scripts/checks/check-public-evidence-links.ps1 -PassThru` checked 46 public URLs |
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
-| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1 -PassThru` found 3 verified signals: 2 first-run reports and 1 feedback follow-up |
+| External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1` found 5 verified signals: 3 first-run reports and 2 feedback follow-ups |
+| First-run report template | `scripts/checks/test-first-run-report.ps1` confirmed the generated issue `#6` comment block asks reviewers to add concrete run-specific detail before posting |
 | Inspection-first star language | `scripts/checks/check-public-ready.ps1 -PassThru` confirms README and Pages copy ask readers to star/share only after inspection and only if useful enough to recommend |
 | Windows PowerShell 5.1 / CP936 demo | `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\checks\run-review-demo.ps1 -CommentLanguage zh` under code page 936 completed with `Passed: 6; Failed: 0; Skipped: 0` |
 | Chinese issue chooser route | `.github/ISSUE_TEMPLATE/config.yml` now routes Chinese 3-minute feedback and 10-minute first-run reports to pinned public comment targets |
@@ -119,9 +120,9 @@ latest successful targeted validations unless their files change.
 | Gate | Current | Required |
 | --- | ---: | ---: |
 | Real stars from people who inspected the project | 0 | 5 |
-| External issue comments or first-run reports | 2 | 2 |
-| External first-run report on issue `#6` | 2 | 1 |
-| Feedback converted into a public issue or commit | 1 | 1 |
+| External issue comments or first-run reports | 3 | 2 |
+| External first-run report on issue `#6` | 3 | 1 |
+| Feedback converted into a public issue or commit | 2 | 1 |
 
 Issue `#5` and issue `#6` remain the shortest public feedback routes, and
 issue `#7` includes the owner dogfooding status comment:

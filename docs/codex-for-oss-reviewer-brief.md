@@ -34,7 +34,7 @@ large star counts.
 
 - Public repository: https://github.com/zlbdh/maintainer-harness
 - Project site: https://zlbdh.github.io/maintainer-harness/
-- Latest tag anchor: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20
+- Latest tag anchor: https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.21
 - Main branch CI history: https://github.com/zlbdh/maintainer-harness/actions/workflows/harness-validation.yml?query=branch%3Amain
 - Main branch Pages history: https://github.com/zlbdh/maintainer-harness/actions?query=workflow%3A%22pages+build+and+deployment%22+branch%3Amain
 - Cross-platform validation: `docs/cross-platform-validation.md`

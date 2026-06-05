@@ -16,7 +16,7 @@ still incomplete.
 | Readiness score | API-backed `85/90` hard-gate state; still not submission-ready |
 | Target score | `90` |
 | Ready for form submission | no |
-| Tag anchor at snapshot time | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.20 |
+| Current public tag anchor | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.21 |
 
 ## Latest API-Backed Measurement
 

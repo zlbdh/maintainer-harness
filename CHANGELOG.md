@@ -4,6 +4,23 @@ All notable changes to Maintainer Harness will be documented in this file.
 
 This project follows a simple date-based changelog until formal versioned releases begin.
 
+## 2026-06-05
+
+### Added
+
+- `v0.1.21` tag anchor for the feedback-driven first-run and worker-output
+  reviewability follow-up batch.
+- Worker output reviewability guidance now includes scope/diff comparison and
+  skipped-check decision levels, based on public issue `#5` feedback.
+- First-run comment handoff now asks outside reviewers to add concrete
+  run-specific detail before posting generated issue `#6` comments.
+
+### Changed
+
+- Latest public anchor links now point to `v0.1.21`, which anchors verified
+  external first-run reports, reviewability feedback, and follow-up commits
+  without counting owner work as external engagement.
+
 ## 2026-06-03
 
 ### Added

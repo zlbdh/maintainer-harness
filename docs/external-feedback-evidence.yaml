@@ -44,3 +44,9 @@
     status: verified
     url: 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-4628617632'
     summary: 'Outside reviewer reran the latest Windows PowerShell 5.1 first-run after the encoding fix; demo passed 6/0/0 and surfaced a template-specific improvement.'
+  - id: '2026-06-05-feedback-follow-up-0e42dc1'
+    date: '2026-06-05'
+    type: feedback-follow-up
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/commit/0e42dc16723aca9bae7786b9d3be4ca923d70628'
+    summary: 'Feedback-driven commit added first-run comment template prompts so external reviewers add at least one concrete run-specific detail before posting.'

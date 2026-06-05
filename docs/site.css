@@ -344,6 +344,37 @@ article p {
   overflow-wrap: anywhere;
 }
 
+.decision-table {
+  display: grid;
+  gap: 0;
+  margin-top: 28px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.decision-table > div {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 0.65fr);
+  gap: 18px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+}
+
+.decision-table > div:first-child {
+  border-top: 0;
+}
+
+.decision-table strong {
+  color: var(--ink);
+}
+
+.decision-table span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .final { padding-bottom: 92px; }
 
 .link-list {
@@ -365,7 +396,8 @@ article p {
   .hero,
   .split,
   .signal-band,
-  .grid {
+  .grid,
+  .decision-table > div {
     grid-template-columns: 1fr;
   }
 

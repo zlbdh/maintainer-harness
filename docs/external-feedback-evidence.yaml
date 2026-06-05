@@ -50,3 +50,9 @@
     status: verified
     url: 'https://github.com/zlbdh/maintainer-harness/commit/0e42dc16723aca9bae7786b9d3be4ca923d70628'
     summary: 'Feedback-driven commit added first-run comment template prompts so external reviewers add at least one concrete run-specific detail before posting.'
+  - id: '2026-06-05-issue-5-comment-4628785250'
+    date: '2026-06-05'
+    type: issue-comment
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-4628785250'
+    summary: 'Outside reviewer inspected the docs and external review page, then suggested a scope/diff comparison table and skipped-check decision levels for maintainer acceptance review.'

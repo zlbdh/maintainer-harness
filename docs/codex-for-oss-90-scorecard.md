@@ -98,8 +98,8 @@ feedback is not enough.
 As recorded in `docs/codex-for-oss-current-readiness.md`, Maintainer Harness
 currently has an API-backed `85/90` hard-gate state. The latest recorded
 readiness measurement completed on observed main commit
-`f54f9703c24ea8e2477e372f71b1314e1e06237c` at
-`2026-06-05T07:12:31.3670216Z`. The latest Harness validation, Pages
+`a0b8d2027849d3dc8a12d3da569fa334327df14c` at
+`2026-06-05T07:33:11.4697504Z`. The latest Harness validation, Pages
 deployment, and post-workflow Codex readiness monitor are successful. The
 external feedback, external first-run, and feedback follow-up gates are now
 passing; the hard external star gate remains missing. A fresh API-backed
@@ -115,6 +115,8 @@ pre-submit measurement is still required immediately before submission.
   artifact upload, and the upload no longer blocks the main validation gate
 - PASS: public readiness and security posture, including the default
   high-confidence secret scan
+- PASS: external review page now exposes a decision table for comment,
+  first-run, or star/share outcomes after inspection
 - PASS: worker output reviewability example is now included in the public
   evidence package
 - PASS: feedback-driven follow-up template is available for converting real

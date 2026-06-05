@@ -9,22 +9,24 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-05T07:12:31.3670216Z` |
+| Checked at UTC | `2026-06-05T07:33:11.4697504Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `f54f9703c24ea8e2477e372f71b1314e1e06237c` |
-| Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` completed with GitHub API access |
+| observed main commit | `a0b8d2027849d3dc8a12d3da569fa334327df14c` |
+| Source command | GitHub Actions token-backed `Codex readiness monitor` artifact after local anonymous GitHub API rate limiting |
 | Readiness score | API-backed `85/90` hard-gate state; still not submission-ready |
 | Target score | `90` |
 | Ready for form submission | no |
 | Current public tag anchor | https://github.com/zlbdh/maintainer-harness/releases/tag/v0.1.21 |
 
-## Latest API-Backed Measurement
+## Latest Token-Backed Measurement
 
-The latest local monitoring pass completed
+The latest local monitoring pass first ran
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
-the submission gate, with GitHub API access. The result is `85/90`, with
-`ready_for_form_submission=false`, for observed main commit
-`f54f9703c24ea8e2477e372f71b1314e1e06237c`.
+the submission gate, but local anonymous GitHub API requests were rate-limited.
+The final authoritative measurement for this snapshot therefore uses the
+GitHub Actions token-backed `Codex readiness monitor` artifact for observed
+main commit `a0b8d2027849d3dc8a12d3da569fa334327df14c`. The result is
+`85/90`, with `ready_for_form_submission=false`.
 
 One manually verified public issue `#5` reviewability comment, three public
 issue `#6` first-run reports, and three feedback-driven public commit
@@ -36,7 +38,7 @@ repository view and API metrics show `Star 0`, `Fork 0`, `Watchers 0`,
 
 The latest Harness validation, Pages deployment, and Codex readiness monitor
 completed successfully for observed main commit
-`f54f9703c24ea8e2477e372f71b1314e1e06237c`.
+`a0b8d2027849d3dc8a12d3da569fa334327df14c`.
 
 The public issue `#7` current gate status comment was refreshed after an
 earlier anonymous API rate-limit window and now points reviewers at the current
@@ -81,15 +83,15 @@ The registered evidence registry breakdown was:
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`f54f9703c24ea8e2477e372f71b1314e1e06237c` show successful main validation,
+`a0b8d2027849d3dc8a12d3da569fa334327df14c` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27000967726 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27000967013 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27001001545 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27001847882 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27001847073 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27001889859 |
 | Monitor artifact | produced on the run page | `codex-readiness-report` |
 
 ## Local Verification
@@ -108,6 +110,7 @@ latest successful targeted validations unless their files change.
 | Public readiness | `scripts/checks/check-public-ready.ps1 -PassThru` |
 | Security posture | `scripts/checks/check-security-posture.ps1 -PassThru` |
 | External review handoff | `scripts/checks/check-external-review-handoff.ps1 -PassThru` |
+| External review decision table | `scripts/checks/check-public-ready.ps1 -PassThru` confirms the public review page tells unsure readers to comment, demo runners to post only matching first-run evidence, and recommenders to star/share only after inspection |
 | External feedback registry | `scripts/checks/validate-external-feedback-evidence.ps1` found 7 verified signals: 1 issue comment, 3 first-run reports, and 3 feedback follow-ups |
 | First-run report template | `scripts/checks/test-first-run-report.ps1` confirmed the generated issue `#6` comment block asks reviewers to add concrete run-specific detail before posting |
 | Inspection-first star language | `scripts/checks/check-public-ready.ps1 -PassThru` confirms README and Pages copy ask readers to star/share only after inspection and only if useful enough to recommend |

@@ -38,3 +38,9 @@
     status: verified
     url: 'https://github.com/zlbdh/maintainer-harness/commit/e82bfbf'
     summary: 'Feedback-driven commit fixed Windows PowerShell 5.1 source encoding and first-run newcomer next-step guidance.'
+  - id: '2026-06-05-issue-6-comment-4628617632'
+    date: '2026-06-05'
+    type: first-run-report
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-4628617632'
+    summary: 'Outside reviewer reran the latest Windows PowerShell 5.1 first-run after the encoding fix; demo passed 6/0/0 and surfaced a template-specific improvement.'

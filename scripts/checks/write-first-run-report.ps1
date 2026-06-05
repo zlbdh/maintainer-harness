@@ -253,11 +253,13 @@ $commentLines = @(
 $commentLines += $commandSummaryLines
 $commentLines += @(
     '',
-    'First useful file:',
+    'Before posting, replace at least one of the next three prompts with a concrete note from your run. Do not publish the untouched template.',
     '',
-    'First confusing file or command:',
+    'First useful file (write one sentence):',
     '',
-    'Smallest improvement:',
+    'First confusing file or command (if none, say so):',
+    '',
+    'Smallest improvement (if none, say so):',
     '',
     'I reviewed this comment for secrets, private repository names, tokens, customer data, and production logs before posting.'
 )
@@ -282,11 +284,13 @@ $commentLinesZh = @(
 $commentLinesZh += $commandSummaryLines
 $commentLinesZh += @(
     '',
-    '第一个有用的文件：',
+    '发布前请至少填写下面三项中的一项真实体验；不要直接发布未补充的空模板。',
     '',
-    '第一个不清楚的文件或命令：',
+    '第一个有用的文件（写一句话）：',
     '',
-    '最小改进建议：',
+    '第一个不清楚的文件或命令（如果没有，也请写明没有）：',
+    '',
+    '最小改进建议（如果没有，也请写明没有）：',
     '',
     '我确认这条评论没有 token、私有仓库地址、客户数据或生产日志。'
 )

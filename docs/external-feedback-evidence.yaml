@@ -56,3 +56,9 @@
     status: verified
     url: 'https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-4628785250'
     summary: 'Outside reviewer inspected the docs and external review page, then suggested a scope/diff comparison table and skipped-check decision levels for maintainer acceptance review.'
+  - id: '2026-06-05-feedback-follow-up-1dcd1bd'
+    date: '2026-06-05'
+    type: feedback-follow-up
+    status: verified
+    url: 'https://github.com/zlbdh/maintainer-harness/commit/1dcd1bdc8c59467baeba2b5facad8b2e41e17fce'
+    summary: 'Feedback-driven commit added scope/diff comparison and skipped-check decision levels to worker output reviewability guidance and templates.'

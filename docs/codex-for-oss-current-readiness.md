@@ -9,9 +9,9 @@ still incomplete.
 
 | Field | Value |
 | --- | --- |
-| Checked at UTC | `2026-06-05T06:42:50.4963740Z` |
+| Checked at UTC | `2026-06-05T07:12:31.3670216Z` |
 | Repository | `zlbdh/maintainer-harness` |
-| observed main commit | `72d7ae1717256fb36ee0aec7fc0fe4360cd12302` |
+| observed main commit | `f54f9703c24ea8e2477e372f71b1314e1e06237c` |
 | Source command | local `scripts/checks/measure-application-readiness.ps1 -PassThru` completed with GitHub API access |
 | Readiness score | API-backed `85/90` hard-gate state; still not submission-ready |
 | Target score | `90` |
@@ -24,7 +24,7 @@ The latest local monitoring pass completed
 `scripts/checks/measure-application-readiness.ps1 -PassThru`, as required by
 the submission gate, with GitHub API access. The result is `85/90`, with
 `ready_for_form_submission=false`, for observed main commit
-`72d7ae1717256fb36ee0aec7fc0fe4360cd12302`.
+`f54f9703c24ea8e2477e372f71b1314e1e06237c`.
 
 One manually verified public issue `#5` reviewability comment, three public
 issue `#6` first-run reports, and three feedback-driven public commit
@@ -36,7 +36,7 @@ repository view and API metrics show `Star 0`, `Fork 0`, `Watchers 0`,
 
 The latest Harness validation, Pages deployment, and Codex readiness monitor
 completed successfully for observed main commit
-`72d7ae1717256fb36ee0aec7fc0fe4360cd12302`.
+`f54f9703c24ea8e2477e372f71b1314e1e06237c`.
 
 The public issue `#7` current gate status comment was refreshed after an
 earlier anonymous API rate-limit window and now points reviewers at the current
@@ -81,15 +81,15 @@ The registered evidence registry breakdown was:
 ## Workflow Status
 
 The latest public workflow pages for observed main commit
-`72d7ae1717256fb36ee0aec7fc0fe4360cd12302` show successful main validation,
+`f54f9703c24ea8e2477e372f71b1314e1e06237c` show successful main validation,
 Pages deployment, and post-workflow Codex readiness monitoring. The readiness
 monitor artifact is produced on the run page.
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999295441 |
-| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999294786 |
-| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/26999326263 |
+| Harness validation | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27000967726 |
+| GitHub Pages deployment | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27000967013 |
+| Codex readiness monitor | success | https://github.com/zlbdh/maintainer-harness/actions/runs/27001001545 |
 | Monitor artifact | produced on the run page | `codex-readiness-report` |
 
 ## Local Verification

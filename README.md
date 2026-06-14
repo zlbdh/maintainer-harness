@@ -12,6 +12,8 @@ Maintainer Harness is a lightweight control plane for open source maintainers wh
 
 **External review path:** https://zlbdh.github.io/maintainer-harness/external-review.html
 
+**Share kit:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/share.md
+
 **Recommendation check:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/recommendation-check.md
 
 **Public review request:** https://github.com/zlbdh/maintainer-harness/blob/main/docs/review-request.md
@@ -37,12 +39,25 @@ demo, or leave public feedback.
 **Reviewability example:** `docs/worker-output-reviewability.md` compares vague
 worker output with evidence a maintainer can actually review.
 
+**Best fit:** Maintainer Harness is most useful for maintainers and reviewers
+who are already letting coding agents touch issues, docs, CI, releases, or
+multi-repository change packets and want those runs to leave reviewable evidence.
+
+Use it when you want to answer these questions before trusting an agent change:
+
+- What was the allowed scope?
+- Which files and repositories were supposed to change?
+- What did the worker actually verify?
+- Which checks were skipped, and who decides whether that is acceptable?
+- What public feedback or release note proves the follow-up happened?
+
 **Outside reviewer actions:**
 
 | Time | Best action | Public link |
 | --- | --- | --- |
 | 3 min | Say what evidence is missing before accepting agent output. | [Issue #5](https://github.com/zlbdh/maintainer-harness/issues/5#issuecomment-new) |
 | 5 min | Run the clean demo and post first-run friction. | [Issue #6](https://github.com/zlbdh/maintainer-harness/issues/6#issuecomment-new) |
+| 5 min | Send a feedback-first post or one-to-one review request. | [Share kit](docs/share.md) |
 | After inspection | Use the copy-ready comment templates if they match what you actually saw. | [External review templates](https://zlbdh.github.io/maintainer-harness/external-review.html#templates) |
 | After feedback | Track any concrete follow-up as a public issue, commit, or release note. | [Issue #7](https://github.com/zlbdh/maintainer-harness/issues/7) |
 

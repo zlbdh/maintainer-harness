@@ -2,6 +2,10 @@
 
 This is the compact sharing page for Maintainer Harness. Use it when posting, replying to feedback, or sending the project to maintainers.
 
+The goal is discovery through real inspection. Do not use this page to ask for
+bulk engagement, star trades, paid recommendations, controlled accounts, or
+copy-pasted praise.
+
 ## Primary Link
 
 https://zlbdh.github.io/maintainer-harness/
@@ -37,6 +41,35 @@ https://github.com/zlbdh/maintainer-harness/blob/main/docs/friend-feedback-recov
 ## One-Liner
 
 Maintainer Harness turns agent work into scoped change packets, validation evidence, and release-ready review trails.
+
+## Who To Send It To
+
+Prioritize people who can judge the workflow quickly:
+
+- open source maintainers who review agent-assisted changes
+- developers already using Codex, Claude Code, Cursor, or similar coding agents
+- reviewers responsible for CI, release notes, security checks, or multi-repo changes
+- DevTools, platform, or engineering productivity engineers
+- friends with GitHub accounts who are willing to actually read the review page or run the demo
+
+Avoid sending it to people who have no context and would only click a button to
+help you. That does not create useful validation.
+
+## 30-Second Value Check
+
+Send reviewers to the project only if this sounds relevant to them:
+
+```text
+Maintainer Harness is a small OSS workflow for making AI-agent changes easier to review.
+It asks agents to work from scoped change packets and leaves maintainer-readable evidence:
+allowed paths, impact notes, validation output, skipped-check reasons, and follow-up links.
+```
+
+The fastest useful action is not praise. It is one of these:
+
+- inspect the external review page and say what evidence is missing
+- run the Codespaces demo and report the first-run result
+- star or share only after inspection, if the workflow is useful enough to recommend
 
 ## What To Try
 
@@ -139,6 +172,67 @@ It turns vague agent work into scoped change packets, validation evidence, and r
 The demo is synthetic and safe to try from a clean checkout:
 https://zlbdh.github.io/maintainer-harness/
 ```
+
+## Maintainer-Focused Post
+
+```text
+For open source maintainers experimenting with coding agents:
+
+I built Maintainer Harness to make agent output easier to accept, reject, or request changes on. It turns vague agent work into scoped change packets, impact notes, validation evidence, skipped-check reasons, and release-ready review trails.
+
+The demo uses synthetic sample repos, so you can inspect it without connecting private projects:
+https://zlbdh.github.io/maintainer-harness/external-review.html
+
+If you maintain a repo, I am most interested in this question: what evidence would make an agent-generated change reviewable enough for you?
+```
+
+## One-To-One Reviewer Invite
+
+Run this through `scripts/checks/check-reviewer-invite-draft.ps1` before using
+it if you edit the wording:
+
+```text
+I am testing a small open source workflow for reviewing AI-agent-generated changes.
+
+It is not a direct star request. Please only star after you inspect it and would honestly recommend it to another maintainer.
+
+If you have 5-10 minutes, can you first open the external review page or run the Codespaces demo, then tell me what evidence is missing or confusing?
+
+External review path:
+https://zlbdh.github.io/maintainer-harness/external-review.html
+
+Codespaces first-run:
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+```
+
+## 中文一对一邀请
+
+```text
+我在测试一个开源小工具，用来让 AI agent 生成的改动更容易被维护者审查。
+
+这不是让你直接 star，也不需要 star；只有你先看过或跑过，觉得确实值得推荐给别的维护者时，再自己决定。
+
+如果你有 5-10 分钟，可以先打开外部评审页，或者用 Codespaces 跑一次 demo，然后告诉我哪里看不懂、哪个证据不够、哪里会影响你接受 agent 输出吗？
+
+外部评审页：
+https://zlbdh.github.io/maintainer-harness/external-review.html
+
+Codespaces 云端 demo：
+https://codespaces.new/zlbdh/maintainer-harness?quickstart=1
+```
+
+## Channel Notes
+
+Use the same feedback-first framing everywhere:
+
+- X / LinkedIn: lead with the maintainer pain, then link the external review page.
+- V2EX / 掘金 / 开源中国: use the Chinese invite and ask for first-run friction.
+- Hacker News / Reddit: use the maintainer-focused post and ask for evidence gaps.
+- GitHub discussions or maintainer groups: ask whether the scoped packet format would fit their review workflow.
+- Private friends: send the one-to-one invite only to people willing to actually inspect or run it.
+
+Do not post the same message repeatedly. A small number of targeted posts is
+better than broad low-context promotion.
 
 ## Feedback Prompt
 

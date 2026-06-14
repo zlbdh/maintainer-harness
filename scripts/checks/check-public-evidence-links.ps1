@@ -167,6 +167,16 @@ $links = @(
         RequiredText = 'Star only after inspection'
     },
     [pscustomobject]@{
+        Check = 'share-kit'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/share.md'
+        RequiredText = 'Maintainer-Focused Post'
+    },
+    [pscustomobject]@{
+        Check = 'share-kit-star-boundary'
+        Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/share.md'
+        RequiredText = 'Please only star after you inspect it'
+    },
+    [pscustomobject]@{
         Check = 'friend-review-guide-zh'
         Url = 'https://raw.githubusercontent.com/zlbdh/maintainer-harness/main/docs/friend-review-guide-zh.md'
         RequiredText = '先实际打开、阅读或运行，再自行决定是否评论或 star'

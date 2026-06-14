@@ -155,6 +155,51 @@ function New-WorkflowRunSummary {
     }
 }
 
+function Find-WorkflowByName {
+    param(
+        $Workflows,
+        [string]$Name
+    )
+
+    if (-not $Workflows -or [string]::IsNullOrWhiteSpace($Name)) {
+        return $null
+    }
+
+    return @($Workflows.workflows |
+        Where-Object { $_.name -eq $Name } |
+        Select-Object -First 1)
+}
+
+function Find-WorkflowRunForCurrentMain {
+    param(
+        [string]$Repository,
+        [string]$DefaultBranch,
+        [string]$MainSha,
+        [string]$WorkflowName,
+        [string]$RunName,
+        [hashtable]$Headers,
+        $RecentRuns,
+        $Workflows
+    )
+
+    $recentMatch = @($RecentRuns.workflow_runs |
+        Where-Object { $_.name -eq $RunName -and $_.head_sha -eq $MainSha } |
+        Select-Object -First 1)
+    if ($recentMatch.Count -gt 0) {
+        return $recentMatch[0]
+    }
+
+    $workflow = Find-WorkflowByName -Workflows $Workflows -Name $WorkflowName
+    if (-not $workflow) {
+        return $null
+    }
+
+    $workflowRuns = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/actions/workflows/$($workflow.id)/runs?branch=$DefaultBranch&per_page=20" -Headers $Headers
+    return @($workflowRuns.workflow_runs |
+        Where-Object { $_.name -eq $RunName -and $_.head_sha -eq $MainSha } |
+        Select-Object -First 1)
+}
+
 $owner, $repoName = $Repository -split '/', 2
 if ([string]::IsNullOrWhiteSpace($owner) -or [string]::IsNullOrWhiteSpace($repoName)) {
     throw "Repository must be in owner/name form. Got: $Repository"
@@ -176,13 +221,26 @@ foreach ($signal in $verifiedEvidenceSignals) {
 $repo = Get-GitHubJson -Url "https://api.github.com/repos/$Repository" -Headers $githubHeaders
 $mainCommit = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/commits/$($repo.default_branch)" -Headers $githubHeaders
 $runs = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/actions/runs?branch=$($repo.default_branch)&per_page=20" -Headers $githubHeaders
+$workflows = Get-GitHubJson -Url "https://api.github.com/repos/$Repository/actions/workflows?per_page=100" -Headers $githubHeaders
 
-$latestHarnessRun = @($runs.workflow_runs) |
-    Where-Object { $_.name -eq 'Harness validation' -and $_.head_sha -eq $mainCommit.sha } |
-    Select-Object -First 1
-$latestPagesRun = @($runs.workflow_runs) |
-    Where-Object { $_.name -eq 'pages build and deployment' -and $_.head_sha -eq $mainCommit.sha } |
-    Select-Object -First 1
+$latestHarnessRun = Find-WorkflowRunForCurrentMain `
+    -Repository $Repository `
+    -DefaultBranch $repo.default_branch `
+    -MainSha $mainCommit.sha `
+    -WorkflowName 'Harness validation' `
+    -RunName 'Harness validation' `
+    -Headers $githubHeaders `
+    -RecentRuns $runs `
+    -Workflows $workflows
+$latestPagesRun = Find-WorkflowRunForCurrentMain `
+    -Repository $Repository `
+    -DefaultBranch $repo.default_branch `
+    -MainSha $mainCommit.sha `
+    -WorkflowName 'pages-build-deployment' `
+    -RunName 'pages build and deployment' `
+    -Headers $githubHeaders `
+    -RecentRuns $runs `
+    -Workflows $workflows
 
 $externalFeedbackComments = 0
 $externalFirstRunReports = 0
